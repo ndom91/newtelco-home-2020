@@ -69,7 +69,7 @@ module.exports = {
         short_name: 'starter',
         start_url: '/',
         background_color: '#222',
-        theme_color: '#fff',
+        theme_color: '#67b246',
         display: 'minimal-ui',
         icon: 'src/images/icon.png',
       },
@@ -80,16 +80,5 @@ module.exports = {
         apiToken: process.env.DATO_CMS_KEY,
       },
     },
-  ],
-  developMiddleware: app => {
-    app.use(
-      '/.netlify/functions/',
-      createProxyMiddleware({
-        target: 'http://localhost:9000',
-        pathRewrite: {
-          '/.netlify/functions/': '',
-        },
-      })
-    );
-  },
+  ]
 };

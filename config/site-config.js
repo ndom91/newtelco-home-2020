@@ -1,7 +1,7 @@
 module.exports = {
-  siteUrl: 'https://gatsby-datocms-starter.netlify.com',
+  siteUrl: 'https://newtelco-dato.netlify.app',
   sitemapPath: '/sitemap.xml',
-  title: 'Gatsby DatoCMS Starter',
-  description: 'Website Description',
-  author: '@chase_ohlson',
+  title: 'Newtelco 2020',
+  description: 'Newtelco Gmbh - The Interconnection Company',
+  author: '@ndom91',
 };

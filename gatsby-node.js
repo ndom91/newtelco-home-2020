@@ -1,41 +1,36 @@
-const path = require('path');
+const path = require('path')
+const slugify = require('slug')
 
 // eslint-disable-next-line
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-  const locales = ['en', 'de'];
+  const { createPage } = actions
+  const locales = ['en', 'de']
 
   /* Create pages defined in code, i.e. pages that are "baked-in", but have localized content defined in dato */
   const createBlogsPosts = new Promise((resolve, reject) => {
     locales.map(locale => {
       graphql(`
         {
-          index: datoCmsIndex(locale: { eq: "${locale}" }) {
-            locale
-          }
-          secondPage: datoCmsSecondpage(locale: { eq: "${locale}" }) {
-            locale
-            slug
+          products: allDatoCmsProduct(filter: {locale: { eq: "${locale}" }}) {
+            nodes {
+              title
+            }
           }
         }
       `).then(result => {
-        ['index', 'secondPage'].forEach(pageId => {
-          const pageData = result.data[pageId];
-          // TODO: move "en" to constants file
+        result.data['products'].nodes.forEach(page => {
           // TODO: consider consolidating localized link creation to helper utility (see LocalizedLink)
-          const localePrefix =
-            pageData.locale === 'en' ? '' : `/${pageData.locale}`;
-          const slug = pageData.slug ? pageData.slug : '';
+          const slug = slugify(page.title)
           createPage({
-            path: `${localePrefix}/${slug}`,
-            component: path.resolve(`./src/templates/dato/${pageId}.tsx`), // TODO: add a check to ensure the page template exists?
-            context: { locale: pageData.locale }, // TODO: coallesce with default locale?
-          });
-        });
-      });
-    });
-  });
+            path: `${locale}/${slug}`,
+            component: path.resolve(`./src/templates/products/index.js`),
+            context: { locale: locale, title: page.title },
+          })
+        })
+      })
+    })
+  })
 
   // eslint-disable-next-line
-  return Promise.all([createBlogsPosts]);
-};
+  return Promise.all([createBlogsPosts])
+}

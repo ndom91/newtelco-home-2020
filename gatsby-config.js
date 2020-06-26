@@ -1,7 +1,6 @@
-const { createProxyMiddleware } = require('http-proxy-middleware');
 const siteConfig = require('./config/site-config');
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 });
 
 module.exports = {
@@ -66,7 +65,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'gatsby-datocms-starter',
-        short_name: 'starter',
+        short_name: 'dato',
         start_url: '/',
         background_color: '#222',
         theme_color: '#67b246',
@@ -77,7 +76,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-datocms',
       options: {
-        apiToken: process.env.DATO_CMS_KEY,
+        apiToken: process.env.DATO_CMS_KEY
       },
     },
   ]

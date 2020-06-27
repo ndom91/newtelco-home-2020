@@ -1,20 +1,23 @@
 ![Banner](https://i.imgur.com/KDyK3sU.jpg "Banner")
 
-# Gatsby DatoCMS Starter
+# Newtelco DatoCMS Homepage
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6fa40240-03dc-4966-9286-7667ceb79dc4/deploy-status)](https://app.netlify.com/sites/gatsby-datocms-starter/deploys)
-[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d316877a-7bbc-441f-9e38-00eff63fea8f/deploy-status)](https://app.netlify.com/sites/gatsby-dato/deploys)
+![Github](https://img.shields.io/github/last-commit/newtelco/newtelco-dato)
+![GitHub](https://img.shields.io/github/license/newtelco/newtelco-dato)
+![Twitter](https://img.shields.io/twitter/follow/newtelcode?label=%40NewtelcoDE&style=social)
 
 ### Vendors
-- DatoCMS: Includes setup for `HomePage`, `BlogPage`, `BlogPost` models 
-- Netlify: Includes build scripts & setup for a simple contact form function/endpoint
+- DatoCMS
+- Netlify
 
 ### Installation
-- `gatsby new my-site https://github.com/brohlson/gatsby-datocms-starter`
-- Create `.env`, `.env.production`, `.env.development` files based on `.env.example`
-- Add `siteUrl` and `sitemapPath` in `site-config` for SEO utils
-- Create the `Home Page`, `Blog Page`, `Blog Post` models in  DatoCMS
-- Kick some ass 
+- `git clone https://github.com/newtelco/newtelco-dato`
+- `cd newtelco-dato && npm install`
+- `cp .env.example .env`
+- Update `.env` variables
+- `npm run dev`
 
 ### Credits 
 - [Inter Font](https://rsms.me/inter/) by Rasmus Andersson & [typeface-inter package](https://github.com/ajmalafif/typeface-inter) by Ajmal Afif
+- [Gatsby Starter](https://www.gatsbyjs.org/starters/brohlson/gatsby-datocms-starter/)

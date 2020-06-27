@@ -9,27 +9,29 @@ import SEO from '../components/SEO'
 const indexQuery = graphql`
   {
     datoCmsSetting {
-      title
+      ctaEmail
+      ctaPhone
+      ctaActionText
       seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
+        tags
       }
     }
   }
 `
 
 export default function IndexPage() {
-  /* const data = useStaticQuery(indexQuery) */
-  /* const { openModal } = useContext(ModalContext) */
-  /* const { title, seoMetaTags } = data.datoCmsHomePage */
+  const data = useStaticQuery(indexQuery)
+  const { openModal } = useContext(ModalContext)
+  const { ctaEmail, ctaPhone, ctaActionText, seoMetaTags } = data.datoCmsSetting
   return (
     <Fragment>
-      {/* <SEO meta={seoMetaTags} /> */}
+      <SEO meta={seoMetaTags} />
       <PageWrapper>
         <PageInner>
-          {/* <PageTitle>{title}</PageTitle> */}
           <pre>
             gatsby new site https://github.com/brohlson/gatsby-datocms-starter
           </pre>
+          <button>{ctaActionText}</button>
           <button onClick={() => openModal(modalTypes.BASIC)}>
             Open Modal
           </button>

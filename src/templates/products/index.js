@@ -23,9 +23,9 @@ const ProductPage = ({ allDatoCmsProduct }) => {
 }
 
 export const projectQuery = graphql`
-  query($locale: String!, $title: Title!) {
+  query($locale: String!, $title: String!) {
     allDatoCmsProduct(
-      filter: { locale: { eq: "en" }, title: { eq: "Colocation" } }
+      filter: { locale: { eq: $locale }, title: { eq: $title } }
     ) {
       nodes {
         title

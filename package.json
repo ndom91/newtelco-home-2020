@@ -1,9 +1,30 @@
 {
-  "name": "gatsby-datocms-starter",
-  "private": true,
-  "description": "An opinionated Gatsby starter",
-  "version": "1.0.0",
-  "author": "Chase Ohlson <chase@chaseohlson.com>",
+  "name": "newtelco-datocms",
+  "description": "Newtelco 2020 Homepage",
+  "version": "0.0.1",
+  "author": "Nico Domino <ndomino@newtelco.de>",
+  "keywords": [
+    "gatsby",
+		"datocms",
+		"newtelco"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "gatsby develop",
+    "serve": "yarn serve:client && yarn serve:functions",
+    "serve:client": "gatsby serve",
+    "serve:functions": "netlify-lambda serve functions-src",
+    "build": "yarn build:client && yarn build:functions",
+    "build:client": "gatsby build",
+    "build:functions": "netlify-lambda build functions-src",
+    "format": "prettier --config ./.prettierrc --write src/**/**/*.js && prettier --config ./.prettierrc --write src/**/*.js",
+    "ssr": "yarn build && yarn serve",
+    "clean": "rm -rf ./node_modules && rm -rf ./.cache && yarn cache clean && yarn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brohlson/gatsby-datocms-starter"
+  },
   "dependencies": {
     "gatsby": "^2.20.7",
     "gatsby-image": "^2.3.1",
@@ -50,29 +71,9 @@
     "netlify-lambda": "^1.6.3",
     "prettier": "^1.18.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "dev": "gatsby develop",
-    "serve": "yarn serve:client && yarn serve:functions",
-    "serve:client": "gatsby serve",
-    "serve:functions": "netlify-lambda serve functions-src",
-    "build": "yarn build:client && yarn build:functions",
-    "build:client": "gatsby build",
-    "build:functions": "netlify-lambda build functions-src",
-    "format": "prettier --config ./.prettierrc --write src/**/**/*.js && prettier --config ./.prettierrc --write src/**/*.js",
-    "ssr": "yarn build && yarn serve",
-    "clean": "rm -rf ./node_modules && rm -rf ./.cache && yarn cache clean && yarn"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn format"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brohlson/gatsby-datocms-starter"
   }
 }

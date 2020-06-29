@@ -1,1 +1,1 @@
-export const BASIC = 'BASIC';
+export const BASIC = 'BASIC'

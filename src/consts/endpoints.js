@@ -1,1 +1,1 @@
-export const contact = '/.netlify/functions/contact';
+export const contact = '/.netlify/functions/contact'

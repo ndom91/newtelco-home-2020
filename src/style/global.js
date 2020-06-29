@@ -1,5 +1,5 @@
-import 'typeface-inter';
-import { createGlobalStyle } from 'styled-components';
+import 'typeface-inter'
+import { createGlobalStyle } from 'styled-components'
 
 const Global = createGlobalStyle`
 
@@ -14,6 +14,6 @@ html { font-family: 'Inter', sans-serif; font-feature-settings: 'dlig', 'zero', 
   -moz-osx-font-smoothing: grayscale;
 }
 
-`;
+`
 
-export default Global;
+export default Global

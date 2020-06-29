@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { font, colors, z, bz } from '../consts/style';
-import { fadeInUp } from '../style/animations';
+import { font, colors, z, bz } from '../consts/style'
+import { fadeInUp } from '../style/animations'
 
 export const PageWrapper = styled.div`
   height: calc(100vh - 10rem);
@@ -10,7 +10,7 @@ export const PageWrapper = styled.div`
   align-items: center;
   max-width: 100%;
   padding: 2rem;
-`;
+`
 
 export const PageInner = styled.div`
   width: 75rem;
@@ -29,11 +29,11 @@ export const PageInner = styled.div`
     padding: 0.35em 0.7em;
     margin-top: 0.7em;
   }
-`;
+`
 
 export const PageTitle = styled.h1`
   ${font.h1}
-`;
+`
 
 export const PostLink = styled.div`
   margin-bottom: 1em;
@@ -47,7 +47,7 @@ export const PostLink = styled.div`
       background: ${colors.dark};
     }
   }
-`;
+`
 
 export const ModalWrapper = styled.div`
   position: fixed;
@@ -61,7 +61,7 @@ export const ModalWrapper = styled.div`
   align-items: center;
   padding: 2rem;
   ${z.modalBackground};
-`;
+`
 
 export const ModalInner = styled.div`
   background: white;
@@ -77,4 +77,4 @@ export const ModalInner = styled.div`
   ${bz};
   ${font.h1};
   ${z.modal};
-`;
+`

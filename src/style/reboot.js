@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 //****** Contains Reboot.css ******/
 // https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap-reboot.css
@@ -327,6 +327,6 @@ template {
 [hidden] {
   display: none !important;
 }
-`;
+`
 
-export default Reboot;
+export default Reboot

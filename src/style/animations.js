@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components';
+import { keyframes } from 'styled-components'
 
 export const spin = keyframes`
   from {
@@ -8,7 +8,7 @@ export const spin = keyframes`
   to {
     transform: rotate(360deg);
   }
-`;
+`
 
 export const fadeInUp = keyframes`
   from {
@@ -20,4 +20,4 @@ export const fadeInUp = keyframes`
     top: 0;
     opacity: 1;
   }
-`;
+`

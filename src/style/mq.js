@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
-import bp from '../consts/breakpoints';
+import { css } from 'styled-components'
+import bp from '../consts/breakpoints'
 
 // Creates up & down media queries for your breakpoints
 // *** Usage ***
@@ -18,15 +18,15 @@ const mq = Object.keys(bp).reduce((acc, label) => {
     @media screen and (max-width: ${bp[label]}px) {
       ${css(...args)};
     }
-  `;
+  `
 
   acc[`${label}_up`] = (...args) => css`
     @media screen and (min-width: ${bp[label]}px) {
       ${css(...args)};
     }
-  `;
+  `
 
-  return acc;
-}, {});
+  return acc
+}, {})
 
-export default mq;
+export default mq

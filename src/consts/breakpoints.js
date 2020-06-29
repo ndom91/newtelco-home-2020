@@ -3,4 +3,4 @@ export default {
   tablet: 1024,
   tabletSmall: 768,
   mobile: 480,
-};
+}

@@ -5,32 +5,25 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Reboot from '../style/reboot'
 import Global from '../style/global'
-import ModalContext from '../store/modalContext'
-import Modals from '../modals'
 import { colors } from '../consts/style'
 import { layoutTypes } from '../types/propTypes'
 
 const SiteWrapper = styled.div`
   background: ${colors.light};
 `
+const LocaleContext = React.createContext()
 
-const Layout = ({ children, location }) => {
-  const { open } = useContext(ModalContext)
-
-  function renderModal() {
-    if (!open) return null
-    const ModalComponent = Modals[open]
-    return <ModalComponent />
-  }
+const Layout = ({ children, location, pageContext: { locale } }) => {
   return (
-    <SiteWrapper>
-      <Reboot />
-      <Global />
-      <Header location={location} />
-      {children}
-      {renderModal()}
-      <Footer />
-    </SiteWrapper>
+    <LocaleContext.Provider value={{ locale }}>
+      <SiteWrapper>
+        <Reboot />
+        <Global />
+        <Header location={location} />
+        {children}
+        <Footer />
+      </SiteWrapper>
+    </LocaleContext.Provider>
   )
 }
 

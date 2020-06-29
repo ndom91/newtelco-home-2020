@@ -40,7 +40,7 @@ export default function Header({ location }) {
    * Oftentimes we'll have different UI state
    * based on the router location.  Do it here.
    */
-  useEffect(() => console.log(location), [location])
+  /* useEffect(() => console.log(location), [location]) */
 
   return (
     <Wrapper>

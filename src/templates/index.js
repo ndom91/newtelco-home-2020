@@ -4,6 +4,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import { PageWrapper, PageInner, PageTitle } from '../components/Elements'
 import * as modalTypes from '../types/modalTypes'
 import ModalContext from '../store/modalContext'
+import LanguageSelect from '../components/LanguageSelect'
 import SEO from '../components/SEO'
 
 export default function IndexPage({ data }) {
@@ -15,6 +16,7 @@ export default function IndexPage({ data }) {
       <SEO meta={seoMetaTags} />
       <PageWrapper>
         <PageInner>
+          <LanguageSelect />
           <Link
             target="_blank"
             alt={`Email to ${ctaEmail}`}

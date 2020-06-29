@@ -1,10 +1,11 @@
 const path = require('path')
 const slugify = require('slug')
+const locales = require('./src/consts/locales')
 
 // eslint-disable-next-line
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const locales = ['en', 'de']
+  console.log(locales)
 
   // Homepage
   locales.forEach(locale => {

@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Homepage
   locales.forEach(locale => {
-    const prefix = locale === 'en' ? '' : `/${locale}`
+    const prefix = locale === 'en' ? '/' : `/${locale}`
     createPage({
       path: `${prefix}`,
       component: path.resolve(`./src/templates/index.js`),

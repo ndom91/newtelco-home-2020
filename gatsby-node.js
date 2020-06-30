@@ -7,14 +7,19 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   console.log(locales)
 
-  // Homepage
-  locales.forEach(locale => {
-    const prefix = locale === 'en' ? '/' : `/${locale}`
-    createPage({
-      path: `${prefix}`,
-      component: path.resolve(`./src/templates/index.js`),
-      context: { locale },
-    })
+  // // Homepage
+  // locales.forEach(locale => {
+  //   const prefix = locale === 'en' ? '/' : `/${locale}`
+  //   createPage({
+  //     path: `${prefix}`,
+  //     component: path.resolve(`./src/templates/index.js`),
+  //     context: { locale },
+  //   })
+  // })
+  createPage({
+    path: '/',
+    component: path.resolve(`./src/templates/index.js`),
+    /* context: { locale }, */
   })
 
   /* Create pages defined in code, i.e. pages that are "baked-in", but have localized content defined in dato */

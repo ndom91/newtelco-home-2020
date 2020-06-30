@@ -1,21 +1,23 @@
 import React, { Fragment, useContext } from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import { PageWrapper, PageInner, PageTitle } from '../components/Elements'
 import * as modalTypes from '../types/modalTypes'
 import ModalContext from '../store/modalContext'
 import LanguageSelect from '../components/LanguageSelect'
 import SEO from '../components/SEO'
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
 
 export default function IndexPage({ data }) {
+  const { t } = useTranslation()
   const { openModal } = useContext(ModalContext)
   const { ctaEmail, ctaPhone, ctaActionText, seoMetaTags } = data.home
-  console.log(data)
   return (
     <Fragment>
       <SEO meta={seoMetaTags} />
       <PageWrapper>
         <PageInner>
+          <h1>{t('welcome')}</h1>
           <LanguageSelect />
           <Link
             target="_blank"
@@ -34,8 +36,8 @@ export default function IndexPage({ data }) {
 }
 
 export const query = graphql`
-  query HomeQuery($locale: String!) {
-    home: datoCmsSetting(locale: { eq: $locale }) {
+  query HomeQuery($language: String!) {
+    home: datoCmsSetting(locale: { eq: $language }) {
       ctaEmail
       ctaPhone
       ctaActionText

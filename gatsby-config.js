@@ -1,7 +1,7 @@
-const siteConfig = require('./config/site-config');
+const siteConfig = require('./config/site-config')
 require('dotenv').config({
   path: `.env`,
-});
+})
 
 module.exports = {
   siteMetadata: {
@@ -76,8 +76,26 @@ module.exports = {
     {
       resolve: 'gatsby-source-datocms',
       options: {
-        apiToken: process.env.DATO_CMS_KEY
+        apiToken: process.env.DATO_CMS_KEY,
       },
     },
-  ]
-};
+    {
+      resolve: 'gatsby-plugin-react-i18next',
+      options: {
+        path: `${__dirname}/src/locales`,
+        languages: ['en', 'de'],
+        defaultLanguage: 'en',
+        i18nextOptions: {
+          preload: ['en', 'de'],
+          fallbackLng: 'en',
+          interpolation: {
+            escapeValue: false,
+          },
+          react: {
+            wait: true,
+          },
+        },
+      },
+    },
+  ],
+}

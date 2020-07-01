@@ -60,13 +60,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-datocms-starter',
-        short_name: 'dato',
+        name: 'Newtelco Home',
+        short_name: 'Newtelco',
         start_url: '/',
         background_color: '#222',
         theme_color: '#67b246',
         display: 'minimal-ui',
-        icon: 'src/images/icon.png',
       },
     },
     {

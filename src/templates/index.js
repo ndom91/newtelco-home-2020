@@ -1,37 +1,20 @@
-import React, { Fragment, useContext } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-
-import { PageWrapper, PageInner, PageTitle } from '../components/Elements'
-import * as modalTypes from '../types/modalTypes'
-import ModalContext from '../store/modalContext'
-import LanguageSelect from '../components/LanguageSelect'
+import React from 'react'
+import { graphql } from 'gatsby'
+import { PageWrapper } from '../components/Elements'
 import SEO from '../components/SEO'
-import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
+import Hero from '../components/Hero'
+import Products from '../components/Products'
 
 export default function IndexPage({ data }) {
-  const { t } = useTranslation()
-  const { openModal } = useContext(ModalContext)
   const { ctaEmail, ctaPhone, ctaActionText, seoMetaTags } = data.home
   return (
-    <Fragment>
+    <>
       <SEO meta={seoMetaTags} />
       <PageWrapper>
-        <PageInner>
-          <h1>{t('welcome')}</h1>
-          <LanguageSelect />
-          <Link
-            target="_blank"
-            alt={`Email to ${ctaEmail}`}
-            href={`mailto:${ctaEmail}`}
-          >
-            <button>{ctaActionText}</button>
-          </Link>
-          <button onClick={() => openModal(modalTypes.BASIC)}>
-            Open Modal
-          </button>
-        </PageInner>
+        <Hero data={data.home} img={data.img} />
+        <Products />
       </PageWrapper>
-    </Fragment>
+    </>
   )
 }
 
@@ -58,6 +41,15 @@ export const query = graphql`
             url
           }
           twitterCard
+        }
+      }
+    }
+    img: allDatoCmsLocation {
+      nodes {
+        image {
+          fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+            ...GatsbyDatoCmsFluid
+          }
         }
       }
     }

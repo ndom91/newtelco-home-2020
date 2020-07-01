@@ -1,3 +1,4 @@
+import React from 'react'
 import 'typeface-inter'
 import { Global, css } from '@emotion/core'
 
@@ -24,4 +25,3 @@ const GlobalStyle = () => (
 )
 
 export default GlobalStyle
-

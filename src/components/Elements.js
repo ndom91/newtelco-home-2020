@@ -1,15 +1,14 @@
 import styled from '@emotion/styled'
 
 import { font, colors, z, bz } from '../consts/style'
-import { fadeInUp } from '../style/animations'
 
 export const PageWrapper = styled.div`
-  height: calc(100vh - 10rem);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   max-width: 100%;
-  padding: 2rem;
+  background-color: #1a202c;
 `
 
 export const PageInner = styled.div`
@@ -47,34 +46,4 @@ export const PostLink = styled.div`
       background: ${colors.dark};
     }
   }
-`
-
-export const ModalWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  ${z.modalBackground};
-`
-
-export const ModalInner = styled.div`
-  background: white;
-  position: relative;
-  max-width: 100%;
-  max-height: 100%;
-  height: 25rem;
-  width: 30rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: ${fadeInUp} 0.3s;
-  ${bz};
-  ${font.h1};
-  ${z.modal};
 `

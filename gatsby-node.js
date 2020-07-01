@@ -5,7 +5,6 @@ const locales = require('./src/consts/locales')
 // eslint-disable-next-line
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  console.log(locales)
 
   // // Homepage
   // locales.forEach(locale => {
@@ -37,7 +36,6 @@ exports.createPages = async ({ graphql, actions }) => {
       `).then(result => {
           result.data['products'].nodes.forEach(page => {
             const slug = slugify(page.title)
-            console.log(slug, page.title)
             createPage({
               path: `${locale}/${slug}`,
               component: path.resolve('./src/templates/products/index.js'),

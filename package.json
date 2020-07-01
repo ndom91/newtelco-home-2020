@@ -42,7 +42,7 @@
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.27",
-    "gatsby-source-datocms": "^2.1.29",
+    "gatsby-source-datocms": "^2.2.6",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-sharp": "^2.3.14",
     "i18next": "^19.5.1",

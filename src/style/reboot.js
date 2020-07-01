@@ -1,3 +1,4 @@
+import React from 'react'
 import { Global, css } from '@emotion/core'
 
 //****** Contains Reboot.css ******/
@@ -13,7 +14,6 @@ const Reboot = () => (
       }
 
       html {
-        font-size: 62.5% !important;
         font-family: 'Inter', sans-serif;
         line-height: 1.15;
         -webkit-text-size-adjust: 100%;

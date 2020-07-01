@@ -1,10 +1,8 @@
 import React from 'react'
-//import LocalizedLink from './LocalizedLink'
-//import { useTranslation } from 'react-i18next'
+import styled from '@emotion/styled'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 
-const LanguageSelect = () => {
-  //const { i18n } = useTranslation()
+const LanguageSelect = ({ toggleMenu }) => {
   const { languages, originalPath, changeLanguage } = useI18next()
 
   const flags = [{ en: '🇬🇧' }, { de: '🇩🇪' }]
@@ -12,16 +10,19 @@ const LanguageSelect = () => {
   /* const changeLang = lang => { */
   /*   i18n.changeLanguage(lang) */
   /* } */
+  const handleLanguageChange = lng => {
+    changeLanguage(lng)
+    toggleMenu()
+  }
 
   return (
-    <div>
+    <Wrapper>
       {flags.map(flag => {
         const lng = Object.keys(flag)[0]
         return (
           <Link
             key={lng}
-            // locale={lng}
-            onClick={() => changeLanguage(lng)}
+            onClick={() => handleLanguageChange(lng)}
             to={'/'}
             language={lng}
           >
@@ -29,8 +30,17 @@ const LanguageSelect = () => {
           </Link>
         )
       })}
-    </div>
+    </Wrapper>
   )
 }
 
 export default LanguageSelect
+
+const Wrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+`

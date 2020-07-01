@@ -8,8 +8,8 @@ module.exports = {
     ...siteConfig,
   },
   plugins: [
-		'gatsby-plugin-emotion',
-		'gatsby-plugin-postcss',
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -89,6 +89,14 @@ module.exports = {
           react: {
             wait: true,
           },
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Roboto:100,300'],
         },
       },
     },

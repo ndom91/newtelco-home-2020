@@ -1,5 +1,6 @@
 {
-	"welcome": "Willkommen zu Newtelco Dato 2020",
+	"welcome": "NewTelco GmbH",
+	"subtitle": "Die Interconnection Company",
 	"description": {
 		"part1": "To get started, edit <1>src/App.js</1> and save to reload.",
 		"part2": "Switch language between english and german using buttons above."

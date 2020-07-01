@@ -1,7 +1,11 @@
 module.exports = {
   theme: {
-    extend: {}
+    extend: {},
+    fontFamily: {
+      display: 'Inter',
+      body: 'Roboto',
+    },
   },
   variants: {},
-  plugins: []
+  plugins: [],
 }

@@ -1,19 +1,27 @@
 import 'typeface-inter'
-import { createGlobalStyle } from 'styled-components'
+import { Global, css } from '@emotion/core'
 
-const Global = createGlobalStyle`
+const GlobalStyle = () => (
+  <Global
+    style={css`
+      html {
+        font-family: 'Inter', sans-serif;
+        font-feature-settings: 'dlig', 'zero', 'ss01', 'cv05', 'cv10';
+      }
 
-html { font-family: 'Inter', sans-serif; font-feature-settings: 'dlig', 'zero', 'ss01', 'cv05', 'cv10';}
+      @supports (font-variation-settings: normal) {
+        html {
+          font-family: 'Inter var', sans-serif;
+        }
+      }
 
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
-}
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    `}
+  />
+)
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+export default GlobalStyle
 
-`
-
-export default Global

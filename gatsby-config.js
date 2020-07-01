@@ -8,6 +8,8 @@ module.exports = {
     ...siteConfig,
   },
   plugins: [
+		'gatsby-plugin-emotion',
+		'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -15,12 +17,6 @@ module.exports = {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
         offset: -90,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-styled-components',
-      options: {
-        displayName: process.env.NODE_ENV !== 'production',
       },
     },
     {

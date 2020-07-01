@@ -36,7 +36,7 @@ export const z = {
   modal: `z-index: 200000;`,
 }
 
-import { css } from 'styled-components'
+import { css } from '@emotion/core'
 
 // Creates up & down media queries for your breakpoints
 // *** Usage ***

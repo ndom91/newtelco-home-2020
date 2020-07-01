@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Reboot from '../style/reboot'
-import Global from '../style/global'
+import GlobalStyle from '../style/global'
 import { colors } from '../consts/style'
 import { layoutTypes } from '../types/propTypes'
 
@@ -18,7 +18,7 @@ const Layout = ({ children, location, pageContext: { locale } }) => {
     <LocaleContext.Provider value={{ locale }}>
       <SiteWrapper>
         <Reboot />
-        <Global />
+        <GlobalStyle />
         <Header location={location} />
         {children}
         <Footer />

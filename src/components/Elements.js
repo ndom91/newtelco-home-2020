@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import { font, colors, z, bz } from '../consts/style'
 import { fadeInUp } from '../style/animations'

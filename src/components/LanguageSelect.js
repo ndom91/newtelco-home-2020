@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 
 const LanguageSelect = ({ toggleMenu }) => {
-  const { languages, originalPath, changeLanguage } = useI18next()
+  const { languages, path, originalPath, changeLanguage } = useI18next()
 
   const flags = [{ en: '🇬🇧' }, { de: '🇩🇪' }]
 

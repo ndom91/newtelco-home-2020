@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import LanguageSelect from '../components/LanguageSelect'
-import Logo from '../components/newtelco-logo'
+import Logo from '../components/NewtelcoLogo'
 import { graphql } from 'gatsby'
 import OverlayMenu from './OverlayMenu'
 import ButtonMenu from './ButtonMenu'

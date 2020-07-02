@@ -5,7 +5,7 @@ import newtelcoLogo from '../images/newtelco-white.png'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import styled from '@emotion/styled'
 
-const OverlayMenu = ({ toggleMenu, isActive }) => {
+const OverlayMenu = ({ toggleMenu, isOpen }) => {
   const x = useMotionValue(10)
   const y = useTransform(x, value => value * 2)
 
@@ -36,13 +36,13 @@ const OverlayMenu = ({ toggleMenu, isActive }) => {
     },
   }
   return (
-    <OverlayWrapper className={isActive ? 'active' : 'hidden'}>
+    <OverlayWrapper className={isOpen ? 'active' : 'hidden'}>
       <HeaderImage src={newtelcoLogo} alt="Newtelco Logo" />
       <Navigation>
-        <ul className={isActive ? 'active' : ''}>
+        <ul className={isOpen ? 'active' : ''}>
           <motion.div
             style={{ x, y }}
-            animate={isActive ? 'visible' : 'hidden'}
+            animate={isOpen ? 'visible' : 'hidden'}
             variants={list}
           >
             {menuItems.map((menu, index) => (
@@ -69,7 +69,7 @@ const OverlayMenu = ({ toggleMenu, isActive }) => {
           </motion.div>
         </ul>
       </Navigation>
-      <LanguageSelect toggleMenu={toggleMenu} />
+      <LanguageSelect toggleMenu={toggleMenu} isOpen={isOpen} />
       {/* <ShapeOverlays
         className="shape-overlays"
         id="shape-overlays"

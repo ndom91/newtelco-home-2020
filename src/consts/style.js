@@ -1,5 +1,4 @@
-/* eslint-disable quotes */
-import media from '../style/mq.js'
+import media from '../style/mq'
 
 export const bz = `
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -25,6 +24,6 @@ export const colors = {
 }
 
 export const z = {
-  modalBackground: `z-index: 100000;`,
-  modal: `z-index: 200000;`,
+  modalBackground: 'z-index: 100000;',
+  modal: 'z-index: 200000;',
 }

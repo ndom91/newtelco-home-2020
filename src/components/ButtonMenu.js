@@ -3,12 +3,12 @@ import styled from '@emotion/styled'
 import media from '../style/mq'
 import LanguageSelect from './LanguageSelect'
 
-export const ButtonMenu = ({ handleClick, isActive }) => {
+export const ButtonMenu = ({ handleClick, isOpen }) => {
   return (
     <>
       <ButtonHamburger
         onClick={handleClick}
-        className={isActive ? 'active' : ''}
+        className={isOpen ? 'active' : ''}
         aria-label="Menu Button"
       >
         <span />

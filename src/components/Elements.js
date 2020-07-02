@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { font, colors, z, bz } from '../consts/style'
+import { font, colors } from '../consts/style'
 
 export const PageWrapper = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const PageWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   max-width: 100%;
-  background-color: #1a202c;
+  background-color: #111111;
 `
 
 export const PageInner = styled.div`

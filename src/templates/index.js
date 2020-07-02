@@ -3,16 +3,22 @@ import { graphql } from 'gatsby'
 import { PageWrapper } from '../components/Elements'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
+import Testimonials from '../components/Testimonials'
 import Products from '../components/Products'
 
 export default function IndexPage({ data }) {
   const { ctaEmail, ctaPhone, ctaActionText, seoMetaTags } = data.home
   return (
     <>
-      <SEO meta={seoMetaTags} />
+      <SEO
+        meta={seoMetaTags}
+        favicon={data.seo.faviconMetaTags}
+        global={data.seo.globalSeo}
+      />
       <PageWrapper>
         <Hero data={data.home} img={data.img} />
         <Products />
+        <Testimonials partners={data.partners.nodes} />
       </PageWrapper>
     </>
   )
@@ -29,6 +35,9 @@ export const query = graphql`
       }
     }
     seo: datoCmsSite {
+      faviconMetaTags {
+        tags
+      }
       globalSeo {
         siteName
         titleSuffix
@@ -41,6 +50,14 @@ export const query = graphql`
             url
           }
           twitterCard
+        }
+      }
+    }
+    partners: allDatoCmsPartner(filter: { locale: { eq: $language } }) {
+      nodes {
+        image {
+          url
+          basename
         }
       }
     }

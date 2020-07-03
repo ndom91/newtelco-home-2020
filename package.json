@@ -1,7 +1,7 @@
 {
   "name": "newtelco-datocms",
   "description": "Newtelco 2020 Homepage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Nico Domino <ndomino@newtelco.de>",
   "keywords": [
     "gatsby",
@@ -14,8 +14,7 @@
     "serve": "gatsby serve",
     "build": "gatsby build",
     "format": "prettier --config ./.prettierrc --write src/**/**/*.js && prettier --config ./.prettierrc --write src/**/*.js",
-    "ssr": "yarn build && yarn serve",
-    "clean": "rm -rf ./node_modules && rm -rf ./.cache && yarn cache clean && yarn"
+    "clean": "rm -rf ./node_modules && rm -rf ./.cache"
   },
   "repository": {
     "type": "git",
@@ -79,7 +78,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format"
+      "pre-commit": "npm run format"
     }
   }
 }

@@ -6,7 +6,7 @@ import { seoTypes } from '../types/propTypes'
 const SEO = ({ meta, favicon, global }) => {
   return (
     <HelmetDatoCms seo={meta} favicon={favicon}>
-      <title>{global.siteName}</title>
+      <title>{global.siteName || 'Newtelco GmbH'}</title>
     </HelmetDatoCms>
   )
 }

@@ -125,7 +125,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
-        printRejected: NODE_ENV === 'development',
+        printRejected: false,
         develop: NODE_ENV === 'development',
         tailwind: true,
       },

@@ -1,8 +1,10 @@
 {
 	"welcome": "NewTelco GmbH",
 	"subtitle": "The Interconnection Company",
-	"description": {
-		"part1": "To get started, edit <1>src/App.js</1> and save to reload.",
-		"part2": "Switch language between english and german using buttons above."
+	"menu": {
+		"products": "Products",
+		"services": "Services",
+		"team": "Team",
+		"about": "About"
 	}
 }

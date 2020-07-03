@@ -108,7 +108,7 @@ const LanguageChoiceWrapper = styled.ul`
   &.active {
     position: absolute;
     flex-direction: row;
-    top: -200px;
+    top: -100px;
     left: 50%;
     transform: translateX(calc(-50% + 10px));
     background-color: transparent;
@@ -160,10 +160,10 @@ const LanguageLink = styled(Link)`
   display: block;
   padding: 0 10px;
   color: #fff;
-  font-size: 24px;
+  font-size: 1.4rem;
   line-height: 30px;
   ${media.tabletSmall`
-    font-size: 34px;
+    font-size: 3rem;
   `}
   &:hover {
     text-decoration: none;

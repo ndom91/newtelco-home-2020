@@ -7,7 +7,7 @@ export const ButtonMenu = ({ handleClick, isOpen }) => {
   return (
     <>
       <ButtonHamburger
-        onClick={handleClick}
+        onClick={() => handleClick()}
         className={isOpen ? 'active' : ''}
         aria-label="Menu Button"
       >

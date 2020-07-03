@@ -70,16 +70,6 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
         </ul>
       </Navigation>
       <LanguageSelect toggleMenu={toggleMenu} isOpen={isOpen} />
-      {/* <ShapeOverlays
-        className="shape-overlays"
-        id="shape-overlays"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <path className="shape-overlays__path"></path>
-        <path className="shape-overlays__path"></path>
-        <path className="shape-overlays__path"></path>
-      </ShapeOverlays> */}
     </OverlayWrapper>
   )
 }
@@ -87,15 +77,15 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
 export default OverlayMenu
 
 const OverlayWrapper = styled.div`
+  position: fixed;
   width: 100vw;
   height: 0%;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: -2;
   transition: opacity 0.35s, visibility 0.35s, height 0.35s;
   overflow: hidden;
-  background-color: #67b246;
+  background-color: #292929;
   &.active {
     z-index: 9998;
     transform: translate(0%, 0%);
@@ -106,15 +96,13 @@ const OverlayWrapper = styled.div`
     transform: translate(0%, 0%);
     height: 0vh;
   }
-  /* & #shape-overlays {
-    z-index: -1;
-  } */
 `
 
 const NavNumber = styled.div`
-  font-family: var(--font-face-serif);
-  font-size: 2rem;
-  color: var(--gray);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: #67b246;
   display: inline-block;
   margin-right: 10px;
 `
@@ -125,34 +113,17 @@ const HeaderImage = styled.img`
   margin-top: 20px;
 `
 
-const ShapeOverlays = styled.svg`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  & path:nth-of-type(1) {
-    fill: #c4dbea;
-  }
-  & path:nth-of-type(2) {
-    fill: #4c688b;
-  }
-  & path:nth-of-type(3) {
-    fill: #2e496a;
-  }
-`
-
 const Navigation = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 90%;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   top: 50%;
-  left: -10%;
+  left: 0%;
   transform: translateY(-50%);
   & ul {
     list-style: none;
@@ -185,19 +156,19 @@ const NavigationLink = styled(Link)`
   z-index: 101;
   text-align: left;
   font-size: 2.2rem;
-  font-family: var(--font-face-serif);
+  font-family: 'Inter';
   font-weight: 300;
   &.active {
     &:after {
       position: absolute;
       display: inline-block;
       content: '';
-      border-bottom: 10px solid #fff;
-      width: 320px;
+      border-bottom: 6px solid #67b246;
+      width: 375px;
       font-family: var(--font-face-san-serif);
       position: absolute;
       top: 40px;
-      left: -150px;
+      left: -200px;
     }
   }
 `

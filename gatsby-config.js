@@ -1,4 +1,10 @@
 const siteConfig = require('./config/site-config')
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://newtelco-dato.netlify.app',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
 require('dotenv').config({
   path: `.env`,
 })
@@ -20,7 +26,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-sitemap',
+      resolve: 'gatsby-plugin-advanced-sitemap',
       options: {
         output: siteConfig.sitemapPath,
       },
@@ -36,6 +42,22 @@ module.exports = {
       options: {
         host: siteConfig.siteUrl,
         sitemap: `${siteConfig.siteUrl}${siteConfig.sitemapPath}`,
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }],
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
       },
     },
     {
@@ -98,6 +120,14 @@ module.exports = {
         google: {
           families: ['Roboto:100,300'],
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        printRejected: NODE_ENV === 'development',
+        develop: NODE_ENV === 'development',
+        tailwind: true,
       },
     },
   ],

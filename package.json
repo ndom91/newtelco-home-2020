@@ -11,12 +11,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "gatsby develop",
-    "serve": "yarn serve:client && yarn serve:functions",
-    "serve:client": "gatsby serve",
-    "serve:functions": "netlify-lambda serve functions-src",
-    "build": "yarn build:client && yarn build:functions",
-    "build:client": "gatsby build",
-    "build:functions": "netlify-lambda build functions-src",
+    "serve": "gatsby serve",
+    "build": "gatsby build",
     "format": "prettier --config ./.prettierrc --write src/**/**/*.js && prettier --config ./.prettierrc --write src/**/*.js",
     "ssr": "yarn build && yarn serve",
     "clean": "rm -rf ./node_modules && rm -rf ./.cache && yarn cache clean && yarn"

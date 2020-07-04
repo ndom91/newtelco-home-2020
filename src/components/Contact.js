@@ -42,7 +42,13 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+        <form
+          className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0"
+          name="Contact Form"
+          method="POST"
+          data-netlify="true"
+        >
+          <input type="hidden" name="form-name" value="Contact Form" />
           <h2 className="text-white text-lg mb-1 font-medium title-font">
             Contact
           </h2>
@@ -63,14 +69,17 @@ const Contact = () => {
             className="transition duration-200 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 rounded border border-gray-700 h-32  text-base text-white px-4 py-2 mb-4 resize-none"
             placeholder="Message"
           ></textarea>
-          <button className="text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+          <button
+            type="submit"
+            className="text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"
+          >
             Send
           </button>
           <p className="text-xs text-gray-500 mt-3">
             Chicharrones blog helvetica normcore iceland tousled brook viral
             artisan.
           </p>
-        </div>
+        </form>
       </div>
     </section>
   )

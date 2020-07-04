@@ -8,7 +8,7 @@ const Hero = ({ data, img }) => {
   const { ctaEmail, ctaActionText } = data
   const { t } = useTranslation()
   const { scrollY } = useViewportScroll()
-  const y = useTransform(scrollY, [-500, 500], [-150, 10])
+  const y = useTransform(scrollY, [500, -500], [-150, 10])
 
   return (
     <section className="text-gray-500 bg-gray-900 body-font">
@@ -35,16 +35,16 @@ const Hero = ({ data, img }) => {
               <motion.div
                 style={{
                   top: y,
-                  marginTop: '270px',
+                  marginTop: '330px',
                   position: 'absolute',
                 }}
               >
                 <img
                   src={BGDot}
-                  height="400"
-                  width="400"
+                  height="500"
+                  width="500"
                   alt="bg-dot-1"
-                  className="bottom-0 left-0 -mb-18 -ml-12 z-0 pointer-events-none opacity-1"
+                  className="bottom-0 left-0 -mb-18 -ml-16 z-0 pointer-events-none opacity-1"
                 />
               </motion.div>
             </div>

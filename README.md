@@ -5,7 +5,7 @@
 ![GitHub](https://img.shields.io/github/license/newtelco/newtelco-dato)
 ![Twitter](https://img.shields.io/twitter/follow/newtelcode?label=%40NewtelcoDE&style=social)
 
-### Stack
+### 🥞 Stack
 - Gatsby 
 - Headless CMS (DatoCMS)
 - TailwindCSS
@@ -13,14 +13,20 @@
 - react-i18next
 - eslint / prettier
 
-### Installation
+### 🚧 Contributing
+
+To contribute to the content, you must login to our headless CMS ([Dato CMS](https://dato.newtelco.dev)).
+
+We also use [Markup.io](https://app.markup.io) to work on the design of the page together. 
+
+### 🏗️ Installation
 - `git clone https://github.com/newtelco/newtelco-dato`
 - `cd newtelco-dato && npm install`
 - `cp .env.example .env`
 - Update `.env` variables
 - `npm run dev`
 
-### Credits 
-- [Inter Font](https://rsms.me/inter/) by Rasmus Andersson & [typeface-inter package](https://github.com/ajmalafif/typeface-inter) by Ajmal Afif
+### 🙏 Credits 
 - [Gatsby Starter](https://www.gatsbyjs.org/starters/brohlson/gatsby-datocms-starter)
 - [Gatsby Tailwind Config](https://github.com/pauloelias/gatsby-tailwind-emotion-starter)
+- [ndomino](https://ndo.dev)

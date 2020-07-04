@@ -4,6 +4,10 @@ module.exports = {
       rotate: {
         '5': '5deg',
       },
+      boxShadow: {
+        focus: '0 0 0 3px rgba(103, 178, 70, 0.3)',
+        outline: '0 0 0 3px rgba(103, 178, 70, 0.3)',
+      },
       colors: {
         green: {
           100: '#edfbd8',

@@ -5,6 +5,7 @@ import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Testimonials from '../components/Testimonials'
 import Products from '../components/Products'
+import Contact from '../components/Contact'
 
 export default function IndexPage({ data }) {
   const { ctaEmail, ctaPhone, ctaActionText, seoMetaTags } = data.home
@@ -17,8 +18,9 @@ export default function IndexPage({ data }) {
       />
       <PageWrapper>
         <Hero data={data.home} img={data.img} />
-        <Products />
+        <Products products={data.products} />
         <Testimonials partners={data.partners.nodes} />
+        <Contact />
       </PageWrapper>
     </>
   )
@@ -56,6 +58,7 @@ export const query = graphql`
     partners: allDatoCmsPartner(filter: { locale: { eq: $language } }) {
       nodes {
         image {
+          alt
           url
           basename
           fluid(imgixParams: { auto: "format", q: 60, fit: "max", w: "150" }) {
@@ -68,6 +71,20 @@ export const query = graphql`
       nodes {
         image {
           fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+    products: allDatoCmsProduct(
+      filter: { locale: { eq: $language }, onHomepage: { eq: true } }
+    ) {
+      nodes {
+        shortText
+        title
+        image {
+          alt
+          fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
             ...GatsbyDatoCmsFluid
           }
         }

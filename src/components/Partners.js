@@ -26,7 +26,7 @@ const Partners = ({ partners }) => {
 
   return (
     <FullWidth>
-      <Height height={200}>
+      <Height height={400}>
         <Marquee
           key="1"
           velocity={18}
@@ -46,7 +46,7 @@ const Partners = ({ partners }) => {
                 <Circle scale={scale}>
                   <Logo
                     src={partner.image.fluid?.src || partner.image.url}
-                    alt=""
+                    alt={partner.image.alt}
                   />
                 </Circle>
               </Company>
@@ -92,11 +92,11 @@ const Logo = styled.img`
 const FullWidth = styled.div`
   width: 99vw;
   position: relative;
-
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  margin-bottom: 100px;
 `
 
 const Height = styled.div`

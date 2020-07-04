@@ -3,20 +3,19 @@ import Marquee, {
   Motion,
   randomIntFromInterval,
 } from 'react-marquee-slider-emotion'
-import times from 'lodash.times'
 import styled from '@emotion/styled'
 
 const Partners = ({ partners }) => {
-  let scale = 0.5
+  let scale = 0.6
 
   if (typeof window !== 'undefined') {
     const width = window.outerWidth
     if (width > 800) {
-      scale = 0.65
+      scale = 0.75
     }
 
     if (width > 1100) {
-      scale = 0.7
+      scale = 0.8
     }
 
     if (width > 1400) {
@@ -70,7 +69,7 @@ const Circle = styled.div`
   top: -50%;
   left: -50%;
   border-radius: 50%;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;

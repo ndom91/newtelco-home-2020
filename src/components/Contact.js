@@ -49,11 +49,8 @@ const Contact = () => {
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="Contact Form" />
-          <h2 className="text-white text-lg mb-1 font-medium title-font">
-            Contact
-          </h2>
-          <p className="leading-relaxed mb-5 text-gray-600">
-            Post-ironic portland shabby chic echo park, banjo fashion axe
+          <p className="leading-relaxed mb-5 text-gray-600 font-body font-hairline">
+            Let us know how we can help you reach your goals!
           </p>
           <input
             className="bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline text-base text-white px-4 py-2 mb-4"

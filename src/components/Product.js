@@ -4,14 +4,11 @@ import { useInView } from 'react-intersection-observer'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
 import styled from '@emotion/styled'
 
-const THRESHOLD = [0.25, 0.5, 0.75]
-
 const Product = ({ product, blob, index }) => {
   const { scrollY } = useViewportScroll()
   const y = useTransform(scrollY, [-500, 500], [-150, 10])
   const [ref, inView, entry] = useInView({
-    // threshold: THRESHOLD,
-    rootMargin: '100px 0px',
+    rootMargin: '50px 0px',
     triggerOnce: true,
   })
 

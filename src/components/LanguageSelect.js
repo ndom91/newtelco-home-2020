@@ -4,17 +4,13 @@ import media from '../style/mq'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 
 const LanguageSelect = ({ toggleMenu, isOpen }) => {
-  const { languages, path, originalPath, changeLanguage } = useI18next()
+  const { changeLanguage } = useI18next()
 
   const flags = [{ en: '🇬🇧' }, { de: '🇩🇪' }]
 
-  /* const changeLang = lang => { */
-  /*   i18n.changeLanguage(lang) */
-  /* } */
   const handleLanguageChange = lng => {
     changeLanguage(lng)
     isOpen && toggleMenu()
-    // toggleMenu()
   }
 
   return (
@@ -96,7 +92,6 @@ const LanguageChoiceWrapper = styled.ul`
   background-color: var(--body-bg);
   border-radius: 0 0 5px 5px;
   padding: 10px 0px;
-  box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.1);
   transition: visibility 250ms ease-in-out, opacity 250ms ease-in-out;
 
   &:hover,
@@ -138,7 +133,6 @@ const LanguageItem = styled.li`
 
   &:hover svg {
     cursor: pointer;
-    box-shadow: 0 0 0 2px #b6b6b610;
     border-radius: 5px;
   }
 

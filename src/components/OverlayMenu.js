@@ -156,7 +156,7 @@ const NavigationLink = styled(Link)`
   z-index: 101;
   text-align: left;
   font-size: 2.2rem;
-  font-family: 'Inter';
+  font-family: 'Roboto';
   font-weight: 300;
   &.active {
     &:after {

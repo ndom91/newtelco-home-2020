@@ -9,6 +9,7 @@ export const PageWrapper = styled.div`
   align-items: center;
   max-width: 100%;
   background-color: #111111;
+  overflow: hidden;
 `
 
 export const PageInner = styled.div`

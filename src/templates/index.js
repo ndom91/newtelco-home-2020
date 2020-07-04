@@ -58,6 +58,9 @@ export const query = graphql`
         image {
           url
           basename
+          fluid(imgixParams: { auto: "format", q: 60, fit: "max", w: "150" }) {
+            src
+          }
         }
       }
     }

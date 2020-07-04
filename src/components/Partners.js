@@ -44,7 +44,10 @@ const Partners = ({ partners }) => {
             >
               <Company scale={scale}>
                 <Circle scale={scale}>
-                  <Logo src={partner.image.url} alt="" />
+                  <Logo
+                    src={partner.image.fluid?.src || partner.image.url}
+                    alt=""
+                  />
                 </Circle>
               </Company>
             </Motion>

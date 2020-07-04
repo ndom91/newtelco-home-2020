@@ -1,6 +1,6 @@
 const siteConfig = require('./config/site-config')
 const {
-  NODE_ENV,
+  NODE_ENV: NODE_ENV  = 'development',
   URL: NETLIFY_SITE_URL = 'https://newtelco-dato.netlify.app',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
@@ -118,7 +118,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Roboto:100,300'],
+          families: ['Raleway:100,300,500', 'Rubik:300,400'],
         },
       },
     },
@@ -126,7 +126,7 @@ module.exports = {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         printRejected: false,
-        develop: NODE_ENV === 'development',
+        develop: NODE_ENV !== 'development',
         tailwind: true,
       },
     },

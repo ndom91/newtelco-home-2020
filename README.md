@@ -1,6 +1,6 @@
 <img align="right" src="https://imgur.com/ham4LFb.png" height="256" />
 
-# Newtelco DatoCMS Homepage
+# Newtelco 2020 Homepage
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d316877a-7bbc-441f-9e38-00eff63fea8f/deploy-status)](https://app.netlify.com/sites/gatsby-dato/deploys)
 ![Github](https://img.shields.io/github/last-commit/newtelco/newtelco-dato)

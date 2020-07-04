@@ -57,16 +57,19 @@ const Contact = () => {
           </p>
           <input
             className="bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline text-base text-white px-4 py-2 mb-4"
+            name="name"
             placeholder="Name"
             type="text"
           />
           <input
             className="bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline  text-base text-white px-4 py-2 mb-4"
+            name="email"
             placeholder="Email"
             type="email"
           />
           <textarea
             className="transition duration-200 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 rounded border border-gray-700 h-32  text-base text-white px-4 py-2 mb-4 resize-none"
+            name="message"
             placeholder="Message"
           ></textarea>
           <button

@@ -1,33 +1,14 @@
-import React, { useState, useLayoutEffect, useRef } from 'react'
+import React from 'react'
 import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
 import Map from '../images/illustrations/map.svg'
 import BGDot from '../images/illustrations/scribbles/background-dot.svg'
-// import Blob from '../images/illustrations/scribbles/blob1.svg'
-import {
-  useViewportScroll,
-  useMotionValue,
-  useTransform,
-  useSpring,
-  motion,
-} from 'framer-motion'
-// import { useInView } from 'react-intersection-observer'
+import { useViewportScroll, useTransform, motion } from 'framer-motion'
 
 const Hero = ({ data, img }) => {
   const { ctaEmail, ctaActionText } = data
   const { t } = useTranslation()
-  const { scrollYProgress } = useViewportScroll()
-  console.log(scrollYProgress)
-  // const y1 = useTransform(scrollY, [0, 10], [0, 200])
-  // useSpeed(scrollY, [0, 200], 15)
-
-  //const [ref, inView, entry] = useInView({
-  /* Optional options */
-  //threshold: 0.5,
-  //triggerOnce: false,
-  //})
-  function template({ x }) {
-    return `translateY(${x}px)`
-  }
+  const { scrollY } = useViewportScroll()
+  const y = useTransform(scrollY, [-500, 500], [-150, 10])
 
   return (
     <section className="text-gray-500 bg-gray-900 body-font">
@@ -53,7 +34,9 @@ const Hero = ({ data, img }) => {
               </div>
               <motion.div
                 style={{
-                  translateY: scrollYProgress,
+                  top: y,
+                  marginTop: '270px',
+                  position: 'absolute',
                 }}
               >
                 <img
@@ -61,7 +44,7 @@ const Hero = ({ data, img }) => {
                   height="400"
                   width="400"
                   alt="bg-dot-1"
-                  className="absolute bottom-0 left-0 -mb-18 -ml-12 z-0 pointer-events-none opacity-1"
+                  className="bottom-0 left-0 -mb-18 -ml-12 z-0 pointer-events-none opacity-1"
                 />
               </motion.div>
             </div>

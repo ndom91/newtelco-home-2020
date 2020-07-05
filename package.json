@@ -1,7 +1,7 @@
 {
   "name": "newtelco-datocms",
   "description": "Newtelco 2020 Homepage",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Nico Domino <ndomino@newtelco.de>",
   "keywords": [
     "gatsby",

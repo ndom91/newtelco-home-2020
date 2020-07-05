@@ -139,6 +139,7 @@ const LanguageItem = styled.li`
   &:hover ~ ul {
     opacity: 1;
     visibility: visible;
+    background-color: #292929;
   }
 
   &.active {

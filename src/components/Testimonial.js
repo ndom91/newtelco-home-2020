@@ -11,7 +11,7 @@ const Testimonial = ({ testimonials }) => {
         infinite
         arrows={false}
         autoPlay={6000}
-        className='w-3/5 max-w-48 mx-auto'
+        className='w-3/5 lg:w-2/5 max-w-48 mx-auto'
       >
         <Slide testimonial={testimonials[0]} />
         <Slide testimonial={testimonials[1]} />

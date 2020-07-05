@@ -12,11 +12,13 @@ const Hero = ({ data, img }) => {
 
   return (
     <section className="text-gray-500 bg-gray-900 body-font">
-      <div className="relative container mx-auto flex px-5 py-0 sm:py-24 md:flex-row flex-col items-center">
-        <div className=" lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 className="z-10 font-display sm:text-4xl text-3xl mb-4 font-medium text-white">
+      <div className="relative container mx-auto flex px-5 py-0 sm:py-24 md:flex-row flex-col-reverse items-center">
+        <div className=" lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-row md:flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1 className="z-10 font-display sm:text-4xl text-3xl mb-4 font-medium text-white text-left">
             {t('welcome')}
-            <div className="font-body font-hairline">{t('subtitle')}</div>
+            <div className="font-body font-hairline md:whitespace-no-wrap">
+              {t('subtitle')}
+            </div>
           </h1>
           <div className="flex justify-center">
             <div className="bg-transparent rounded p-4 flex flex-col justify-between leading-normal">
@@ -44,7 +46,7 @@ const Hero = ({ data, img }) => {
                   height="500"
                   width="500"
                   alt="bg-dot-1"
-                  className="bottom-0 left-0 -mb-18 -ml-16 z-0 pointer-events-none opacity-1"
+                  className="bottom-0 left-0 -mb-18 -ml-16 z-0 pointer-events-none opacity-0 md:opacity-100"
                 />
               </motion.div>
             </div>

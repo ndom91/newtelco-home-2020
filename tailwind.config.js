@@ -1,6 +1,13 @@
 module.exports = {
   theme: {
     extend: {
+      inset: {
+        '1/2': '-50%',
+        '275': '275px',
+      },
+      opacity: {
+        '10': '.1',
+      },
       rotate: {
         '5': '5deg',
       },

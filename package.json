@@ -1,7 +1,7 @@
 {
   "name": "newtelco-datocms",
   "description": "Newtelco 2020 Homepage",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Nico Domino <ndomino@newtelco.de>",
   "keywords": [
     "gatsby",
@@ -13,7 +13,6 @@
     "dev": "NODE_ENV=development gatsby develop",
     "serve": "gatsby serve",
     "build": "gatsby build",
-    "format": "prettier --config ./.prettierrc --write src/**/**/*.js && prettier --config ./.prettierrc --write src/**/*.js",
     "clean": "rm -rf ./node_modules && rm -rf ./.cache"
   },
   "repository": {
@@ -21,6 +20,7 @@
     "url": "https://github.com/brohlson/gatsby-datocms-starter"
   },
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.19.14",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "framer-motion": "^1.11.1",
@@ -47,7 +47,6 @@
     "i18next": "^19.5.1",
     "i18next-browser-languagedetector": "^5.0.0",
     "i18next-http-backend": "^1.0.15",
-    "keen-slider": "^5.0.5",
     "path": "^0.12.7",
     "postcss-import": "^12.0.1",
     "prop-types": "^15.7.2",
@@ -56,6 +55,7 @@
     "react-helmet": "^5.2.1",
     "react-i18next": "^11.7.0",
     "react-intersection-observer": "^8.26.2",
+    "react-loadable": "^5.5.0",
     "react-marquee-slider-emotion": "^1.0.17",
     "react-outside-click-handler": "^1.3.0"
   },
@@ -74,13 +74,14 @@
     "husky": "^4.2.3",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.1",
     "slug": "^3.3.0",
     "tailwindcss": "^1.4.6",
     "twin.macro": "^1.4.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format"
+      "pre-commit": "pretty-quick --staged"
     }
   }
 }

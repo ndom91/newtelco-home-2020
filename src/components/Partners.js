@@ -27,11 +27,16 @@ const Partners = ({ partners }) => {
 
   return (
     <FullWidth>
-      <div className="lg:w-4/5 w-2/3 pb-20 lg:mb-0 mx-auto">
-        <h1 className="sm:text-4xl text-2xl mb-2 text-white font-body font-hairline">
-          {t('trustedby')}
-        </h1>
-        <div className="h-1 w-20 bg-green-500 rounded"></div>
+      <div className="container px-5 pt-24 mx-auto">
+        <div className="flex justify-between w-full mb-20">
+          <div className="lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto">
+            <h1 className="sm:text-4xl text-2xl mb-2 text-white font-body font-hairline">
+              {t('trustedby')}
+            </h1>
+            <div className="h-1 w-20 bg-green-500 rounded"></div>
+          </div>
+          <p className="flex-grow max-w-2xl w-full leading-relaxed text-base"></p>
+        </div>
       </div>
       <Height height={400}>
         <Marquee
@@ -102,7 +107,7 @@ const Logo = styled.img`
 `
 
 const FullWidth = styled.div`
-  width: 99vw;
+  width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;

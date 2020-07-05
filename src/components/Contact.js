@@ -1,6 +1,8 @@
 import React from 'react'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const Contact = () => {
+  const { t } = useTranslation()
   return (
     <section className="text-gray-500 bg-gray-900 body-font relative">
       <div className="container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap">
@@ -20,7 +22,7 @@ const Contact = () => {
           <div className="bg-gray-900 relative flex flex-wrap py-6 px-4">
             <div className="lg:w-1/2 pl-4">
               <h2 className="title-font font-medium text-green-500 tracking-widest text-sm">
-                ADDRESS
+                {t('contact.address')}
               </h2>
               <p className="leading-relaxed text-base">
                 Moenchhofstr. 24 <br />
@@ -30,13 +32,13 @@ const Contact = () => {
             </div>
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
               <h2 className="title-font font-medium text-green-500 tracking-widest text-sm">
-                EMAIL
+                {t('contact.email')}
               </h2>
               <a className="text-green-500 leading-relaxed text-base">
                 contact@newtelco.de
               </a>
               <h2 className="title-font font-medium text-green-500 tracking-widest text-sm mt-4">
-                PHONE
+                {t('contact.phone')}
               </h2>
               <p className="leading-relaxed text-base">+49 69 75 00 27 00</p>
             </div>
@@ -50,30 +52,30 @@ const Contact = () => {
         >
           <input type="hidden" name="form-name" value="Contact Form" />
           <p className="leading-relaxed mb-5 text-gray-600 font-body font-hairline">
-            Let us know how we can help you reach your goals!
+            {t('contact.header')}
           </p>
           <input
             className="bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline text-base text-white px-4 py-2 mb-4"
             name="name"
-            placeholder="Name"
+            placeholder={t('contact.name')}
             type="text"
           />
           <input
             className="bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline  text-base text-white px-4 py-2 mb-4"
             name="email"
-            placeholder="Email"
+            placeholder={t('contact.email')}
             type="email"
           />
           <textarea
             className="transition duration-200 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 rounded border border-gray-700 h-32  text-base text-white px-4 py-2 mb-4 resize-none"
             name="message"
-            placeholder="Message"
+            placeholder={t('contact.message')}
           ></textarea>
           <button
             type="submit"
             className="text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"
           >
-            Send
+            {t('contact.send')}
           </button>
           <p className="text-xs text-gray-500 mt-3">
             Chicharrones blog helvetica normcore iceland tousled brook viral

@@ -17,13 +17,13 @@ export default function Header() {
     console.log(scrollY)
   }, [scrollY])
 
-  scrollY.onChange(pos => {
-    if (pos > 100) {
-      setBlur(true)
-    } else {
-      setBlur(false)
-    }
-  })
+  /* scrollY.onChange(pos => { */
+  /*   if (pos > 100) { */
+  /*     setBlur(true) */
+  /*   } else { */
+  /*     setBlur(false) */
+  /*   } */
+  /* }) */
 
   return (
     <header

@@ -6,5 +6,17 @@
 		"services": "Dienstleistung",
 		"team": "Team",
 		"about": "About"
-	}
+	},
+  "products": "Produkte",
+  "trustedby": "Vertraut Von",
+  "products_byline": "",
+  "contact": {
+    "header": "Schreiben Sie uns wie wir Ihnen helfen koennen!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Nachricht",
+    "send": "Senden",
+    "address": "Adresse",
+    "phone": "Telefon"
+  }
 }

@@ -4,8 +4,10 @@ import Marquee, {
   randomIntFromInterval,
 } from 'react-marquee-slider-emotion'
 import styled from '@emotion/styled'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const Partners = ({ partners }) => {
+  const { t } = useTranslation()
   let scale = 0.6
 
   if (typeof window !== 'undefined') {
@@ -25,6 +27,12 @@ const Partners = ({ partners }) => {
 
   return (
     <FullWidth>
+      <div className="lg:w-4/5 w-2/3 pb-20 lg:mb-0 mx-auto">
+        <h1 className="sm:text-4xl text-2xl mb-2 text-white font-body font-hairline">
+          {t('trustedby')}
+        </h1>
+        <div className="h-1 w-20 bg-green-500 rounded"></div>
+      </div>
       <Height height={400}>
         <Marquee
           key="1"
@@ -33,24 +41,29 @@ const Partners = ({ partners }) => {
           minScale={0.7}
           resetAfterTries={200}
         >
-          {partners.map((partner, i) => (
-            <Motion
-              key={`marquee-example-company-${i}`}
-              initDeg={randomIntFromInterval(0, 360)}
-              direction={Math.random() > 0.5 ? 'clockwise' : 'counterclockwise'}
-              velocity={10}
-              radius={scale * 70}
-            >
-              <Company scale={scale}>
-                <Circle scale={scale}>
-                  <Logo
-                    src={partner.image.fluid?.src || partner.image.url}
-                    alt={partner.image.alt}
-                  />
-                </Circle>
-              </Company>
-            </Motion>
-          ))}
+          {partners
+            .sort(() => Math.random() - Math.random())
+            .slice(0, 10)
+            .map((partner, i) => (
+              <Motion
+                key={`marquee-example-company-${i}`}
+                initDeg={randomIntFromInterval(0, 360)}
+                direction={
+                  Math.random() > 0.5 ? 'clockwise' : 'counterclockwise'
+                }
+                velocity={10}
+                radius={scale * 70}
+              >
+                <Company scale={scale}>
+                  <Circle scale={scale}>
+                    <Logo
+                      src={partner.image.fluid?.src || partner.image.url}
+                      alt={partner.image.alt}
+                    />
+                  </Circle>
+                </Company>
+              </Motion>
+            ))}
         </Marquee>
       </Height>
     </FullWidth>

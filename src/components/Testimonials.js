@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
 import Partners from './Partners'
+import Testimonial from './Testimonial'
 import styled from '@emotion/styled'
 
-const Testimonials = ({ partners }) => {
+const Testimonials = ({ partners, testimonials }) => {
   const { t } = useTranslation()
 
   return (
     <section className="text-gray-500 bg-gray-900 body-font">
       <Partners partners={partners} />
+      <Testimonial testimonials={testimonials} />
     </section>
   )
 }

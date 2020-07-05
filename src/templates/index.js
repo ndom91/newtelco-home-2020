@@ -19,7 +19,10 @@ export default function IndexPage({ data }) {
       <PageWrapper>
         <Hero data={data.home} img={data.img} />
         <Products products={data.products} />
-        <Testimonials partners={data.partners.nodes} />
+        <Testimonials
+          partners={data.partners.nodes}
+          testimonials={data.testimonials.nodes}
+        />
         <Contact />
       </PageWrapper>
     </>
@@ -88,6 +91,13 @@ export const query = graphql`
             ...GatsbyDatoCmsFluid
           }
         }
+      }
+    }
+    testimonials: allDatoCmsTestimonial(filter: { locale: { eq: $language } }) {
+      nodes {
+        description
+        company
+        person
       }
     }
   }

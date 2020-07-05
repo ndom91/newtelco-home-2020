@@ -9,7 +9,7 @@ export const ButtonMenu = ({ handleClick, isOpen }) => {
       <ButtonHamburger
         onClick={() => handleClick()}
         className={isOpen ? 'active' : ''}
-        aria-label="Menu Button"
+        aria-label='Menu Button'
       >
         <span />
       </ButtonHamburger>

@@ -38,40 +38,40 @@ export default function Header() {
           : {}
       }
     >
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center z-50">
+      <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center z-50'>
         <Link
           language={language}
-          to="/"
-          className="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+          to='/'
+          className='flex title-font font-medium items-center text-white mb-4 md:mb-0'
         >
           <Logo />
         </Link>
-        <nav className="md:mr-auto md:ml-3 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center hidden sm:flex">
+        <nav className='md:mr-auto md:ml-3 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center hidden sm:flex'>
           <Link
             language={language}
-            to="/products"
-            className="mr-5 text-white hover:text-white hover:no-underline"
+            to='/products'
+            className='mr-5 text-white hover:text-white hover:no-underline'
           >
             {t('menu.products')}
           </Link>
           <Link
             language={language}
-            to="/services"
-            className="mr-5 text-white hover:text-white hover:no-underline"
+            to='/services'
+            className='mr-5 text-white hover:text-white hover:no-underline'
           >
             {t('menu.services')}
           </Link>
           <Link
             language={language}
-            to="/team"
-            className="mr-5 text-white hover:text-white hover:no-underline"
+            to='/team'
+            className='mr-5 text-white hover:text-white hover:no-underline'
           >
             {t('menu.team')}
           </Link>
           <Link
             language={language}
-            to="/about"
-            className="mr-5 text-white hover:text-white hover:no-underline"
+            to='/about'
+            className='mr-5 text-white hover:text-white hover:no-underline'
           >
             {t('menu.about')}
           </Link>

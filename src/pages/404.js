@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 
 const NotFoundPage = () => (
   <Fragment>
-    <SEO title="404: Not found" />
+    <SEO title='404: Not found' />
     <Wrapper>
       <h1>404</h1>
     </Wrapper>

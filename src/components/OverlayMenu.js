@@ -37,7 +37,7 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
   }
   return (
     <OverlayWrapper className={isOpen ? 'active' : 'hidden'}>
-      <HeaderImage src={newtelcoLogo} alt="Newtelco Logo" />
+      <HeaderImage src={newtelcoLogo} alt='Newtelco Logo' />
       <Navigation>
         <ul className={isOpen ? 'active' : ''}>
           <motion.div
@@ -47,7 +47,7 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
           >
             {menuItems.map((menu, index) => (
               <motion.div
-                initial="hidden"
+                initial='hidden'
                 variants={variants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.9 }}
@@ -58,7 +58,7 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
                   <NavigationLink
                     to={menu.link}
                     aria-label={menu.name}
-                    activeClassName="active"
+                    activeClassName='active'
                     onClick={toggleMenu}
                   >
                     {menu.name}

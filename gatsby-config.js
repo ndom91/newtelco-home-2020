@@ -1,3 +1,4 @@
+const path = require('path')
 const siteConfig = require('./config/site-config')
 const {
   NODE_ENV: NODE_ENV = 'development',
@@ -130,6 +131,12 @@ module.exports = {
         printRejected: false,
         develop: NODE_ENV !== 'development',
         tailwind: true,
+        content: [
+          path.join(
+            process.cwd(),
+            'node_modules/@brainhubeu/react-carousel/!(*.d).{ts,js,jsx,tsx}'
+          ),
+        ],
       },
     },
   ],

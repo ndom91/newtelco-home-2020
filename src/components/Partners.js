@@ -26,7 +26,7 @@ const Partners = ({ partners }) => {
   }
 
   return (
-    <FullWidth>
+    <Wrapper>
       <div className='container px-5 pt-24 mx-auto'>
         <div className='flex justify-between w-full mb-20'>
           <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto'>
@@ -71,7 +71,7 @@ const Partners = ({ partners }) => {
             ))}
         </Marquee>
       </Height>
-    </FullWidth>
+    </Wrapper>
   )
 }
 
@@ -106,7 +106,7 @@ const Logo = styled.img`
   }
 `
 
-const FullWidth = styled.div`
+const Wrapper = styled.div`
   width: 100vw;
   position: relative;
   left: 50%;

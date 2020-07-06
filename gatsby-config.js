@@ -7,7 +7,7 @@ const {
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env
 require('dotenv').config({
-  path: `.env`,
+  path: '.env',
 })
 
 module.exports = {
@@ -131,12 +131,7 @@ module.exports = {
         printRejected: false,
         develop: NODE_ENV !== 'development',
         tailwind: true,
-        content: [
-          path.join(
-            process.cwd(),
-            'node_modules/@brainhubeu/react-carousel/!(*.d).{ts,js,jsx,tsx}'
-          ),
-        ],
+        ignore: ['node_modules/@brainhubeu/react-carousel/lib/style.css'],
       },
     },
   ],

@@ -92,6 +92,7 @@ const LanguageChoiceWrapper = styled.ul`
   background-color: var(--body-bg);
   border-radius: 0 0 5px 5px;
   padding: 10px 0px;
+  z-index: 21;
   transition: visibility 250ms ease-in-out, opacity 250ms ease-in-out;
 
   &:hover {
@@ -102,6 +103,7 @@ const LanguageChoiceWrapper = styled.ul`
   &.active {
     visibility: visible;
     opacity: 1;
+    z-index: 21;
     position: absolute;
     flex-direction: row;
     top: -100px;
@@ -140,6 +142,12 @@ const LanguageItem = styled.li`
   &:hover ~ ul {
     opacity: 1;
     visibility: visible;
+  }
+
+  & ~ ul {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    border-radius: 0 5px 5px 0;
   }
 
   &.active {

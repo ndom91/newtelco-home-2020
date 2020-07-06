@@ -1,16 +1,20 @@
 import React from 'react'
-// import Img from 'gatsby-image'
 import { useInView } from 'react-intersection-observer'
-import { useViewportScroll, useTransform, motion } from 'framer-motion'
 import styled from '@emotion/styled'
 
-const Product = ({ product, blob, index }) => {
-  const { scrollY } = useViewportScroll()
-  const y = useTransform(scrollY, [-500, 500], [-150, 10])
+import Blob1 from '../images/illustrations/blobs/blob6.svg'
+import Blob2 from '../images/illustrations/blobs/blob7.svg'
+import Blob3 from '../images/illustrations/blobs/blob8.svg'
+import Blob4 from '../images/illustrations/blobs/blob9.svg'
+
+const Product = ({ product, index }) => {
   const [ref, inView, entry] = useInView({
     rootMargin: '50px 0px',
     triggerOnce: true,
   })
+
+  const blobs = [Blob1, Blob2, Blob3, Blob4]
+  const Blob = blobs[index]
 
   return (
     <Wrapper
@@ -22,18 +26,7 @@ const Product = ({ product, blob, index }) => {
       } ${inView ? 'sectionInView product-wrapper' : 'product-wrapper'}`}
     >
       <div className='absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible'>
-        {/* <motion.div */}
-        {/*   style={{ */}
-        {/*     top: y, */}
-        {/*   }} */}
-        {/*   className='z-0 w-screen sm:w-full lg:-mt-24' */}
-        {/* > */}
-        <img
-          src={blob}
-          alt={product.image.alt}
-          className='z-0 w-full md:max-w-md '
-        />
-        {/* </motion.div> */}
+        <Blob alt={product.image.alt} className='z-0 w-64 ' />
       </div>
       <div className='flex-grow sm:text-left text-center mt-6 sm:mt-0'>
         <h2 className='text-green text-4xl md:text-5xl font-body font-hairline mb-2'>

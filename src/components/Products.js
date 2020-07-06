@@ -2,13 +2,7 @@ import React from 'react'
 import Product from './Product'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
-import Blob1 from '../images/illustrations/blobs/blob2.svg'
-import Blob2 from '../images/illustrations/blobs/blob3.svg'
-import Blob3 from '../images/illustrations/blobs/blob4.svg'
-import Blob4 from '../images/illustrations/blobs/blob5.svg'
-
 const Products = ({ products }) => {
-  const blobs = [Blob1, Blob2, Blob3, Blob4]
   const { t } = useTranslation()
   return (
     <section className='text-gray-500 body-font bg-gray-900'>
@@ -30,14 +24,11 @@ const Products = ({ products }) => {
           <div className='container px-5 pt-24 pb-12  mx-auto'>
             <div className='flex items-center max-w-screen-xl border-gray-800 flex-col'>
               {products &&
-                products.nodes.map((product, i) => (
-                  <Product
-                    key={product.title}
-                    product={product}
-                    blob={blobs[i]}
-                    index={i}
-                  />
-                ))}
+                products.nodes.map((product, i) => {
+                  return (
+                    <Product key={product.title} product={product} index={i} />
+                  )
+                })}
             </div>
           </div>
         </section>

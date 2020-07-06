@@ -126,6 +126,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images\/illustrations/,
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         printRejected: false,

@@ -21,10 +21,7 @@ const Product = ({ product, blob, index }) => {
         (index + 1) % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
       } ${inView ? 'sectionInView product-wrapper' : 'product-wrapper'}`}
     >
-      <div
-        className=' absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible'
-        inView={inView}
-      >
+      <div className=' absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible'>
         {/* <Img */}
         {/*   className="w-1/2 h-56 rounded mb-2 z-10 overflow-visible" */}
         {/*   fluid={product.image.fluid} */}

@@ -14,7 +14,7 @@ export default function Header() {
   const { language } = useI18next()
   const { scrollY } = useViewportScroll()
   useEffect(() => {
-    console.log(scrollY)
+    // console.log(scrollY)
   }, [scrollY])
 
   /* scrollY.onChange(pos => { */

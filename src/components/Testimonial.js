@@ -13,9 +13,12 @@ const Testimonial = ({ testimonials }) => {
         autoPlay={6000}
         className='w-3/5 lg:w-2/5 max-w-48 mx-auto'
       >
-        <Slide testimonial={testimonials[0]} />
-        <Slide testimonial={testimonials[1]} />
-        <Slide testimonial={testimonials[2]} />
+        {testimonials &&
+          testimonials.map((test, i) => (
+            <div key={i}>
+              <Slide testimonial={test} />
+            </div>
+          ))}
       </Carousel>
     </div>
   )

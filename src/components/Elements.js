@@ -4,12 +4,12 @@ import { font, colors } from '../consts/style'
 
 export const PageWrapper = styled.div`
   display: flex;
+  overflow: visible;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   max-width: 100%;
   background-color: #111111;
-  overflow: hidden;
 `
 
 export const PageInner = styled.div`

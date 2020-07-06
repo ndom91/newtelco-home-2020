@@ -100,6 +100,8 @@ const LanguageChoiceWrapper = styled.ul`
   }
 
   &.active {
+    visibility: visible;
+    opacity: 1;
     position: absolute;
     flex-direction: row;
     top: -100px;

@@ -12,6 +12,8 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
   const menuItems = [
     { name: 'Home', link: '/' },
     { name: 'Products', link: '/products' },
+    { name: 'Services', link: '/services' },
+    { name: 'Company', link: '/company' },
     { name: 'About', link: '/about' },
   ]
 
@@ -54,10 +56,11 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
                 key={index}
               >
                 <li key={menu.name}>
-                  <NavNumber>{`0${index + 1}`}</NavNumber>
+                  <NavNumber>{`0${index}`}</NavNumber>
                   <NavigationLink
                     to={menu.link}
                     aria-label={menu.name}
+                    className='hover:no-underline hover:text-white'
                     activeClassName='active'
                     onClick={toggleMenu}
                   >
@@ -79,32 +82,34 @@ export default OverlayMenu
 const OverlayWrapper = styled.div`
   position: fixed;
   width: 100vw;
-  height: 0%;
+  height: 0vh;
   top: 0;
   left: 0;
   z-index: -2;
-  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out,
+    height 0.35s ease-in-out;
   overflow: hidden;
   background-color: #292929;
   &.active {
     z-index: 9998;
-    transform: translate(0%, 0%);
-    height: 100%;
+    height: 100vh;
+    opacity: 1;
+    max-height: 2000px;
   }
   &.hidden {
-    z-index: 99998;
-    transform: translate(0%, 0%);
+    z-index: 98;
+    opacity: 0;
     height: 0vh;
   }
 `
 
 const NavNumber = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 600;
   font-size: 1.7rem;
   color: #67b246;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 15px;
 `
 
 const HeaderImage = styled.img`
@@ -156,18 +161,19 @@ const NavigationLink = styled(Link)`
   z-index: 101;
   text-align: left;
   font-size: 2.2rem;
-  font-family: 'Roboto';
-  font-weight: 300;
+  font-family: 'Raleway';
+  font-weight: 100;
   &.active {
     &:after {
       position: absolute;
       display: inline-block;
       content: '';
-      border-bottom: 6px solid #67b246;
+      border-bottom: 0.25rem solid #67b246;
+      border-radius: 0 5px 5px;
       width: 375px;
       font-family: var(--font-face-san-serif);
       position: absolute;
-      top: 40px;
+      top: 50px;
       left: -200px;
     }
   }

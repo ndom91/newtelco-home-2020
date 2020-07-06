@@ -4,6 +4,10 @@
 
 @import "tailwindcss/utilities";
 
+html {
+  background-color: #111111;
+}
+
 ::selection {
   background: #67b246; /* WebKit/Blink Browsers */
 }

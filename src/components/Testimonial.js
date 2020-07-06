@@ -5,7 +5,7 @@ import '@brainhubeu/react-carousel/lib/style.css'
 
 const Testimonial = ({ testimonials }) => {
   return (
-    <div className='absolute w-40-screen transform -translate-x-1/2 top-250 inset-1/2'>
+    <div className='absolute w-76 sm:w-40-screen transform -translate-x-1/2 top-250 inset-1/2'>
       <Carousel
         dots
         infinite

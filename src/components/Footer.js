@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styled from '@emotion/styled'
 import LogoFull from '../images/NewtelcoFullLogo'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
@@ -271,8 +272,8 @@ const SocialItem = styled.a`
     opacity: 0;
     background: radial-gradient(
       ellipse at center,
-      rgba(102, 102, 102, 0.35) 0%,
-      rgba(102, 102, 102, 0) 80%
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0) 80%
     );
     transition-duration: 0.3s;
     transition-property: transform, opacity;

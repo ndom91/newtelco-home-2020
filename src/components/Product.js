@@ -21,35 +21,27 @@ const Product = ({ product, blob, index }) => {
         (index + 1) % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
       } ${inView ? 'sectionInView product-wrapper' : 'product-wrapper'}`}
     >
-      <div className=' absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible'>
-        {/* <Img */}
-        {/*   className="w-1/2 h-56 rounded mb-2 z-10 overflow-visible" */}
-        {/*   fluid={product.image.fluid} */}
-        {/*   alt={product.image.alt} */}
-        {/* /> */}
-        <motion.div
-          style={{
-            top: y,
-          }}
-          className='z-0 w-full lg:-mt-24'
-        >
-          <img
-            src={blob}
-            alt={product.image.alt}
-            className='z-0 w-full max-w-md '
-          />
-        </motion.div>
+      <div className='absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible'>
+        {/* <motion.div */}
+        {/*   style={{ */}
+        {/*     top: y, */}
+        {/*   }} */}
+        {/*   className='z-0 w-screen sm:w-full lg:-mt-24' */}
+        {/* > */}
+        <img
+          src={blob}
+          alt={product.image.alt}
+          className='z-0 w-full md:max-w-md '
+        />
+        {/* </motion.div> */}
       </div>
       <div className='flex-grow sm:text-left text-center mt-6 sm:mt-0'>
-        <h2 className='text-green text-3xl md:text-5xl font-body font-hairline mb-2'>
+        <h2 className='text-green text-4xl md:text-5xl font-body font-hairline mb-2'>
           {product.title}
         </h2>
         <p className='leading-relaxed text-base md:text-lg'>
           {product.shortText}
         </p>
-        {/* <button className="flex mx-auto mt-5 text-white bg-green-500 border-0 py-1 px-3 focus:outline-none hover:bg-green-600 rounded text-md transition transition-colors duration-200 ease-in-out display-font text-lg font-body font-medium"> */}
-        {/*   More */}
-        {/* </button> */}
       </div>
     </Wrapper>
   )

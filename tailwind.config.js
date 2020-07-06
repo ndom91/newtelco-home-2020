@@ -4,6 +4,7 @@ module.exports = {
       width: {
         '50-screen': '50vw',
         '40-screen': '40vw',
+        '76': '20rem',
       },
       inset: {
         '1/2': '-50%',

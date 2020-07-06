@@ -4,7 +4,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 const Contact = () => {
   const { t } = useTranslation()
   return (
-    <section className='text-gray-500 bg-gray-900 body-font relative'>
+    <section className='text-gray-500 bg-gray-900 body-font relative mt-20 sm:mt-0'>
       <div className='container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap'>
         <div className='lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative'>
           <iframe

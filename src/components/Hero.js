@@ -13,15 +13,15 @@ const Hero = ({ data, img }) => {
   return (
     <section className='text-gray-500 bg-gray-900 body-font'>
       <div className='relative container mx-auto flex px-5 py-0 sm:py-24 md:flex-row flex-col-reverse items-center'>
-        <div className=' lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-row md:flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
+        <div className=' lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:text-left mb-16 md:mb-0 items-left'>
           <h1 className='z-10 font-display sm:text-4xl text-3xl mb-4 font-medium text-white text-left'>
             {t('welcome')}
             <div className='font-body font-hairline md:whitespace-no-wrap'>
               {t('subtitle')}
             </div>
           </h1>
-          <div className='flex justify-center'>
-            <div className='bg-transparent rounded p-4 flex flex-col justify-between leading-normal'>
+          <div className='flex justify-left'>
+            <div className='bg-transparent rounded flex flex-col justify-between leading-normal'>
               <div className='static mb-8 z-10'>
                 <Link
                   target='_blank'
@@ -52,7 +52,7 @@ const Hero = ({ data, img }) => {
             </div>
           </div>
         </div>
-        <div className='lg:max-w-xl lg:w-full md:w-1/2 w-5/6 overflow-visible'>
+        <div className='lg:max-w-xl lg:w-full md:w-1/2 md:mt-0 w-screen -mt-8 overflow-visible'>
           <img
             className='object-cover object-center rounded  w-full max-w-none'
             style={{

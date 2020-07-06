@@ -15,7 +15,7 @@ const Testimonials = ({ partners, testimonials }) => {
   // const { t } = useTranslation()
 
   return (
-    <section className='text-gray-500 bg-gray-900 body-font relative'>
+    <section className='text-gray-500 bg-gray-900 body-font relative z-10'>
       <Partners partners={partners} />
       <Testimonial testimonials={testimonials} className='absolute' />
     </section>

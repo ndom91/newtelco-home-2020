@@ -27,8 +27,8 @@ export default function Header() {
 
   return (
     <header
-      className={` top-0 text-gray-500 bg-gray-900 body-font z-50 ${
-        blur ? 'bg-opacity-50' : 'bg-opacity-1'
+      className={` top-0 text-gray-500 body-font bg-transparent ${
+        blur ? 'bg-opacity-50' : 'bg-opacity-100'
       }`}
       style={
         blur
@@ -38,7 +38,7 @@ export default function Header() {
           : {}
       }
     >
-      <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center z-50'>
+      <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center z-50 bg-transparent'>
         <Link
           language={language}
           to='/'

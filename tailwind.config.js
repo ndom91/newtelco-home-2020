@@ -1,9 +1,13 @@
 module.exports = {
   theme: {
     extend: {
+      width: {
+        '50-screen': '50vw',
+        '40-screen': '40vw',
+      },
       inset: {
         '1/2': '-50%',
-        '275': '275px',
+        '250': '250px',
       },
       opacity: {
         '10': '.1',

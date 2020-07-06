@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
-import Logo from '../components/NewtelcoLogo'
+import Logo from '../images/NewtelcoLogo'
 import OverlayMenu from './OverlayMenu'
 import ButtonMenu from './ButtonMenu'
 import { useViewportScroll } from 'framer-motion'

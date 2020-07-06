@@ -24,3 +24,11 @@
   border-radius: 15px;
   background-color: #67b236;
 }
+
+.BrainhubCarousel__dot--selected::before {
+  background-color: #67b246 !important;
+}
+
+.BrainhubCarousel__container {
+  width: 100% !important;
+}

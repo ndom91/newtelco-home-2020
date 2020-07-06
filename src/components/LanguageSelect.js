@@ -94,8 +94,7 @@ const LanguageChoiceWrapper = styled.ul`
   padding: 10px 0px;
   transition: visibility 250ms ease-in-out, opacity 250ms ease-in-out;
 
-  &:hover,
-  &.active {
+  &:hover {
     visibility: visible;
     opacity: 1;
   }
@@ -139,7 +138,6 @@ const LanguageItem = styled.li`
   &:hover ~ ul {
     opacity: 1;
     visibility: visible;
-    background-color: #292929;
   }
 
   &.active {

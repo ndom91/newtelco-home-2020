@@ -25,7 +25,7 @@ const Testimonials = ({ partners, testimonials }) => {
   return (
     <section className='text-gray-500 bg-gray-900 body-font relative z-10'>
       {/* <Partners partners={partners} /> */}
-      <Testimonial testimonials={testimonials} className='absolute' />
+      {/* <Testimonial testimonials={testimonials} className='absolute' /> */}
     </section>
   )
 }

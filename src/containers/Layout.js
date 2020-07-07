@@ -1,5 +1,4 @@
 import React from 'react'
-import { I18nextProvider } from 'react-i18next'
 import { useStaticQuery, graphql } from 'gatsby'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -22,13 +21,13 @@ const Layout = ({ children, location, pageContext: { locale } }) => {
     `
   )
   return (
-    <I18nextProvider>
+    <>
       <Reboot />
       <GlobalStyle />
       <Header location={location} />
       {children}
       <Footer social={allDatoCmsSocial.nodes} />
-    </I18nextProvider>
+    </>
   )
 }
 

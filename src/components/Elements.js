@@ -4,7 +4,7 @@ import { font, colors } from '../consts/style'
 
 export const PageWrapper = styled.div`
   display: flex;
-  overflow-x: hidden;
+  overflow: hidden;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;

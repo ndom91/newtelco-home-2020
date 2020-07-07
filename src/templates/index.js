@@ -5,7 +5,6 @@ import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Testimonials from '../components/Testimonials'
 import Products from '../components/Products'
-// import Contact from '../components/Contact'
 
 import Loadable from 'react-loadable'
 const Contact = Loadable({

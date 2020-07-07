@@ -1,8 +1,16 @@
 import React from 'react'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
-import Partners from './Partners'
+// import Partners from './Partners'
 // import Loadable from 'react-loadable'
 import Testimonial from './Testimonial'
+
+import Loadable from 'react-loadable'
+const Partners = Loadable({
+  loader: () => import('./Partners'),
+  loading() {
+    return <div>Loading...</div>
+  },
+})
 
 /* const Testimonial = Loadable({ */
 /*   loader: () => import('./Testimonial'), */

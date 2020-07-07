@@ -83,12 +83,20 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Newtelco Home',
-        short_name: 'Newtelco',
+        name: 'NewTelco GmbH',
+        short_name: 'NewTelco',
         start_url: '/',
-        background_color: '#222',
+        background_color: '#111',
         theme_color: '#67b246',
         display: 'minimal-ui',
+        lang: 'en',
+        icon: 'src/images/favicon.png',
+        localize: [
+          {
+            start_url: '/de/',
+            lang: 'de',
+          },
+        ],
       },
     },
     {

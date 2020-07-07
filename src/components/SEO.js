@@ -7,6 +7,7 @@ const SEO = ({ meta, favicon = '', global = '' }) => {
   return (
     <HelmetDatoCms seo={meta} favicon={favicon}>
       <title>{global.siteName || 'Newtelco GmbH'}</title>
+      <html lang='en' />
     </HelmetDatoCms>
   )
 }

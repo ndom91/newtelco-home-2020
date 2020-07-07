@@ -23,6 +23,7 @@ export default ButtonMenu
 const ButtonHamburger = styled.button`
   background: transparent;
   display: fixed !important;
+  visibility: hidden;
   width: 50px;
   height: 50px;
   border: none;
@@ -36,6 +37,10 @@ const ButtonHamburger = styled.button`
     box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
   }
+  ${media.tabletSmall`
+    display: fixed;
+    visibility: visible;
+  `}
   ${media.tabletSmall_up`
     display: none;
   `}

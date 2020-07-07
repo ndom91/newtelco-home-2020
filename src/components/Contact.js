@@ -50,24 +50,32 @@ const Contact = () => {
           method='POST'
           data-netlify='true'
         >
-          <input type='hidden' name='form-name' value='Contact Form' />
+          <input
+            type='hidden'
+            name='form-name'
+            value='Contact Form'
+            aria-label='Form Name'
+          />
           <p className='leading-relaxed mb-5 text-gray-600 font-body font-hairline'>
             {t('contact.header')}
           </p>
           <input
             className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline text-base text-white px-4 py-2 mb-4'
             name='name'
+            aria-label='Name'
             placeholder={t('contact.name')}
             type='text'
           />
           <input
             className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline  text-base text-white px-4 py-2 mb-4'
             name='email'
+            aria-label='Email'
             placeholder={t('contact.email')}
             type='email'
           />
           <textarea
             className='transition duration-200 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 rounded border border-gray-700 h-32  text-base text-white px-4 py-2 mb-4 resize-none'
+            aria-label='Message'
             name='message'
             placeholder={t('contact.message')}
           ></textarea>

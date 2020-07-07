@@ -42,6 +42,7 @@ export default function Header() {
         <Link
           language={language}
           to='/'
+          aria-label='Home'
           className='flex title-font font-medium items-center text-white mb-4 md:mb-0'
         >
           <Logo />

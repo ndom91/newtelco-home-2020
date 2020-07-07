@@ -24,6 +24,7 @@ const Footer = ({ social }) => {
           <p className='mt-8 text-sm text-gray-700 z-20'>
             <span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-around w-full z-20'>
               <SocialItem
+                aria-label='Facebook'
                 href={fb}
                 className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
               >
@@ -40,6 +41,7 @@ const Footer = ({ social }) => {
               </SocialItem>
               <SocialItem
                 href={twitter}
+                aria-label='Twitter'
                 className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
               >
                 <svg
@@ -54,6 +56,7 @@ const Footer = ({ social }) => {
                 </svg>
               </SocialItem>
               <SocialItem
+                aria-label='Instagram'
                 href={instagram}
                 className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
               >
@@ -72,6 +75,7 @@ const Footer = ({ social }) => {
               </SocialItem>
               <SocialItem
                 href={linkedin}
+                aria-label='LinkedIn'
                 className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
               >
                 <svg
@@ -92,6 +96,7 @@ const Footer = ({ social }) => {
               </SocialItem>
               <SocialItem
                 href={github}
+                aria-label='Github'
                 className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
               >
                 <svg
@@ -117,21 +122,21 @@ const Footer = ({ social }) => {
               Locations
             </h2>
             <nav className='list-none mb-10'>
-              <li>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   First Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Second Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Third Link
                 </a>
-              </li>
+              </div>
             </nav>
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
@@ -139,26 +144,26 @@ const Footer = ({ social }) => {
               Company
             </h2>
             <nav className='list-none mb-10'>
-              <li>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   First Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Second Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Third Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Fourth Link
                 </a>
-              </li>
+              </div>
             </nav>
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
@@ -166,26 +171,26 @@ const Footer = ({ social }) => {
               Products
             </h2>
             <nav className='list-none mb-10'>
-              <li>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   First Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Second Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Third Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Fourth Link
                 </a>
-              </li>
+              </div>
             </nav>
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
@@ -193,26 +198,26 @@ const Footer = ({ social }) => {
               Services
             </h2>
             <nav className='list-none mb-10'>
-              <li>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   First Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Second Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Third Link
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a className='text-gray-600 text-sm hover:text-white'>
                   Fourth Link
                 </a>
-              </li>
+              </div>
             </nav>
           </div>
         </div>

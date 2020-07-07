@@ -63,7 +63,7 @@ const Partners = React.memo(function Partners({ partners }) {
                   <Circle scale={scale}>
                     <Logo
                       src={partner.image.fluid?.src || partner.image.url}
-                      alt={partner.image.alt}
+                      alt={partner.image.alt || 'Company Logo'}
                     />
                   </Circle>
                 </Company>

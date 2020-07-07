@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { I18nextProvider } from 'react-i18next'
 import { useStaticQuery, graphql } from 'gatsby'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Reboot from '../style/reboot'
 import GlobalStyle from '../style/global'
 import { layoutTypes } from '../types/propTypes'
-
-const LocaleContext = React.createContext()
 
 const Layout = ({ children, location, pageContext: { locale } }) => {
   const { allDatoCmsSocial } = useStaticQuery(
@@ -23,13 +22,13 @@ const Layout = ({ children, location, pageContext: { locale } }) => {
     `
   )
   return (
-    <LocaleContext.Provider value={{ locale }}>
+    <I18nextProvider>
       <Reboot />
       <GlobalStyle />
       <Header location={location} />
       {children}
       <Footer social={allDatoCmsSocial.nodes} />
-    </LocaleContext.Provider>
+    </I18nextProvider>
   )
 }
 

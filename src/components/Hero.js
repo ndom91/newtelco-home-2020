@@ -8,7 +8,7 @@ import Blob12 from '../images/illustrations/blobs/blob12.svg'
 import Blob13 from '../images/illustrations/blobs/blob13.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
 
-const Hero = ({ data, img }) => {
+const Hero = React.memo(function Hero({ data, img }) {
   const { ctaEmail, ctaActionText } = data
   const { t } = useTranslation()
   const { scrollY } = useViewportScroll()
@@ -97,6 +97,6 @@ const Hero = ({ data, img }) => {
       </div>
     </section>
   )
-}
+})
 
 export default Hero

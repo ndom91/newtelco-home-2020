@@ -6,7 +6,7 @@ import Marquee, {
 import styled from '@emotion/styled'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
-const Partners = ({ partners }) => {
+const Partners = React.memo(function Partners({ partners }) {
   const { t } = useTranslation()
   let scale = 0.6
 
@@ -73,7 +73,7 @@ const Partners = ({ partners }) => {
       </Height>
     </Wrapper>
   )
-}
+})
 
 export default Partners
 

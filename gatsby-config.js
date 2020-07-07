@@ -100,6 +100,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        precachePages: ['/', '/404'],
+      },
+    },
+    {
       resolve: 'gatsby-source-datocms',
       options: {
         apiToken: process.env.DATO_CMS_KEY,

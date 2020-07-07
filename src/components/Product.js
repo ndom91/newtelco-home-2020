@@ -20,10 +20,13 @@ const Product = ({ product, index }) => {
     <Wrapper
       key={product.title}
       ref={ref}
-      id={(index + 1) % 2 === 0 ? 'left' : 'right'}
+      // id={(index + 1) % 2 === 0 ? 'left' : 'right'}
       className={`overflow-visible w-full mb-32 flex justify-around ${
-        (index + 1) % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
-      } ${inView ? 'sectionInView product-wrapper' : 'product-wrapper'}`}
+        (index + 1) % 2 === 0 ? 'left' : 'right'
+      } 
+				${(index + 1) % 2 === 0 ? 'flex-row-reverse' : 'flex-row'} ${
+        inView ? 'sectionInView product-wrapper' : 'product-wrapper'
+      }`}
     >
       <div className='absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible'>
         <Blob alt={product.image.alt} className='z-0 w-64 ' />
@@ -46,11 +49,11 @@ const Wrapper = styled.div`
   &.product-wrapper {
     opacity: 0;
   }
-  &#right.sectionInView {
+  &.right.sectionInView {
     animation: slideInRight 0.7s ease-in-out;
     opacity: 1;
   }
-  &#left.sectionInView {
+  &.left.sectionInView {
     animation: slideInLeft 0.7s ease-in-out;
     opacity: 1;
   }

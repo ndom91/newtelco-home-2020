@@ -98,11 +98,11 @@ const Logo = styled.img`
   width: 65%;
   height: 65%;
   filter: grayscale(100%);
-  opacity: 0.7;
+  opacity: 0.8;
   transition: filter 250ms ease-in-out;
 
   &:hover {
-    filter: grayscale(10%);
+    filter: grayscale(0%);
   }
 `
 

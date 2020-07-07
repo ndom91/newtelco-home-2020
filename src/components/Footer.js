@@ -17,12 +17,12 @@ const Footer = ({ social }) => {
   return (
     <footer className='text-gray-500 bg-gray-900 body-font'>
       <div className='relative container px-5 py-20 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col'>
-        <div className='relative w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left z-10'>
-          <a className='flex title-font font-medium items-center md:justify-start justify-center text-white'>
+        <div className='relative w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left'>
+          <div className='flex title-font font-medium items-center md:justify-start justify-center text-white z-20'>
             <LogoFull />
-          </a>
-          <p className='mt-8 text-sm text-gray-700 z-10'>
-            <span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-around w-full'>
+          </div>
+          <p className='mt-8 text-sm text-gray-700 z-20'>
+            <span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-around w-full z-20'>
               <SocialItem
                 href={fb}
                 className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
@@ -108,7 +108,7 @@ const Footer = ({ social }) => {
           </p>
           <Scribble
             alt='Scribble Circle'
-            className='h-auto w-full z-0 absolute mt-12 bottom-0 left-0 opacity-50'
+            className='h-auto w-full z-0 absolute mt-12 bottom-0 left-0 opacity-50 pointer-events-none'
           />
         </div>
         <div className='flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center'>

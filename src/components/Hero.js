@@ -13,7 +13,7 @@ const Hero = ({ data, img }) => {
   const { t } = useTranslation()
   const { scrollY } = useViewportScroll()
   const y1 = useTransform(scrollY, [500, -500], [-150, 10])
-  const y2 = useTransform(scrollY, [-200, 200], [50, -50])
+  const y2 = useTransform(scrollY, [-200, 200], [20, -20])
   const x1 = useTransform(scrollY, [500, -500], [-150, 10])
 
   return (
@@ -52,10 +52,12 @@ const Hero = ({ data, img }) => {
             </Link>
           </div>
           <motion.div
-            className='absolute bottom-0 right-0 mb-12 mr-2'
-            style={{
-              bottom: y2,
-            }}
+            className='absolute bottom-0 right-0 mb-2 mr-2'
+            style={
+              {
+                // right: y2,
+              }
+            }
           >
             <Blob10
               alt='Lines from Text Blob'

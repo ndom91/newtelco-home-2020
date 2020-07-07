@@ -166,7 +166,7 @@ const LanguageLink = styled(Link)`
   font-size: 1.4rem;
   line-height: 30px;
   ${media.tabletSmall`
-    font-size: 3rem;
+    font-size: 2.75rem;
   `}
   &:hover {
     text-decoration: none;

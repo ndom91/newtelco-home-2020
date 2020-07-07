@@ -17,7 +17,7 @@ const Hero = React.memo(function Hero({ data, img }) {
   const x1 = useTransform(scrollY, [500, -500], [-150, 10])
 
   return (
-    <section className='relative text-gray-500 bg-gray-900 body-font mb-8'>
+    <section className='relative text-gray-500 bg-gray-900 body-font mb-8 w-4/5 md:w-3/5'>
       <Blob11
         alt='Arrow Nav Blob'
         width='100px'
@@ -33,7 +33,7 @@ const Hero = React.memo(function Hero({ data, img }) {
       </motion.div>
       <div className='relative container mx-auto flex px-5 py-0 sm:py-24 md:flex-row flex-col-reverse items-end'>
         <div className='relative lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:text-left mb-16 md:mb-0 items-left'>
-          <h1 className='z-10 font-display sm:text-4xl text-3xl font-medium text-white text-left'>
+          <h1 className='z-10 font-display sm:text-4xl text-3xl font-medium text-white text-left md:whitespace-no-wrap'>
             {t('welcome')}
           </h1>
           <div className='font-body text-3xl font-hairline md:whitespace-no-wrap'>
@@ -52,18 +52,14 @@ const Hero = React.memo(function Hero({ data, img }) {
             </Link>
           </div>
           <motion.div
-            className='absolute bottom-0 right-0 mb-2 mr-2'
+            className='absolute bottom-0 left-0 mb-2 ml-64'
             style={
               {
                 // right: y2,
               }
             }
           >
-            <Blob10
-              alt='Lines from Text Blob'
-              width='200px'
-              className='absolute bottom-0 right-0 mb-2 mr-12'
-            />
+            <Blob10 alt='Lines from Text Blob' width='200px' />
           </motion.div>
           <motion.div
             style={{
@@ -75,7 +71,7 @@ const Hero = React.memo(function Hero({ data, img }) {
               height='500'
               width='500'
               alt='bg-dot-1'
-              className='bottom-0 left-0 -mb-18 -ml-20 z-0 pointer-events-none opacity-0 md:opacity-25'
+              className='bottom-0 left-0 -mb-18 -ml-20 z-0 pointer-events-none opacity-0 md:opacity-50'
             />
           </motion.div>
         </div>

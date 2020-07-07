@@ -1,5 +1,4 @@
 import React from 'react'
-
 import styled from '@emotion/styled'
 import LogoFull from '../images/NewtelcoFullLogo'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
@@ -141,33 +140,6 @@ const Footer = ({ social }) => {
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
             <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
-              Company
-            </h2>
-            <nav className='list-none mb-10'>
-              <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
-                  First Link
-                </a>
-              </div>
-              <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
-                  Second Link
-                </a>
-              </div>
-              <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
-                  Third Link
-                </a>
-              </div>
-              <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
-                  Fourth Link
-                </a>
-              </div>
-            </nav>
-          </div>
-          <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
-            <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
               Products
             </h2>
             <nav className='list-none mb-10'>
@@ -220,6 +192,33 @@ const Footer = ({ social }) => {
               </div>
             </nav>
           </div>
+          <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
+            <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
+              Company
+            </h2>
+            <nav className='list-none mb-10'>
+              <div>
+                <a className='text-gray-600 text-sm hover:text-white'>
+                  First Link
+                </a>
+              </div>
+              <div>
+                <a className='text-gray-600 text-sm hover:text-white'>
+                  Second Link
+                </a>
+              </div>
+              <div>
+                <a className='text-gray-600 text-sm hover:text-white'>
+                  Third Link
+                </a>
+              </div>
+              <div>
+                <a className='text-gray-600 text-sm hover:text-white'>
+                  Fourth Link
+                </a>
+              </div>
+            </nav>
+          </div>
         </div>
       </div>
       <div className='bg-gray-800'>
@@ -229,7 +228,7 @@ const Footer = ({ social }) => {
             <a
               href='https://github.com/ndom91'
               rel='noopener noreferrer'
-              className='text-gray-700 ml-1 hover:text-green-500 hover:no-underline'
+              className='text-gray-700 ml-1 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out'
               target='_blank'
             >
               <svg

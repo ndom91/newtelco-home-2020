@@ -22,7 +22,7 @@ export default ButtonMenu
 
 const ButtonHamburger = styled.button`
   background: transparent;
-  display: inline-block;
+  display: fixed !important;
   width: 50px;
   height: 50px;
   border: none;

@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { PageWrapper } from '../components/Elements'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Testimonials from '../components/Testimonials'
@@ -23,7 +22,7 @@ export default function IndexPage({ data }) {
         favicon={data.seo.faviconMetaTags}
         global={data.seo.globalSeo}
       />
-      <PageWrapper>
+      <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
         <Hero data={data.home} img={data.img} />
         <Products products={data.products} />
         <Testimonials
@@ -31,7 +30,7 @@ export default function IndexPage({ data }) {
           testimonials={data.testimonials.nodes}
         />
         <Contact />
-      </PageWrapper>
+      </div>
     </>
   )
 }

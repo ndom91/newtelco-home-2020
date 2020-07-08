@@ -6,6 +6,19 @@
 
 html {
   background-color: #111111;
+  font-family: 'Roboto', sans-serif;
+  font-feature-settings: 'dlig', 'zero', 'ss01', 'cv05', 'cv10';
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {

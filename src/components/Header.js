@@ -3,27 +3,11 @@ import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
 import Logo from '../images/NewtelcoLogo'
 import OverlayMenu from './OverlayMenu'
 import ButtonMenu from './ButtonMenu'
-import { useViewportScroll } from 'framer-motion'
-
-import { headerTypes } from '../types/propTypes'
 
 export default function Header() {
   const { t } = useTranslation()
   const [toggleMenu, setToggleMenu] = useState(false)
-  const [blur, setBlur] = useState(false)
   const { language } = useI18next()
-  const { scrollY } = useViewportScroll()
-  useEffect(() => {
-    // console.log(scrollY)
-  }, [scrollY])
-
-  /* scrollY.onChange(pos => { */
-  /*   if (pos > 100) { */
-  /*     setBlur(true) */
-  /*   } else { */
-  /*     setBlur(false) */
-  /*   } */
-  /* }) */
 
   return (
     <header
@@ -89,5 +73,3 @@ export default function Header() {
     </header>
   )
 }
-
-Header.propTypes = headerTypes

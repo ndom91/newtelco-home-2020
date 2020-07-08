@@ -1,6 +1,10 @@
 {
 	"welcome": "NewTelco GmbH",
-	"subtitle": "Die Interconnection Company",
+	"subtitle": {
+		"1": "Die Rechenzentrum Firma",
+		"2": "Die Bringe Dich zum Ziel Firma",
+		"3": "Die Interconnection Firma"
+	},
 	"menu": {
 		"products": "Produkte",
 		"services": "Dienstleistung",

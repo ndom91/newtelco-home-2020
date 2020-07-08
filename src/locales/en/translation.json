@@ -1,6 +1,10 @@
 {
 	"welcome": "NewTelco GmbH",
-	"subtitle": "The Interconnection Company",
+	"subtitle": {
+		"1": "The Datacenter Company",
+		"2": "The Help You Reach Your Goals Company",
+		"3": "The Interconnection Company"
+	},
 	"menu": {
 		"products": "Products",
 		"services": "Services",

@@ -1,8 +1,6 @@
 import React from 'react'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 
-import { seoTypes } from '../types/propTypes'
-
 const SEO = ({ meta, favicon = '', global = '' }) => {
   return (
     <HelmetDatoCms seo={meta} favicon={favicon}>
@@ -11,7 +9,5 @@ const SEO = ({ meta, favicon = '', global = '' }) => {
     </HelmetDatoCms>
   )
 }
-
-SEO.propTypes = seoTypes
 
 export default SEO

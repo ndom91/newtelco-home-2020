@@ -7,6 +7,7 @@ import Blob11 from '../images/illustrations/blobs/blob11.svg'
 import Blob12 from '../images/illustrations/blobs/blob12.svg'
 import Blob13 from '../images/illustrations/blobs/blob13.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
+import Typed from 'react-typed'
 
 const Hero = React.memo(function Hero({ data, img }) {
   const { ctaEmail, ctaActionText } = data
@@ -37,7 +38,11 @@ const Hero = React.memo(function Hero({ data, img }) {
             {t('welcome')}
           </h1>
           <div className='font-body text-3xl font-hairline md:whitespace-no-wrap'>
-            {t('subtitle')}
+            <Typed
+              strings={[t('subtitle.1'), t('subtitle.2'), t('subtitle.3')]}
+              typeSpeed={50}
+              backSpeed={60}
+            />
           </div>
           <div className='flex flex-col bg-transparent text-left items-start leading-normal -mb-20 z-10'>
             <Link
@@ -51,16 +56,11 @@ const Hero = React.memo(function Hero({ data, img }) {
               </button>
             </Link>
           </div>
-          <motion.div
+          <Blob10
+            alt='Lines from Text Blob'
+            width='200px'
             className='absolute bottom-0 left-0 mb-2 ml-64'
-            style={
-              {
-                // right: y2,
-              }
-            }
-          >
-            <Blob10 alt='Lines from Text Blob' width='200px' />
-          </motion.div>
+          />
           <motion.div
             style={{
               top: y1,
@@ -77,18 +77,25 @@ const Hero = React.memo(function Hero({ data, img }) {
         </div>
         <div className='relative lg:max-w-xl lg:w-full md:w-1/2 w-screen -mt-20 overflow-visible'>
           <Map
-            className='object-cover object-center rounded  w-full max-w-none'
+            className='object-cover object-center rounded w-full'
             style={{
               width: '130%',
               maxHeight: '610px',
             }}
             alt='hero'
           />
-          <Blob13
-            alt='Lines under Map Blob'
-            width='150px'
-            className='absolute bottom-0 left-0 ml-24 -mb-12'
-          />
+          <motion.div
+            className='absolute bottom-0 left-0'
+            style={{
+              right: y2,
+            }}
+          >
+            <Blob13
+              alt='Lines under Map Blob'
+              width='150px'
+              className='bottom-0 left-0 ml-24 -mb-12'
+            />
+          </motion.div>
         </div>
       </div>
     </section>

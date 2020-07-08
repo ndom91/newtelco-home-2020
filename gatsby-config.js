@@ -1,4 +1,3 @@
-const path = require('path')
 const siteConfig = require('./config/site-config')
 const {
   NODE_ENV: NODE_ENV = 'development',

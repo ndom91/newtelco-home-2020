@@ -3,6 +3,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const Contact = () => {
   const { t } = useTranslation()
+  const a = 123
   return (
     <section className='text-gray-500 bg-gray-900 body-font relative mt-20 sm:mt-0'>
       <div className='container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap'>

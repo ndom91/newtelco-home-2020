@@ -4,7 +4,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 const Contact = () => {
   const { t } = useTranslation()
   return (
-    <section className='text-gray-500 bg-gray-900 body-font relative mt-20 sm:mt-0'>
+    <section className='text-gray-500 bg-gray-900 body-font relative mt-20 sm:mt-0 z-20'>
       <div className='container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap'>
         <div className='lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative'>
           <iframe
@@ -56,25 +56,25 @@ const Contact = () => {
             value='Contact Form'
             aria-label='Form Name'
           />
-          <p className='leading-relaxed mb-5 text-gray-600 font-body font-hairline'>
+          <p className='leading-relaxed mb-5 text-gray-600 font-body font-thin'>
             {t('contact.header')}
           </p>
           <input
-            className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline text-base text-white px-4 py-2 mb-4'
+            className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline text-base text-white px-4 py-2 mb-4 bg-opacity-25 placeholder-font-hairline'
             name='name'
             aria-label='Name'
             placeholder={t('contact.name')}
             type='text'
           />
           <input
-            className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline  text-base text-white px-4 py-2 mb-4'
+            className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline  text-base text-white px-4 py-2 mb-4 bg-opacity-25'
             name='email'
             aria-label='Email'
             placeholder={t('contact.email')}
             type='email'
           />
           <textarea
-            className='transition duration-200 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 rounded border border-gray-700 h-32  text-base text-white px-4 py-2 mb-4 resize-none'
+            className='transition duration-200 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 rounded border border-gray-700 h-32  text-base text-white px-4 py-2 mb-4 resize-none bg-opacity-25'
             aria-label='Message'
             name='message'
             placeholder={t('contact.message')}
@@ -85,10 +85,10 @@ const Contact = () => {
           >
             {t('contact.send')}
           </button>
-          <p className='text-xs text-gray-700 mt-3'>
+          <p className='text-xs text-gray-700 mt-3 flex justify-center'>
             By sending us your data, you agree to our{' '}
             <a
-              href='#'
+              href='/privacy'
               alt='Terms of Service'
               className='text-gray-800 hover:text-gray-600 hover:no-underline transition transition-colors duration-300 ease-in-out'
             >

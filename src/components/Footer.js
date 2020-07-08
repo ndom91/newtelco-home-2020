@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import LogoFull from '../images/NewtelcoFullLogo'
+// import NewtelcoFull from '../images/newtelco-full.png'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
 
 const Footer = ({ social }) => {
@@ -18,14 +19,15 @@ const Footer = ({ social }) => {
       <div className='relative container px-5 py-20 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col'>
         <div className='relative w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left'>
           <div className='flex title-font font-medium items-center md:justify-start justify-center text-white z-20'>
-            <LogoFull />
+            <LogoFull className='z-30' />
+            {/* <img alt='Newtelco' src={NewtelcoFull} className='z-10 ' /> */}
           </div>
-          <p className='mt-8 text-sm text-gray-700 z-20'>
-            <span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-around w-full z-20'>
+          <p className='mt-8 text-sm text-gray-700'>
+            <span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-around w-full'>
               <SocialItem
                 aria-label='Facebook'
                 href={fb}
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
+                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
               >
                 <svg
                   fill='currentColor'
@@ -41,7 +43,7 @@ const Footer = ({ social }) => {
               <SocialItem
                 href={twitter}
                 aria-label='Twitter'
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
+                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
               >
                 <svg
                   fill='currentColor'
@@ -57,7 +59,7 @@ const Footer = ({ social }) => {
               <SocialItem
                 aria-label='Instagram'
                 href={instagram}
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
+                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
               >
                 <svg
                   fill='none'
@@ -75,7 +77,7 @@ const Footer = ({ social }) => {
               <SocialItem
                 href={linkedin}
                 aria-label='LinkedIn'
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
+                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
               >
                 <svg
                   fill='currentColor'
@@ -96,7 +98,7 @@ const Footer = ({ social }) => {
               <SocialItem
                 href={github}
                 aria-label='Github'
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors'
+                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
               >
                 <svg
                   className='w-10 h-10'
@@ -109,11 +111,11 @@ const Footer = ({ social }) => {
                 </svg>
               </SocialItem>
             </span>
+            <Scribble
+              alt='Scribble Circle'
+              className='h-auto w-full absolute mt-12 bottom-0 left-0 opacity-50 pointer-events-none z-0'
+            />
           </p>
-          <Scribble
-            alt='Scribble Circle'
-            className='h-auto w-full z-0 absolute mt-12 bottom-0 left-0 opacity-50 pointer-events-none'
-          />
         </div>
         <div className='flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center'>
           <div className='lg:w-1/4 md:w-1/2 w-full px-4'>

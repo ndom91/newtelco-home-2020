@@ -7,6 +7,7 @@ const LogoFull = () => (
     width='400'
     height='48.794599807135974'
     viewBox='0, 0, 400,48.794599807135974'
+    className='z-20'
   >
     <g id='svgg'>
       <path

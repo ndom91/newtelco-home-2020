@@ -37,13 +37,12 @@ const Hero = React.memo(function Hero({ data, img }) {
           <h1 className='z-10 font-display sm:text-4xl text-3xl font-medium text-white text-left md:whitespace-no-wrap'>
             {t('welcome')}
           </h1>
-          <div className='font-body text-3xl font-hairline md:whitespace-no-wrap'>
-            <Typed
-              strings={[t('subtitle.1'), t('subtitle.2'), t('subtitle.3')]}
-              typeSpeed={50}
-              backSpeed={60}
-            />
-          </div>
+          <Typed
+            strings={[t('subtitle.1'), t('subtitle.2'), t('subtitle.3')]}
+            typeSpeed={50}
+            backSpeed={60}
+            className='font-body text-3xl font-hairline md:whitespace-no-wrap'
+          />
           <div className='flex flex-col bg-transparent text-left items-start leading-normal -mb-20 z-10'>
             <Link
               target='_blank'
@@ -88,6 +87,7 @@ const Hero = React.memo(function Hero({ data, img }) {
             className='absolute bottom-0 left-0'
             style={{
               right: y2,
+              position: 'absolute',
             }}
           >
             <Blob13

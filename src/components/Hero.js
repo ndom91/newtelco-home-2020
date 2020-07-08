@@ -23,16 +23,16 @@ const Hero = React.memo(function Hero({ data, img }) {
         width='100px'
         className='absolute top-0 left-0 mt-8'
       />
-      <motion.div
-        className='absolute top-0 right-0 -mr-12 z-10'
-        style={
-          {
-            // right: x1,
-          }
-        }
-      >
-        <Blob12 alt='Squiggle Map Blob' width='200px' />
-      </motion.div>
+      {/* <motion.div */}
+      {/*   className='absolute top-0 right-0 -mr-12 z-10' */}
+      {/*   style={ */}
+      {/*     { */}
+      {/*       // right: x1, */}
+      {/*     } */}
+      {/*   } */}
+      {/* > */}
+      <Blob12 alt='Squiggle Map Blob' width='200px' />
+      {/* </motion.div> */}
       <div className='relative container mx-auto flex px-5 py-0 sm:py-24 md:flex-row flex-col-reverse items-end'>
         <div className='relative lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:text-left mb-16 md:mb-0 items-left'>
           <h1 className='z-10 font-display sm:text-4xl text-3xl font-medium text-white text-left md:whitespace-no-wrap'>
@@ -53,29 +53,29 @@ const Hero = React.memo(function Hero({ data, img }) {
               </button>
             </Link>
           </div>
-          <motion.div
-            className='absolute bottom-0 left-0 mb-2 ml-64'
-            style={
-              {
-                // right: y2,
-              }
-            }
-          >
-            <Blob10 alt='Lines from Text Blob' width='200px' />
-          </motion.div>
-          <motion.div
-            style={{
-              // top: y1,
-              position: 'absolute',
-            }}
-          >
-            <BGDot
-              height='500'
-              width='500'
-              alt='bg-dot-1'
-              className='bottom-0 left-0 -mb-18 -ml-20 z-0 pointer-events-none opacity-0 md:opacity-50'
-            />
-          </motion.div>
+          {/* <motion.div */}
+          {/*   className='absolute bottom-0 left-0 mb-2 ml-64' */}
+          {/*   style={ */}
+          {/*     { */}
+          {/*       // right: y2, */}
+          {/*     } */}
+          {/*   } */}
+          {/* > */}
+          <Blob10 alt='Lines from Text Blob' width='200px' />
+          {/* </motion.div> */}
+          {/* <motion.div */}
+          {/*   style={{ */}
+          {/*     // top: y1, */}
+          {/*     position: 'absolute', */}
+          {/*   }} */}
+          {/* > */}
+          <BGDot
+            height='500'
+            width='500'
+            alt='bg-dot-1'
+            className='bottom-0 left-0 -mb-18 -ml-20 z-0 pointer-events-none opacity-0 md:opacity-50'
+          />
+          {/* </motion.div> */}
         </div>
         <div className='relative lg:max-w-xl lg:w-full md:w-1/2 w-screen -mt-20 overflow-visible'>
           <Map

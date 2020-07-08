@@ -1,15 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-// import LogoFull from '../images/NewtelcoFullLogo'
+import LogoFull from '../images/NewtelcoFullLogo'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
-
-import Loadable from 'react-loadable'
-const LogoFull = Loadable({
-  loader: () => import('../images/NewtelcoFullLogo'),
-  loading() {
-    return <div>Loading...</div>
-  },
-})
 
 const Footer = ({ social }) => {
   const today = new Date()

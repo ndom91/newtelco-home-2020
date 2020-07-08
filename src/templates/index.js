@@ -5,14 +5,15 @@ import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Testimonials from '../components/Testimonials'
 import Products from '../components/Products'
+import Contact from '../components/Contact'
 
-import Loadable from 'react-loadable'
-const Contact = Loadable({
-  loader: () => import('../components/Contact'),
-  loading() {
-    return <div>Loading...</div>
-  },
-})
+/* import Loadable from 'react-loadable' */
+/* const Contact = Loadable({ */
+/*   loader: () => import('../components/Contact'), */
+/*   loading() { */
+/*     return <div>Loading...</div> */
+/*   }, */
+/* }) */
 
 export default function IndexPage({ data }) {
   const { ctaEmail, ctaPhone, ctaActionText, seoMetaTags } = data.home

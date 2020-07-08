@@ -156,5 +156,11 @@ module.exports = {
         ignore: ['node_modules/@brainhubeu/react-carousel/lib/style.css'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        devMode: true,
+      },
+    },
   ],
 }

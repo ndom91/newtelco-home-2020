@@ -129,16 +129,16 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Raleway:100,300,500', 'Rubik:300,400&display=swap'],
-        },
-        events: false,
-        classes: false,
-      },
-    },
+    /* { */
+    /*   resolve: 'gatsby-plugin-web-font-loader', */
+    /*   options: { */
+    /*     google: { */
+    /*       families: ['Raleway:100,300,500', 'Rubik:300,400&display=swap'], */
+    /*     }, */
+    /*     events: false, */
+    /*     classes: false, */
+    /*   }, */
+    /* }, */
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

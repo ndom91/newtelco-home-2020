@@ -61,12 +61,12 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: process.env.GA_ID,
-      },
-    },
+    /* { */
+    /*   resolve: 'gatsby-plugin-google-analytics', */
+    /*   options: { */
+    /*     trackingId: process.env.GA_ID, */
+    /*   }, */
+    /* }, */
     {
       resolve: 'gatsby-plugin-layout',
       options: {

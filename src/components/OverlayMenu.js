@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'gatsby-plugin-react-i18next'
 import LanguageSelect from './LanguageSelect'
 import newtelcoLogo from '../images/newtelco-white.png'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
+// import { motion, useMotionValue, useTransform } from 'framer-motion'
 import styled from '@emotion/styled'
 
 const OverlayMenu = ({ toggleMenu, isOpen }) => {
-  const x = useMotionValue(10)
-  const y = useTransform(x, value => value * 2)
+  /* const x = useMotionValue(10) */
+  /* const y = useTransform(x, value => value * 2) */
 
   const menuItems = [
     { name: 'Home', link: '/' },
@@ -17,59 +17,59 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
     { name: 'About', link: '/about' },
   ]
 
-  const list = {
-    visible: {
-      opacity: [0, 1],
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.25,
-        type: 'inertia',
-      },
-    },
-  }
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      x: [-50, 0],
-      opacity: [0, 1],
-      transition: {
-        duration: 0.25,
-      },
-    },
-  }
+  /* const list = { */
+  /*   visible: { */
+  /*     opacity: [0, 1], */
+  /*     transition: { */
+  /*       staggerChildren: 0.1, */
+  /*       delayChildren: 0.25, */
+  /*       type: 'inertia', */
+  /*     }, */
+  /*   }, */
+  /* } */
+  /* const variants = { */
+  /*   hidden: { opacity: 0 }, */
+  /*   visible: { */
+  /*     x: [-50, 0], */
+  /*     opacity: [0, 1], */
+  /*     transition: { */
+  /*       duration: 0.25, */
+  /*     }, */
+  /*   }, */
+  /* } */
   return (
     <OverlayWrapper className={isOpen ? 'active' : 'hidden'}>
       <HeaderImage src={newtelcoLogo} alt='Newtelco Logo' />
       <Navigation>
         <ul className={isOpen ? 'active' : ''}>
-          <motion.div
-            style={{ x, y }}
-            animate={isOpen ? 'visible' : 'hidden'}
-            variants={list}
-          >
-            {menuItems.map((menu, index) => (
-              <motion.div
-                initial='hidden'
-                variants={variants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.9 }}
-                key={index}
+          {/* <motion.div */}
+          {/*   style={{ x, y }} */}
+          {/*   animate={isOpen ? 'visible' : 'hidden'} */}
+          {/*   variants={list} */}
+          {/* > */}
+          {/* <motion.div */}
+          {/*   initial='hidden' */}
+          {/*   variants={variants} */}
+          {/*   whileHover={{ scale: 1.05 }} */}
+          {/*   whileTap={{ scale: 0.9 }} */}
+          {/*   key={index} */}
+          {/* > */}
+          {menuItems.map((menu, index) => (
+            <li key={menu.name}>
+              <NavNumber>{`0${index}`}</NavNumber>
+              <NavigationLink
+                to={menu.link}
+                aria-label={menu.name}
+                className='hover:no-underline hover:text-white'
+                activeClassName='active'
+                onClick={toggleMenu}
               >
-                <li key={menu.name}>
-                  <NavNumber>{`0${index}`}</NavNumber>
-                  <NavigationLink
-                    to={menu.link}
-                    aria-label={menu.name}
-                    className='hover:no-underline hover:text-white'
-                    activeClassName='active'
-                    onClick={toggleMenu}
-                  >
-                    {menu.name}
-                  </NavigationLink>
-                </li>
-              </motion.div>
-            ))}
-          </motion.div>
+                {menu.name}
+              </NavigationLink>
+            </li>
+          ))}
+          {/* </motion.div> */}
+          {/* </motion.div> */}
         </ul>
       </Navigation>
       <LanguageSelect toggleMenu={toggleMenu} isOpen={isOpen} />

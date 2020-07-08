@@ -6,15 +6,15 @@ import Blob10 from '../images/illustrations/blobs/blob10.svg'
 import Blob11 from '../images/illustrations/blobs/blob11.svg'
 import Blob12 from '../images/illustrations/blobs/blob12.svg'
 import Blob13 from '../images/illustrations/blobs/blob13.svg'
-import { useViewportScroll, useTransform, motion } from 'framer-motion'
+// import { useViewportScroll, useTransform, motion } from 'framer-motion'
 
 const Hero = React.memo(function Hero({ data, img }) {
   const { ctaEmail, ctaActionText } = data
   const { t } = useTranslation()
-  const { scrollY } = useViewportScroll()
-  const y1 = useTransform(scrollY, [500, -500], [-150, 10])
-  const y2 = useTransform(scrollY, [-200, 200], [20, -20])
-  const x1 = useTransform(scrollY, [500, -500], [-150, 10])
+  /* const { scrollY } = useViewportScroll() */
+  /* const y1 = useTransform(scrollY, [500, -500], [-150, 10]) */
+  /* const y2 = useTransform(scrollY, [-200, 200], [20, -20]) */
+  /* const x1 = useTransform(scrollY, [500, -500], [-150, 10]) */
 
   return (
     <section className='relative text-gray-500 bg-gray-900 body-font mb-8 w-4/5 md:w-3/5'>
@@ -25,9 +25,11 @@ const Hero = React.memo(function Hero({ data, img }) {
       />
       <motion.div
         className='absolute top-0 right-0 -mr-12 z-10'
-        style={{
-          right: x1,
-        }}
+        style={
+          {
+            // right: x1,
+          }
+        }
       >
         <Blob12 alt='Squiggle Map Blob' width='200px' />
       </motion.div>
@@ -63,7 +65,7 @@ const Hero = React.memo(function Hero({ data, img }) {
           </motion.div>
           <motion.div
             style={{
-              top: y1,
+              // top: y1,
               position: 'absolute',
             }}
           >

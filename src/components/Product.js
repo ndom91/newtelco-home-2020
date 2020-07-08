@@ -1,5 +1,5 @@
 import React from 'react'
-import { useInView } from 'react-intersection-observer'
+// import { useInView } from 'react-intersection-observer'
 import styled from '@emotion/styled'
 
 import Blob1 from '../images/illustrations/blobs/blob6.svg'
@@ -8,26 +8,24 @@ import Blob3 from '../images/illustrations/blobs/blob8.svg'
 import Blob4 from '../images/illustrations/blobs/blob9.svg'
 
 const Product = ({ product, index }) => {
-  const [ref, inView, entry] = useInView({
-    rootMargin: '50px 0px',
-    triggerOnce: true,
-  })
+  /* const [ref, inView, entry] = useInView({ */
+  /*   rootMargin: '50px 0px', */
+  /*   triggerOnce: true, */
+  /* }) */
 
   const blobs = [Blob1, Blob2, Blob3, Blob4]
   const Blob = blobs[index]
 
   return (
-    <Wrapper
-      key={product.title}
-      ref={ref}
-      // id={(index + 1) % 2 === 0 ? 'left' : 'right'}
-      className={`overflow-visible w-full mb-32 flex justify-around ${
-        (index + 1) % 2 === 0 ? 'left' : 'right'
-      } 
-				${(index + 1) % 2 === 0 ? 'flex-row-reverse' : 'flex-row'} ${
-        inView ? 'sectionInView product-wrapper' : 'product-wrapper'
-      }`}
-    >
+    <Wrapper key={product.title}>
+      {/* ref={ref} */}
+      {/* // id={(index + 1) % 2 === 0 ? 'left' : 'right'} */}
+      {/* className={`overflow-visible w-full mb-32 flex justify-around ${ */}
+      {/*   (index + 1) % 2 === 0 ? 'left' : 'right' */}
+      {/* } */}
+      {/* ${(index + 1) % 2 === 0 ? 'flex-row-reverse' : 'flex-row'} */}
+      {/*   ${ inView ? 'sectionInView product-wrapper' : 'product-wrapper' */}
+      {/* }`} */}
       <div className='absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible'>
         <Blob alt={product.image.alt} className='z-0 w-64 ' />
       </div>

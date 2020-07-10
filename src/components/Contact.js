@@ -1,22 +1,30 @@
 import React from 'react'
-// import GoogleMaps from './GoogleMaps'
+import { useInView } from 'react-intersection-observer'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
-// import Loadable from 'react-loadable'
-/* const GoogleMaps = Loadable({ */
-/*   loader: () => import('../components/GoogleMaps'), */
-/*   loading() { */
-/*     return <div>Loading...</div> */
-/*   }, */
-/* }) */
+import Loadable from 'react-loadable'
+const GoogleMaps = Loadable({
+  loader: () => import('../components/GoogleMaps'),
+  loading() {
+    return <div>Loading...</div>
+  },
+})
 
 const Contact = () => {
   const { t } = useTranslation()
+  const [ref, inView, entry] = useInView({
+    rootMargin: '50px 0px',
+    triggerOnce: true,
+  })
+
   return (
-    <section className='text-gray-500 bg-gray-900 body-font relative mt-20 sm:mt-0 z-20'>
+    <section
+      ref={ref}
+      className='text-gray-500 bg-gray-900 body-font relative mt-20 sm:mt-0 z-20'
+    >
       <div className='container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap'>
         <div className='lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative'>
-          {/* <GoogleMaps /> */}
+          {inView && <GoogleMaps />}
           <div className='bg-gray-900 relative flex flex-wrap py-6 px-4'>
             <div className='lg:w-1/2 pl-4'>
               <h2 className='title-font font-medium text-green-500 tracking-widest text-sm'>

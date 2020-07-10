@@ -64,6 +64,7 @@ const Partners = React.memo(function Partners({ partners }) {
                     <Logo
                       src={partner.image.fluid?.src || partner.image.url}
                       alt={partner.image.alt || 'Company Logo'}
+                      loading='lazy'
                     />
                   </Circle>
                 </Company>

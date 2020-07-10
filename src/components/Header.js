@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
 import Logo from '../images/NewtelcoLogo'
 import OverlayMenu from './OverlayMenu'
@@ -10,18 +10,7 @@ export default function Header() {
   const { language } = useI18next()
 
   return (
-    <header
-      className={` top-0 text-gray-500 body-font bg-transparent ${
-        blur ? 'bg-opacity-50' : 'bg-opacity-100'
-      }`}
-      style={
-        blur
-          ? {
-              filter: 'blur(0px)',
-            }
-          : {}
-      }
-    >
+    <header className='top-0 text-gray-500 body-font bg-transparent'>
       <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center z-50 bg-transparent'>
         <Link
           language={language}

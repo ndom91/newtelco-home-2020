@@ -13,7 +13,7 @@ const GoogleMaps = Loadable({
 const Contact = () => {
   const { t } = useTranslation()
   const [ref, inView, entry] = useInView({
-    rootMargin: '50px 0px',
+    rootMargin: '200px 0px',
     triggerOnce: true,
   })
 

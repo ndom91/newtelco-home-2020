@@ -9,6 +9,7 @@ import Rubik400 from '../../static/fonts/Rubik_400.woff2'
 import Raleway100 from '../../static/fonts/Raleway_100.woff2'
 import Raleway200 from '../../static/fonts/Raleway_200.woff2'
 import Raleway500 from '../../static/fonts/Raleway_500.woff2'
+import '../style/globals.css'
 
 const Layout = ({ children, location, pageContext: { locale } }) => {
   const { allDatoCmsSocial } = useStaticQuery(

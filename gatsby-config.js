@@ -128,16 +128,16 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Raleway:100,300,500', 'Rubik:300,400&display=swap'],
-        },
-        events: false,
-        classes: false,
-      },
-    },
+    /* { */
+    /*   resolve: 'gatsby-plugin-web-font-loader', */
+    /*   options: { */
+    /*     google: { */
+    /*       families: ['Raleway:100,300,500', 'Rubik:300,400&display=swap'], */
+    /*     }, */
+    /*     events: false, */
+    /*     classes: false, */
+    /*   }, */
+    /* }, */
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -153,6 +153,12 @@ module.exports = {
         develop: NODE_ENV !== 'development',
         tailwind: true,
         ignore: ['node_modules/@brainhubeu/react-carousel/lib/style.css'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        devMode: true,
       },
     },
   ],

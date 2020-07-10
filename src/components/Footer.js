@@ -113,7 +113,8 @@ const Footer = ({ social }) => {
             </span>
             <Scribble
               alt='Scribble Circle'
-              className='h-auto w-full absolute mt-12 bottom-0 left-0 opacity-50 pointer-events-none z-0'
+              className='h-auto w-full absolute mt-2 -ml-16 bottom-0 left-0 opacity-50 pointer-events-none z-0'
+              style={{ width: '150%' }}
             />
           </p>
         </div>

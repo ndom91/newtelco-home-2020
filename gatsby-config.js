@@ -161,5 +161,9 @@ module.exports = {
         devMode: false,
       },
     },
+    {
+      resolve: '@bundle-analyzer/gatsby-plugin',
+      options: { token: process.env.BUNDLE_ANALYZER_TOKEN },
+    },
   ],
 }

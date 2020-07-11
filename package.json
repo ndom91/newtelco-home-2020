@@ -62,6 +62,7 @@
     "react-typed": "^1.2.0"
   },
   "devDependencies": {
+    "@bundle-analyzer/gatsby-plugin": "^0.5.1",
     "babel-eslint": "^10.0.3",
     "babel-preset-gatsby": "^0.4.12",
     "dotenv": "^8.1.0",

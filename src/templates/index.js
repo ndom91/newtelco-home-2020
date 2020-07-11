@@ -2,12 +2,18 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
-import Testimonials from '../components/Testimonials'
+// import Testimonials from '../components/Testimonials'
 import Products from '../components/Products'
 
 import Loadable from 'react-loadable'
 const Contact = Loadable({
   loader: () => import('../components/Contact'),
+  loading() {
+    return <div>Loading...</div>
+  },
+})
+const Testimonials = Loadable({
+  loader: () => import('../components/Testimonials'),
   loading() {
     return <div>Loading...</div>
   },

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
+import { useMediaQuery } from 'react-responsive'
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
 import Logo from '../images/NewtelcoLogo'
 import OverlayMenu from './OverlayMenu'
@@ -9,6 +10,7 @@ export default function Header() {
   const { t } = useTranslation()
   const [toggleMenu, setToggleMenu] = useState(false)
   const { language } = useI18next()
+  const isMobile = useMediaQuery({ query: '(min-devicewidth: 641)' })
 
   return (
     <Wrapper className='top-0 text-gray-500 body-font bg-transparent'>
@@ -51,14 +53,17 @@ export default function Header() {
             {t('menu.about')}
           </Link>
         </nav>
-        <ButtonMenu
-          handleClick={() => setToggleMenu(!toggleMenu)}
-          isOpen={toggleMenu}
-        />
-        <OverlayMenu
-          isOpen={toggleMenu}
-          toggleMenu={() => setToggleMenu(!toggleMenu)}
-        />
+        {isMobile ? (
+          <ButtonMenu
+            handleClick={() => setToggleMenu(!toggleMenu)}
+            isOpen={toggleMenu}
+          />
+        ) : (
+          <OverlayMenu
+            isOpen={toggleMenu}
+            toggleMenu={() => setToggleMenu(!toggleMenu)}
+          />
+        )}
       </div>
     </Wrapper>
   )

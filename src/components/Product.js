@@ -8,7 +8,7 @@ import Blob3 from '../images/illustrations/blobs/blob8.svg'
 import Blob4 from '../images/illustrations/blobs/blob9.svg'
 
 const Product = ({ product, index }) => {
-  const [ref, inView, entry] = useInView({
+  const [ref, inView] = useInView({
     rootMargin: '50px 0px',
     triggerOnce: true,
   })
@@ -20,7 +20,6 @@ const Product = ({ product, index }) => {
     <Wrapper
       key={product.title}
       ref={ref}
-      // id={(index + 1) % 2 === 0 ? 'left' : 'right'}
       className={`overflow-visible w-full mb-32 flex justify-around ${
         (index + 1) % 2 === 0 ? 'left' : 'right'
       } 
@@ -29,7 +28,7 @@ const Product = ({ product, index }) => {
       }`}
     >
       <div className='absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible'>
-        <Blob alt={product.image.alt} className='z-0 w-64 ' />
+        <Blob alt={product.image.alt} className='z-0 w-76 h-48' />
       </div>
       <div className='flex-grow sm:text-left text-center mt-6 sm:mt-0'>
         <h2 className='text-green text-4xl md:text-5xl font-body font-hairline mb-2'>

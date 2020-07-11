@@ -15,7 +15,7 @@ const LanguageSelect = ({ toggleMenu, isOpen }) => {
 
   return (
     <LanguageWrapper className={isOpen ? 'active' : ''}>
-      <LanguageItem className={isOpen ? 'active' : ''}>
+      <LanguageItem className={isOpen ? 'active' : ''} className='pt-4'>
         <svg
           height='32'
           width='32'
@@ -71,8 +71,8 @@ const LanguageWrapper = styled.ul`
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    top: 28px;
-    right: -13px;
+    top: 11px;
+    right: 27px;
   }
 
   ${media.tabletSmall`
@@ -88,8 +88,6 @@ const LanguageWrapper = styled.ul`
 
 const LanguageChoiceWrapper = styled.ul`
   display: flex;
-  flex-direction: column;
-  background-color: var(--body-bg);
   border-radius: 0 0 5px 5px;
   padding: 10px 0px;
   z-index: 21;
@@ -145,7 +143,6 @@ const LanguageItem = styled.li`
   }
 
   & ~ ul {
-    background-color: rgba(0, 0, 0, 0.2);
     padding: 3px;
     border-radius: 0 5px 5px 0;
   }

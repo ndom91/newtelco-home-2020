@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from '@emotion/styled'
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
 import Logo from '../images/NewtelcoLogo'
 import OverlayMenu from './OverlayMenu'
@@ -10,8 +11,8 @@ export default function Header() {
   const { language } = useI18next()
 
   return (
-    <header className='top-0 text-gray-500 body-font bg-transparent'>
-      <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center z-50 bg-transparent'>
+    <Wrapper className='top-0 text-gray-500 body-font bg-transparent'>
+      <div className='container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center z-50 bg-transparent'>
         <Link
           language={language}
           to='/'
@@ -20,7 +21,7 @@ export default function Header() {
         >
           <Logo />
         </Link>
-        <nav className='md:mr-auto md:ml-3 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center hidden sm:flex'>
+        <nav className='md:mr-auto md:ml-3 md:py-1 md:pl-4 flex flex-wrap items-center text-base justify-center hidden sm:flex'>
           <Link
             language={language}
             to='/products'
@@ -59,6 +60,13 @@ export default function Header() {
           toggleMenu={() => setToggleMenu(!toggleMenu)}
         />
       </div>
-    </header>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(180%) blur(5px);
+`

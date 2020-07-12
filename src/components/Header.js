@@ -10,20 +10,20 @@ export default function Header() {
   const { t } = useTranslation()
   const [toggleMenu, setToggleMenu] = useState(false)
   const { language } = useI18next()
-  const isMobile = useMediaQuery({ query: '(min-devicewidth: 641)' })
+  const isMobile = useMediaQuery({ query: '(max-device-width: 641px)' })
 
   return (
-    <Wrapper className='top-0 text-gray-500 body-font bg-transparent'>
-      <div className='container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center z-50 bg-transparent'>
+    <Wrapper className='top-0 text-gray-500 bg-transparent body-font'>
+      <div className='container z-50 flex flex-col flex-wrap items-center p-2 mx-auto bg-transparent md:flex-row'>
         <Link
           language={language}
           to='/'
           aria-label='Home'
-          className='flex title-font font-medium items-center text-white mb-4 md:mb-0'
+          className='flex items-center font-medium text-white title-font'
         >
           <Logo />
         </Link>
-        <nav className='md:mr-auto md:ml-3 md:py-1 md:pl-4 flex flex-wrap items-center text-base justify-center hidden sm:flex'>
+        <nav className='flex flex-wrap items-center justify-center hidden text-base md:mr-auto md:ml-3 md:py-1 md:pl-4 sm:flex'>
           <Link
             language={language}
             to='/products'
@@ -54,14 +54,20 @@ export default function Header() {
           </Link>
         </nav>
         {isMobile ? (
+          <>
+            <ButtonMenu
+              handleClick={() => setToggleMenu(!toggleMenu)}
+              isOpen={toggleMenu}
+            />
+            <OverlayMenu
+              isOpen={toggleMenu}
+              toggleMenu={() => setToggleMenu(!toggleMenu)}
+            />
+          </>
+        ) : (
           <ButtonMenu
             handleClick={() => setToggleMenu(!toggleMenu)}
             isOpen={toggleMenu}
-          />
-        ) : (
-          <OverlayMenu
-            isOpen={toggleMenu}
-            toggleMenu={() => setToggleMenu(!toggleMenu)}
           />
         )}
       </div>

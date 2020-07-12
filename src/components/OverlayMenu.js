@@ -38,7 +38,7 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
     },
   }
   return (
-    <OverlayWrapper className={isOpen ? 'active' : 'hidden'}>
+    <OverlayWrapper className={isOpen ? 'active' : ''}>
       <HeaderImage src={newtelcoLogo} alt='Newtelco Logo' />
       <Navigation>
         <ul className={isOpen ? 'active' : ''}>
@@ -82,24 +82,22 @@ export default OverlayMenu
 const OverlayWrapper = styled.div`
   position: fixed;
   width: 100vw;
-  height: 0vh;
+  height: 100vh;
   top: 0;
   left: 0;
   z-index: -2;
   transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out,
-    height 0.35s ease-in-out;
+    max-height 0.35s ease-in-out;
   overflow: hidden;
   background-color: #292929;
+  z-index: 98;
+  opacity: 0;
+  max-height: 0px;
   &.active {
     z-index: 9998;
-    height: 100vh;
     opacity: 1;
+    transition: max-height 500ms ease-in-out;
     max-height: 2000px;
-  }
-  &.hidden {
-    z-index: 98;
-    opacity: 0;
-    height: 0vh;
   }
 `
 

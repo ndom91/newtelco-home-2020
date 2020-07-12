@@ -34,8 +34,6 @@ const ButtonHamburger = styled.button`
   z-index: 59999;
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
   }
   ${media.tabletSmall`
     display: fixed;

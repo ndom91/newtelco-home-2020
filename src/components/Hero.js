@@ -18,7 +18,7 @@ const Hero = React.memo(function Hero({ data, img }) {
   const x1 = useTransform(scrollY, [500, -500], [-150, 10])
 
   return (
-    <section className='relative text-gray-500 bg-gray-900 body-font mb-8 w-4/5 md:w-3/5'>
+    <section className='relative text-gray-500 bg-gray-900 body-font mb-8 w-4/5 max-w-screen-lg'>
       <Blob11
         alt='Arrow Nav Blob'
         width='100px'
@@ -32,8 +32,8 @@ const Hero = React.memo(function Hero({ data, img }) {
       >
         <Blob12 alt='Squiggle Map Blob' width='200px' />
       </motion.div>
-      <div className='relative container mx-auto flex px-5 py-0 sm:py-24 md:flex-row flex-col-reverse items-end'>
-        <div className='relative lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:text-left mb-16 md:mb-0 items-left'>
+      <div className='relative mx-auto flex px-5 py-0 sm:py-24 md:flex-row flex-col-reverse items-end'>
+        <div className='relative lg:flex-grow md:w-1/2 flex flex-col md:text-left mb-16 md:mb-0 items-left'>
           <h1 className='z-10 font-display sm:text-4xl text-3xl font-medium text-white text-left md:whitespace-no-wrap'>
             {t('welcome')}
           </h1>
@@ -41,7 +41,7 @@ const Hero = React.memo(function Hero({ data, img }) {
             strings={[t('subtitle.1'), t('subtitle.2'), t('subtitle.3')]}
             typeSpeed={50}
             backSpeed={60}
-            className='font-body text-3xl font-hairline md:whitespace-no-wrap'
+            className='font-body text-3xl font-hairline md:whitespace-no-wrap w-64 overflow-x-visible'
           />
           <div className='flex flex-col bg-transparent text-left items-start leading-normal -mb-20 z-10'>
             <Link

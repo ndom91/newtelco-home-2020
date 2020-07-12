@@ -54,19 +54,18 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.9 }}
                 key={index}
+                className='mb-8'
               >
-                <li key={menu.name}>
-                  <NavNumber>{`0${index}`}</NavNumber>
-                  <NavigationLink
-                    to={menu.link}
-                    aria-label={menu.name}
-                    className='hover:no-underline hover:text-white'
-                    activeClassName='active'
-                    onClick={toggleMenu}
-                  >
-                    {menu.name}
-                  </NavigationLink>
-                </li>
+                <NavNumber>{`0${index}`}</NavNumber>
+                <NavigationLink
+                  to={menu.link}
+                  aria-label={menu.name}
+                  className='hover:no-underline hover:text-white'
+                  activeClassName='active'
+                  onClick={toggleMenu}
+                >
+                  {menu.name}
+                </NavigationLink>
               </motion.div>
             ))}
           </motion.div>
@@ -96,13 +95,13 @@ const OverlayWrapper = styled.div`
   &.active {
     z-index: 9998;
     opacity: 1;
-    transition: max-height 500ms ease-in-out;
+    transition: max-height 1s ease-in-out;
     max-height: 2000px;
   }
 `
 
 const NavNumber = styled.div`
-  font-family: 'Rubik', sans-serif;
+  font-family: monospace;
   font-weight: 600;
   font-size: 1.7rem;
   color: #67b246;

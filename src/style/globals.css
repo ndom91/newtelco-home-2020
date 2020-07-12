@@ -4,47 +4,6 @@
 
 @import "tailwindcss/utilities";
 
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 300;
-  display: swap;
-  src: local('Rubik'), url('../../static/fonts/Rubik_300.woff2') format('woff2')
-}
-
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 400;
-  display: swap;
-  src: local('Rubik'), url('../../static/fonts/Rubik_400.woff2') format('woff2')
-}
-
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 100;
-  display: swap;
-  src: local('Raleway'), url('../../static/fonts/Raleway_100.woff2') format('woff2')
-}
-
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 200;
-  display: swap;
-  src: local('Raleway'), url('../../static/fonts/Raleway_200.woff2') format('woff2')
-}
-
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 500;
-  display: swap;
-  src: local('Raleway'), url('../../static/fonts/Raleway_500.woff2') format('woff2')
-}
-
-
 html {
   scroll-behavior: smooth;
   background-color: #111111;

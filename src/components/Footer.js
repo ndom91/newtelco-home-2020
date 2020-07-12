@@ -125,17 +125,29 @@ const Footer = ({ social }) => {
             </h2>
             <nav className='list-none mb-10'>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   First Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Second Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Third Link
                 </a>
               </div>
@@ -147,22 +159,38 @@ const Footer = ({ social }) => {
             </h2>
             <nav className='list-none mb-10'>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   First Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Second Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Third Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Fourth Link
                 </a>
               </div>
@@ -174,22 +202,38 @@ const Footer = ({ social }) => {
             </h2>
             <nav className='list-none mb-10'>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   First Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Second Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Third Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Fourth Link
                 </a>
               </div>
@@ -201,22 +245,38 @@ const Footer = ({ social }) => {
             </h2>
             <nav className='list-none mb-10'>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   First Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Second Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Third Link
                 </a>
               </div>
               <div>
-                <a className='text-gray-600 text-sm hover:text-white'>
+                <a
+                  href='https://newtelco.dev'
+                  alt='Link'
+                  className='text-gray-600 text-sm hover:text-white'
+                >
                   Fourth Link
                 </a>
               </div>

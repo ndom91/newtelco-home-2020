@@ -20,7 +20,10 @@ class Slide extends React.Component {
           <p className='flex flex-grow leading-relaxed mb-6 text-sm font-display md:text-base'>
             {testimonial.description}
           </p>
-          <a href={testimonial.url} className='inline-flex items-center'>
+          <a
+            href={testimonial.url || 'https://newtelco.dev'}
+            className='inline-flex items-center'
+          >
             <img
               alt='testimonial slide'
               src='https://dummyimage.com/106x106'

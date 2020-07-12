@@ -28,11 +28,11 @@ const Layout = ({ children, location, pageContext: { locale } }) => {
   return (
     <>
       <HelmetDatoCms>
-        <link rel='preload' href={Rubik300} as='font' />
-        <link rel='preload' href={Rubik400} as='font' />
-        <link rel='preload' href={Raleway200} as='font' />
-        <link rel='preload' href={Raleway100} as='font' />
-        <link rel='preload' href={Raleway500} as='font' />
+        {/* <link rel='preload' href={Rubik300} as='font' /> */}
+        {/* <link rel='preload' href={Rubik400} as='font' /> */}
+        {/* <link rel='preload' href={Raleway200} as='font' /> */}
+        {/* <link rel='preload' href={Raleway100} as='font' /> */}
+        {/* <link rel='preload' href={Raleway500} as='font' /> */}
       </HelmetDatoCms>
       <Reboot />
       <Header location={location} />

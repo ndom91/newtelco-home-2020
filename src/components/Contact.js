@@ -1,5 +1,6 @@
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 import Loadable from 'react-loadable'
@@ -20,7 +21,7 @@ const GoogleMaps = Loadable({
 const Contact = () => {
   const { t } = useTranslation()
   const [ref, inView] = useInView({
-    rootMargin: '200px 0px',
+    rootMargin: '200px 0px 0px 0px',
     triggerOnce: true,
   })
 
@@ -31,7 +32,13 @@ const Contact = () => {
     >
       <div className='container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap'>
         <div className='lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative'>
-          <div className='text-white'>{inView && <GoogleMaps />}</div>
+          <div className='text-white'>
+            {inView && (
+              <motion.div style={{ opacity: inView ? 1 : 0 }}>
+                <GoogleMaps />
+              </motion.div>
+            )}
+          </div>
           <div className='bg-gray-900 relative flex flex-wrap py-6 px-4'>
             <div className='lg:w-1/2 pl-4'>
               <h2 className='title-font font-medium text-green-500 tracking-widest text-sm'>

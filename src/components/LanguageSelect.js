@@ -117,10 +117,11 @@ const LanguageChoiceWrapper = styled.ul`
 const LanguageItemDropdown = styled.li`
   display: list-item;
 
-  width: 60px;
+  width: 50px;
   float: none;
   display: list-item;
   position: relative;
+  margin-right: 5px;
 
   & svg:hover {
     cursor: pointer;

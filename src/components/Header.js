@@ -79,5 +79,5 @@ const Wrapper = styled.div`
   z-index: 999;
   position: sticky;
   top: 0;
-  backdrop-filter: saturate(180%) blur(5px);
+  backdrop-filter: saturate(180%) blur(10px);
 `

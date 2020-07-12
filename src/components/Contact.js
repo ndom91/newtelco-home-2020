@@ -57,7 +57,7 @@ const Contact = () => {
               <a
                 href='mailto:contact@newtelco.de'
                 alt='Email Contact Address'
-                className='text-gray-500 leading-relaxed text-base hover:no-underline hover:text-gray-600'
+                className='text-gray-500 lading-relaxed text-base hover:no-underline hover:text-gray-600'
               >
                 contact@newtelco.de
               </a>

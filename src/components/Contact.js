@@ -54,7 +54,11 @@ const Contact = () => {
               <h2 className='title-font font-medium text-green-500 tracking-widest text-sm'>
                 {t('contact.email')}
               </h2>
-              <a className='text-green-500 leading-relaxed text-base'>
+              <a
+                href='mailto:contact@newtelco.de'
+                alt='Email Contact Address'
+                className='text-gray-500 leading-relaxed text-base hover:no-underline hover:text-gray-600'
+              >
                 contact@newtelco.de
               </a>
               <h2 className='title-font font-medium text-green-500 tracking-widest text-sm mt-4'>

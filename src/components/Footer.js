@@ -119,7 +119,7 @@ const Footer = ({ social }) => {
           </p>
         </div>
         <div className='flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center'>
-          <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
+          <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
             <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
               Locations
             </h2>
@@ -153,7 +153,7 @@ const Footer = ({ social }) => {
               </div>
             </nav>
           </div>
-          <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
+          <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
             <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
               Products
             </h2>
@@ -196,7 +196,7 @@ const Footer = ({ social }) => {
               </div>
             </nav>
           </div>
-          <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
+          <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
             <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
               Services
             </h2>
@@ -239,7 +239,7 @@ const Footer = ({ social }) => {
               </div>
             </nav>
           </div>
-          <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
+          <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
             <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
               Company
             </h2>

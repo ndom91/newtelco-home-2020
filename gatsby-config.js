@@ -90,6 +90,9 @@ module.exports = {
         display: 'minimal-ui',
         lang: 'en',
         icon: 'src/images/favicon.png',
+        icon_options: {
+          purpose: 'maskable',
+        },
         localize: [
           {
             start_url: '/de/',

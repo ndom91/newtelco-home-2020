@@ -1,10 +1,11 @@
 import React from 'react'
-import HelmetDatoCms from 'gatsby-source-datocms'
+import { Helmet } from 'react-helmet'
 
-const StructuredContent = () => (
-  <HelmetDatoCms>
-    <script type='application/ld+json'>
-      {`{
+const StructuredContent = () => {
+  return (
+    <Helmet>
+      <script type='application/ld+json'>
+        {`{
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "image": [
@@ -44,16 +45,17 @@ const StructuredContent = () => (
         },
       ]
     }`}
-    </script>
-    <script type='application/ld+json'>
-      {`{
+      </script>
+      <script type='application/ld+json'>
+        {`{
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "https://newtelco.dev",
       "logo": "https://newtelco.dev/icons/icon-256x256.png"
     }`}
-    </script>
-  </HelmetDatoCms>
-)
+      </script>
+    </Helmet>
+  )
+}
 
 export default StructuredContent

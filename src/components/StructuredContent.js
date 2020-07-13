@@ -42,7 +42,7 @@ const StructuredContent = () => {
           ],
           "opens": "8:00",
           "closes": "18:00"
-        },
+        }
       ]
     }`}
       </script>

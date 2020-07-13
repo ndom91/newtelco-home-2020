@@ -38,7 +38,7 @@ const StructuredContent = () => {
             "Tuesday",
             "Wednesday",
             "Thursday",
-            "Friday",
+            "Friday"
           ],
           "opens": "8:00",
           "closes": "18:00"

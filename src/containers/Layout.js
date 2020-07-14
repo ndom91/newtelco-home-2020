@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import StructuredContent from '../components/StructuredContent'
+import HelmetTags from '../components/HelmetTags'
 import Reboot from '../style/reboot'
 import '../style/globals.css'
 import '../style/fonts.css'
@@ -24,7 +24,7 @@ const Layout = ({ children, location, pageContext: { locale } }) => {
   return (
     <>
       <Reboot />
-      <StructuredContent />
+      <HelmetTags />
       <Header location={location} />
       {children}
       <Footer social={allDatoCmsSocial.nodes} />

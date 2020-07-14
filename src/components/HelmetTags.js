@@ -1,9 +1,23 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-const StructuredContent = () => {
+const HelmetData = () => {
   return (
     <Helmet>
+      <link
+        rel='preload'
+        as='font'
+        href='static/fonts/Rubik_400.woff2'
+        type='font/woff2'
+        crossOrigin
+      />
+      <link
+        rel='preload'
+        as='font'
+        href='static/fonts/Raleway_100.woff2'
+        type='font/woff2'
+        crossOrigin
+      />
       <script type='application/ld+json'>
         {`{
       "@context": "https://schema.org",
@@ -58,4 +72,4 @@ const StructuredContent = () => {
   )
 }
 
-export default StructuredContent
+export default HelmetData

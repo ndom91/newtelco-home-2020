@@ -42,7 +42,7 @@ const Wrapper = styled.div`
   background-color: var(--primary-color);
   transition: box-shadow 250ms ease-in-out, transform 250ms ease-in-out;
 
-  &:nth-child(2n) {
+  &:nth-of-type(2n) {
     top: 35px;
   }
 
@@ -67,7 +67,7 @@ const Value = styled.div`
 `
 
 const Label = styled.div`
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-family: var(--fontfamily-serif);
   font-weight: 300;
   color: #fff;

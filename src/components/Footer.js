@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link, useI18next } from 'gatsby-plugin-react-i18next'
+import slug from 'slug'
 import styled from '@emotion/styled'
 import LogoFull from '../images/NewtelcoFullLogo'
-// import NewtelcoFull from '../images/newtelco-full.png'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
 
-const Footer = ({ social }) => {
+const Footer = ({ products, services, social }) => {
   const today = new Date()
+  const { language } = useI18next()
   const year = today.getFullYear()
 
   const fb = social.find(item => item.provider === 'Facebook').url
@@ -158,42 +160,19 @@ const Footer = ({ social }) => {
               Products
             </h2>
             <nav className='list-none mb-10'>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
-                >
-                  First Link
-                </a>
-              </div>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
-                >
-                  Second Link
-                </a>
-              </div>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
-                >
-                  Third Link
-                </a>
-              </div>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
-                >
-                  Fourth Link
-                </a>
-              </div>
+              {products &&
+                products.map(product => (
+                  <div key={product.title}>
+                    <Link
+                      to={`/products/${slug(product.title)}`}
+                      language={language}
+                      aria-label={`${product.title} Link`}
+                      className='text-gray-600 text-sm hover:text-white'
+                    >
+                      {product.title}
+                    </Link>
+                  </div>
+                ))}
             </nav>
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
@@ -201,42 +180,19 @@ const Footer = ({ social }) => {
               Services
             </h2>
             <nav className='list-none mb-10'>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
-                >
-                  First Link
-                </a>
-              </div>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
-                >
-                  Second Link
-                </a>
-              </div>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
-                >
-                  Third Link
-                </a>
-              </div>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
-                >
-                  Fourth Link
-                </a>
-              </div>
+              {services &&
+                services.map(service => (
+                  <div key={service.title}>
+                    <Link
+                      to={`/services/${slug(service.title)}`}
+                      language={language}
+                      aria-label={`${service.title} Link`}
+                      className='text-gray-600 text-sm hover:text-white'
+                    >
+                      {service.title}
+                    </Link>
+                  </div>
+                ))}
             </nav>
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>

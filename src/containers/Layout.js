@@ -7,15 +7,26 @@ import Reboot from '../style/reboot'
 import '../style/globals.css'
 import '../style/fonts.css'
 
-const Layout = ({ children, location, pageContext: { locale } }) => {
-  const { allDatoCmsSocial } = useStaticQuery(
+const Layout = ({ children, location, data, pageContext }) => {
+  // console.log(location, data, pageContext)
+  const { social, products, services } = useStaticQuery(
     graphql`
       query {
-        allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
+        social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
           nodes {
             provider
             url
             locale
+          }
+        }
+        products: allDatoCmsProduct(filter: { locale: { eq: "en" } }) {
+          nodes {
+            title
+          }
+        }
+        services: allDatoCmsService(filter: { locale: { eq: "en" } }) {
+          nodes {
+            title
           }
         }
       }
@@ -27,7 +38,11 @@ const Layout = ({ children, location, pageContext: { locale } }) => {
       <HelmetTags />
       <Header location={location} />
       {children}
-      <Footer social={allDatoCmsSocial.nodes} />
+      <Footer
+        social={social.nodes}
+        products={products.nodes}
+        services={services.nodes}
+      />
     </>
   )
 }

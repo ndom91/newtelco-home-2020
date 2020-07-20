@@ -48,6 +48,7 @@ const Hero = React.memo(function Hero({ data, img }) {
               target='_blank'
               alt={`Email to ${ctaEmail}`}
               href={`mailto:${ctaEmail}`}
+              to={`mailto:${ctaEmail}`}
               className='z-10 hover:no-underline important'
             >
               <button className='z-10 shadow shadow-base transition transition-colors duration-500 ease-in-out font-body flex mx-auto mt-6 text-white text-lg bg-green-500 border-0 py-2 px-4 focus:shadow-outline focus:outline-none hover:bg-green-600 rounded'>

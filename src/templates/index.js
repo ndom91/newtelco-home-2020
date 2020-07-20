@@ -106,6 +106,20 @@ export const query = graphql`
         }
       }
     }
+    services: allDatoCmsService(
+      filter: { locale: { eq: $language }, onHomepage: { eq: true } }
+    ) {
+      nodes {
+        shortText
+        title
+        image {
+          alt
+          fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
     testimonials: allDatoCmsTestimonial(filter: { locale: { eq: $language } }) {
       nodes {
         description

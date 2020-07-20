@@ -1,10 +1,18 @@
 const path = require('path')
 const slugify = require('slug')
-const locales = require('./src/consts/locales')
+// const locales = require('./src/consts/locales')
 
 // eslint-disable-next-line
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+
+  const localeQuery = await graphql(`
+    {
+      datoCmsSite {
+        locales
+      }
+    }
+  `)
 
   // // Homepage
   // locales.forEach(locale => {
@@ -15,19 +23,19 @@ exports.createPages = async ({ graphql, actions }) => {
   //     context: { locale },
   //   })
   // })
-  createPage({
-    path: '/',
-    component: path.resolve(`./src/templates/index.js`),
-    /* context: { locale }, */
-  })
 
   /* Create pages defined in code, i.e. pages that are "baked-in", but have localized content defined in dato */
-  const createBlogsPosts = async (resolve, reject) => {
+  const createProductPages = async (resolve, reject) => {
     Promise.all(
-      locales.map(locale => {
+      localeQuery.data.datoCmsSite.locales.map(locale => {
         graphql(`
         {
           products: allDatoCmsProduct(filter: {locale: { eq: "${locale}" }}) {
+            nodes {
+              title
+            }
+          }
+          services: allDatoCmsService(filter: {locale: { eq: "${locale}" }}) {
             nodes {
               title
             }
@@ -37,8 +45,16 @@ exports.createPages = async ({ graphql, actions }) => {
           result.data['products'].nodes.forEach(page => {
             const slug = slugify(page.title)
             createPage({
-              path: `${locale}/${slug}`,
-              component: path.resolve('./src/templates/products/index.js'),
+              path: `/products/${slug}`,
+              component: path.resolve('./src/templates/product.js'),
+              context: { locale: locale, title: page.title },
+            })
+          })
+          result.data['services'].nodes.forEach(page => {
+            const slug = slugify(page.title)
+            createPage({
+              path: `/services/${slug}`,
+              component: path.resolve('./src/templates/service.js'),
               context: { locale: locale, title: page.title },
             })
           })
@@ -46,6 +62,33 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     )
   }
+
+  createPage({
+    path: '/',
+    component: path.resolve('./src/templates/index.js'),
+    /* context: { locale }, */
+  })
+  createPage({
+    path: '/services',
+    component: path.resolve('./src/templates/services.js'),
+    /* context: { locale }, */
+  })
+  createPage({
+    path: '/products',
+    component: path.resolve('./src/templates/products.js'),
+    /* context: { locale }, */
+  })
+  createPage({
+    path: '/team',
+    component: path.resolve('./src/templates/team.js'),
+    /* context: { locale }, */
+  })
+  createPage({
+    path: '/about',
+    component: path.resolve('./src/templates/about.js'),
+    /* context: { locale }, */
+  })
+  createProductPages()
 }
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {

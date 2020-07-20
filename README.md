@@ -1,6 +1,6 @@
-<img align="right" src="https://imgur.com/ham4LFb.png" height="256" />
+<img align="right" src="https://imgur.com/ham4LFb.png" height="325" />
 
-# Newtelco GmbH
+# Newtelco GmbH  
 
 > 2020 Homepage
 

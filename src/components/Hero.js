@@ -59,7 +59,7 @@ const Hero = React.memo(function Hero({ data, img }) {
           <Blob10
             alt='Lines from Text Blob'
             width='200px'
-            className='absolute bottom-0 left-0 mb-2 ml-64 z-10'
+            className='absolute bottom-0 left-0 mb-2 ml-72 z-10'
           />
           <motion.div
             style={{

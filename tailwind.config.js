@@ -6,6 +6,9 @@ module.exports = {
         '40-screen': '40vw',
         '76': '20rem',
       },
+      margin: {
+        '72': '18rem',
+      },
       inset: {
         '-2': '-2rem',
         '1/2': '-50%',

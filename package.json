@@ -1,7 +1,7 @@
 {
   "name": "newtelco-datocms",
-  "description": "Newtelco 2020 Homepage",
-  "version": "0.3.1",
+  "description": "NewTelco GmbH",
+  "version": "0.4.0",
   "author": "Nico Domino <ndomino@newtelco.de>",
   "keywords": [
     "gatsby",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/brohlson/gatsby-datocms-starter"
+    "url": "git+https://github.com/newtelco/newtelco-dato.git"
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.19.14",

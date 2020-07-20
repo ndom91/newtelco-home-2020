@@ -1,17 +1,19 @@
 <img align="right" src="https://imgur.com/ham4LFb.png" height="256" />
 
-# Newtelco 2020 Homepage
+# Newtelco GmbH
+
+> 2020 Homepage
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d316877a-7bbc-441f-9e38-00eff63fea8f/deploy-status)](https://app.netlify.com/sites/gatsby-dato/deploys)
 ![Github](https://img.shields.io/github/last-commit/newtelco/newtelco-dato)
 ![GitHub](https://img.shields.io/github/license/newtelco/newtelco-dato)
-![Twitter](https://img.shields.io/twitter/follow/newtelcode?label=%40NewtelcoDE&style=social)
 
 ## 🥞 Stack
 - Gatsby 
-- Headless CMS (DatoCMS)
+- DatoCMS (Headless CMS)
 - TailwindCSS
 - Emotion JS-in-CSS
+- Framer-Motion
 - react-i18next
 - eslint / prettier
 

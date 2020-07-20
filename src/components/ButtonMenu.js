@@ -29,7 +29,7 @@ const ButtonHamburger = styled.button`
   border: none;
   position: absolute;
   border-radius: 3px;
-  top: 0.5rem;
+  top: 1rem;
   right: 1.5rem;
   z-index: 59999;
   &:focus {

@@ -1,20 +1,21 @@
 import React from 'react'
-import { Link } from 'gatsby-plugin-react-i18next'
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
 import LanguageSelect from './LanguageSelect'
 import newtelcoLogo from '../images/newtelco-white.png'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import styled from '@emotion/styled'
 
 const OverlayMenu = ({ toggleMenu, isOpen }) => {
+  const { t } = useTranslation()
   const x = useMotionValue(10)
   const y = useTransform(x, value => value * 2)
 
   const menuItems = [
     { name: 'Home', link: '/' },
-    { name: 'Products', link: '/products' },
-    { name: 'Services', link: '/services' },
-    { name: 'Company', link: '/company' },
-    { name: 'About', link: '/about' },
+    { name: t('menu.products'), link: '/products' },
+    { name: t('menu.services'), link: '/services' },
+    { name: t('menu.team'), link: '/team' },
+    { name: t('menu.about'), link: '/about' },
   ]
 
   const list = {
@@ -101,8 +102,8 @@ const OverlayWrapper = styled.div`
 `
 
 const NavNumber = styled.div`
-  font-family: monospace;
-  font-weight: 600;
+  font-family: var(--fontfamily-mono);
+  font-weight: 100;
   font-size: 1.7rem;
   color: #67b246;
   display: inline-block;
@@ -158,8 +159,8 @@ const NavigationLink = styled(Link)`
   z-index: 101;
   text-align: left;
   font-size: 2.2rem;
-  font-family: 'Raleway';
-  font-weight: 100;
+  font-family: var(--fontfamily-all);
+  font-weight: 200;
   &.active {
     &:after {
       position: absolute;

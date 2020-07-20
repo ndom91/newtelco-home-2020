@@ -44,7 +44,6 @@ const Wrapper = styled.div`
 
   ${media.tabletSmall`
     height: 1250px;
-    margin: 300px 0 0 0;
   `}
 `
 

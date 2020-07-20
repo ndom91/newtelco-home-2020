@@ -68,11 +68,11 @@ const Value = styled.div`
 
 const Label = styled.div`
   font-size: 1.8rem;
-  font-family: var(--fontfamily-body);
+  font-family: var(--fontfamily-serif);
   font-weight: 300;
   color: #fff;
   ${media.tabletSmall`
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   `}
 `
 

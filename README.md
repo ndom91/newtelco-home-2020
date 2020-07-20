@@ -15,12 +15,6 @@
 - react-i18next
 - eslint / prettier
 
-## 🚧 Contributing
-
-To contribute to the content, you must login to our headless CMS ([Dato CMS](https://dato.newtelco.dev)).
-
-We also use [Markup.io](https://app.markup.io) to work on the design of the page together. 
-
 ## 🏗️ Installation
 1. `git clone https://github.com/newtelco/newtelco-dato`
 2. `cd newtelco-dato && npm install`

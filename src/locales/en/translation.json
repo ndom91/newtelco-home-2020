@@ -1,16 +1,16 @@
 {
-	"welcome": "NewTelco GmbH",
-	"subtitle": {
-		"1": "The Datacenter Company",
-		"2": "The Help You Reach Your Goals Company",
-		"3": "The Interconnection Company"
-	},
-	"menu": {
-		"products": "Products",
-		"services": "Services",
-		"team": "Team",
-		"about": "About"
-	},
+  "welcome": "NewTelco GmbH",
+  "subtitle": {
+    "1": "The Datacenter Company",
+    "2": "The Help You Reach Your Goals Company",
+    "3": "The Interconnection Company"
+  },
+  "menu": {
+    "products": "Products",
+    "services": "Services",
+    "team": "Team",
+    "about": "About"
+  },
   "products": "Products",
   "trustedby": "Trusted By",
   "products_byline": "",
@@ -22,5 +22,11 @@
     "send": "Send",
     "address": "Address",
     "phone": "Phone"
+  },
+  "stats": {
+    "racks": "Racks",
+    "datacenter": "Datacenters",
+    "tbps": "Tbps",
+    "watts": "kWh"
   }
 }

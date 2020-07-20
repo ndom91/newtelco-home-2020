@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
-// import Testimonials from '../components/Testimonials'
 import Products from '../components/Products'
+import RackStats from '../components/RackStats'
 
 import Loadable from 'react-loadable'
 const Contact = Loadable({
@@ -30,6 +30,7 @@ export default function IndexPage({ data }) {
       />
       <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
         <Hero data={data.home} img={data.img} />
+        <RackStats />
         <Products products={data.products} />
         <Testimonials
           partners={data.partners.nodes}

@@ -4,6 +4,14 @@
 
 @import "tailwindcss/utilities";
 
+:root {
+  --primary-color: #67b246;
+  --fontfamily-header: 'Raleway', sans-serif;
+  --fontfamily-body: 'Rubik', sans-serif;
+  --fontfamily-mono: 'IBM Plex Mono', sans-serif;
+  --fontfamily-all: 'Roboto', sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: #111111;

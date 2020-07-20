@@ -1,16 +1,16 @@
 {
-	"welcome": "NewTelco GmbH",
-	"subtitle": {
-		"1": "Die Rechenzentrum Firma",
-		"2": "Die Bringe Dich zum Ziel Firma",
-		"3": "Die Interconnection Firma"
-	},
-	"menu": {
-		"products": "Produkte",
-		"services": "Dienstleistung",
-		"team": "Team",
-		"about": "About"
-	},
+  "welcome": "NewTelco GmbH",
+  "subtitle": {
+    "1": "Die Rechenzentrum Firma",
+    "2": "Die Bringe Dich zum Ziel Firma",
+    "3": "Die Interconnection Firma"
+  },
+  "menu": {
+    "products": "Produkte",
+    "services": "Dienstleistung",
+    "team": "Team",
+    "about": "About"
+  },
   "products": "Produkte",
   "trustedby": "Vertraut Von",
   "products_byline": "",
@@ -22,5 +22,11 @@
     "send": "Senden",
     "address": "Adresse",
     "phone": "Telefon"
+  },
+  "stats": {
+    "racks": "Racks",
+    "datacenter": "Rechenzentren",
+    "tbps": "Tbps",
+    "watts": "kWh"
   }
 }

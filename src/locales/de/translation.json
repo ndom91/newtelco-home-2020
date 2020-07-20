@@ -21,7 +21,10 @@
     "message": "Nachricht",
     "send": "Senden",
     "address": "Adresse",
-    "phone": "Telefon"
+    "phone": "Telefon",
+    "tos1": "Hiermit stimmen Sie unseren",
+    "tos2": "AGB's",
+    "tos3": "zu"
   },
   "stats": {
     "racks": "Racks",

@@ -69,7 +69,7 @@ const Contact = () => {
           </div>
         </div>
         <form
-          className='lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0'
+          className='lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full mx-8 md:mx-0 md:py-8 mt-8 md:mt-0'
           name='Contact Form'
           method='POST'
           data-netlify='true'
@@ -110,15 +110,15 @@ const Contact = () => {
             {t('contact.send')}
           </button>
           <p className='text-xs text-gray-700 mt-3 flex justify-center'>
-            By sending us your data, you agree to our{' '}
+            {t('contact.tos1')}
             <a
               href='/privacy'
               alt='Terms of Service'
               className='text-gray-800 hover:text-gray-600 hover:no-underline transition transition-colors duration-300 ease-in-out'
             >
-              Terms of Service
+              &nbsp; {t('contact.tos2')}
             </a>
-            .
+            &nbsp; {t('contact.tos3')}
           </p>
         </form>
       </div>

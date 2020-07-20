@@ -21,7 +21,10 @@
     "message": "Message",
     "send": "Send",
     "address": "Address",
-    "phone": "Phone"
+    "phone": "Phone",
+    "tos1": "By pressing Send, you are agreeing to our",
+    "tos2": "Terms of Service",
+    "tos3": ""
   },
   "stats": {
     "racks": "Racks",

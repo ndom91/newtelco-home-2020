@@ -10,12 +10,12 @@ const RackStats = () => {
   const { t } = useTranslation()
 
   const [ref, inView] = useInView({
-    threshold: 0.1,
     triggerOnce: true,
+    threshold: 0.1,
   })
 
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <SvgImage />
       <ContentWrapper>
         <Datacenter
@@ -24,7 +24,7 @@ const RackStats = () => {
           className={inView ? 'imageInView' : ''}
           loading='lazy'
         />
-        <Content ref={ref}>
+        <Content>
           <StatBlock inView={inView} label={t('stats.racks')} value={457} />
           <StatBlock inView={inView} label={t('stats.datacenter')} value={26} />
           <StatBlock inView={inView} label={t('stats.tbps')} value={1340} />
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   position: relative;
 
   ${media.tabletSmall`
-    height: 1250px;
+    height: 1000px;
   `}
 `
 

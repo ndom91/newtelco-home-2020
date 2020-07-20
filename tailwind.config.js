@@ -47,7 +47,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: 'Rubik',
+      display: 'Libre Baskerville',
       body: 'Raleway',
     },
   },

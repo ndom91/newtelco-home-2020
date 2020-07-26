@@ -43,7 +43,7 @@ const HorizontalScroll = ({ children }) => {
   const objectRef = useRef()
   // useEffect(() =>
   scrollY.onChange(latest => {
-    setTranslateX(latest - 1600)
+    setTranslateX(latest - 1800)
   })
   // , [])
 

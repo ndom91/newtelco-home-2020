@@ -149,6 +149,7 @@ export const query = graphql`
           }
         }
         jobTitle
+        contactmethod
       }
     }
   }

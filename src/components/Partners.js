@@ -109,6 +109,7 @@ const Logo = styled.img`
 
 const Wrapper = styled.div`
   width: 100vw;
+  overflow-x: hidden;
   position: relative;
   left: 50%;
   right: 50%;

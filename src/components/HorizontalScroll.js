@@ -10,10 +10,10 @@ const TallOuterContainer = styled.div`
 
 const StickyInnerContainer = styled.div`
   position: sticky;
-  top: 0px;
+  top: 200px;
   height: 100vh;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 `
 
 const HorizontalTranslateContainer = styled.div(props => ({
@@ -43,7 +43,7 @@ const HorizontalScroll = ({ children }) => {
   const objectRef = useRef()
   // useEffect(() =>
   scrollY.onChange(latest => {
-    setTranslateX(latest - 1800)
+    setTranslateX(latest - 1600)
   })
   // , [])
 
@@ -60,6 +60,19 @@ const HorizontalScroll = ({ children }) => {
   return (
     <TallOuterContainer dynamicHeight={dynamicHeight}>
       <StickyInnerContainer>
+        <div className='flex justify-between w-full mb-20'>
+          <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto'>
+            <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-hairline'>
+              Team
+            </h1>
+            <div className='h-1 w-20 bg-green-500 rounded'></div>
+          </div>
+          <p className='flex-grow max-w-2xl w-full leading-relaxed text-base text-gray-500'>
+            Newtelco offers many products and services for our customers, below
+            you will find some of our more popular offerings. To learn more,
+            just click on the associated button to continue!
+          </p>
+        </div>
         <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
           {children}
         </HorizontalTranslateContainer>

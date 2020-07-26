@@ -4,6 +4,7 @@ import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Products from '../components/Products'
 import RackStats from '../components/RackStats'
+import Team from '../components/Team'
 
 import Loadable from 'react-loadable'
 const Contact = Loadable({
@@ -31,6 +32,7 @@ export default function IndexPage({ data }) {
       <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
         <Hero data={data.home} img={data.img} />
         <RackStats />
+        <Team members={data.team} />
         <Products products={data.products} />
         <Testimonials
           partners={data.partners.nodes}
@@ -125,6 +127,24 @@ export const query = graphql`
         description
         company
         person
+      }
+    }
+    team: allDatoCmsTeam(filter: { locale: { eq: $language } }) {
+      nodes {
+        name
+        image {
+          fluid(
+            imgixParams: {
+              auto: "format"
+              fit: "max"
+              crop: "entropy"
+              w: "300"
+            }
+          ) {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+        jobTitle
       }
     }
   }

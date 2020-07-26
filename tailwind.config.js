@@ -50,7 +50,11 @@ module.exports = {
       },
     },
     fontFamily: {
+      header: 'Raleway',
+      serif: 'Libre Baskerville',
+      mono: 'IBM Plex Mono',
       display: 'Libre Baskerville',
+      all: 'Roboto',
       body: 'Raleway',
     },
   },

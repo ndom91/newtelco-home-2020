@@ -130,7 +130,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
+                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   First Link
                 </a>
@@ -139,7 +139,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
+                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Second Link
                 </a>
@@ -148,7 +148,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
+                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Third Link
                 </a>
@@ -167,7 +167,7 @@ const Footer = ({ products, services, social }) => {
                       to={`/products/${slug(product.title)}`}
                       language={language}
                       aria-label={`${product.title} Link`}
-                      className='text-gray-600 text-sm hover:text-white'
+                      className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                     >
                       {product.title}
                     </Link>
@@ -187,7 +187,7 @@ const Footer = ({ products, services, social }) => {
                       to={`/services/${slug(service.title)}`}
                       language={language}
                       aria-label={`${service.title} Link`}
-                      className='text-gray-600 text-sm hover:text-white'
+                      className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                     >
                       {service.title}
                     </Link>
@@ -204,7 +204,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
+                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   First Link
                 </a>
@@ -213,7 +213,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
+                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Second Link
                 </a>
@@ -222,7 +222,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
+                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Third Link
                 </a>
@@ -231,7 +231,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white'
+                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Fourth Link
                 </a>

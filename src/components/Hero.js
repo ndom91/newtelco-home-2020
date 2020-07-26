@@ -34,7 +34,7 @@ const Hero = React.memo(function Hero({ data, img }) {
       </motion.div>
       <div className='relative mx-auto flex md:px-5 py-0 sm:py-24 md:flex-row flex-col-reverse items-end'>
         <div className='relative lg:flex-grow w-full md:w-1/2 flex flex-col md:text-left -mt-8 md:mb-0 items-left'>
-          <h1 className='z-10 font-display sm:text-4xl text-3xl font-medium text-white text-left md:whitespace-no-wrap'>
+          <h1 className='z-10 font-mono font-semibold sm:text-4xl text-3xl text-white text-left md:whitespace-no-wrap'>
             {t('welcome')}
           </h1>
           <Typed

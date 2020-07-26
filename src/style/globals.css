@@ -6,10 +6,10 @@
 
 :root {
   --primary-color: #67b246;
-  --fontfamily-header: 'Raleway', sans-serif;
-  --fontfamily-serif: 'Libre Baskerville', serif;
-  --fontfamily-mono: 'IBM Plex Mono', monospace;
-  --fontfamily-all: 'Roboto', sans-serif;
+  --font-header: 'Raleway', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-all: 'Roboto', sans-serif;
 }
 
 html {

@@ -31,5 +31,8 @@
     "datacenter": "Rechenzentren",
     "tbps": "Tbps",
     "watts": "kWh"
+  },
+  "team": {
+    "headline": "Team"
   }
 }

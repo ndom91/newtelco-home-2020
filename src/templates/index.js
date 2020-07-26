@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { motion } from 'framer-motion'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Products from '../components/Products'
@@ -29,9 +30,9 @@ export default function IndexPage({ data }) {
         favicon={data.seo.faviconMetaTags}
         global={data.seo.globalSeo}
       />
-      <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
+      <div className='flex flex-col justify-start items-center max-w-100 bg-gray-900'>
         <Hero data={data.home} img={data.img} />
-        <RackStats />
+        <RackStats className='overflow-hidden max-w-100' />
         <Team members={data.team} />
         <Products products={data.products} />
         <Testimonials
@@ -129,7 +130,10 @@ export const query = graphql`
         person
       }
     }
-    team: allDatoCmsTeam(filter: { locale: { eq: $language } }) {
+    team: allDatoCmsTeam(
+      filter: { locale: { eq: $language } }
+      sort: { order: ASC, fields: order }
+    ) {
       nodes {
         name
         image {

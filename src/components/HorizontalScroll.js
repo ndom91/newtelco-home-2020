@@ -1,28 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useViewportScroll } from 'framer-motion'
 import styled from '@emotion/styled'
 
-// const TallOuterContainer = styled.div.attrs(({ dynamicHeight }) => ({
-//   style: { height: `${dynamicHeight}px` },
-// }))`
 const TallOuterContainer = styled.div`
-  height: ${props => (props.dynamicHeight ? props.dynamicHeight : 100)}px;
+  height: ${props => props.dynamicHeight}px;
   position: relative;
   width: 100%;
 `
 
 const StickyInnerContainer = styled.div`
   position: sticky;
-  top: 0;
+  top: 0px;
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
 `
 
-// const HorizontalTranslateContainer = styled.div.attrs(({ translateX }) => ({
-//   style: { transform: `translateX(${translateX}px)` },
-// }))`
 const HorizontalTranslateContainer = styled.div(props => ({
-  transform: `translateX(${props.translateX}px)`,
+  transform: `translateX(-${props.translateX}px)`,
   position: 'absolute',
   height: '100%',
   willChange: 'transform',
@@ -40,20 +35,17 @@ const handleDynamicHeight = (ref, setDynamicHeight) => {
   setDynamicHeight(dynamicHeight)
 }
 
-const applyScrollListener = (ref, setTranslateX) => {
-  window.addEventListener('scroll', () => {
-    const offsetTop = -ref.current.offsetTop
-    console.log(offsetTop)
-    setTranslateX(offsetTop)
-  })
-}
-
 const HorizontalScroll = ({ children }) => {
+  const { scrollY } = useViewportScroll()
   const [dynamicHeight, setDynamicHeight] = useState(null)
   const [translateX, setTranslateX] = useState(0)
 
-  const containerRef = useRef()
   const objectRef = useRef()
+  // useEffect(() =>
+  scrollY.onChange(latest => {
+    setTranslateX(latest - 1800)
+  })
+  // , [])
 
   const resizeHandler = () => {
     handleDynamicHeight(objectRef, setDynamicHeight)
@@ -62,12 +54,12 @@ const HorizontalScroll = ({ children }) => {
   useEffect(() => {
     handleDynamicHeight(objectRef, setDynamicHeight)
     window.addEventListener('resize', resizeHandler)
-    applyScrollListener(containerRef, setTranslateX)
+    // applyScrollListener(containerRef, setTranslateX)
   }, [])
 
   return (
     <TallOuterContainer dynamicHeight={dynamicHeight}>
-      <StickyInnerContainer ref={containerRef}>
+      <StickyInnerContainer>
         <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
           {children}
         </HorizontalTranslateContainer>

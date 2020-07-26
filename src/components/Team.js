@@ -16,26 +16,18 @@ const Team = ({ members }) => {
   const { t } = useTranslation()
 
   return (
-    <HorizontalSection>
-      <HorizontalScroll>
-        <CardsContainer>
-          {members.nodes &&
-            members.nodes.map(member => {
-              return <TeamMember member={member} key={member.name} />
-            })}
-        </CardsContainer>
-      </HorizontalScroll>
-    </HorizontalSection>
+    <HorizontalScroll>
+      <CardsContainer>
+        {members.nodes &&
+          members.nodes.map(member => {
+            return <TeamMember member={member} key={member.name} />
+          })}
+      </CardsContainer>
+    </HorizontalScroll>
   )
 }
 
 export default Team
-
-const BumperSection = styled.section`
-  text-align: center;
-  padding: 128px 16px;
-  background-color: #efefef;
-`
 
 const CardsContainer = styled.div`
   position: relative;

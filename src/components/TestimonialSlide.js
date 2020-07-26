@@ -22,7 +22,7 @@ class Slide extends React.Component {
           </p>
           <a
             href={testimonial.url || 'https://newtelco.dev'}
-            className='inline-flex items-center'
+            className='inline-flex items-center hover:no-underline'
           >
             <img
               alt='testimonial slide'

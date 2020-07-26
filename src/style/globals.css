@@ -26,6 +26,10 @@ html {
   font-feature-settings: 'dlig', 'zero', 'ss01', 'cv05', 'cv10';
 }
 
+body { 
+  overflow-x: hidden;
+}
+
 @supports (font-variation-settings: normal) {
   html {
     font-family: 'Roboto', sans-serif;

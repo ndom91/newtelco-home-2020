@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 import TeamMember from './TeamMember'
 import styled from '@emotion/styled'
-// import media from '../style/mq'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import HorizontalScroll from './HorizontalScroll'
 

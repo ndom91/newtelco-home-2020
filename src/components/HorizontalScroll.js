@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useViewportScroll } from 'framer-motion'
+import Blob from '../images/illustrations/blobs/blob16.svg'
 import styled from '@emotion/styled'
 
 const TallOuterContainer = styled.div`
@@ -10,7 +11,7 @@ const TallOuterContainer = styled.div`
 
 const StickyInnerContainer = styled.div`
   position: sticky;
-  top: 200px;
+  top: 150px;
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -60,17 +61,20 @@ const HorizontalScroll = ({ children }) => {
   return (
     <TallOuterContainer dynamicHeight={dynamicHeight}>
       <StickyInnerContainer>
-        <div className='flex justify-between w-full mb-20'>
+        <div className='flex justify-between w-full mb-20 mt-12'>
           <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto'>
             <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-hairline'>
               Team
             </h1>
             <div className='h-1 w-20 bg-green-500 rounded'></div>
           </div>
-          <p className='flex-grow max-w-2xl w-full leading-relaxed text-base text-gray-500'>
-            Newtelco offers many products and services for our customers, below
-            you will find some of our more popular offerings. To learn more,
-            just click on the associated button to continue!
+          <p className='flex-grow max-w-2xl w-full leading-relaxed text-base text-gray-500 overflow-visible'>
+            <Blob className='absolute -ml-12 -mt-12' />
+            <span className='relative z-20'>
+              Newtelco offers many products and services for our customers,
+              below you will find some of our more popular offerings. To learn
+              more, just click on the associated button to continue!
+            </span>
           </p>
         </div>
         <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>

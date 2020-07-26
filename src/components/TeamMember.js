@@ -45,8 +45,8 @@ const TeamMember = ({ member }) => {
           )}
           {member.contactmethod.linkedin && (
             <a
-              href={`mailto:${member.contactmethod.email}`}
-              alt={`mailto ${member.name}`}
+              href={member.contactmethod.linkedin}
+              alt={`${member.name} LinkedIn`}
               className='text-gray-700 hover:text-green-500 transition transition-color duration-300 ease-in-out'
             >
               <svg height='32' width='32' viewBox='0 0 24 24'>

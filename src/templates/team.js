@@ -4,14 +4,21 @@ import SEO from '../components/SEO'
 
 export default function TeamPage({ data }) {
   console.log(data)
-  const { seo, products } = data
+  const { seo, team } = data
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
       <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
         <section className='relative text-gray-500 bg-gray-900 body-font mb-8 w-4/5 max-w-screen-lg'>
-          Team!
-          {JSON.stringify(products).substr(0, 100)}
+          {team &&
+            team.nodes.map(member => {
+              return (
+                <div key={member.name}>
+                  <h1>{member.name}</h1>
+                  <p>{member.jobTitle}</p>
+                </div>
+              )
+            })}
         </section>
       </div>
     </>
@@ -39,12 +46,15 @@ export const query = graphql`
         }
       }
     }
-    products: allDatoCmsProduct(
-      filter: { locale: { eq: $language }, onHomepage: { eq: true } }
+    team: allDatoCmsTeam(
+      sort: { order: ASC, fields: order }
+      filter: { locale: { eq: $language } }
     ) {
       nodes {
-        shortText
-        title
+        name
+        jobTitle
+        description
+        order
         image {
           alt
           fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {

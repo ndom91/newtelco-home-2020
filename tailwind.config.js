@@ -24,6 +24,9 @@ module.exports = {
         focus: '0 0 0 3px rgba(103, 178, 70, 0.5)',
         outline: '0 0 0 3px rgba(103, 178, 70, 0.5)',
       },
+      stroke: theme => ({
+        green: theme('colors.green.500'),
+      }),
       colors: {
         green: {
           100: '#edfbd8',
@@ -58,7 +61,9 @@ module.exports = {
       body: 'Raleway',
     },
   },
-  variants: {},
+  variants: {
+    stroke: ['responsive', 'hover', 'focus'],
+  },
   plugins: [],
   purge: false,
 }

@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
             createPage({
               path: `/products/${slug}`,
               component: path.resolve('./src/templates/product.js'),
-              context: { locale: locale, title: page.title },
+              context: { ...page.context, title: page.title },
             })
           })
           result.data['services'].nodes.forEach(page => {
@@ -55,7 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
             createPage({
               path: `/services/${slug}`,
               component: path.resolve('./src/templates/service.js'),
-              context: { locale: locale, title: page.title },
+              context: { ...page.context, title: page.title },
             })
           })
         })

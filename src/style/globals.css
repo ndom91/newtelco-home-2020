@@ -42,10 +42,10 @@ body {
 }
 
 ::selection {
-  background: #67b246; /* WebKit/Blink Browsers */
+  background: #898989; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: #67b246; /* Gecko Browsers */
+  background: #898989; /* Gecko Browsers */
 }
 
 ::-webkit-scrollbar-track,

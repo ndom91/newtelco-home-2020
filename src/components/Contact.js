@@ -10,7 +10,7 @@ const GoogleMaps = Loadable({
   loading() {
     return (
       <div
-        style={{ height: '515px', width: '700px' }}
+        styl={{ height: '515px', width: '70px' }}
         className='text-white font-display font-hairline'
       >
         Loading...
@@ -40,7 +40,7 @@ const Contact = () => {
         <div className='lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative'>
           <div className='text-white'>
             {inView && (
-              <motion.div style={{ opacity: inView ? 1 : 0 }}>
+              <motion.div syle={{ opacity: 1, inView: 0 }}>
                 <GoogleMaps />
               </motion.div>
             )}
@@ -90,7 +90,7 @@ const Contact = () => {
           <p className='leading-relaxed mb-5 text-gray-600 font-body font-thin'>
             {t('contact.header')}
           </p>
-          <div>
+          <ContactInputWrapper>
             <ContactInput
               className={contact.name.length > 0 ? 'filled' : ''}
               value={contact.name}
@@ -102,8 +102,8 @@ const Contact = () => {
             <ContactLabel className={contact.name.length > 0 ? 'filled' : ''}>
               <ContactLabelContent>{t('contact.name')}</ContactLabelContent>
             </ContactLabel>
-          </div>
-          <div>
+          </ContactInputWrapper>
+          <ContactInputWrapper>
             <ContactInput
               className={contact.email.length > 0 ? 'filled' : ''}
               value={contact.email}
@@ -114,8 +114,8 @@ const Contact = () => {
             <ContactLabel className={contact.email.length > 0 ? 'filled' : ''}>
               <ContactLabelContent>{t('contact.email')}</ContactLabelContent>
             </ContactLabel>
-          </div>
-          <div>
+          </ContactInputWrapper>
+          <ContactInputWrapper>
             <ContactTextarea
               className={contact.message.length > 0 ? 'filled' : ''}
               value={contact.message}
@@ -128,20 +128,7 @@ const Contact = () => {
             >
               <ContactLabelContent>{t('contact.message')}</ContactLabelContent>
             </ContactLabel>
-          </div>
-          {/* <input */}
-          {/* 	className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline  text-base text-white px-4 py-2 mb-4 bg-opacity-25' */}
-          {/* 	name='email' */}
-          {/* 	aria-label='Email' */}
-          {/* 	placeholder={t('contact.email')} */}
-          {/* 	type='email' */}
-          {/* /> */}
-          {/* <textarea */}
-          {/* 	className='transition duration-200 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 rounded border border-gray-700 h-32  text-base text-white px-4 py-2 mb-4 resize-none bg-opacity-25' */}
-          {/* 	aria-label='Message' */}
-          {/* 	name='message' */}
-          {/* 	placeholder={t('contact.message')} */}
-          {/* ></textarea> */}
+          </ContactInputWrapper>
           <button
             type='submit'
             className='text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg'
@@ -166,39 +153,44 @@ const Contact = () => {
 }
 
 const ContactLabel = styled.label`
-  display: inline-block;
-  float: right;
-  padding: 0 1em;
-  width: 40%;
-  font-weight: 100;
-  font-size: 70.25%;
-  position: relative;
+  position: absolute;
+  left: 0;
+  padding: 0 0.85em;
   width: 100%;
-  color: #bcbcbc;
+  height: 100%;
   text-align: left;
+  pointer-events: none;
 
   &:before {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    width: 100%;
-    height: 3.6em;
-    background: #292929;
-    transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
-    transform-origin: 50% 100%;
-    transition: transform 0.3s;
+    border-top: 2px solid #292929;
+    transform: translate3d(0, 100%, 0) translate3d(0, -2px, 0);
   }
 
+  &:after {
+    transform: scale3d(1, 0, 1);
+    z-index: -1;
+    background: #292929;
+    transform-origin: 50% 0%;
+  }
+
+  &.filled::before {
+    transition-delay: 0s;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &.filled::after {
+    transform: scale3d(1, 1, 1);
+    transition-delay: 0.3s;
+  }
+
+  &:before,
   &:after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 0.25em;
-    background: #292929;
-    transform-origin: 50% 0%;
+    height: 100%;
     transition: transform 0.3s;
   }
 `
@@ -209,7 +201,19 @@ const ContactLabelContent = styled.span`
   display: block;
   padding: 1.6em 0;
   width: 100%;
-  padding: 0.75em 0;
+
+  transition: transform 0.3s 0.3s;
+`
+
+const ContactInputWrapper = styled.span`
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 1em;
+  max-width: 350px;
+  width: calc(100% - 2em);
+  vertical-align: top;
+  margin-top: 2em;
 `
 
 const ContactInput = styled.input`
@@ -220,14 +224,27 @@ const ContactInput = styled.input`
   width: 60%;
   border: none;
   border-radius: 0;
-  color: #fff;
-  font-weight: 200;
-  font-size: 1.3rem;
-  z-index: 10;
+  background: #f0f0f0;
+  color: #aaa;
+  font-weight: bold;
+
+  padding: 0.85em 0.5em;
   width: 100%;
   background: transparent;
+  color: #dde2e2;
   opacity: 0;
   transition: opacity 0.3s;
+
+  &:focus + label::before {
+    transition-delay: 0s;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &:focus + label::after {
+    transform: scale3d(1, 1, 1);
+    transition-delay: 0.3s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
 
   &:focus,
   &.filled {
@@ -236,20 +253,18 @@ const ContactInput = styled.input`
     outline: none;
   }
 
+  &:focus + label span,
+  & + label.filled span {
+    transform: translate3d(0, -80%, 0);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
   &:focus + label,
   span.filled {
     pointer-events: none;
   }
-
-  &:focus + label::before,
-  & + label.filled::before {
-    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
-  }
-  &:focus + label::after,
-  & + label.filled::after {
-    transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
-  }
 `
+
 const ContactTextarea = styled.textarea`
   position: relative;
   display: block;

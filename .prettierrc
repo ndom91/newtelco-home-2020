@@ -7,5 +7,7 @@
   "jsxBracketSameLine": false,
   "parser": "babel",
   "semi": false,
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "tabWidth": 2,
+  "useTabs": false
 }

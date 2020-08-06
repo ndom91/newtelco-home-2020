@@ -4,6 +4,7 @@ import LanguageSelect from './LanguageSelect'
 import newtelcoLogo from '../images/newtelco-white.png'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import styled from '@emotion/styled'
+import 'transition-style'
 
 const OverlayMenu = ({ toggleMenu, isOpen }) => {
   const { t } = useTranslation()
@@ -39,7 +40,8 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
     },
   }
   return (
-    <OverlayWrapper className={isOpen ? 'active' : ''}>
+    <OverlayWrapper transition='in:circle:top-right'>
+      {/* className={isOpen ? 'active' : ''}> */}
       <HeaderImage src={newtelcoLogo} alt='Newtelco Logo' />
       <Navigation>
         <ul className={isOpen ? 'active' : ''}>

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import styled from '@emotion/styled'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
@@ -20,6 +21,11 @@ const GoogleMaps = Loadable({
 
 const Contact = () => {
   const { t } = useTranslation()
+  const [contact, setContactValue] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
   const [ref, inView] = useInView({
     rootMargin: '200px 0px 0px 0px',
     triggerOnce: true,
@@ -72,6 +78,7 @@ const Contact = () => {
           className='lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full mx-8 md:mx-0 md:py-8 mt-8 md:mt-0'
           name='Contact Form'
           method='POST'
+          autoComplete='off'
           data-netlify='true'
         >
           <input
@@ -83,26 +90,58 @@ const Contact = () => {
           <p className='leading-relaxed mb-5 text-gray-600 font-body font-thin'>
             {t('contact.header')}
           </p>
-          <input
-            className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline text-base text-white px-4 py-2 mb-4 bg-opacity-25 placeholder-font-hairline'
-            name='name'
-            aria-label='Name'
-            placeholder={t('contact.name')}
-            type='text'
-          />
-          <input
-            className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline  text-base text-white px-4 py-2 mb-4 bg-opacity-25'
-            name='email'
-            aria-label='Email'
-            placeholder={t('contact.email')}
-            type='email'
-          />
-          <textarea
-            className='transition duration-200 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 rounded border border-gray-700 h-32  text-base text-white px-4 py-2 mb-4 resize-none bg-opacity-25'
-            aria-label='Message'
-            name='message'
-            placeholder={t('contact.message')}
-          ></textarea>
+          <div>
+            <ContactInput
+              className={contact.name.length > 0 ? 'filled' : ''}
+              value={contact.name}
+              autoComplete='off'
+              onChange={event =>
+                setContactValue({ ...contact, name: event.target.value })
+              }
+            />
+            <ContactLabel className={contact.name.length > 0 ? 'filled' : ''}>
+              <ContactLabelContent>{t('contact.name')}</ContactLabelContent>
+            </ContactLabel>
+          </div>
+          <div>
+            <ContactInput
+              className={contact.email.length > 0 ? 'filled' : ''}
+              value={contact.email}
+              onChange={event =>
+                setContactValue({ ...contact, email: event.target.value })
+              }
+            />
+            <ContactLabel className={contact.email.length > 0 ? 'filled' : ''}>
+              <ContactLabelContent>{t('contact.email')}</ContactLabelContent>
+            </ContactLabel>
+          </div>
+          <div>
+            <ContactTextarea
+              className={contact.message.length > 0 ? 'filled' : ''}
+              value={contact.message}
+              onChange={event =>
+                setContactValue({ ...contact, message: event.target.value })
+              }
+            />
+            <ContactLabel
+              className={contact.message.length > 0 ? 'filled' : ''}
+            >
+              <ContactLabelContent>{t('contact.message')}</ContactLabelContent>
+            </ContactLabel>
+          </div>
+          {/* <input */}
+          {/* 	className='bg-gray-800 rounded border border-gray-700 transition duration-200 ease-in-out focus:outline-none focus:shadow-outline  text-base text-white px-4 py-2 mb-4 bg-opacity-25' */}
+          {/* 	name='email' */}
+          {/* 	aria-label='Email' */}
+          {/* 	placeholder={t('contact.email')} */}
+          {/* 	type='email' */}
+          {/* /> */}
+          {/* <textarea */}
+          {/* 	className='transition duration-200 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 rounded border border-gray-700 h-32  text-base text-white px-4 py-2 mb-4 resize-none bg-opacity-25' */}
+          {/* 	aria-label='Message' */}
+          {/* 	name='message' */}
+          {/* 	placeholder={t('contact.message')} */}
+          {/* ></textarea> */}
           <button
             type='submit'
             className='text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg'
@@ -125,5 +164,130 @@ const Contact = () => {
     </section>
   )
 }
+
+const ContactLabel = styled.label`
+  display: inline-block;
+  float: right;
+  padding: 0 1em;
+  width: 40%;
+  font-weight: 100;
+  font-size: 70.25%;
+  position: relative;
+  width: 100%;
+  color: #bcbcbc;
+  text-align: left;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 3.6em;
+    background: #292929;
+    transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
+    transform-origin: 50% 100%;
+    transition: transform 0.3s;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.25em;
+    background: #292929;
+    transform-origin: 50% 0%;
+    transition: transform 0.3s;
+  }
+`
+
+const ContactLabelContent = styled.span`
+  color: #fff;
+  position: relative;
+  display: block;
+  padding: 1.6em 0;
+  width: 100%;
+  padding: 0.75em 0;
+`
+
+const ContactInput = styled.input`
+  position: relative;
+  display: block;
+  float: right;
+  padding: 0.8em;
+  width: 60%;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-weight: 200;
+  font-size: 1.3rem;
+  z-index: 10;
+  width: 100%;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &:focus,
+  &.filled {
+    opacity: 1;
+    transition-delay: 0.3s;
+    outline: none;
+  }
+
+  &:focus + label,
+  span.filled {
+    pointer-events: none;
+  }
+
+  &:focus + label::before,
+  & + label.filled::before {
+    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
+  }
+  &:focus + label::after,
+  & + label.filled::after {
+    transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
+  }
+`
+const ContactTextarea = styled.textarea`
+  position: relative;
+  display: block;
+  float: right;
+  padding: 0.5em;
+  height: 6.2em;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-weight: 200;
+  font-size: 1.1rem;
+  z-index: 10;
+  width: 100%;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &:focus,
+  &.filled {
+    opacity: 1;
+    transition-delay: 0.3s;
+    outline: none;
+  }
+
+  &:focus + label,
+  span.filled {
+    pointer-events: none;
+  }
+
+  &:focus + label::before,
+  & + label.filled::before {
+    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
+    height: 6em;
+  }
+  &:focus + label::after,
+  & + label.filled::after {
+    transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
+  }
+`
 
 export default Contact

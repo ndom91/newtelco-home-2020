@@ -22,7 +22,7 @@ class Slide extends React.Component {
           </p>
           <a
             href={testimonial.url || 'https://newtelco.dev'}
-            className='inline-flex items-center'
+            className='inline-flex items-center hover:no-underline'
           >
             <img
               alt='testimonial slide'
@@ -30,10 +30,10 @@ class Slide extends React.Component {
               className='w-12 h-12 rounded-full flex-shrink-0 object-cover object-center'
             />
             <span className='flex-grow flex flex-col pl-4'>
-              <span className='text-lg font-medium text-white font-display'>
+              <span className='text-lg font-bold text-white font-all'>
                 {testimonial.person}
               </span>
-              <span className='text-gray-600 text-sm font-display'>
+              <span className='text-gray-600 text-sm font-all'>
                 {testimonial.company}
               </span>
             </span>

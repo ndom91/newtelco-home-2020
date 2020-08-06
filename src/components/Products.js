@@ -5,7 +5,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 const Products = ({ products }) => {
   const { t } = useTranslation()
   return (
-    <section className='text-gray-500 body-font bg-gray-900'>
+    <section className='text-gray-500 body-font bg-gray-900 overflow-x-hidden'>
       <div className='container px-5 pt-24 mx-auto'>
         <div className='flex justify-between w-full mb-20'>
           <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto'>

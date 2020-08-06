@@ -104,7 +104,7 @@ const OverlayWrapper = styled.div`
 `
 
 const NavNumber = styled.div`
-  font-family: var(--fontfamily-mono);
+  font-family: var(--font-mono);
   font-weight: 100;
   font-size: 1.7rem;
   color: #67b246;

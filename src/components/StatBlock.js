@@ -3,7 +3,7 @@ import CountUp from 'react-countup'
 import styled from '@emotion/styled'
 import media from '../style/mq'
 
-const StatBlock = React.forwardRef((props, ref) => {
+const StatBlock = (props, ref) => {
   return (
     <Wrapper>
       <Value>
@@ -21,7 +21,7 @@ const StatBlock = React.forwardRef((props, ref) => {
       <Label>{props.label}</Label>
     </Wrapper>
   )
-})
+}
 
 const Wrapper = styled.div`
   width: 200px;
@@ -39,7 +39,9 @@ const Wrapper = styled.div`
   background: rgb(255, 255, 255);
   position: relative;
   padding: 40px;
-  background-color: var(--primary-color);
+  background-color: #111;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
   transition: box-shadow 250ms ease-in-out, transform 250ms ease-in-out;
 
   &:nth-of-type(2n) {
@@ -58,19 +60,19 @@ const Wrapper = styled.div`
 
 const Value = styled.div`
   font-size: 4.5rem;
-  font-family: var(--fontfamily-mono);
+  font-family: var(--font-all);
   font-weight: 100;
-  color: #fff;
+  color: #ababab;
   ${media.tabletSmall`
     font-size: 3.5rem;
   `}
 `
 
 const Label = styled.div`
-  font-size: 1.4rem;
-  font-family: var(--fontfamily-serif);
-  font-weight: 300;
-  color: #fff;
+  font-size: 1.7rem;
+  font-family: var(--font-header);
+  font-weight: 100;
+  color: #ababab;
   ${media.tabletSmall`
     font-size: 1.2rem;
   `}

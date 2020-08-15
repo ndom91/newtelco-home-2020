@@ -61,7 +61,8 @@
     "react-marquee-slider-emotion": "^1.0.17",
     "react-outside-click-handler": "^1.3.0",
     "react-responsive": "^8.1.0",
-    "react-typed": "^1.2.0"
+    "react-typed": "^1.2.0",
+    "transition-style": "0.0.7"
   },
   "devDependencies": {
     "@bundle-analyzer/gatsby-plugin": "^0.5.1",
@@ -78,6 +79,8 @@
     "gatsby-plugin-eslint": "^2.0.3",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.10",
     "husky": "^4.2.3",
+    "postcss-easings": "^2.0.0",
+    "postcss-import-url": "^5.1.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^2.0.1",

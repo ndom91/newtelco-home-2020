@@ -10,12 +10,13 @@
 
 ## 🥞 Stack
 - Gatsby 
-- DatoCMS (Headless CMS)
+- DatoCMS
 - TailwindCSS
-- Emotion JS-in-CSS
-- Framer-Motion
+- Emotion
+- Framer Motion
 - react-i18next
 - eslint / prettier
+
 
 ## 🏗️ Installation
 1. `git clone https://github.com/newtelco/newtelco-dato`
@@ -24,7 +25,13 @@
 4. Update `.env` variables
 5. `npm run dev`
 
-## 🙏 Credits 
+## 🔭 Lighthouse
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/newtelco/newtelco-dato/main/lighthouse.svg" width="600px">
+</p>
+
+## 🙏 Thanks 
 
 [Gatsby Starter](https://www.gatsbyjs.org/starters/brohlson/gatsby-datocms-starter)  
 [Gatsby Tailwind Config](https://github.com/pauloelias/gatsby-tailwind-emotion-starter)  

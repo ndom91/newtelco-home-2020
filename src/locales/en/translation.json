@@ -16,7 +16,7 @@
   "locations": "Locations",
   "products_byline": "",
   "contact": {
-    "titlte": "Contact Us",
+    "title": "Contact Us",
     "header": "Let us know how we can help you reach your goals!",
     "name": "Name",
     "email": "Email",
@@ -36,5 +36,11 @@
   },
   "team": {
     "headline": "Team"
+  },
+  "404": {
+    "title": "404",
+    "desc": "Unfortunately there is nothing here for you..",
+    "button1": "Home",
+    "button2": "Back"
   }
 }

@@ -29,9 +29,9 @@ const Location = ({ locations }) => {
             <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-hairline text-right'>
               {t('locations')}
             </h1>
-            <div className='h-1 w-20 bg-green-500 rounded'></div>
+            <div className='h-1 w-20 bg-green-500 rounded float-right'></div>
           </div>
-          <p className='flex-grow max-w-2xl w-full leading-relaxed text-base float-right'></p>
+          <p className='flex-grow max-w-2xl w-full leading-relaxed text-base'></p>
         </div>
       </div>
       <div className='container px-5 py-14 mx-auto flex sm:flex-no-wrap flex-wrap'>

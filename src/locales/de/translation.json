@@ -17,7 +17,7 @@
   "products_byline": "",
   "contact": {
     "title": "Kontaktieren Sie Uns",
-    "header": "Schreiben Sie uns wie wir Ihnen helfen koennen!",
+    "header": "Schreiben Sie uns wie wir Ihnen helfen können!",
     "name": "Name",
     "email": "Email",
     "message": "Nachricht",
@@ -36,5 +36,11 @@
   },
   "team": {
     "headline": "Team"
+  },
+  "404": {
+    "title": "404",
+    "desc": "Hier ist leider nichts für Sie..",
+    "button1": "Home",
+    "button2": "Zurück"
   }
 }

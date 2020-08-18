@@ -13,8 +13,10 @@
   },
   "products": "Products",
   "trustedby": "Trusted By",
+  "locations": "Locations",
   "products_byline": "",
   "contact": {
+    "titlte": "Contact Us",
     "header": "Let us know how we can help you reach your goals!",
     "name": "Name",
     "email": "Email",

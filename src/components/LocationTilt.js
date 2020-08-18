@@ -1,35 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
-import Tilt from 'react-parallax-tilt'
 import ReactTilt from 'react-universal-tilt'
+import Flippy, { FrontSide, BackSide } from 'react-flippy'
 
 const LocationTilt = ({ city, address, image }) => {
+  const [flipped, setFlipped] = useState(false)
   return (
     <Tilter
       href='#'
       settings={{
         speed: 500,
-        scale: 1.1,
-        shine: true,
+        scale: 1.05,
         max: 25,
         perspective: 1000,
       }}
+      key='front'
+      onClick={() => setFlipped(!flipped)}
     >
-      <figure className='tilter__figure'>
-        <Img className='tilter__image' fluid={image.fluid} />
-        <div className='tilter__deco tilter__deco--shine'>
-          <div></div>
-        </div>
-        <div className='tilter__deco tilter__deco--overlay'></div>
-        <figcaption className='tilter__caption'>
-          <h3 className='tilter__title'>{city}</h3>
-          {/* <p className='tilter__description'>{address}</p> */}
-        </figcaption>
-        <svg className='tilter__deco tilter__deco--lines' viewBox='0 0 300 415'>
-          <path d='M20.5,20.5h260v375h-260V20.5z' />
-        </svg>
-      </figure>
+      <Flippy isFlipped={flipped}>
+        <FrontSide>
+          <figure className='tilter__figure'>
+            <Img className='tilter__image' fluid={image.fluid} />
+            <div className='tilter__deco tilter__deco--shine'>
+              <div></div>
+            </div>
+            <div className='tilter__deco tilter__deco--overlay'></div>
+            <figcaption className='tilter__caption'>
+              <h3 className='tilter__title'>{city}</h3>
+            </figcaption>
+            <svg
+              className='tilter__deco tilter__deco--lines'
+              viewBox='0 0 300 415'
+            >
+              <path d='M20.5,20.5h280v375h-305V20.5z' />
+            </svg>
+          </figure>
+        </FrontSide>
+        <BackSide>
+          <figure className='tilter__figure'>
+            <Img className='tilter__image' fluid={image.fluid} />
+            <div className='tilter__deco tilter__deco--shine'>
+              <div></div>
+            </div>
+            <div className='tilter__deco tilter__deco--overlay'></div>
+            <figcaption className='tilter__caption'>
+              <p className='tilter__description'>{address}</p>
+            </figcaption>
+            <svg
+              className='tilter__deco tilter__deco--lines'
+              viewBox='0 0 300 415'
+            >
+              <path d='M20.5,20.5h280v375h-305V20.5z' />
+            </svg>
+          </figure>
+        </BackSide>
+      </Flippy>
     </Tilter>
   )
 }
@@ -38,9 +64,9 @@ const Tilter = styled(ReactTilt)`
   position: relative;
   display: block;
   flex: none;
-  width: 300px;
+  width: 360px;
   height: 415px;
-  margin: 1.5em 2.5em;
+  margin: 1.5em 1em;
   color: #fff;
   perspective: 1000px;
   border-radius: 10px;
@@ -54,6 +80,7 @@ const Tilter = styled(ReactTilt)`
   &:focus {
     color: #fff;
     outline: none;
+    cursor: pointer;
   }
 
   .tilter__figure,
@@ -124,24 +151,32 @@ const Tilter = styled(ReactTilt)`
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 1.5em;
+    padding: 2rem;
   }
 
   .tilter__title {
-    font-family: var(--font-serif);
-    font-size: 2em;
-    font-weight: normal;
-    line-height: 1;
-    margin: 0;
-    transform: translateZ(40px) scale(0.8);
+    font-family: var(--font-mono);
+    font-size: 1.5em;
+    font-weight: 100;
+    margin: 1rem;
+    transform: translateZ(40px);
   }
 
   .tilter__description {
     font-size: 0.65em;
-    font-family: var(--font-header);
-    font-weight: 200;
+    font-family: var(--font-mono);
+    font-weight: 560;
     margin: 1em 0 0 0;
     letter-spacing: 0.15em;
+    transform: translateZ(40px) scale(0.8);
+  }
+
+  .flippy-card {
+    box-shadow: none;
+  }
+  .flippy-container {
+    height: 100%;
+    width: 100%;
   }
 `
 

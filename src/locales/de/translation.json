@@ -13,8 +13,10 @@
   },
   "products": "Produkte",
   "trustedby": "Vertraut Von",
+  "locations": "Standorte",
   "products_byline": "",
   "contact": {
+    "title": "Kontaktieren Sie Uns",
     "header": "Schreiben Sie uns wie wir Ihnen helfen koennen!",
     "name": "Name",
     "email": "Email",

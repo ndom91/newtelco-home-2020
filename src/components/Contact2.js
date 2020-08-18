@@ -14,7 +14,7 @@ const Contact = () => {
       <div className='container px-5 py-24 mx-auto'>
         <div className='flex flex-col text-center w-full mb-12'>
           <h1 className='sm:text-3xl text-2xl font-medium title-font mb-4 text-white'>
-            Contact Us
+            {t('contact.title')}
           </h1>
           <p className='lg:w-2/3 mx-auto leading-relaxed text-base'>
             {t('contact.header')}
@@ -36,8 +36,8 @@ const Contact = () => {
             />
             <div className='p-2 w-1/2'>
               <input
-                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2'
-                placeholder='Name'
+                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out'
+                placeholder={t('contact.name')}
                 type='text'
                 value={contact.name}
                 onChange={event =>
@@ -47,8 +47,8 @@ const Contact = () => {
             </div>
             <div className='p-2 w-1/2'>
               <input
-                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2'
-                placeholder='Email'
+                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out'
+                placeholder={t('contact.email')}
                 type='email'
                 value={contact.email}
                 onChange={event =>
@@ -58,12 +58,12 @@ const Contact = () => {
             </div>
             <div className='p-2 w-full'>
               <textarea
-                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-green-500 text-base px-4 py-2 resize-none block'
+                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-green-500 text-base px-4 py-2 resize-none block transition transition-borders duration-300 ease-in-out'
                 value={contact.message}
                 onChange={event =>
                   setContactValue({ ...contact, message: event.target.value })
                 }
-                placeholder='Message'
+                placeholder={t('contact.message')}
               ></textarea>
             </div>
             <div className='p-2 w-full'>
@@ -72,7 +72,7 @@ const Contact = () => {
                 <a
                   href='/privacy'
                   alt='Terms of Service'
-                  className='text-gray-800 hover:text-gray-600 hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-green-700 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   &nbsp; {t('contact.tos2')}
                 </a>

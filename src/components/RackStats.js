@@ -40,10 +40,10 @@ const RackStats = () => {
         <Content>
           <StatBlock inView={inView} label={t('stats.racks')} value={457} />
           <StatBlock inView={inView} label={t('stats.datacenter')} value={26} />
-          <StatBlock inView={inView} label={t('stats.tbps')} value={1340} />
+          <StatBlock inView={inView} label={t('stats.tbps')} value={14} />
           <StatBlock inView={inView} label={t('stats.watts')} value={3.5} />
         </Content>
-        <BlobDots style={{ right: xSpring }}>
+        <BlobDots>
           <Blob />
         </BlobDots>
         <BlobCircle />

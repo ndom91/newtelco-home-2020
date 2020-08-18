@@ -9,7 +9,7 @@ import Blob13 from '../images/illustrations/blobs/blob13.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
 import Typed from 'react-typed'
 
-const Hero = React.memo(function Hero({ data, img }) {
+const Hero = React.memo(function Hero({ data }) {
   const { ctaEmail, ctaActionText } = data
   const { t } = useTranslation()
   const { scrollY } = useViewportScroll()
@@ -32,9 +32,6 @@ const Hero = React.memo(function Hero({ data, img }) {
       >
         <Blob12 alt='Squiggle Map Blob' width='200px' />
       </motion.div>
-      {/* <div className='relative mx-auto flex md:px-5 py-0 sm:py-24 md:flex-row flex-col-reverse items-end'>
-        <div className='relative lg:flex-grow w-full md:w-1/2 flex flex-col md:text-left -mt-8 md:mb-0 items-left'>
-          <h1 className='z-10 font-mono font-semibold sm:text-4xl text-3xl text-white text-left md:whitespace-no-wrap'> */}
       <div className='relative flex flex-col-reverse items-end py-0 mx-auto md:px-5 sm:py-24 md:flex-row'>
         <div className='relative flex flex-col w-full -mt-8 lg:flex-grow md:w-1/2 md:text-left md:mb-0 items-left'>
           <h1 className='z-10 text-3xl font-medium text-left text-white font-display sm:text-4xl md:whitespace-no-wrap'>
@@ -71,10 +68,10 @@ const Hero = React.memo(function Hero({ data, img }) {
             }}
           >
             <BGDot
-              height='500'
-              width='500'
+              height='400'
+              width='400'
               alt='bg-dot-1'
-              className='bottom-0 left-0 z-0 -ml-20 opacity-0 pointer-events-none -mb-18 md:opacity-50'
+              className='bottom-0 left-0 z-0 -ml-20 opacity-0 pointer-events-none -mb-18 md:opacity-25'
             />
           </motion.div>
         </div>

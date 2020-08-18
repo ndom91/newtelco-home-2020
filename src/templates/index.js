@@ -1,15 +1,21 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { motion } from 'framer-motion'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Products from '../components/Products'
 import RackStats from '../components/RackStats'
 import Team from '../components/Team'
+// import Location from '../components/Locations2'
 
 import Loadable from 'react-loadable'
+const Location = Loadable({
+  loader: () => import('../components/Locations2'),
+  loading() {
+    return <div>Loading...</div>
+  },
+})
 const Contact = Loadable({
-  loader: () => import('../components/Contact'),
+  loader: () => import('../components/Contact2'),
   loading() {
     return <div>Loading...</div>
   },
@@ -22,23 +28,24 @@ const Testimonials = Loadable({
 })
 
 export default function IndexPage({ data }) {
-  const { ctaEmail, ctaPhone, ctaActionText, seoMetaTags } = data.home
+  const { home, seo, team, products, partners, testimonials, locations } = data
   return (
     <>
       <SEO
-        meta={seoMetaTags}
-        favicon={data.seo.faviconMetaTags}
-        global={data.seo.globalSeo}
+        meta={home.seoMetaTags}
+        favicon={seo.faviconMetaTags}
+        global={seo.globalSeo}
       />
       <div className='flex flex-col justify-start items-center max-w-100 bg-gray-900'>
-        <Hero data={data.home} img={data.img} />
+        <Hero data={home} />
         <RackStats className='overflow-hidden max-w-100' />
-        <Team members={data.team} />
-        <Products products={data.products} />
+        <Team members={team} />
+        <Products products={products} />
         <Testimonials
-          partners={data.partners.nodes}
-          testimonials={data.testimonials.nodes}
+          partners={partners.nodes}
+          testimonials={testimonials.nodes}
         />
+        <Location locations={locations} />
         <Contact />
       </div>
     </>
@@ -86,8 +93,10 @@ export const query = graphql`
         }
       }
     }
-    img: allDatoCmsLocation {
+    locations: allDatoCmsLocation(filter: { locale: { eq: $language } }) {
       nodes {
+        city
+        address
         image {
           fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
             ...GatsbyDatoCmsFluid

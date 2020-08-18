@@ -1,23 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import { useInView } from 'react-intersection-observer'
-import { motion } from 'framer-motion'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
-
-import Loadable from 'react-loadable'
-const GoogleMaps = Loadable({
-  loader: () => import('../components/GoogleMaps'),
-  loading() {
-    return (
-      <div
-        styl={{ height: '515px', width: '70px' }}
-        className='text-white font-display font-hairline'
-      >
-        Loading...
-      </div>
-    )
-  },
-})
 
 const Contact = () => {
   const { t } = useTranslation()
@@ -26,54 +9,9 @@ const Contact = () => {
     email: '',
     message: '',
   })
-  const [ref, inView] = useInView({
-    rootMargin: '200px 0px 0px 0px',
-    triggerOnce: true,
-  })
-
   return (
-    <section
-      ref={ref}
-      className='text-gray-500 bg-gray-900 body-font relative mt-20 sm:mt-0 z-20'
-    >
+    <section className='text-gray-500 bg-gray-900 body-font relative mt-20 sm:mt-0 z-20'>
       <div className='container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap'>
-        <div className='lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative'>
-          <div className='text-white'>
-            {inView && (
-              <motion.div syle={{ opacity: 1, inView: 0 }}>
-                <GoogleMaps />
-              </motion.div>
-            )}
-          </div>
-          <div className='bg-gray-900 relative flex flex-wrap py-6 px-4'>
-            <div className='lg:w-1/2 pl-4'>
-              <h2 className='title-font font-medium text-green-500 tracking-widest text-sm'>
-                {t('contact.address')}
-              </h2>
-              <p className='leading-relaxed text-base'>
-                Moenchhofstr. 24 <br />
-                60326 Frankfurt am Main <br />
-                Germany
-              </p>
-            </div>
-            <div className='lg:w-1/2 px-6 mt-4 lg:mt-0'>
-              <h2 className='title-font font-medium text-green-500 tracking-widest text-sm'>
-                {t('contact.email')}
-              </h2>
-              <a
-                href='mailto:contact@newtelco.de'
-                alt='Email Contact Address'
-                className='text-gray-500 lading-relaxed text-base hover:no-underline hover:text-gray-600'
-              >
-                contact@newtelco.de
-              </a>
-              <h2 className='title-font font-medium text-green-500 tracking-widest text-sm mt-4'>
-                {t('contact.phone')}
-              </h2>
-              <p className='leading-relaxed text-base'>+49 69 75 00 27 00</p>
-            </div>
-          </div>
-        </div>
         <form
           className='lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full mx-8 md:mx-0 md:py-8 mt-8 md:mt-0'
           name='Contact Form'
@@ -152,14 +90,27 @@ const Contact = () => {
   )
 }
 
+const ContactInputWrapper = styled.span`
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 1em;
+  max-width: 350px;
+  width: 100%;
+  vertical-align: top;
+  margin-top: 2em;
+  margin-left: 0;
+`
+
 const ContactLabel = styled.label`
   position: absolute;
   left: 0;
-  padding: 0 0.85em;
+  padding: 0 0.35em;
   width: 100%;
   height: 100%;
   text-align: left;
   pointer-events: none;
+  font-weight: 100;
 
   &:before {
     border-top: 2px solid #292929;
@@ -199,36 +150,21 @@ const ContactLabelContent = styled.span`
   color: #fff;
   position: relative;
   display: block;
-  padding: 1.6em 0;
+  padding: 0.3em 0;
   width: 100%;
 
   transition: transform 0.3s 0.3s;
-`
-
-const ContactInputWrapper = styled.span`
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  margin: 1em;
-  max-width: 350px;
-  width: calc(100% - 2em);
-  vertical-align: top;
-  margin-top: 2em;
 `
 
 const ContactInput = styled.input`
   position: relative;
   display: block;
   float: right;
-  padding: 0.8em;
-  width: 60%;
   border: none;
   border-radius: 0;
-  background: #f0f0f0;
-  color: #aaa;
-  font-weight: bold;
-
-  padding: 0.85em 0.5em;
+  font-weight: 100;
+  font-size: 1.3rem;
+  padding: 0.45em 0.5em;
   width: 100%;
   background: transparent;
   color: #dde2e2;
@@ -269,18 +205,27 @@ const ContactTextarea = styled.textarea`
   position: relative;
   display: block;
   float: right;
-  padding: 0.5em;
-  height: 6.2em;
   border: none;
   border-radius: 0;
-  color: #fff;
-  font-weight: 200;
-  font-size: 1.1rem;
-  z-index: 10;
+  font-weight: 100;
+
+  padding: 0.45em 0.5em;
   width: 100%;
   background: transparent;
+  color: #dde2e2;
   opacity: 0;
   transition: opacity 0.3s;
+
+  &:focus + label::before {
+    transition-delay: 0s;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &:focus + label::after {
+    transform: scale3d(1, 1, 1);
+    transition-delay: 0.3s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
 
   &:focus,
   &.filled {
@@ -289,19 +234,15 @@ const ContactTextarea = styled.textarea`
     outline: none;
   }
 
+  &:focus + label span,
+  & + label.filled span {
+    transform: translate3d(0, -80%, 0);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
   &:focus + label,
   span.filled {
     pointer-events: none;
-  }
-
-  &:focus + label::before,
-  & + label.filled::before {
-    transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
-    height: 6em;
-  }
-  &:focus + label::after,
-  & + label.filled::after {
-    transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
   }
 `
 

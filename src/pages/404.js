@@ -22,7 +22,7 @@ const Datacenter = styled.div`
   text-align: center;
   height: calc(100vh - 10rem);
   background-image: url(${BG});
-  opacity: 0.02;
+  opacity: 0.05;
   background-size: cover;
   height: 65vh;
   width: 80%;
@@ -42,8 +42,9 @@ const TravoltaWrapper = styled.div`
 
 const Travolta = styled.img`
   z-index: 99;
-  opacity: 0.6;
+  opacity: 0.7;
   filter: brightness(0.5) grayscale(0.5);
+  margin-left: 250px;
 `
 
 const TextWrapper = styled.div`
@@ -53,6 +54,7 @@ const TextWrapper = styled.div`
   flex-direction: column;
   place-self: start;
   margin-top: 220px;
+  z-index: 101;
 
   & p.title {
     font-size: 4rem;

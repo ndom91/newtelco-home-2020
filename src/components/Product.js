@@ -35,25 +35,12 @@ const Product = ({ product, index }) => {
       </div>
       <div className='flex-grow sm:text-left text-center mt-6 sm:mt-0'>
         <h2 className='text-green text-4xl md:text-5xl font-body font-hairline mb-2'>
-          {product.title}
-          <Link language={language} to={`/products/${slugify(product.title)}`}>
-            <svg
-              fill='none'
-              className='hover:stroke-green hover:opacity-100 opacity-25 transition ease-in-out duration-300 transition-colors transition-opacity'
-              height='32'
-              width='32'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth='2'
-              viewBox='0 0 24 24'
-              stroke='#666'
-              style={{
-                display: 'inline',
-                margin: '0 0 0.5rem 0.5rem',
-              }}
-            >
-              <path d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' />
-            </svg>
+          <Link
+            language={language}
+            to={`/products/${slugify(product.title)}`}
+            className='text-white hover:text-green-500 transition transition-color duration-300 ease-in-out hover:no-underline'
+          >
+            {product.title}
           </Link>
         </h2>
         <p className='leading-relaxed text-base md:text-lg'>

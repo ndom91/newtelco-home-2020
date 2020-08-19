@@ -53,20 +53,21 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   place-self: start;
-  margin-top: 220px;
+  margin-top: 130px;
   z-index: 101;
+  max-width: 30rem;
 
   & p.title {
-    font-size: 4rem;
+    font-size: 7rem;
     font-family: var(--font-mono);
     margin: 10px;
-    font-weight: 600;
+    font-weight: 100;
   }
   & p.desc {
     margin: 10px;
-    margin-top: 30px;
     font-family: var(--font-mono);
     font-weight: 200;
+    font-size: 1.5rem;
   }
   & .btn-wrapper {
     display: flex;

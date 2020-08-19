@@ -39,7 +39,7 @@
   },
   "404": {
     "title": "404",
-    "desc": "Hier ist leider nichts für Sie..",
+    "desc": "Diese Seite konnte nicht gefunden werden.",
     "button1": "Home",
     "button2": "Zurück"
   }

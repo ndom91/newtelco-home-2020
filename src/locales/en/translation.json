@@ -39,7 +39,7 @@
   },
   "404": {
     "title": "404",
-    "desc": "Unfortunately there is nothing here for you..",
+    "desc": "We couldn't find this page.",
     "button1": "Home",
     "button2": "Back"
   }

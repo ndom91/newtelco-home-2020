@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useViewportScroll } from 'framer-motion'
 import Blob from '../images/illustrations/blobs/blob16.svg'
 import styled from '@emotion/styled'
@@ -37,6 +38,7 @@ const handleDynamicHeight = (ref, setDynamicHeight) => {
 }
 
 const HorizontalScroll = ({ children }) => {
+  const { t } = useTranslation()
   const { scrollY } = useViewportScroll()
   const [dynamicHeight, setDynamicHeight] = useState(null)
   const [translateX, setTranslateX] = useState(0)
@@ -61,20 +63,16 @@ const HorizontalScroll = ({ children }) => {
   return (
     <TallOuterContainer dynamicHeight={dynamicHeight}>
       <StickyInnerContainer>
-        <div className='flex justify-between w-full mb-20 mt-12'>
+        <div className='flex justify-between w-full mb-20 mt-12 lg:w-2/3 w-3/4 mx-auto'>
           <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto'>
             <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-hairline'>
-              Team
+              {t('team.headline')}
             </h1>
             <div className='h-1 w-20 bg-green-500 rounded'></div>
           </div>
           <p className='flex-grow max-w-2xl w-full leading-relaxed text-base text-gray-500 overflow-visible'>
             <Blob className='absolute -ml-12 -mt-12' />
-            <span className='relative z-20'>
-              Newtelco offers many products and services for our customers,
-              below you will find some of our more popular offerings. To learn
-              more, just click on the associated button to continue!
-            </span>
+            <span className='relative z-20'>{t('team.byline')}</span>
           </p>
         </div>
         <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>

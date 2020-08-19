@@ -23,7 +23,7 @@ export default function Header() {
         >
           <Logo />
         </Link>
-        <nav className='flex flex-wrap items-center justify-center hidden text-base md:mr-auto md:ml-3 md:py-1 md:pl-4 sm:flex'>
+        <nav className='flex flex-wrap items-center justify-center hidden font-mono text-base md:mr-auto md:ml-3 md:py-1 md:pl-4 sm:flex'>
           <Link
             language={language}
             to='/products'

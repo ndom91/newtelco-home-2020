@@ -11,10 +11,12 @@
     "team": "Team",
     "about": "About"
   },
-  "products": "Products",
+  "products": {
+    "title": "Products",
+    "byline": "Newtelco offers many products and services for our customers, below you will find some of our more popular offerings. Click on the title to learn more!"
+  },
   "trustedby": "Trusted By",
   "locations": "Locations",
-  "products_byline": "",
   "contact": {
     "title": "Contact Us",
     "header": "Let us know how we can help you reach your goals!",
@@ -35,7 +37,8 @@
     "watts": "kWh"
   },
   "team": {
-    "headline": "Team"
+    "headline": "Team",
+    "byline": "The Newtelco team is happy to work together with you to solve your problems."
   },
   "404": {
     "title": "404",

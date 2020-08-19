@@ -15,10 +15,10 @@ const TeamMember = ({ member }) => {
           fluid={member.image.fluid}
         />
         <div className='w-full'>
-          <h2 className='title-font font-medium text-2xl text-gray-600 text-center'>
+          <h2 className='font-medium text-2xl text-gray-600 text-center'>
             {member.name}
           </h2>
-          <h3 className='text-gray-800 text-lg mb-3 text-center'>
+          <h3 className='text-gray-700 text-lg mb-3 text-center font-normal'>
             {member.jobTitle}
           </h3>
         </div>

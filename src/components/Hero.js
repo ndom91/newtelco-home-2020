@@ -8,12 +8,13 @@ import Blob12 from '../images/illustrations/blobs/blob12.svg'
 import Blob13 from '../images/illustrations/blobs/blob13.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
 import Typed from 'react-typed'
+import 'pattern.css/dist/pattern.min.css'
 
 const Hero = React.memo(function Hero({ data }) {
   const { ctaEmail, ctaActionText } = data
   const { t } = useTranslation()
   const { scrollY } = useViewportScroll()
-  const y1 = useTransform(scrollY, [500, -500], [-150, 10])
+  const y1 = useTransform(scrollY, [700, -100], [-170, -10])
   const y2 = useTransform(scrollY, [-200, 200], [20, -20])
   const x1 = useTransform(scrollY, [500, -500], [-150, 10])
 
@@ -34,14 +35,14 @@ const Hero = React.memo(function Hero({ data }) {
       </motion.div>
       <div className='relative flex flex-col-reverse items-end py-0 mx-auto md:px-5 sm:py-24 md:flex-row'>
         <div className='relative flex flex-col w-full -mt-8 lg:flex-grow md:w-1/2 md:text-left md:mb-0 items-left'>
-          <h1 className='z-10 text-3xl font-medium text-left text-white font-display sm:text-4xl md:whitespace-no-wrap'>
+          <h1 className='z-10 text-3xl font-semibold text-left text-white font-sans sm:text-4xl md:whitespace-no-wrap'>
             {t('welcome')}
           </h1>
           <Typed
             strings={[t('subtitle.1'), t('subtitle.2'), t('subtitle.3')]}
             typeSpeed={50}
             backSpeed={60}
-            className='w-full overflow-x-visible text-2xl font-hairline font-body md:text-3xl md:whitespace-no-wrap'
+            className='w-full overflow-x-visible text-2xl font-hairline font-mono md:text-3xl md:whitespace-no-wrap'
           />
           <div className='z-10 flex flex-col items-start -mb-20 leading-normal text-left bg-transparent'>
             <Link
@@ -67,11 +68,10 @@ const Hero = React.memo(function Hero({ data }) {
               position: 'absolute',
             }}
           >
-            <BGDot
-              height='400'
-              width='400'
+            <div
               alt='bg-dot-1'
-              className='bottom-0 left-0 z-0 -ml-20 opacity-0 pointer-events-none -mb-18 md:opacity-25'
+              style={{ height: '260px', width: '260px' }}
+              className='bottom-0 left-0 z-0 opacity-0 pointer-events-none -ml-20 -mb-16 md:opacity-10 pattern-dots-xl'
             />
           </motion.div>
         </div>

@@ -1,14 +1,29 @@
 import React from 'react'
 import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
 import Map from '../images/illustrations/map.svg'
-import BGDot from '../images/illustrations/scribbles/background-dot.svg'
 import Blob10 from '../images/illustrations/blobs/blob10.svg'
 import Blob11 from '../images/illustrations/blobs/blob11.svg'
 import Blob12 from '../images/illustrations/blobs/blob12.svg'
 import Blob13 from '../images/illustrations/blobs/blob13.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
 import Typed from 'react-typed'
+import ReactGlobe from 'react-globe'
+
+const globeBackgroundTexture =
+  'https://raw.githubusercontent.com/chrisrzhou/react-globe/main/textures/invalid_background_file.png'
+const globeCloudsTexture =
+  'https://raw.githubusercontent.com/chrisrzhou/react-globe/main/textures/clouds2.png'
+const globeTexture =
+  'https://raw.githubusercontent.com/chrisrzhou/react-globe/main/textures/globe_dark.jpg'
+
 import 'pattern.css/dist/pattern.min.css'
+
+const options = {
+  ambientLightColor: 'white',
+  ambientLightIntensity: 0.1,
+  enableCameraAutoRotate: true,
+  enableGlobeGlow: false,
+}
 
 const Hero = React.memo(function Hero({ data }) {
   const { ctaEmail, ctaActionText } = data
@@ -75,15 +90,7 @@ const Hero = React.memo(function Hero({ data }) {
             />
           </motion.div>
         </div>
-        <div className='relative w-screen -mt-20 overflow-visible lg:max-w-xl lg:w-full md:w-1/2'>
-          <Map
-            className='object-cover object-center w-full rounded -mt-14 md:mt-0'
-            style={{
-              width: '130%',
-              maxHeight: '610px',
-            }}
-            alt='hero'
-          />
+        <div className='relative w-screen -mt-20 overflow-visible lg:max-w-xl lg:w-full md:w-1/2 outline-none'>
           <motion.div
             className='absolute bottom-0 left-0'
             style={{
@@ -97,6 +104,14 @@ const Hero = React.memo(function Hero({ data }) {
               className='bottom-0 left-0 ml-24 -mb-12'
             />
           </motion.div>
+          <ReactGlobe
+            options={options}
+            height={600}
+            width={600}
+            globeBackgroundTexture={globeBackgroundTexture}
+            globeCloudsTexture={globeCloudsTexture}
+            globeTexture={globeTexture}
+          />
         </div>
       </div>
     </section>

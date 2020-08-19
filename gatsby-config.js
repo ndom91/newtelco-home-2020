@@ -155,7 +155,10 @@ module.exports = {
         printRejected: false,
         develop: NODE_ENV !== 'development',
         tailwind: true,
-        ignore: ['node_modules/@brainhubeu/react-carousel/lib/style.css'],
+        ignore: [
+          'node_modules/@brainhubeu/react-carousel/lib/style.css',
+          'node_modules/react-flippy/dist/styles.css',
+        ],
       },
     },
     {

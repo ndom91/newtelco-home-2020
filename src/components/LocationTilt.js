@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import ReactTilt from 'react-universal-tilt'
 import Flippy, { FrontSide, BackSide } from 'react-flippy'
+import 'react-flippy/dist/styles.css'
 
 const LocationTilt = ({ city, address, image }) => {
   const [flipped, setFlipped] = useState(false)

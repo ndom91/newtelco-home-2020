@@ -1,6 +1,7 @@
 import React from 'react'
+import styled from '@emotion/styled'
 import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
-import Map from '../images/illustrations/map.svg'
+// import Map from '../images/illustrations/map.svg'
 import Blob10 from '../images/illustrations/blobs/blob10.svg'
 import Blob11 from '../images/illustrations/blobs/blob11.svg'
 import Blob12 from '../images/illustrations/blobs/blob12.svg'
@@ -8,21 +9,74 @@ import Blob13 from '../images/illustrations/blobs/blob13.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
 import Typed from 'react-typed'
 import ReactGlobe from 'react-globe'
+import 'tippy.js/dist/tippy.css'
+import 'tippy.js/animations/scale.css'
 
 const globeBackgroundTexture =
   'https://raw.githubusercontent.com/chrisrzhou/react-globe/main/textures/invalid_background_file.png'
 const globeCloudsTexture =
-  'https://raw.githubusercontent.com/chrisrzhou/react-globe/main/textures/clouds2.png'
-const globeTexture =
-  'https://raw.githubusercontent.com/chrisrzhou/react-globe/main/textures/globe_dark.jpg'
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Fair_Weather_Cloud_Map.jpg/1280px-Fair_Weather_Cloud_Map.jpg'
+const globeTexture = 'https://i.imgur.com/MipfNVK.png'
 
 import 'pattern.css/dist/pattern.min.css'
 
+const markers = [
+  {
+    id: 'marker1',
+    city: 'Singapore',
+    color: '#67b246',
+    coordinates: [1.3521, 103.8198],
+    value: 50,
+  },
+  {
+    id: 'marker2',
+    city: 'New York',
+    color: '#67b246',
+    coordinates: [40.73061, -73.935242],
+    value: 25,
+  },
+  {
+    id: 'marker3',
+    city: 'San Francisco',
+    color: '#67b246',
+    coordinates: [37.773972, -122.431297],
+    value: 35,
+  },
+  {
+    id: 'marker4',
+    city: 'Beijing',
+    color: '#67b246',
+    coordinates: [39.9042, 116.4074],
+    value: 135,
+  },
+  {
+    id: 'marker5',
+    city: 'London',
+    color: '#67b246',
+    coordinates: [51.5074, 0.1278],
+    value: 80,
+  },
+  {
+    id: 'marker6',
+    city: 'Los Angeles',
+    color: '#67b246',
+    coordinates: [29.7604, -95.3698],
+    value: 54,
+  },
+]
+
 const options = {
-  ambientLightColor: 'white',
-  ambientLightIntensity: 0.1,
-  enableCameraAutoRotate: true,
   enableGlobeGlow: false,
+  enableCameraAutoRotate: true,
+  cameraRotateSpeed: 0.3,
+  markerType: 'bar',
+  enableMarkerGlow: false,
+  markerRadiusScaleRange: [0.2, 0.5],
+  cameraDistanceRadiusScale: 4,
+  enableCameraZoom: false,
+  cameraAutoRotateSpeed: 0.6,
+  initialCoordinates: [51.5074, 0.1278],
+  markerTooltipRenderer: marker => `${marker.city} (${marker.value})`,
 }
 
 const Hero = React.memo(function Hero({ data }) {
@@ -104,18 +158,27 @@ const Hero = React.memo(function Hero({ data }) {
               className='bottom-0 left-0 ml-24 -mb-12'
             />
           </motion.div>
-          <ReactGlobe
-            options={options}
-            height={600}
-            width={600}
-            globeBackgroundTexture={globeBackgroundTexture}
-            globeCloudsTexture={globeCloudsTexture}
-            globeTexture={globeTexture}
-          />
+          <GlobeWrapper>
+            <ReactGlobe
+              options={options}
+              markers={markers}
+              height={600}
+              width={600}
+              globeBackgroundTexture={globeBackgroundTexture}
+              globeCloudsTexture={globeCloudsTexture}
+              globeTexture={globeTexture}
+            />
+          </GlobeWrapper>
         </div>
       </div>
     </section>
   )
 })
+
+const GlobeWrapper = styled.div`
+  & canvas {
+    outline: none;
+  }
+`
 
 export default Hero

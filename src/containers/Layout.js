@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from '@emotion/styled'
 import { useStaticQuery, graphql } from 'gatsby'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -36,15 +37,26 @@ const Layout = ({ children, location, data, pageContext }) => {
     <>
       <Reboot />
       <HelmetTags />
-      <Header location={location} />
-      {children}
-      <Footer
-        social={social.nodes}
-        products={products.nodes}
-        services={services.nodes}
-      />
+      <Wrapper>
+        <Header location={location} />
+        {children}
+        <Footer
+          social={social.nodes}
+          products={products.nodes}
+          services={services.nodes}
+        />
+      </Wrapper>
     </>
   )
 }
+
+const Wrapper = styled.div`
+  position: sticky;
+  top: 0;
+  width: 100%;
+  border-left: 20px solid #67b246;
+  border-right: 20px solid #67b246;
+  z-index: 9999;
+`
 
 export default Layout

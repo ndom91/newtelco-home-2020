@@ -22,7 +22,6 @@ const Footer = ({ products, services, social }) => {
         <div className='relative w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left'>
           <div className='flex title-font font-medium items-center md:justify-start justify-center text-white z-20'>
             <LogoFull className='z-30' />
-            {/* <img alt='Newtelco' src={NewtelcoFull} className='z-10 ' /> */}
           </div>
           <p className='mt-8 text-sm text-gray-700'>
             <span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-around w-full'>
@@ -115,14 +114,14 @@ const Footer = ({ products, services, social }) => {
             </span>
             <Scribble
               alt='Scribble Circle'
-              className='h-auto w-full absolute -ml-16 -bottom-2 left-0 opacity-50 pointer-events-none z-0'
+              className='h-auto w-full absolute -ml-16 -bottom-2 left-0 opacity-25 pointer-events-none z-0'
               style={{ width: '150%' }}
             />
           </p>
         </div>
         <div className='flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center'>
           <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
-            <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
+            <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
               Locations
             </h2>
             <nav className='list-none mb-10'>
@@ -130,7 +129,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   First Link
                 </a>
@@ -139,7 +138,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Second Link
                 </a>
@@ -148,7 +147,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Third Link
                 </a>
@@ -156,7 +155,7 @@ const Footer = ({ products, services, social }) => {
             </nav>
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
-            <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
+            <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
               Products
             </h2>
             <nav className='list-none mb-10'>
@@ -167,7 +166,7 @@ const Footer = ({ products, services, social }) => {
                       to={`/products/${slug(product.title)}`}
                       language={language}
                       aria-label={`${product.title} Link`}
-                      className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                      className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                     >
                       {product.title}
                     </Link>
@@ -176,7 +175,7 @@ const Footer = ({ products, services, social }) => {
             </nav>
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
-            <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
+            <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
               Services
             </h2>
             <nav className='list-none mb-10'>
@@ -187,7 +186,7 @@ const Footer = ({ products, services, social }) => {
                       to={`/services/${slug(service.title)}`}
                       language={language}
                       aria-label={`${service.title} Link`}
-                      className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                      className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                     >
                       {service.title}
                     </Link>
@@ -196,7 +195,7 @@ const Footer = ({ products, services, social }) => {
             </nav>
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
-            <h2 className='title-font font-medium text-white tracking-widest text-sm mb-3'>
+            <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
               Company
             </h2>
             <nav className='list-none mb-10'>
@@ -204,7 +203,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   First Link
                 </a>
@@ -213,7 +212,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Second Link
                 </a>
@@ -222,7 +221,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Third Link
                 </a>
@@ -231,7 +230,7 @@ const Footer = ({ products, services, social }) => {
                 <a
                   href='https://newtelco.dev'
                   alt='Link'
-                  className='text-gray-600 text-sm hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Fourth Link
                 </a>
@@ -242,18 +241,18 @@ const Footer = ({ products, services, social }) => {
       </div>
       <div className='bg-gray-800'>
         <div className='container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row align-center'>
-          <p className='text-gray-600 text-sm text-center sm:text-left w-full flex justify-between mb-0'>
+          <p className='text-gray-600 text-sm text-center sm:text-left w-full flex justify-between mb-0 font-mono'>
             © {year} NewTelco GmbH
             <a
               href='https://github.com/ndom91'
               rel='noopener noreferrer'
-              className='text-gray-700 ml-1 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out'
+              className='text-gray-700 ml-1 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out text-xs'
               target='_blank'
             >
               <svg
                 fill='none'
-                height='16'
-                width='16'
+                height='12'
+                width='12'
                 strokeLinecap='round'
                 strokeLinejoin='round'
                 strokeWidth='2'

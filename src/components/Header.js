@@ -24,34 +24,34 @@ export default function Header() {
           <Logo />
         </Link>
         <nav className='flex flex-wrap items-center justify-center hidden font-mono text-base md:mr-auto md:ml-3 md:py-1 md:pl-4 sm:flex'>
-          <Link
+          <NavLink
             language={language}
             to='/products'
             className='mr-5 text-white hover:text-white hover:no-underline'
           >
             {t('menu.products')}
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             language={language}
             to='/services'
             className='mr-5 text-white hover:text-white hover:no-underline'
           >
             {t('menu.services')}
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             language={language}
             to='/team'
             className='mr-5 text-white hover:text-white hover:no-underline'
           >
             {t('menu.team')}
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             language={language}
             to='/about'
             className='mr-5 text-white hover:text-white hover:no-underline'
           >
             {t('menu.about')}
-          </Link>
+          </NavLink>
         </nav>
         {isMobile ? (
           <>
@@ -75,9 +75,39 @@ export default function Header() {
   )
 }
 
+const NavLink = styled(Link)`
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #67b246;
+    height: 3px;
+    transition-property: right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
+    right: 0;
+  }
+`
+
 const Wrapper = styled.div`
   z-index: 999;
   position: sticky;
   top: 0;
   backdrop-filter: saturate(120%) blur(10px);
+  border-top: 20px solid #67b246;
 `

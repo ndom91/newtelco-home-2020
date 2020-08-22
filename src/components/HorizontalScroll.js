@@ -12,7 +12,7 @@ const TallOuterContainer = styled.div`
 
 const StickyInnerContainer = styled.div`
   position: sticky;
-  top: 150px;
+  top: 130px;
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -46,7 +46,7 @@ const HorizontalScroll = ({ children }) => {
   const objectRef = useRef()
   // useEffect(() =>
   scrollY.onChange(latest => {
-    setTranslateX(latest - 1800)
+    setTranslateX(latest - 1900)
   })
   // , [])
 
@@ -63,7 +63,7 @@ const HorizontalScroll = ({ children }) => {
   return (
     <TallOuterContainer dynamicHeight={dynamicHeight}>
       <StickyInnerContainer>
-        <div className='flex justify-between w-full mb-20 mt-12 lg:w-2/3 w-3/4 mx-auto'>
+        <div className='flex justify-between w-full mb-12 mt-12 lg:w-2/3 w-3/4 mx-auto'>
           <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto'>
             <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-hairline'>
               {t('team.headline')}

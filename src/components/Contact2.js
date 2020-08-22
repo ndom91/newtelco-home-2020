@@ -4,11 +4,34 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const Contact = () => {
   const { t } = useTranslation()
-  const [contact, setContactValue] = useState({
+  const [state, setState] = useState({
     name: '',
     email: '',
     message: '',
   })
+
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&')
+  }
+
+  const handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...state }),
+    })
+      .then(() => null)
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
   return (
     <section className='text-gray-500 bg-gray-900 body-font relative'>
       <div className='container px-5 py-24 mx-auto'>
@@ -27,11 +50,12 @@ const Contact = () => {
             method='POST'
             autoComplete='off'
             data-netlify='true'
+            onSubmit={handleSubmit}
           >
             <input
               type='hidden'
               name='form-name'
-              value='Contact Form'
+              value='contact'
               aria-label='Form Name'
             />
             <div className='p-2 w-1/2'>
@@ -39,10 +63,7 @@ const Contact = () => {
                 className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out'
                 placeholder={t('contact.name')}
                 type='text'
-                value={contact.name}
-                onChange={event =>
-                  setContactValue({ ...contact, name: event.target.value })
-                }
+                onChange={handleChange}
               />
             </div>
             <div className='p-2 w-1/2'>
@@ -50,19 +71,13 @@ const Contact = () => {
                 className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out'
                 placeholder={t('contact.email')}
                 type='email'
-                value={contact.email}
-                onChange={event =>
-                  setContactValue({ ...contact, email: event.target.value })
-                }
+                onChange={handleChange}
               />
             </div>
             <div className='p-2 w-full'>
               <textarea
                 className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-green-500 text-base px-4 py-2 resize-none block transition transition-borders duration-300 ease-in-out'
-                value={contact.message}
-                onChange={event =>
-                  setContactValue({ ...contact, message: event.target.value })
-                }
+                onChange={handleChange}
                 placeholder={t('contact.message')}
               ></textarea>
             </div>

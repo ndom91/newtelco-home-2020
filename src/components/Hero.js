@@ -14,11 +14,9 @@ const Globe = Loadable({
   loading() {
     return (
       <div
-        styl={{ height: '515px', width: '70px' }}
+        styl={{ height: '600px', width: '600px' }}
         className='text-white font-display font-hairline'
-      >
-        Loading...
-      </div>
+      ></div>
     )
   },
 })

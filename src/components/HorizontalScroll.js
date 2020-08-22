@@ -44,11 +44,9 @@ const HorizontalScroll = ({ children }) => {
   const [translateX, setTranslateX] = useState(0)
 
   const objectRef = useRef()
-  // useEffect(() =>
   scrollY.onChange(latest => {
     setTranslateX(latest - 1900)
   })
-  // , [])
 
   const resizeHandler = () => {
     handleDynamicHeight(objectRef, setDynamicHeight)
@@ -57,7 +55,6 @@ const HorizontalScroll = ({ children }) => {
   useEffect(() => {
     handleDynamicHeight(objectRef, setDynamicHeight)
     window.addEventListener('resize', resizeHandler)
-    // applyScrollListener(containerRef, setTranslateX)
   }, [])
 
   return (

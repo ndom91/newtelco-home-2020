@@ -9,7 +9,6 @@ import '../style/globals.css'
 import '../style/fonts.css'
 
 const Layout = ({ children, location, data, pageContext }) => {
-  // console.log(location, data, pageContext)
   const { social, products, services } = useStaticQuery(
     graphql`
       query {

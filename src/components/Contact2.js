@@ -14,24 +14,6 @@ const Contact = () => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&')
-  }
-
-  const handleSubmit = e => {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...state }),
-    })
-      .then(() => null)
-      .catch(error => alert(error))
-
-    e.preventDefault()
-  }
-
   return (
     <section className='text-gray-500 bg-gray-900 body-font relative'>
       <div className='container px-5 py-24 mx-auto'>
@@ -50,7 +32,6 @@ const Contact = () => {
             method='POST'
             autoComplete='off'
             data-netlify='true'
-            onSubmit={handleSubmit}
           >
             <input
               type='hidden'

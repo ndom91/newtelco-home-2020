@@ -44,7 +44,7 @@ const Travolta = styled.img`
   z-index: 99;
   opacity: 0.7;
   filter: brightness(0.5) grayscale(0.5);
-  margin-left: 250px;
+  margin-left: 50px;
 `
 
 const TextWrapper = styled.div`

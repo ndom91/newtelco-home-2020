@@ -7,20 +7,20 @@ import media from '../style/mq'
 import Blob from '../images/illustrations/blobs/blob14.svg'
 import Blob2 from '../images/illustrations/blobs/blob15.svg'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
-import {
-  useViewportScroll,
-  useSpring,
-  useTransform,
-  motion,
-} from 'framer-motion'
+// import {
+//   useViewportScroll,
+//   useSpring,
+//   useTransform,
+//   motion,
+// } from 'framer-motion'
 
 const RackStats = () => {
   const { t } = useTranslation()
-  const { scrollY } = useViewportScroll()
-  const x = useTransform(scrollY, [20, -20], [10, -350])
-  const xSpring = useSpring(x, { damping: 10 })
-  const y = useTransform(scrollY, [20, -20], [400, 350])
-  const ySpring = useSpring(x, { damping: 10, stiffness: 100 })
+  // const { scrollY } = useViewportScroll()
+  // const x = useTransform(scrollY, [20, -20], [10, -350])
+  // const xSpring = useSpring(x, { damping: 10 })
+  // const y = useTransform(scrollY, [20, -20], [400, 350])
+  // const ySpring = useSpring(x, { damping: 10, stiffness: 100 })
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -43,16 +43,14 @@ const RackStats = () => {
           <StatBlock inView={inView} label={t('stats.tbps')} value={14} />
           <StatBlock inView={inView} label={t('stats.watts')} value={3.5} />
         </Content>
-        <BlobDots>
-          <Blob />
-        </BlobDots>
+        <BlobDots />
         <BlobCircle />
       </ContentWrapper>
     </Wrapper>
   )
 }
 
-const BlobDots = styled(motion.div)`
+const BlobDots = styled(Blob)`
   position: absolute;
   right: 0;
   top: 18rem;

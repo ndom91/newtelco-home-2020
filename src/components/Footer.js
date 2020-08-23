@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 import slug from 'slug'
 import styled from '@emotion/styled'
@@ -15,6 +15,10 @@ const Footer = ({ products, services, social }) => {
   const github = social.find(item => item.provider === 'Github').url
   const instagram = social.find(item => item.provider === 'Instagram').url
   const linkedin = social.find(item => item.provider === 'Linkedin').url
+
+  useEffect(() => {
+    console.log(process.env.UPTIMEROBOT_KEY)
+  }, [])
 
   return (
     <footer className='text-gray-500 bg-gray-900 body-font overflow-hidden max-w-100'>

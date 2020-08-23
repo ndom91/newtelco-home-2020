@@ -1,10 +1,10 @@
 const siteConfig = require('./config/site-config')
-const {
-  NODE_ENV: NODE_ENV = 'development',
-  URL: NETLIFY_SITE_URL = 'https://newtelco-dato.netlify.app',
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV,
-} = process.env
+// const {
+//   NODE_ENV: NODE_ENV = 'development',
+//   URL: NETLIFY_SITE_URL = 'https://newtelco-dato.netlify.app',
+//   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+//   CONTEXT: NETLIFY_ENV = NODE_ENV,
+// } = process.env
 require('dotenv').config({
   path: '.env',
 })
@@ -42,7 +42,7 @@ module.exports = {
       options: {
         host: siteConfig.siteUrl,
         sitemap: `${siteConfig.siteUrl}${siteConfig.sitemapPath}`,
-        resolveEnv: () => NETLIFY_ENV,
+        resolveEnv: () => process.env.NETLIFY_ENV,
         env: {
           production: {
             policy: [{ userAgent: '*' }],
@@ -153,7 +153,7 @@ module.exports = {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         printRejected: false,
-        develop: NODE_ENV !== 'development',
+        develop: process.env.NODE_ENV !== 'development',
         tailwind: true,
         ignore: [
           'node_modules/@brainhubeu/react-carousel/lib/style.css',

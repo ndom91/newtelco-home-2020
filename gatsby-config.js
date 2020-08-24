@@ -6,7 +6,7 @@ const siteConfig = require('./config/site-config')
 //   CONTEXT: NETLIFY_ENV = NODE_ENV,
 // } = process.env
 require('dotenv').config({
-  path: '.env',
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {

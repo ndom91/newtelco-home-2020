@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 import slug from 'slug'
 import styled from '@emotion/styled'
@@ -6,6 +6,7 @@ import LogoFull from '../images/NewtelcoFullLogo'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
 
 const Footer = ({ products, services, social }) => {
+  const [uptime, setUptime] = useState(true)
   const today = new Date()
   const { language } = useI18next()
   const year = today.getFullYear()
@@ -17,7 +18,18 @@ const Footer = ({ products, services, social }) => {
   const linkedin = social.find(item => item.provider === 'Linkedin').url
 
   useEffect(() => {
-    console.log(process.env.UPTIMEROBOT_KEY)
+    fetch('https://uptimerobot.newtelco.workers.dev', {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then(data => data.json())
+      .then(data => {
+        data.monitors.forEach(mon => {
+          if (!mon.online) setUptime(false)
+        })
+      })
   }, [])
 
   return (
@@ -245,29 +257,49 @@ const Footer = ({ products, services, social }) => {
       </div>
       <div className='bg-gray-800'>
         <div className='container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row align-center'>
-          <p className='text-gray-600 text-sm text-center sm:text-left w-full flex justify-between mb-0 font-mono'>
-            © {year} NewTelco GmbH
-            <a
-              href='https://github.com/ndom91'
-              rel='noopener noreferrer'
-              className='text-gray-700 ml-1 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out text-xs'
-              target='_blank'
-            >
-              <svg
-                fill='none'
-                height='12'
-                width='12'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-                className='inline-block mr-1'
+          <p className='text-gray-600 text-sm text-center sm:text-left w-full flex justify-between items-center mb-0 font-mono'>
+            <p className=' mb-0'>© {year} NewTelco GmbH</p>
+            <div className='flex'>
+              <a
+                href='https://is.newtelco.online'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:no-underline'
               >
-                <path d='M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' />
-              </svg>
-              ndomino
-            </a>
+                <div className='h-4 flex items-center border-gray-700 border p-4 rounded-lg mr-8'>
+                  <span
+                    alt='team'
+                    className={`w-5 h-5 ${
+                      uptime ? 'bg-green-500' : 'bg-red-200'
+                    } flex-shrink-0 rounded-full mr-4`}
+                  ></span>
+                  <div className='flex-grow align-middle'>
+                    <p className='text-gray-500 mb-0'>Newtelco Uptime</p>
+                  </div>
+                </div>
+              </a>
+              <a
+                href='https://github.com/ndom91'
+                rel='noopener noreferrer'
+                className='leading-8 text-gray-700 ml-1 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out text-xs'
+                target='_blank'
+              >
+                <svg
+                  fill='none'
+                  height='12'
+                  width='12'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                  className='inline-block mr-1'
+                >
+                  <path d='M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' />
+                </svg>
+                ndomino
+              </a>
+            </div>
           </p>
         </div>
       </div>

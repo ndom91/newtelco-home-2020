@@ -5,17 +5,16 @@ import Hero from '../components/Hero'
 import Products from '../components/Products'
 import RackStats from '../components/RackStats'
 import Team from '../components/Team'
-// import Location from '../components/Locations2'
 
 import Loadable from 'react-loadable'
 const Location = Loadable({
-  loader: () => import('../components/Locations2'),
+  loader: () => import('../components/Locations'),
   loading() {
     return <div>Loading...</div>
   },
 })
 const Contact = Loadable({
-  loader: () => import('../components/Contact2'),
+  loader: () => import('../components/Contact'),
   loading() {
     return <div>Loading...</div>
   },

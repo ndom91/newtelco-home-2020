@@ -3,8 +3,6 @@ import ReactGlobe from 'react-globe'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/scale.css'
 
-const globeBackgroundTexture =
-  'https://raw.githubusercontent.com/chrisrzhou/react-globe/main/textures/invalid_background_file.png'
 const globeCloudsTexture =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Fair_Weather_Cloud_Map.jpg/1280px-Fair_Weather_Cloud_Map.jpg'
 const globeTexture = 'https://i.imgur.com/MipfNVK.png'
@@ -73,9 +71,9 @@ const Globe = () => {
     <ReactGlobe
       options={options}
       markers={markers}
-      height={600}
-      width={600}
-      globeBackgroundTexture={globeBackgroundTexture}
+      height={800}
+      width={800}
+      globeBackgroundTexture={null}
       globeCloudsTexture={globeCloudsTexture}
       globeTexture={globeTexture}
     />

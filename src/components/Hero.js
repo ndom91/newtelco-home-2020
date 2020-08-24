@@ -14,7 +14,7 @@ const Globe = Loadable({
   loading() {
     return (
       <div
-        styl={{ height: '600px', width: '600px' }}
+        style={{ height: '600px', width: '600px' }}
         className='text-white font-display font-hairline'
       ></div>
     )
@@ -88,7 +88,10 @@ const Hero = React.memo(function Hero({ data }) {
             />
           </motion.div>
         </div>
-        <div className='relative w-screen -mt-20 overflow-visible lg:max-w-xl lg:w-full md:w-1/2 outline-none'>
+        <div
+          className='relative w-screen -mt-20 overflow-visible lg:max-w-xl lg:w-full md:w-1/2 outline-none'
+          style={{ height: '600px' }}
+        >
           <motion.div
             className='absolute bottom-0 left-0'
             style={{
@@ -99,7 +102,7 @@ const Hero = React.memo(function Hero({ data }) {
             <Blob13
               alt='Lines under Map Blob'
               width='150px'
-              className='bottom-0 left-0 ml-24 -mb-12'
+              className='bottom-0 left-0 ml-24 -mb-24 transform rotate-45'
             />
           </motion.div>
           <GlobeWrapper>

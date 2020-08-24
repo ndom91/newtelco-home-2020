@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <Wrapper className='top-0 text-gray-500 bg-transparent body-font'>
-      <div className='container z-50 flex flex-col flex-wrap items-center p-2 mx-auto bg-transparent md:flex-row'>
+      <div className='container z-50 flex flex-col flex-wrap items-center px-8 py-2 mx-auto bg-transparent md:flex-row'>
         <Link
           language={language}
           to='/'

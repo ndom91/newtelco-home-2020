@@ -45,7 +45,7 @@ const HorizontalScroll = ({ children }) => {
 
   const objectRef = useRef()
   scrollY.onChange(latest => {
-    setTranslateX(latest - 1900)
+    setTranslateX(latest - 1800)
   })
 
   const resizeHandler = () => {

@@ -4,7 +4,7 @@ import datacenter from '../images/servers.png'
 import StatBlock from './StatBlock'
 import styled from '@emotion/styled'
 import media from '../style/mq'
-import Blob from '../images/illustrations/blobs/blob14.svg'
+import Blob from '../images/illustrations/blobs/blob17.svg'
 import Blob2 from '../images/illustrations/blobs/blob15.svg'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import {
@@ -13,6 +13,7 @@ import {
   useTransform,
   motion,
 } from 'framer-motion'
+import 'pattern.css/dist/pattern.min.css'
 
 const RackStats = () => {
   const { t } = useTranslation()
@@ -31,6 +32,7 @@ const RackStats = () => {
     <Wrapper ref={ref}>
       <SvgImage />
       <ContentWrapper>
+        {/* <BlobCircle /> */}
         <Datacenter
           src={datacenter}
           alt='datacenter'
@@ -43,21 +45,23 @@ const RackStats = () => {
           <StatBlock inView={inView} label={t('stats.tbps')} value={14} />
           <StatBlock inView={inView} label={t('stats.watts')} value={3.5} />
         </Content>
-        <BlobDots>
-          <Blob />
-        </BlobDots>
-        <BlobCircle />
+        <div
+          alt='bg-dot-1'
+          style={{ height: '230px', width: '230px' }}
+          className='absolute top-0 right-0 z-0 opacity-0 pointer-events-none -mr-24 mt-56 md:opacity-25 pattern-dots-md text-gray-700'
+        />
+        <BlobFilled />
       </ContentWrapper>
     </Wrapper>
   )
 }
 
-const BlobDots = styled(motion.div)`
+const BlobCircle = styled(Blob)`
   position: absolute;
-  right: 0;
-  top: 18rem;
+  left: 2rem;
+  top: 7rem;
 `
-const BlobCircle = styled(Blob2)`
+const BlobFilled = styled(Blob2)`
   position: absolute;
   right: 18rem;
   top: 41rem;

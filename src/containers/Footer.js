@@ -269,12 +269,14 @@ const Footer = ({ products, services, social }) => {
                 <div className='h-4 flex items-center border-gray-700 border p-4 rounded-lg mr-8'>
                   <span
                     alt='team'
-                    className={`w-5 h-5 ${
-                      uptime ? 'bg-green-500' : 'bg-red-200'
-                    } flex-shrink-0 rounded-full mr-4`}
+                    className={`w-3 h-3 ${
+                      uptime ? 'bg-green-500' : 'bg-yellow-400'
+                    } flex-shrink-0 rounded-full mr-4 shadow-outline`}
                   ></span>
                   <div className='flex-grow align-middle'>
-                    <p className='text-gray-500 mb-0'>Newtelco Uptime</p>
+                    <p className='text-gray-500 mb-0'>
+                      {uptime ? 'All Systems Normal' : 'Systems Degraded'}
+                    </p>
                   </div>
                 </div>
               </a>

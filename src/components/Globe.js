@@ -70,7 +70,7 @@ const Globe = () => {
   return (
     <ReactGlobe
       options={options}
-      markers={markers}
+      // markers={markers}
       height={800}
       width={800}
       globeBackgroundTexture={null}

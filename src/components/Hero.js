@@ -48,27 +48,27 @@ const Hero = React.memo(function Hero({ data }) {
       </motion.div>
       <div className='relative flex flex-col-reverse items-end py-0 mx-auto md:px-5 sm:py-24 md:flex-row'>
         <div className='relative flex flex-col w-full -mt-8 lg:flex-grow md:w-1/2 md:text-left md:mb-0 items-left'>
-          <h1 className='z-10 text-3xl font-semibold text-left text-white font-sans sm:text-4xl md:whitespace-no-wrap'>
+          <h1 className='z-10 text-3xl mb-16 font-semibold text-left text-white font-sans sm:text-4xl md:whitespace-no-wrap'>
             {t('welcome')}
           </h1>
           <Typed
             strings={[t('subtitle.1'), t('subtitle.2'), t('subtitle.3')]}
             typeSpeed={50}
             backSpeed={60}
-            className='w-full overflow-x-visible text-2xl font-hairline font-mono md:text-3xl md:whitespace-no-wrap'
+            className='absolute bottom-0 w-full overflow-x-visible text-2xl font-hairline font-mono md:text-3xl md:whitespace-no-wrap'
           />
           <div className='z-10 flex flex-col items-start -mb-20 leading-normal text-left bg-transparent'>
-            <Link
+            <a
               target='_blank'
+              rel='noopener noreferrer'
               alt={`Email to ${ctaEmail}`}
               href={`mailto:${ctaEmail}`}
-              to={`mailto:${ctaEmail}`}
               className='z-10 hover:no-underline important'
             >
               <button className='z-10 flex px-4 py-2 mx-auto mt-6 text-lg text-white bg-green-500 border-0 rounded shadow shadow-base transition transition-colors duration-500 ease-in-out font-body focus:shadow-outline focus:outline-none hover:bg-green-600'>
                 {ctaActionText}
               </button>
-            </Link>
+            </a>
           </div>
           <Blob10
             alt='Lines from Text Blob'

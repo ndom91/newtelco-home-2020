@@ -15,13 +15,14 @@ import {
 } from 'framer-motion'
 import 'pattern.css/dist/pattern.min.css'
 
+
 const RackStats = () => {
   const { t } = useTranslation()
-  const { scrollY } = useViewportScroll()
-  const x = useTransform(scrollY, [20, -20], [10, -350])
-  const xSpring = useSpring(x, { damping: 10 })
-  const y = useTransform(scrollY, [20, -20], [400, 350])
-  const ySpring = useSpring(x, { damping: 10, stiffness: 100 })
+  // const { scrollY } = useViewportScroll()
+  // const x = useTransform(scrollY, [20, -20], [10, -350])
+  // const xSpring = useSpring(x, { damping: 10 })
+  // const y = useTransform(scrollY, [20, -20], [400, 350])
+  // const ySpring = useSpring(x, { damping: 10, stiffness: 100 })
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -57,6 +58,7 @@ const RackStats = () => {
 }
 
 const BlobCircle = styled(Blob)`
+
   position: absolute;
   left: 2rem;
   top: 7rem;

@@ -6,7 +6,7 @@ const {
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env
 require('dotenv').config({
-  path: '.env',
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
@@ -42,7 +42,7 @@ module.exports = {
       options: {
         host: siteConfig.siteUrl,
         sitemap: `${siteConfig.siteUrl}${siteConfig.sitemapPath}`,
-        resolveEnv: () => NETLIFY_ENV,
+        resolveEnv: () => process.env.NETLIFY_ENV,
         env: {
           production: {
             policy: [{ userAgent: '*' }],
@@ -153,7 +153,7 @@ module.exports = {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         printRejected: false,
-        develop: NODE_ENV !== 'development',
+        develop: process.env.NODE_ENV !== 'development',
         tailwind: true,
         ignore: [
           'node_modules/@brainhubeu/react-carousel/lib/style.css',

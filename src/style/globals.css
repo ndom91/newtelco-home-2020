@@ -48,19 +48,6 @@ body {
   background: #898989; /* Gecko Browsers */
 }
 
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-track-piece {
-  visibility: none;
-  background-color: #111111;
-}
-::-webkit-scrollbar {
-  width: 10px;
-  background-color: transparent;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 15px;
-  background-color: #67b236;
-}
 
 .BrainhubCarousel__dot--selected::before {
   background-color: #67b246 !important;

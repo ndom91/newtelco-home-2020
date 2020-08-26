@@ -1,10 +1,10 @@
 const siteConfig = require('./config/site-config')
-// const {
-//   NODE_ENV: NODE_ENV = 'development',
-//   URL: NETLIFY_SITE_URL = 'https://newtelco-dato.netlify.app',
-//   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-//   CONTEXT: NETLIFY_ENV = NODE_ENV,
-// } = process.env
+const {
+  NODE_ENV: NODE_ENV = 'development',
+  URL: NETLIFY_SITE_URL = 'https://newtelco-dato.netlify.app',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })

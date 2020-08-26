@@ -1,9 +1,10 @@
 const path = require('path')
 const slugify = require('slug')
 // const locales = require('./src/consts/locales')
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+
+// require('dotenv').config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// })
 
 // eslint-disable-next-line
 exports.createPages = async ({ graphql, actions }) => {

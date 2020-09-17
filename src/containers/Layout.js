@@ -53,8 +53,6 @@ const Wrapper = styled.div`
   position: sticky;
   top: 0;
   width: 100%;
-  border-left: 20px solid #67b246;
-  border-right: 20px solid #67b246;
   z-index: 9999;
 `
 

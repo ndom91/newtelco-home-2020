@@ -1,6 +1,9 @@
 module.exports = {
   theme: {
     extend: {
+      height: {
+        '7': '1.75rem',
+      },
       width: {
         '50-screen': '50vw',
         '40-screen': '40vw',

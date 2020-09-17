@@ -23,32 +23,32 @@ export default function Header() {
         >
           <Logo />
         </Link>
-        <nav className='flex flex-wrap items-center justify-center hidden font-mono text-base md:mr-auto md:ml-3 md:py-1 md:pl-4 sm:flex'>
+        <nav className='flex flex-wrap items-center justify-center hidden font-mono text-base md:mr-auto md:ml-3 md:py-1 md:pl-10 sm:flex'>
           <NavLink
             language={language}
             to='/products'
-            className='mr-5 text-white hover:text-white hover:no-underline'
+            className='mr-16 text-white hover:text-white hover:no-underline h-7'
           >
             {t('menu.products')}
           </NavLink>
           <NavLink
             language={language}
             to='/services'
-            className='mr-5 text-white hover:text-white hover:no-underline'
+            className='mr-16 text-white hover:text-white hover:no-underline h-7'
           >
             {t('menu.services')}
           </NavLink>
           <NavLink
             language={language}
             to='/team'
-            className='mr-5 text-white hover:text-white hover:no-underline'
+            className='mr-16 text-white hover:text-white hover:no-underline h-7'
           >
             {t('menu.team')}
           </NavLink>
           <NavLink
             language={language}
             to='/about'
-            className='mr-5 text-white hover:text-white hover:no-underline'
+            className='mr-16 text-white hover:text-white hover:no-underline h-7'
           >
             {t('menu.about')}
           </NavLink>
@@ -109,5 +109,4 @@ const Wrapper = styled.div`
   position: sticky;
   top: 0;
   backdrop-filter: saturate(120%) blur(10px);
-  border-top: 20px solid #67b246;
 `

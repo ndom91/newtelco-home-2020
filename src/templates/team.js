@@ -34,14 +34,6 @@ export const query = graphql`
         locale
       }
     }
-    home: datoCmsSetting(locale: { eq: $language }) {
-      ctaEmail
-      ctaPhone
-      ctaActionText
-      seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
-      }
-    }
     seo: datoCmsSite {
       faviconMetaTags {
         tags
@@ -61,15 +53,23 @@ export const query = graphql`
         }
       }
     }
-    partners: allDatoCmsPartner(filter: { locale: { eq: $language } }) {
+    team: allDatoCmsTeam(
+      sort: { order: ASC, fields: order }
+      filter: { locale: { eq: $language } }
+    ) {
       nodes {
+        name
+        jobTitle
+        description
+        order
         image {
           alt
-          url
-          basename
-          fluid(imgixParams: { auto: "format", q: 60, fit: "max", w: "150" }) {
-            src
+          fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
+            ...GatsbyDatoCmsFluid
           }
+        }
+        seoMetaTags {
+          tags
         }
       }
     }
@@ -110,35 +110,6 @@ export const query = graphql`
             ...GatsbyDatoCmsFluid
           }
         }
-      }
-    }
-    testimonials: allDatoCmsTestimonial(filter: { locale: { eq: $language } }) {
-      nodes {
-        description
-        company
-        person
-      }
-    }
-    team: allDatoCmsTeam(
-      filter: { locale: { eq: $language } }
-      sort: { order: ASC, fields: order }
-    ) {
-      nodes {
-        name
-        image {
-          fluid(
-            imgixParams: {
-              auto: "format"
-              fit: "max"
-              crop: "entropy"
-              w: "300"
-            }
-          ) {
-            ...GatsbyDatoCmsFluid
-          }
-        }
-        jobTitle
-        contactmethod
       }
     }
   }

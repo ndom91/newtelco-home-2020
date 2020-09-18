@@ -122,7 +122,7 @@ const NotFoundPage = () => {
 export default NotFoundPage
 
 export const query = graphql`
-  query AboutQuery($language: String!) {
+  query Query404($language: String!) {
     social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
       nodes {
         provider

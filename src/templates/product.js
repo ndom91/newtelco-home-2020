@@ -30,6 +30,13 @@ export default function ProductPage({ data = {}, pageContext }) {
 
 export const query = graphql`
   query ProductQuery($language: String!, $title: String!) {
+    social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
+      nodes {
+        provider
+        url
+        locale
+      }
+    }
     seo: datoCmsSite {
       faviconMetaTags {
         tags

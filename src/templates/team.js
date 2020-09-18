@@ -27,6 +27,13 @@ export default function TeamPage({ data }) {
 
 export const query = graphql`
   query TeamQuery($language: String!) {
+    social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
+      nodes {
+        provider
+        url
+        locale
+      }
+    }
     seo: datoCmsSite {
       faviconMetaTags {
         tags

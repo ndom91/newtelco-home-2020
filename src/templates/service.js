@@ -20,6 +20,13 @@ export default function ServicePage({ data }) {
 
 export const query = graphql`
   query ServiceQuery($language: String!) {
+    social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
+      nodes {
+        provider
+        url
+        locale
+      }
+    }
     seo: datoCmsSite {
       faviconMetaTags {
         tags

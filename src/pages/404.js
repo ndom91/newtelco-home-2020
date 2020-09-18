@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import BG from '../images/404.jpg'
 import SEO from '../components/SEO'
@@ -119,3 +120,76 @@ const NotFoundPage = () => {
 }
 
 export default NotFoundPage
+
+export const query = graphql`
+  query AboutQuery($language: String!) {
+    social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
+      nodes {
+        provider
+        url
+        locale
+      }
+    }
+    seo: datoCmsSite {
+      faviconMetaTags {
+        tags
+      }
+      globalSeo {
+        siteName
+        titleSuffix
+        twitterAccount
+        facebookPageUrl
+        fallbackSeo {
+          title
+          description
+          image {
+            url
+          }
+          twitterCard
+        }
+      }
+    }
+    products: allDatoCmsProduct(
+      filter: { locale: { eq: $language }, onHomepage: { eq: true } }
+    ) {
+      nodes {
+        shortText
+        title
+        image {
+          alt
+          fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+        seoMetaTags {
+          tags
+        }
+      }
+    }
+    locations: allDatoCmsLocation(filter: { locale: { eq: $language } }) {
+      nodes {
+        city
+        address
+        image {
+          fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+    services: allDatoCmsService(
+      filter: { locale: { eq: $language }, onHomepage: { eq: true } }
+    ) {
+      nodes {
+        shortText
+        title
+        image {
+          alt
+          fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+  }
+`

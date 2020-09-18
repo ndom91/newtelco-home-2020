@@ -53,6 +53,13 @@ export default function IndexPage({ data }) {
 
 export const query = graphql`
   query HomeQuery($language: String!) {
+    social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
+      nodes {
+        provider
+        url
+        locale
+      }
+    }
     home: datoCmsSetting(locale: { eq: $language }) {
       ctaEmail
       ctaPhone

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { useStaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 import Footer from './Footer'
 import HelmetTags from './HelmetTags'
@@ -9,29 +8,8 @@ import '../style/globals.css'
 import '../style/fonts.css'
 
 const Layout = ({ children, location, data, pageContext }) => {
-  const { social, products, services } = useStaticQuery(
-    graphql`
-      query {
-        social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
-          nodes {
-            provider
-            url
-            locale
-          }
-        }
-        products: allDatoCmsProduct(filter: { locale: { eq: "en" } }) {
-          nodes {
-            title
-          }
-        }
-        services: allDatoCmsService(filter: { locale: { eq: "en" } }) {
-          nodes {
-            title
-          }
-        }
-      }
-    `
-  )
+  console.log(data)
+
   return (
     <>
       <Reboot />
@@ -40,9 +18,10 @@ const Layout = ({ children, location, data, pageContext }) => {
         <Header location={location} />
         {children}
         <Footer
-          social={social.nodes}
-          products={products.nodes}
-          services={services.nodes}
+          social={data.social.nodes}
+          products={data.products.nodes}
+          services={data.services.nodes}
+          locations={data.locations.nodes}
         />
       </Wrapper>
     </>

@@ -115,6 +115,7 @@ const Hero = React.memo(function Hero({ data }) {
 })
 
 const GlobeWrapper = styled.div`
+  z-index: 999;
   & canvas {
     outline: none;
   }

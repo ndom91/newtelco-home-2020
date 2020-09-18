@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import LogoFull from '../images/NewtelcoFullLogo'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
 
-const Footer = ({ products, services, social }) => {
+const Footer = ({ products, services, social, locations }) => {
   const [uptime, setUptime] = useState(true)
   const today = new Date()
   const { language } = useI18next()
@@ -141,33 +141,21 @@ const Footer = ({ products, services, social }) => {
               Locations
             </h2>
             <nav className='list-none mb-10'>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
-                >
-                  First Link
-                </a>
-              </div>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
-                >
-                  Second Link
-                </a>
-              </div>
-              <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
-                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
-                >
-                  Third Link
-                </a>
-              </div>
+              {locations.map(location => (
+                <div key={location.city}>
+                  <a
+                    href={`https://maps.google.com?q=${encodeURIComponent(
+                      location.address
+                    )}`}
+                    alt={`${location.city} Maps Link`}
+                    rel='noopener noreferrer'
+                    target='_blank'
+                    className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  >
+                    {location.city}
+                  </a>
+                </div>
+              ))}
             </nav>
           </div>
           <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
@@ -221,7 +209,7 @@ const Footer = ({ products, services, social }) => {
                   alt='Link'
                   className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
-                  First Link
+                  About Us
                 </a>
               </div>
               <div>
@@ -230,7 +218,7 @@ const Footer = ({ products, services, social }) => {
                   alt='Link'
                   className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
-                  Second Link
+                  Team
                 </a>
               </div>
               <div>
@@ -239,7 +227,7 @@ const Footer = ({ products, services, social }) => {
                   alt='Link'
                   className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
-                  Third Link
+                  Privacy Policy
                 </a>
               </div>
               <div>
@@ -248,7 +236,7 @@ const Footer = ({ products, services, social }) => {
                   alt='Link'
                   className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
-                  Fourth Link
+                  Legal
                 </a>
               </div>
             </nav>

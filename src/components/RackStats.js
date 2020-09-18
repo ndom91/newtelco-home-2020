@@ -1,28 +1,16 @@
 import React from 'react'
+import { Reveal, PlayState, Timeline, Tween } from 'react-gsap'
 import { useInView } from 'react-intersection-observer'
 import datacenter from '../images/servers.png'
 import StatBlock from './StatBlock'
 import styled from '@emotion/styled'
 import media from '../style/mq'
-import Blob from '../images/illustrations/blobs/blob17.svg'
 import Blob2 from '../images/illustrations/blobs/blob15.svg'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
-import {
-  useViewportScroll,
-  useSpring,
-  useTransform,
-  motion,
-} from 'framer-motion'
 import 'pattern.css/dist/pattern.min.css'
-
 
 const RackStats = () => {
   const { t } = useTranslation()
-  // const { scrollY } = useViewportScroll()
-  // const x = useTransform(scrollY, [20, -20], [10, -350])
-  // const xSpring = useSpring(x, { damping: 10 })
-  // const y = useTransform(scrollY, [20, -20], [400, 350])
-  // const ySpring = useSpring(x, { damping: 10, stiffness: 100 })
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -31,15 +19,16 @@ const RackStats = () => {
 
   return (
     <Wrapper ref={ref}>
-      <SvgImage />
       <ContentWrapper>
-        {/* <BlobCircle /> */}
-        <Datacenter
-          src={datacenter}
-          alt='datacenter'
-          className={inView ? 'imageInView' : ''}
-          loading='lazy'
-        />
+        <Reveal trigger={<div />}>
+          <Timeline
+            target={<img src={datacenter} alt='datacenter' />}
+            playState={inView ? PlayState.play : PlayState.stop}
+          >
+            <Tween from={{ opacity: 0, x: -1000 }} to={{ opacity: 1, x: 0 }} />
+            <Tween to={{ y: 8, repeat: -1, yoyo: true }} stagger='0.5' />
+          </Timeline>
+        </Reveal>
         <Content>
           <StatBlock inView={inView} label={t('stats.racks')} value={457} />
           <StatBlock inView={inView} label={t('stats.datacenter')} value={26} />
@@ -48,7 +37,11 @@ const RackStats = () => {
         </Content>
         <div
           alt='bg-dot-1'
-          style={{ height: '230px', width: '230px' }}
+          style={{
+            height: '230px',
+            width: '230px',
+            backgroundSize: 'calc(20 * 1px) calc(20 * 1px)',
+          }}
           className='absolute top-0 right-0 z-0 opacity-0 pointer-events-none -mr-24 mt-56 md:opacity-25 pattern-dots-md text-gray-700'
         />
         <BlobFilled />
@@ -56,13 +49,6 @@ const RackStats = () => {
     </Wrapper>
   )
 }
-
-const BlobCircle = styled(Blob)`
-
-  position: absolute;
-  left: 2rem;
-  top: 7rem;
-`
 const BlobFilled = styled(Blob2)`
   position: absolute;
   right: 18rem;
@@ -81,40 +67,6 @@ const Wrapper = styled.div`
   `}
 `
 
-const SvgImage = styled.div`
-  position: relative;
-  &::before {
-    position: absolute;
-    height: 850px;
-    opacity: 0.1;
-    content: '';
-    background: linear-gradient(to right, #8cbf86, #66b4a6, #408ca3);
-
-    z-index: -1;
-    top: 0px;
-    border-radius: 60px;
-    transform: skew(0deg, 7deg) translateX(50%);
-    left: auto;
-    right: 50%;
-  }
-  ${media.tabletSmall`
-    &::before {
-      width: 100%;
-      height: 1150px;
-    }
-  `}
-  ${media.tabletSmall_up`
-    &::before {
-      width: 950px;
-    }
-  `}
-  ${media.tablet_up`
-    &::before {
-      width: 1250px;
-    }
-  `}
-`
-
 const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -123,34 +75,6 @@ const ContentWrapper = styled.div`
     & {
       flex-direction: column;
       align-items: center;
-    }
-  `}
-`
-
-const Datacenter = styled.img`
-  top: 220px;
-  left: 20px;
-  max-width: 550px;
-  opacity: 0;
-
-  &.imageInView {
-    animation: slideIn 0.5s ease-in-out forwards;
-    animation-delay: 0.5s;
-  }
-  @keyframes slideIn {
-    0% {
-      opacity: 0;
-      transform: translateX(-20vw);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0vw);
-    }
-  }
-
-  ${media.tabletSmall`
-    & {
-      width: 90%;
     }
   `}
 `

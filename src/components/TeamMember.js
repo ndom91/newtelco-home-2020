@@ -18,7 +18,7 @@ const TeamMember = ({ member }) => {
           <h2 className='font-medium text-2xl text-gray-600 text-center'>
             {member.name}
           </h2>
-          <h3 className='text-gray-700 text-lg mb-3 text-center font-normal'>
+          <h3 className='text-gray-700 text-lg mb-3 text-center font-mono font-thin'>
             {member.jobTitle}
           </h3>
         </div>

@@ -91,7 +91,6 @@ const Tilter = styled(ReactTilt)`
     height: 100%;
     margin: 0;
     border-radius: 10px;
-    transform-style: preserve-3d;
   }
 
   .tilter__figure {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import styled from '@emotion/styled'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
+import WorldMap from './WorldMapBg'
 
 const Contact = () => {
   const { t } = useTranslation()
@@ -16,6 +16,7 @@ const Contact = () => {
 
   return (
     <section className='text-gray-500 bg-gray-900 body-font relative'>
+      <WorldMap />
       <div className='container px-5 py-24 mx-auto'>
         <div className='flex flex-col text-center w-full mb-12'>
           <h1 className='sm:text-3xl text-2xl font-medium title-font mb-4 text-white'>

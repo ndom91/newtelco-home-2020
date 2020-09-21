@@ -78,7 +78,6 @@ export default function Header() {
 const NavLink = styled(Link)`
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;

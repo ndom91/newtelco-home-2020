@@ -13,6 +13,7 @@ const TeamMember = ({ member }) => {
           alt={member.name}
           className='flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4'
           fluid={member.image.fluid}
+          loading='eager'
         />
         <div className='w-full'>
           <h2 className='font-medium text-2xl text-gray-600 text-center'>

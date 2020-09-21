@@ -38,6 +38,15 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: [
+          'https://www.google-analytics.com',
+          'https://fonts.googleapis.com',
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: siteConfig.siteUrl,

@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <section className='text-gray-500 bg-gray-900 body-font relative'>
       <WorldMap />
-      <div className='container px-5 py-24 mx-auto'>
+      <div className='container px-5 py-24 mx-auto z-10'>
         <div className='flex flex-col text-center w-full mb-12'>
           <h1 className='sm:text-3xl text-2xl font-medium title-font mb-4 text-white'>
             {t('contact.title')}
@@ -26,9 +26,9 @@ const Contact = () => {
             {t('contact.header')}
           </p>
         </div>
-        <div className='lg:w-3/4 md:w-2/3 mx-auto'>
+        <div className='lg:w-3/4 md:w-2/3 mx-auto z-10'>
           <form
-            className='flex flex-wrap -m-2'
+            className='flex flex-wrap -m-2 z-10'
             name='Contact Form'
             method='POST'
             autoComplete='off'
@@ -40,39 +40,39 @@ const Contact = () => {
               value='contact'
               aria-label='Form Name'
             />
-            <div className='p-2 w-1/2'>
+            <div className='p-2 w-1/2 z-10'>
               <input
-                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out'
+                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75'
                 placeholder={t('contact.name')}
                 type='text'
                 name='name'
                 onChange={handleChange}
               />
             </div>
-            <div className='p-2 w-1/2'>
+            <div className='p-2 w-1/2 z-10'>
               <input
-                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out'
+                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75'
                 placeholder={t('contact.email')}
                 type='email'
                 name='email'
                 onChange={handleChange}
               />
             </div>
-            <div className='p-2 w-full'>
+            <div className='p-2 w-full z-10'>
               <textarea
-                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-green-500 text-base px-4 py-2 resize-none block transition transition-borders duration-300 ease-in-out'
+                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-green-500 text-base px-4 py-2 resize-none block transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75'
                 onChange={handleChange}
                 name='email'
                 placeholder={t('contact.message')}
               ></textarea>
             </div>
-            <div className='p-2 w-full'>
-              <p className='text-xs text-gray-700 flex justify-center'>
+            <div className='p-2 w-full z-10'>
+              <p className='text-xs text-gray-700 flex justify-center z-10'>
                 {t('contact.tos1')}
                 <a
                   href='/privacy'
                   alt='Terms of Service'
-                  className='text-green-700 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-green-700 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out z-10'
                 >
                   &nbsp; {t('contact.tos2')}
                 </a>
@@ -80,7 +80,7 @@ const Contact = () => {
               </p>
               <button
                 type='submit'
-                className='flex mx-auto text-white bg-green-500 border-0 py-2 px-16 focus:outline-none hover:bg-green-600 rounded text-lg transition transition-colors duration-300 ease-in-out'
+                className='flex mx-auto text-white bg-green-500 border-0 py-2 px-16 focus:outline-none hover:bg-green-600 rounded text-lg transition transition-colors duration-300 ease-in-out z-10'
               >
                 {t('contact.send')}
               </button>

@@ -10,4 +10,5 @@
 
 [[redirects]]
   from = "/services/*"
+  force = true
   to = "https://newtelco.com/service/:splat"

@@ -49,13 +49,14 @@ const Hero = React.memo(function Hero({ data }) {
         className='absolute top-0 right-0 z-10 -mr-12 z-50'
         style={{
           right: x1,
+          top: y1,
         }}
       >
         <Blob12 alt='Squiggle Map Blob' width='200px' className='z-50' />
       </motion.div>
       <div className='relative flex flex-col-reverse items-end py-0 mx-auto md:px-5 sm:py-24 md:flex-row'>
         <div className='relative flex flex-col w-full -mt-8 lg:flex-grow md:w-1/2 md:text-left md:mb-0 items-left'>
-          <h1 className='z-10 text-3xl mb-16 font-semibold text-left text-white font-sans sm:text-4xl md:whitespace-no-wrap'>
+          <h1 className='z-10 text-3xl mb-10 font-semibold text-left text-white font-sans sm:text-4xl md:whitespace-no-wrap'>
             {t('welcome')}
           </h1>
           <Typed
@@ -64,7 +65,7 @@ const Hero = React.memo(function Hero({ data }) {
             backSpeed={60}
             className='absolute bottom-0 w-full overflow-x-visible text-2xl font-hairline font-mono md:text-3xl whitespace-no-wrap'
           />
-          <div className='z-10 flex flex-col items-start -mb-20 leading-normal text-left bg-transparent'>
+          <div className='z-10 flex flex-col items-start -mb-16 leading-normal text-left bg-transparent'>
             <a
               target='_blank'
               rel='noopener noreferrer'

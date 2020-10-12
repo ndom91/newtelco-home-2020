@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactGlobe from 'react-globe'
+import { useMediaQuery } from 'react-responsive'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/scale.css'
 
@@ -67,12 +68,13 @@ const options = {
 }
 
 const Globe = () => {
+  const isMobile = useMediaQuery({ query: '(max-device-width: 641px)' })
   return (
     <ReactGlobe
       options={options}
       markers={markers}
-      height={800}
-      width={800}
+      height={isMobile ? 600 : 800}
+      width={isMobile ? 600 : 800}
       globeBackgroundTexture={null}
       globeCloudsTexture={globeCloudsTexture}
       globeTexture={globeTexture}

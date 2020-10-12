@@ -99,3 +99,7 @@ body {
 .triangle-float3 {
   animation: float3 6s infinite;
 }
+
+.fixedPosition {
+  position: fixed;
+}

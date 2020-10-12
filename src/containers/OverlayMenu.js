@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
 import LanguageSelect from './LanguageSelect'
 import newtelcoLogo from '../images/newtelco-white.png'
@@ -18,6 +18,12 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
     { name: t('menu.team'), link: '/team' },
     { name: t('menu.about'), link: '/about' },
   ]
+
+  useEffect(() => {
+    const body = document.getElementsByTagName('body')
+    isOpen && body[0].classList.add('fixedPosition')
+    !isOpen && body[0].classList.remove('fixedPosition')
+  }, [isOpen])
 
   const list = {
     visible: {
@@ -40,8 +46,10 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
     },
   }
   return (
-    <OverlayWrapper transition='in:circle:top-right'>
-      {/* className={isOpen ? 'active' : ''}> */}
+    <OverlayWrapper
+      transition='in:circle:top-right'
+      className={isOpen ? 'active' : ''}
+    >
       <HeaderImage src={newtelcoLogo} alt='Newtelco Logo' />
       <Navigation>
         <ul className={isOpen ? 'active' : ''}>

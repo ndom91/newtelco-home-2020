@@ -1,26 +1,26 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
-import Hero from '../components/Hero'
-import Products from '../components/Products'
-import RackStats from '../components/RackStats'
-import Team from '../components/Team'
+import SEO from '../components/shared/SEO'
+import Hero from '../components/home/Hero'
+import Products from '../components/home/Products'
+import RackStats from '../components/home/RackStats'
+import Team from '../components/home/Team'
 
 import Loadable from 'react-loadable'
 const Location = Loadable({
-  loader: () => import('../components/Locations'),
+  loader: () => import('../components/home/Locations'),
   loading() {
     return <div>Loading...</div>
   },
 })
 const Contact = Loadable({
-  loader: () => import('../components/Contact'),
+  loader: () => import('../components/home/Contact'),
   loading() {
     return <div>Loading...</div>
   },
 })
 const Testimonials = Loadable({
-  loader: () => import('../components/Testimonials'),
+  loader: () => import('../components/home/Testimonials'),
   loading() {
     return <div>Loading...</div>
   },

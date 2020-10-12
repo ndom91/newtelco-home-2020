@@ -4,10 +4,10 @@ import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 import styled from '@emotion/styled'
 import slugify from 'slug'
 
-import Blob1 from '../images/illustrations/blobs/blob6.svg'
-import Blob2 from '../images/illustrations/blobs/blob7.svg'
-import Blob3 from '../images/illustrations/blobs/blob8.svg'
-import Blob4 from '../images/illustrations/blobs/blob9.svg'
+import Blob1 from '../../images/illustrations/blobs/blob6.svg'
+import Blob2 from '../../images/illustrations/blobs/blob7.svg'
+import Blob3 from '../../images/illustrations/blobs/blob8.svg'
+import Blob4 from '../../images/illustrations/blobs/blob9.svg'
 
 const Product = ({ product, index }) => {
   const [ref, inView] = useInView({

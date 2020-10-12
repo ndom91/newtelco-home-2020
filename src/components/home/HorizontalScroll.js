@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useViewportScroll } from 'framer-motion'
-import Blob from '../images/illustrations/blobs/blob16.svg'
+import Blob from '../../images/illustrations/blobs/blob16.svg'
 import styled from '@emotion/styled'
 
 const TallOuterContainer = styled.div`

@@ -8,7 +8,7 @@
 # [[plugins]]
   # package = "netlify-plugin-submit-sitemap"
 
-[[redirects]]
-  from = "/services/*"
-  force = true
-  to = "https://newtelco.com/service/:splat"
+# [[redirects]]
+  # from = "/services/*"
+  # force = true
+  # to = "https://newtelco.com/service/:splat"

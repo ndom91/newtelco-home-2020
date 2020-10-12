@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
+import SEO from '../components/shared/SEO'
 
 export default function ServicesPage({ data }) {
   const { seo, services } = data

@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 import HeaderImg from '../../static/product1.jpg'
-import SEO from '../components/SEO'
+import SEO from '../components/shared/SEO'
 import slugify from 'slug'
 
 export default function ProductsPage({ data }) {

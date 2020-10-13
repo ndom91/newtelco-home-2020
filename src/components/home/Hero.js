@@ -115,7 +115,7 @@ const Hero = React.memo(function Hero({ data }) {
               />
             )}
           </motion.div>
-          <GlobeWrapper style={isMobile ? globeMobileStyle : ''}>
+          <GlobeWrapper style={isMobile ? globeMobileStyle : {}}>
             <Globe />
           </GlobeWrapper>
         </div>

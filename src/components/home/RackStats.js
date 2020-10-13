@@ -22,7 +22,13 @@ const RackStats = () => {
       <ContentWrapper>
         <Reveal trigger={<div />}>
           <Timeline
-            target={<img src={datacenter} alt='datacenter' />}
+            target={
+              <img
+                src={datacenter}
+                alt='datacenter'
+                className='w-5/6 m:w-full mx-auto mt-20'
+              />
+            }
             playState={inView ? PlayState.play : PlayState.stop}
           >
             <Tween from={{ opacity: 0, x: -1000 }} to={{ opacity: 1, x: 0 }} />
@@ -53,6 +59,11 @@ const BlobFilled = styled(Blob2)`
   position: absolute;
   right: 18rem;
   top: 41rem;
+  ${media.tabletSmall`
+    bottom: -100px;
+    right: 30px;
+    top: unset;
+  `}
 `
 
 const Wrapper = styled.div`

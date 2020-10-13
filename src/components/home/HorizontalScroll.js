@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useViewportScroll } from 'framer-motion'
 import Blob from '../../images/illustrations/blobs/blob16.svg'
@@ -38,14 +39,17 @@ const handleDynamicHeight = (ref, setDynamicHeight) => {
 }
 
 const HorizontalScroll = ({ children }) => {
+  const isMobile = useMediaQuery({ query: '(max-device-width: 641px)' })
   const { t } = useTranslation()
   const { scrollY } = useViewportScroll()
   const [dynamicHeight, setDynamicHeight] = useState(null)
   const [translateX, setTranslateX] = useState(0)
-
   const objectRef = useRef()
+
   scrollY.onChange(latest => {
-    setTranslateX(latest - 1800)
+    const offset = isMobile ? 1500 : 1800
+    console.log(latest)
+    setTranslateX(latest - offset)
   })
 
   const resizeHandler = () => {

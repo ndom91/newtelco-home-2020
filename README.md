@@ -2,7 +2,7 @@
 
 # Newtelco GmbH  
 
-> 2020 Homepage
+> 2020 Homepage - [`View Demo`](https://newtelco.dev)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d316877a-7bbc-441f-9e38-00eff63fea8f/deploy-status)](https://app.netlify.com/sites/gatsby-dato/deploys)
 ![Github](https://img.shields.io/github/last-commit/newtelco/newtelco-dato)

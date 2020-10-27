@@ -48,7 +48,7 @@ const HorizontalScroll = ({ children }) => {
 
   scrollY.onChange(latest => {
     const offset = isMobile ? 1500 : 1800
-    console.log(latest)
+    // console.log(latest)
     setTranslateX(latest - offset)
   })
 

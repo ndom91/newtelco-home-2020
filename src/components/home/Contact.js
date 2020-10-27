@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from '@emotion/styled'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import WorldMap from './WorldMapBg'
 
@@ -40,31 +41,37 @@ const Contact = () => {
               value='contact'
               aria-label='Form Name'
             />
-            <div className='p-2 w-1/2 z-10'>
-              <input
-                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75'
-                placeholder={t('contact.name')}
+            <div className='p-2 w-1/2 z-10 relative'>
+              <ContactInput
+                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75 '
                 type='text'
                 name='name'
+                id='name'
                 onChange={handleChange}
               />
+              <label className='absolute text-base font-mono' for='name'>
+                {t('contact.name')}
+              </label>
             </div>
-            <div className='p-2 w-1/2 z-10'>
-              <input
+            <div className='p-2 w-1/2 z-10 relative'>
+              <ContactInput
                 className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75'
-                placeholder={t('contact.email')}
                 type='email'
                 name='email'
                 onChange={handleChange}
               />
+              <label className='absolute text-base font-mono' for='email'>
+                {t('contact.email')}
+              </label>
             </div>
-            <div className='p-2 w-full z-10'>
-              <textarea
+            <div className='p-2 w-full z-10 relative'>
+              <ContactTextarea
                 className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-green-500 text-base px-4 py-2 resize-none block transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75'
                 onChange={handleChange}
-                name='email'
                 placeholder={t('contact.message')}
-              ></textarea>
+                name='msg'
+                id='msg'
+              ></ContactTextarea>
             </div>
             <div className='p-2 w-full z-10'>
               <p className='text-xs text-gray-700 flex justify-center z-10'>
@@ -93,3 +100,28 @@ const Contact = () => {
 }
 
 export default Contact
+
+const ContactInput = styled.input`
+  & + label {
+    position: absolute;
+    top: calc(50% - 12px);
+    bottom: 0;
+    left: 20px;
+    width: 100%;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  &:focus + label {
+    top: 100%;
+    margin-top: -78px;
+    transition-timing-function: ease-in-out;
+  }
+`
+
+const ContactTextarea = styled.textarea`
+  &::placeholder {
+    font-family: monospace;
+    transition: 0.2s;
+    font-size: 1rem;
+  }
+`

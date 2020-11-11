@@ -71,7 +71,7 @@ const Contact = () => {
                 className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-green-500 text-base px-4 py-2 resize-none block transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75'
                 onChange={handleChange}
                 placeholder={t('contact.message')}
-                name='msg'
+                name='message'
                 id='msg'
               ></ContactTextarea>
             </div>

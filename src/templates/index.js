@@ -6,6 +6,7 @@ import Products from '../components/home/Products'
 import RackStats from '../components/home/RackStats'
 import Team from '../components/home/Team'
 import Loadable from 'react-loadable'
+import Faq from '../components/shared/faq'
 
 const Location = Loadable({
   loader: () => import('../components/home/Locations'),
@@ -46,6 +47,7 @@ export default function IndexPage({ data }) {
           partners={partners.nodes}
           testimonials={testimonials.nodes}
         />
+        {/* <Faq /> */}
         <Location locations={locations} />
         <Contact />
       </div>

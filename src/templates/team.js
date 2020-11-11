@@ -35,7 +35,7 @@ export default function TeamPage({ data }) {
                         loading='eager'
                       />
                       <div class='flex-grow sm:pl-8'>
-                        <h2 class='title-font font-medium text-lg text-white'>
+                        <h2 class='title-font font-medium text-lg text-green-500 font-mono'>
                           {member.name}
                         </h2>
                         <h3 class='text-gray-600 font-thin tracking-tighter font-mono mb-3'>

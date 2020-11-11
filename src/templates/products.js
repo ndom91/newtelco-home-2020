@@ -50,7 +50,7 @@ export default function ProductsPage({ data }) {
                         <Link
                           language={language}
                           to={`/products/${slugify(product.title)}`}
-                          className='text-white hover:text-green-500 transition transition-color duration-300 ease-in-out hover:no-underline inline'
+                          className='text-white hover:text-green-500 transition transition-color duration-300 ease-in-out hover:no-underline inline font-mono font-thin'
                         >
                           <span>{product.title}</span>
                         </Link>

@@ -245,7 +245,7 @@ const Footer = ({ products, services, social, locations }) => {
       </div>
       <div className='bg-gray-800'>
         <div className='container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row align-center'>
-          <p className='text-gray-600 text-sm text-center sm:text-left w-full flex justify-between items-center mb-0 font-mono'>
+          <div className='text-gray-600 text-sm text-center sm:text-left w-full flex justify-between items-center mb-0 font-mono'>
             <p className=' mb-0'>© {year} NewTelco GmbH</p>
             <div className='flex'>
               <a
@@ -290,7 +290,7 @@ const Footer = ({ products, services, social, locations }) => {
                 ndomino
               </a>
             </div>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

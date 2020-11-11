@@ -50,7 +50,7 @@ const Contact = () => {
                 id='name'
                 onChange={handleChange}
               />
-              <label className='absolute text-base font-mono' for='name'>
+              <label className='absolute text-base font-mono' htmlFor='name'>
                 {t('contact.name')}
               </label>
             </div>
@@ -62,7 +62,7 @@ const Contact = () => {
                 name='email'
                 onChange={handleChange}
               />
-              <label className='absolute text-base font-mono' for='email'>
+              <label className='absolute text-base font-mono' htmlFor='email'>
                 {t('contact.email')}
               </label>
             </div>

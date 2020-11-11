@@ -9,7 +9,7 @@ export default function AboutPage({ data }) {
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
-      <section className='relative px-0 py-40 xl:px-20 min-w-screen animation-fade animation-delay'>
+      <section className='relative px-0 py-32 xl:px-20 min-w-screen animation-fade animation-delay'>
         <div className='container px-10 mx-auto sm:px-0'>
           <div className='sm:flex'>
             <div className='flex-1 mr-12'>
@@ -314,22 +314,22 @@ export default function AboutPage({ data }) {
               <div className='grid grid-cols-2 gap-5'>
                 <div className='col-span-1'>
                   <Img
-                    className='min-w-full h-64 rounded-md object-cover object-center'
-                    fluid={data.about.nodes[0].images[0].uploadId.fluid}
+                    className='min-w-full h-76 rounded-md object-cover object-center'
+                    fluid={about.images[0].uploadId.fluid}
                   />
                   <Img
-                    className='min-w-full h-56 mt-5 rounded-md'
-                    fluid={data.about.nodes[0].images[2].uploadId.fluid}
+                    className='min-w-full h-64 mt-5 rounded-md'
+                    fluid={about.images[2].uploadId.fluid}
                   />
                 </div>
                 <div className='col-span-1 pt-10'>
                   <Img
-                    className='min-w-full h-64 rounded-md'
-                    fluid={data.about.nodes[0].images[3].uploadId.fluid}
+                    className='min-w-full h-76 rounded-md'
+                    fluid={about.images[3].uploadId.fluid}
                   />
                   <Img
                     className='min-w-full h-64 mt-5 rounded-md'
-                    fluid={data.about.nodes[0].images[1].uploadId.fluid}
+                    fluid={about.images[1].uploadId.fluid}
                   />
                 </div>
               </div>
@@ -416,13 +416,11 @@ export const query = graphql`
         }
       }
     }
-    about: allDatoCmsAbout {
-      nodes {
-        images {
-          uploadId {
-            fluid(imgixParams: { auto: "format", sat: -100 }) {
-              ...GatsbyDatoCmsFluid
-            }
+    about: datoCmsAbout {
+      images {
+        uploadId {
+          fluid(imgixParams: { auto: "format", sat: -100 }) {
+            ...GatsbyDatoCmsFluid
           }
         }
       }

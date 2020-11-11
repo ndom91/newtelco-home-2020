@@ -3,6 +3,7 @@ module.exports = {
     extend: {
       height: {
         '7': '1.75rem',
+        '76': '20rem',
       },
       width: {
         '50-screen': '50vw',

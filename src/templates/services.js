@@ -8,7 +8,7 @@ import slugify from 'slug'
 
 export default function ServicesPage({ data }) {
   const { language } = useI18next()
-  const { seo, services } = data
+  const { seo, services, serviceImg } = data
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
@@ -25,7 +25,7 @@ export default function ServicesPage({ data }) {
                 <Img
                   alt='content'
                   className='object-cover object-middle h-full w-full'
-                  fluid={data.serviceImg.nodes[0].childImageSharp.fluid}
+                  fluid={serviceImg.nodes[0].childImageSharp.fluid}
                 />
               </div>
               {services &&

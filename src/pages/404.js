@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   transform: translateY(-10%);
   position: relative;
   margin: 0 auto;
+  margin-top: 100px;
 `
 
 const Datacenter = styled.div`
@@ -43,7 +44,7 @@ const TravoltaWrapper = styled.div`
 
 const Travolta = styled.img`
   z-index: 99;
-  opacity: 0.7;
+  opacity: 0.9;
   filter: brightness(0.5) grayscale(0.5);
   margin-left: 50px;
 `
@@ -98,7 +99,7 @@ const NotFoundPage = () => {
     <>
       <SEO title='404: Not found' />
       <Wrapper>
-        <Datacenter />
+        {/* <Datacenter /> */}
         <TextWrapper>
           <p className='title'>{t('404.title')}</p>
           <p className='desc'>{t('404.desc')}</p>

@@ -31,8 +31,7 @@ export default function TeamPage({ data }) {
                       <Img
                         fluid={member.image.fluid}
                         alt='team'
-                        className='rounded-lg w-56 h-48 object-cover object-center sm:mb-0 mb-4'
-                        loading='eager'
+                        className='rounded-lg w-76 h-48 object-cover object-center sm:mb-0 mb-4'
                       />
                       <div class='flex-grow sm:pl-8'>
                         <h2 class='title-font font-medium text-lg text-green-500 font-mono'>

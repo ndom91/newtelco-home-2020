@@ -1,26 +1,29 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import SEO from '../components/shared/SEO'
 
 export default function AboutPage({ data }) {
   console.log(data)
-  const { seo, products } = data
+  const { seo, about } = data
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
-      <section class='relative px-0 py-40 xl:px-20 min-w-screen animation-fade animation-delay'>
-        <div class='container px-10 mx-auto sm:px-0'>
-          <div class='sm:flex'>
-            <div class='flex-1 mr-12'>
-              <div class='text-sm text-gray-500 uppercase'>
+      <section className='relative px-0 py-40 xl:px-20 min-w-screen animation-fade animation-delay'>
+        <div className='container px-10 mx-auto sm:px-0'>
+          <div className='sm:flex'>
+            <div className='flex-1 mr-12'>
+              <div className='text-sm text-gray-500 uppercase'>
                 Get to know us more
               </div>
-              <div class='text-4xl text-white font-mono'>The Dream Team</div>
-              <div class='mt-10'>
-                <div class='flex'>
-                  <div class='flex-shrink'>
+              <div className='text-4xl text-white font-mono'>
+                The Dream Team
+              </div>
+              <div className='mt-10'>
+                <div className='flex'>
+                  <div className='flex-shrink'>
                     <svg
-                      class='w-10 text-green-500 stroke-current'
+                      className='w-10 text-green-500 stroke-current'
                       version='1.1'
                       xmlns='http://www.w3.org/2000/svg'
                       x='0px'
@@ -31,7 +34,7 @@ export default function AboutPage({ data }) {
                     >
                       <g
                         transform='translate(0, 0)'
-                        class='nc-icon-wrapper'
+                        className='nc-icon-wrapper'
                         fill='none'
                       >
                         <rect
@@ -101,11 +104,11 @@ export default function AboutPage({ data }) {
                       </g>
                     </svg>
                   </div>
-                  <div class='flex-grow ml-5'>
-                    <div class='text-2xl text-green-500 font-mono font-thin'>
+                  <div className='flex-grow ml-5'>
+                    <div className='text-2xl text-green-500 font-mono font-thin'>
                       Powerhouse
                     </div>
-                    <p class='mt-5 leading-7 text-gray-700 text-md font-thin'>
+                    <p className='mt-5 leading-7 text-gray-700 text-md font-thin'>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -113,10 +116,10 @@ export default function AboutPage({ data }) {
                     </p>
                   </div>
                 </div>
-                <div class='flex mt-5'>
-                  <div class='flex-shrink'>
+                <div className='flex mt-5'>
+                  <div className='flex-shrink'>
                     <svg
-                      class='w-10 text-green-500 stroke-current'
+                      className='w-10 text-green-500 stroke-current'
                       version='1.1'
                       xmlns='http://www.w3.org/2000/svg'
                       x='0px'
@@ -127,7 +130,7 @@ export default function AboutPage({ data }) {
                     >
                       <g
                         transform='translate(0, 0)'
-                        class='nc-icon-wrapper'
+                        className='nc-icon-wrapper'
                         fill='none'
                       >
                         <rect
@@ -197,11 +200,11 @@ export default function AboutPage({ data }) {
                       </g>
                     </svg>
                   </div>
-                  <div class='flex-grow ml-5'>
-                    <div class='text-2xl text-green-500 font-mono font-thin'>
+                  <div className='flex-grow ml-5'>
+                    <div className='text-2xl text-green-500 font-mono font-thin'>
                       Tenure
                     </div>
-                    <p class='mt-5 leading-7 text-gray-700 text-md font-thin'>
+                    <p className='mt-5 leading-7 text-gray-700 text-md font-thin'>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -209,10 +212,10 @@ export default function AboutPage({ data }) {
                     </p>
                   </div>
                 </div>
-                <div class='flex mt-5'>
-                  <div class='flex-shrink'>
+                <div className='flex mt-5'>
+                  <div className='flex-shrink'>
                     <svg
-                      class='w-10 text-green-500 stroke-current'
+                      className='w-10 text-green-500 stroke-current'
                       version='1.1'
                       xmlns='http://www.w3.org/2000/svg'
                       x='0px'
@@ -223,7 +226,7 @@ export default function AboutPage({ data }) {
                     >
                       <g
                         transform='translate(0, 0)'
-                        class='nc-icon-wrapper'
+                        className='nc-icon-wrapper'
                         fill='none'
                       >
                         <rect
@@ -293,11 +296,11 @@ export default function AboutPage({ data }) {
                       </g>
                     </svg>
                   </div>
-                  <div class='flex-grow ml-5'>
-                    <div class='text-2xl text-green-500 font-mono font-thin'>
+                  <div className='flex-grow ml-5'>
+                    <div className='text-2xl text-green-500 font-mono font-thin'>
                       Vision
                     </div>
-                    <p class='mt-5 leading-7 text-gray-700 text-md font-sans font-thin'>
+                    <p className='mt-5 leading-7 text-gray-700 text-md font-sans font-thin'>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -307,34 +310,26 @@ export default function AboutPage({ data }) {
                 </div>
               </div>
             </div>
-            <div class='px-10 mt-20 sm:flex-1 sm:mt-0 sm:px-0 sm:mt-48 lg:mt-0'>
-              <div class='grid grid-cols-2 gap-5'>
-                <div class='col-span-1'>
-                  <img
-                    class='min-w-full rounded-md'
-                    width='245'
-                    height='330'
-                    src='https://picsum.photos/245/330?grayscale'
+            <div className='px-10 mt-20 pt-40 sm:flex-1 sm:mt-0 sm:px-0 sm:mt-48 lg:mt-0'>
+              <div className='grid grid-cols-2 gap-5'>
+                <div className='col-span-1'>
+                  <Img
+                    className='min-w-full h-64 rounded-md object-cover object-center'
+                    fluid={data.about.nodes[0].images[0].uploadId.fluid}
                   />
-                  <img
-                    class='min-w-full mt-5 rounded-md'
-                    width='245'
-                    height='245'
-                    src='https://picsum.photos/245/245?grayscale'
+                  <Img
+                    className='min-w-full h-56 mt-5 rounded-md'
+                    fluid={data.about.nodes[0].images[2].uploadId.fluid}
                   />
                 </div>
-                <div class='col-span-1 pt-10'>
-                  <img
-                    class='min-w-full rounded-md'
-                    width='240'
-                    height='240'
-                    src='https://picsum.photos/240/240?grayscale'
+                <div className='col-span-1 pt-10'>
+                  <Img
+                    className='min-w-full h-64 rounded-md'
+                    fluid={data.about.nodes[0].images[3].uploadId.fluid}
                   />
-                  <img
-                    class='min-w-full mt-5 rounded-md'
-                    width='245'
-                    height='335'
-                    src='https://picsum.photos/245/335?grayscale'
+                  <Img
+                    className='min-w-full h-64 mt-5 rounded-md'
+                    fluid={data.about.nodes[0].images[1].uploadId.fluid}
                   />
                 </div>
               </div>
@@ -417,6 +412,17 @@ export const query = graphql`
           alt
           fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
             ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+    about: allDatoCmsAbout {
+      nodes {
+        images {
+          uploadId {
+            fluid(imgixParams: { auto: "format", sat: -100 }) {
+              ...GatsbyDatoCmsFluid
+            }
           }
         }
       }

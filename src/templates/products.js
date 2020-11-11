@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
-import HeaderImg from '../../static/product1.jpg'
+// import HeaderImg from '../../static/product1.jpg'
+import Img from 'gatsby-image'
 import SEO from '../components/shared/SEO'
 import slugify from 'slug'
 
@@ -16,10 +17,11 @@ export default function ProductsPage({ data }) {
           <div className='container px-5 py-12 mx-auto flex flex-col'>
             <div className='lg:w-4/6 mx-auto'>
               <div className='rounded-lg h-64 overflow-hidden'>
-                <img
+                <Img
                   alt='content'
+                  fluid={data.productImg.nodes[0].childImageSharp.fluid}
                   className='object-cover object-top h-full w-full'
-                  src={HeaderImg}
+                  // src={HeaderImg}
                 />
               </div>
               {products &&
@@ -147,6 +149,16 @@ export const query = graphql`
           alt
           fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
             ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+    productImg: allFile(filter: { name: { eq: "product1" } }) {
+      nodes {
+        name
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }

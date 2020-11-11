@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
-import HeaderImg from '../../static/service1.jpg'
+// import HeaderImg from '../../static/service1.jpg'
 import SEO from '../components/shared/SEO'
+import Img from 'gatsby-image'
 import slugify from 'slug'
 
 export default function ServicesPage({ data }) {
@@ -16,10 +17,15 @@ export default function ServicesPage({ data }) {
           <div className='container px-5 py-12 mx-auto flex flex-col'>
             <div className='lg:w-4/6 mx-auto'>
               <div className='rounded-lg h-64 overflow-hidden'>
-                <img
+                {/* <img
                   alt='content'
                   className='object-cover object-middle h-full w-full'
                   src={HeaderImg}
+                /> */}
+                <Img
+                  alt='content'
+                  className='object-cover object-middle h-full w-full'
+                  fluid={data.serviceImg.nodes[0].childImageSharp.fluid}
                 />
               </div>
               {services &&
@@ -147,6 +153,16 @@ export const query = graphql`
           alt
           fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
             ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+    serviceImg: allFile(filter: { name: { eq: "service1" } }) {
+      nodes {
+        name
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }

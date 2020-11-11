@@ -7,9 +7,3 @@
   package = "netlify-plugin-inline-critical-css"
 # [[plugins]]
   # package = "netlify-plugin-submit-sitemap"
-
-[[redirects]]
-  from = "/services/*"
-	to = "https://newtelco.com/service/:splat"
-  force = true
-	status = 200

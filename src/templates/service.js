@@ -64,7 +64,7 @@ const Body = styled.p`
 `
 
 export const query = graphql`
-  query ServiceQuery($language: String!, $title: String!) {
+  query ServiceQuery($language: String!, $serviceid: String!) {
     social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
       nodes {
         provider
@@ -92,9 +92,10 @@ export const query = graphql`
       }
     }
     service: allDatoCmsService(
-      filter: { locale: { eq: $language }, title: { eq: $title } }
+      filter: { locale: { eq: $language }, serviceid: { eq: $serviceid } }
     ) {
       nodes {
+        serviceid
         shortText
         fullText
         title
@@ -138,6 +139,7 @@ export const query = graphql`
       filter: { locale: { eq: $language }, onHomepage: { eq: true } }
     ) {
       nodes {
+        serviceid
         shortText
         title
         image {

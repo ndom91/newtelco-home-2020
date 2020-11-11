@@ -141,6 +141,7 @@ export const query = graphql`
     ) {
       nodes {
         shortText
+        serviceid
         title
         image {
           alt

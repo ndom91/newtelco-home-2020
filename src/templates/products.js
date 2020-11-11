@@ -128,6 +128,7 @@ export const query = graphql`
       nodes {
         shortText
         title
+        productid
         image {
           alt
           fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {

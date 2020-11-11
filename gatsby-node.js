@@ -37,11 +37,13 @@ exports.createPages = async ({ graphql, actions }) => {
           products: allDatoCmsProduct(filter: {locale: { eq: "${locale}" }}) {
             nodes {
               title
+              productid
             }
           }
           services: allDatoCmsService(filter: {locale: { eq: "${locale}" }}) {
             nodes {
               title
+              serviceid
             }
           }
         }
@@ -51,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
             createPage({
               path: `/products/${slug}`,
               component: path.resolve('./src/templates/product.js'),
-              context: { ...page.context, title: page.title },
+              context: { ...page.context, productid: page.productid },
             })
           })
           result.data['services'].nodes.forEach(page => {
@@ -59,7 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
             createPage({
               path: `/services/${slug}`,
               component: path.resolve('./src/templates/service.js'),
-              context: { ...page.context, title: page.title },
+              context: { ...page.context, serviceid: page.serviceid },
             })
           })
         })

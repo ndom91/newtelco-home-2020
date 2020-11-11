@@ -65,7 +65,7 @@ const Body = styled.p`
 `
 
 export const query = graphql`
-  query ProductQuery($language: String!, $title: String!) {
+  query ProductQuery($language: String!, $productid: String!) {
     social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
       nodes {
         provider
@@ -93,9 +93,10 @@ export const query = graphql`
       }
     }
     product: allDatoCmsProduct(
-      filter: { locale: { eq: $language }, title: { eq: $title } }
+      filter: { locale: { eq: $language }, productid: { eq: $productid } }
     ) {
       nodes {
+        productid
         shortText
         fullText
         title
@@ -125,6 +126,7 @@ export const query = graphql`
       filter: { locale: { eq: $language }, onHomepage: { eq: true } }
     ) {
       nodes {
+        productid
         shortText
         title
         image {

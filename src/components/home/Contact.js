@@ -38,12 +38,13 @@ const Contact = () => {
             <input
               type='hidden'
               name='form-name'
-              value='contact'
+              value='Contact Form'
               aria-label='Form Name'
             />
             <div className='p-2 w-1/2 z-10 relative'>
               <ContactInput
-                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75 '
+                className={`w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75 ${state.name !==
+                  '' && 'content'}`}
                 type='text'
                 name='name'
                 id='name'
@@ -55,7 +56,8 @@ const Contact = () => {
             </div>
             <div className='p-2 w-1/2 z-10 relative'>
               <ContactInput
-                className='w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75'
+                className={`w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 transition transition-borders duration-300 ease-in-out z-10 bg-opacity-75 ${state.email !==
+                  '' && 'content'}`}
                 type='email'
                 name='email'
                 onChange={handleChange}
@@ -111,6 +113,7 @@ const ContactInput = styled.input`
     transition: 0.3s;
     pointer-events: none;
   }
+  &.content + label,
   &:focus + label {
     top: 100%;
     margin-top: -78px;

@@ -1,11 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 import SEO from '../components/shared/SEO'
 
 export default function AboutPage({ data }) {
-  console.log(data)
+  // console.log(data)
   const { seo, about } = data
+  const { t } = useTranslation()
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
@@ -14,10 +16,10 @@ export default function AboutPage({ data }) {
           <div className='sm:flex'>
             <div className='flex-1 mr-12'>
               <div className='text-sm text-gray-500 uppercase'>
-                Get to know us more
+                {t('about.subtitle')}
               </div>
               <div className='text-4xl text-white font-mono'>
-                The Dream Team
+                {t('about.title')}
               </div>
               <div className='mt-10'>
                 <div className='flex'>
@@ -315,21 +317,21 @@ export default function AboutPage({ data }) {
                 <div className='col-span-1'>
                   <Img
                     className='min-w-full h-76 rounded-md object-cover object-center'
-                    fluid={about.images[0].uploadId.fluid}
+                    fluid={about.images[0].fluid}
                   />
                   <Img
                     className='min-w-full h-64 mt-5 rounded-md'
-                    fluid={about.images[2].uploadId.fluid}
+                    fluid={about.images[2].fluid}
                   />
                 </div>
                 <div className='col-span-1 pt-10'>
                   <Img
                     className='min-w-full h-76 rounded-md'
-                    fluid={about.images[3].uploadId.fluid}
+                    fluid={about.images[3].fluid}
                   />
                   <Img
                     className='min-w-full h-64 mt-5 rounded-md'
-                    fluid={about.images[1].uploadId.fluid}
+                    fluid={about.images[1].fluid}
                   />
                 </div>
               </div>
@@ -418,10 +420,8 @@ export const query = graphql`
     }
     about: datoCmsAbout {
       images {
-        uploadId {
-          fluid(imgixParams: { auto: "format", sat: -100 }) {
-            ...GatsbyDatoCmsFluid
-          }
+        fluid(imgixParams: { auto: "format", sat: -100 }) {
+          ...GatsbyDatoCmsFluid
         }
       }
     }

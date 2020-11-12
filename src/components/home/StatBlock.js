@@ -33,7 +33,6 @@ const Wrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   z-index: 1;
-  cursor: pointer;
   box-shadow: rgba(16, 66, 97, 0.07) 0px 8px 20px 0px;
   border-radius: 10px;
   background: rgb(255, 255, 255);

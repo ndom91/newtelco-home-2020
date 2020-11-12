@@ -1,11 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 import SEO from '../components/shared/SEO'
 
 export default function TeamPage({ data }) {
-  console.log(data)
+  // console.log(data)
   const { seo, team } = data
+  const { t } = useTranslation()
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
@@ -14,7 +16,7 @@ export default function TeamPage({ data }) {
           <div class='container px-5 py-24 mx-auto'>
             <div class='flex flex-col text-center w-full mb-20'>
               <h1 class='text-2xl font-thin font-mono mb-4 text-green-500 tracking-widest'>
-                OUR TEAM
+                {t('team.title')}
               </h1>
               <p class='lg:w-2/3 mx-auto leading-relaxed text-base'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

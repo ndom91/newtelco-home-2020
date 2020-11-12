@@ -38,7 +38,12 @@
   },
   "team": {
     "headline": "Team",
-    "byline": "Das Newtelco management team freut sich mit Ihnen zusammen Ihre Probleme lösen zu dürfen."
+    "byline": "Das Newtelco management team freut sich mit Ihnen zusammen Ihre Probleme lösen zu dürfen.",
+    "title": "Our Team"
+  },
+  "about": {
+    "subtitle": "Lernen Sie uns besser kennen",
+    "title": "Das Dream Team"
   },
   "404": {
     "title": "404",

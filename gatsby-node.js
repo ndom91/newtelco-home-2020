@@ -77,22 +77,22 @@ exports.createPages = async ({ graphql, actions }) => {
   createPage({
     path: '/services',
     component: path.resolve('./src/templates/services.js'),
-    /* context: { locale }, */
+    context: { language: locale },
   })
   createPage({
     path: '/products',
     component: path.resolve('./src/templates/products.js'),
-    /* context: { locale }, */
+    context: { language: locale },
   })
   createPage({
     path: '/team',
     component: path.resolve('./src/templates/team.js'),
-    /* context: { locale }, */
+    context: { language: locale },
   })
   createPage({
     path: '/about',
     component: path.resolve('./src/templates/about.js'),
-    /* context: { locale }, */
+    context: { language: locale },
   })
   createProductPages()
 }

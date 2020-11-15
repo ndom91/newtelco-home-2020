@@ -64,16 +64,16 @@ const HorizontalScroll = ({ children }) => {
   return (
     <TallOuterContainer dynamicHeight={dynamicHeight}>
       <StickyInnerContainer>
-        <div className='flex justify-between w-full mb-12 mt-12 lg:w-2/3 w-3/4 mx-auto'>
-          <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto'>
+        <div className='flex justify-between w-full mb-12 mt-12 mx-12 max-w-screen-xl flex-row-reverse'>
+          <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-16 text-right'>
             <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-hairline'>
               {t('team.headline')}
             </h1>
-            <div className='h-1 w-20 bg-green-500 rounded'></div>
+            <div className='h-1 w-20 bg-green-500 rounded float-right'></div>
           </div>
-          <p className='flex-grow max-w-2xl w-full leading-relaxed text-base text-gray-500 overflow-visible'>
-            <Blob className='absolute -ml-12 -mt-12' />
-            <span className='relative z-20'>{t('team.byline')}</span>
+          <p className='flex-grow text-right leading-relaxed text-base text-gray-500 overflow-visible justify-end'>
+            {/* <Blob className='absolute -ml-12 -mt-12' />
+            <span className='relative z-20'>{t('team.byline')}</span> */}
           </p>
         </div>
         <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>

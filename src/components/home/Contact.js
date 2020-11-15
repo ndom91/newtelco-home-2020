@@ -124,7 +124,8 @@ const ContactInput = styled.input`
 const ContactTextarea = styled.textarea`
   &::placeholder {
     font-family: monospace;
+    font-size: 14px;
+    color: rgb(137, 137, 137);
     transition: 0.2s;
-    font-size: 1rem;
   }
 `

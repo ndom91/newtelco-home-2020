@@ -39,11 +39,11 @@ const Hero = React.memo(function Hero({ data }) {
   const isMobile = useMediaQuery({ query: '(max-device-width: 641px)' })
 
   return (
-    <section className='relative w-4/5 mb-8 text-gray-500 bg-gray-900 body-font max-w-screen-lg'>
+    <section className='relative w-4/5 mb-8 text-gray-500 bg-gray-900 body-font w-full max-w-screen-lg'>
       <Blob11
         alt='Arrow Nav Blob'
         width='100px'
-        className='absolute top-0 left-0 mt-8 z-50'
+        className='absolute top-0 left-0 ml-24 mt-8 z-50'
       />
       <motion.div
         className='absolute top-0 right-0 z-10 -mr-12 z-50'

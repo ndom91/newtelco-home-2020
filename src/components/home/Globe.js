@@ -72,7 +72,7 @@ const Globe = () => {
   return (
     <ReactGlobe
       options={options}
-      markers={markers}
+      // markers={markers}
       height={isMobile ? 600 : 800}
       width={isMobile ? 600 : 800}
       globeBackgroundTexture={null}

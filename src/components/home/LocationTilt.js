@@ -5,7 +5,7 @@ import ReactTilt from 'react-universal-tilt'
 import Flippy, { FrontSide, BackSide } from 'react-flippy'
 import 'react-flippy/dist/styles.css'
 
-const LocationTilt = useMemo(({ city, address, image }) => {
+const LocationTilt = ({ city, address, image }) => {
   const [flipped, setFlipped] = useState(false)
   return (
     <Tilter
@@ -15,7 +15,7 @@ const LocationTilt = useMemo(({ city, address, image }) => {
         scale: 1.05,
         max: 25,
         perspective: 1000,
-        base: 'window',
+        base: 'element',
       }}
       key='front'
       onClick={() => setFlipped(!flipped)}
@@ -60,7 +60,7 @@ const LocationTilt = useMemo(({ city, address, image }) => {
       </Flippy>
     </Tilter>
   )
-})
+}
 
 const Tilter = styled(ReactTilt)`
   position: relative;

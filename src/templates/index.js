@@ -49,10 +49,11 @@ export default function IndexPage({ data }) {
           partners={partners.nodes}
           testimonials={testimonials.nodes}
         />
+        <Location locations={locations} />
         {/* <Faq /> */}
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <Location locations={locations} />
-        </React.Suspense>
+        {/* <React.Suspense fallback={<div>Loading...</div>}> */}
+        {/* <Location locations={locations} /> */}
+        {/* </React.Suspense> */}
         <Contact />
       </div>
     </>

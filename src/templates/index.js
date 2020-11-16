@@ -8,14 +8,14 @@ import Team from '../components/home/Team'
 import Loadable from 'react-loadable'
 import Faq from '../components/shared/faq'
 
-// const Location = Loadable({
-//   loader: () => import('../components/home/Locations'),
-//   loading() {
-//     return <div>Loading...</div>
-//   },
-// })
+const Location = Loadable({
+  loader: () => import('../components/home/Locations'),
+  loading() {
+    return <div>Loading...</div>
+  },
+})
 
-const Location = React.lazy(() => import('../components/home/Locations'))
+// const Location = React.lazy(() => import('../components/home/Locations'))
 
 const Contact = Loadable({
   loader: () => import('../components/home/Contact'),

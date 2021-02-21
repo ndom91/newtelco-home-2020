@@ -15,8 +15,6 @@ const Location = Loadable({
   },
 })
 
-// const Location = React.lazy(() => import('../components/home/Locations'))
-
 const Contact = Loadable({
   loader: () => import('../components/home/Contact'),
   loading() {
@@ -51,9 +49,6 @@ export default function IndexPage({ data }) {
         />
         <Location locations={locations} />
         {/* <Faq /> */}
-        {/* <React.Suspense fallback={<div>Loading...</div>}> */}
-        {/* <Location locations={locations} /> */}
-        {/* </React.Suspense> */}
         <Contact />
       </div>
     </>

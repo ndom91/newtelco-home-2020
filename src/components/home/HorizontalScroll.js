@@ -64,7 +64,8 @@ const HorizontalScroll = ({ children }) => {
   return (
     <TallOuterContainer dynamicHeight={dynamicHeight}>
       <StickyInnerContainer>
-        <div className='flex justify-between w-full mb-12 mt-12 mx-12 max-w-screen-xl flex-row-reverse'>
+        <div className='container flex justify-between flex-row-reverse w-full my-12 mx-auto'>
+          {/* flex justify-between w-full my-12 mx-auto max-w-screen-lg flex-row-reverse'> */}
           <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-16 text-right'>
             <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-hairline'>
               {t('team.headline')}

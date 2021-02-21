@@ -1,10 +1,5 @@
 const path = require('path')
 const slugify = require('slug')
-// const locales = require('./src/consts/locales')
-
-// require('dotenv').config({
-//   path: `.env.${process.env.NODE_ENV}`,
-// })
 
 // eslint-disable-next-line
 exports.createPages = async ({ graphql, actions }) => {
@@ -18,21 +13,11 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  // // Homepage
-  // locales.forEach(locale => {
-  //   const prefix = locale === 'en' ? '/' : `/${locale}`
-  //   createPage({
-  //     path: `${prefix}`,
-  //     component: path.resolve(`./src/templates/index.js`),
-  //     context: { locale },
-  //   })
-  // })
-
   /* Create pages defined in code, i.e. pages that are "baked-in", but have localized content defined in dato */
   const createProductPages = async (resolve, reject) => {
-    Promise.all(
+    const langs = await Promise.all(
       localeQuery.data.datoCmsSite.locales.map(locale => {
-        graphql(`
+        return graphql(`
         {
           products: allDatoCmsProduct(filter: {locale: { eq: "${locale}" }}) {
             nodes {
@@ -47,54 +32,52 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-      `).then(result => {
-          result.data['products'].nodes.forEach(page => {
-            const slug = slugify(page.title)
-            createPage({
-              path: `/products/${slug}`,
-              component: path.resolve('./src/templates/product.js'),
-              context: { ...page.context, productid: page.productid },
-            })
-          })
-          result.data['services'].nodes.forEach(page => {
-            const slug = slugify(page.title)
-            createPage({
-              path: `/services/${slug}`,
-              component: path.resolve('./src/templates/service.js'),
-              context: { ...page.context, serviceid: page.serviceid },
-            })
-          })
-        })
+      `)
       })
     )
+
+    langs.map((lang, i) => {
+      const { products, services } = lang.data
+      products.nodes.forEach(page => {
+        const slug = slugify(page.title)
+        createPage({
+          path: `/products/${slug}`,
+          component: path.resolve('./src/templates/product.js'),
+          context: { ...page.context, productid: page.productid },
+        })
+      })
+      services.nodes.forEach(page => {
+        const slug = slugify(page.title)
+        createPage({
+          path: `/services/${slug}`,
+          component: path.resolve('./src/templates/service.js'),
+          context: { ...page.context, serviceid: page.serviceid },
+        })
+      })
+    })
   }
 
   createPage({
     path: '/',
     component: path.resolve('./src/templates/index.js'),
-    /* context: { locale }, */
   })
   createPage({
     path: '/services',
     component: path.resolve('./src/templates/services.js'),
-    // context: { language: locale },
   })
   createPage({
     path: '/products',
     component: path.resolve('./src/templates/products.js'),
-    // context: { language: locale },
   })
   createPage({
     path: '/team',
     component: path.resolve('./src/templates/team.js'),
-    // context: { language: locale },
   })
   createPage({
     path: '/about',
     component: path.resolve('./src/templates/about.js'),
-    // context: { language: locale },
   })
-  createProductPages()
+  await createProductPages()
 }
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {

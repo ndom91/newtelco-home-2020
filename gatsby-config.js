@@ -13,6 +13,9 @@ module.exports = {
   siteMetadata: {
     ...siteConfig,
   },
+  flags: {
+    DEV_SSR: false,
+  },
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-postcss',

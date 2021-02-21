@@ -39,11 +39,12 @@
   "team": {
     "headline": "Team",
     "byline": "The Newtelco team is happy to work together with you to solve your problems.",
-    "title": "Our Team"
+    "title": "The NewTelco Team",
+    "subtitle": "Get to know us more"
   },
   "about": {
     "subtitle": "Get to know us more",
-    "title": "The Dream Team"
+    "title": "The NewTelco Company"
   },
   "404": {
     "title": "404",

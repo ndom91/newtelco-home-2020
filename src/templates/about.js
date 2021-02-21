@@ -5,7 +5,6 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 import SEO from '../components/shared/SEO'
 
 export default function AboutPage({ data }) {
-  // console.log(data)
   const { seo, about } = data
   const { t } = useTranslation()
   return (

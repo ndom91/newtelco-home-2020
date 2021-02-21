@@ -7,26 +7,22 @@ import Reboot from '../style/reboot'
 import '../style/globals.css'
 import '../style/fonts.css'
 
-const Layout = ({ children, location, data, pageContext }) => {
-  console.log(data)
-
-  return (
-    <>
-      <Reboot />
-      <HelmetTags />
-      <Wrapper>
-        <Header location={location} />
-        {children}
-        <Footer
-          social={data.social.nodes}
-          products={data.products.nodes}
-          services={data.services.nodes}
-          locations={data.locations.nodes}
-        />
-      </Wrapper>
-    </>
-  )
-}
+const Layout = ({ children, location, data, pageContext }) => (
+  <>
+    <Reboot />
+    <HelmetTags />
+    <Wrapper>
+      <Header location={location} />
+      {children}
+      <Footer
+        social={data.social.nodes}
+        products={data.products.nodes}
+        services={data.services.nodes}
+        locations={data.locations.nodes}
+      />
+    </Wrapper>
+  </>
+)
 
 const Wrapper = styled.div`
   position: sticky;

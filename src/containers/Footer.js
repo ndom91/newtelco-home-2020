@@ -205,40 +205,44 @@ const Footer = ({ products, services, social, locations }) => {
             </h2>
             <nav className='list-none mb-10'>
               <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
+                <Link
+                  to={'/about'}
+                  language={language}
+                  aria-label={'About Link'}
                   className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   About Us
-                </a>
+                </Link>
               </div>
               <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
+                <Link
+                  to={'/team'}
+                  language={language}
+                  aria-label={'Team Link'}
                   className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Team
-                </a>
+                </Link>
               </div>
               <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
+                <Link
+                  to={'/privacy'}
+                  language={language}
+                  aria-label={'Privacy Link'}
                   className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </div>
               <div>
-                <a
-                  href='https://newtelco.dev'
-                  alt='Link'
+                <Link
+                  to={'/legal'}
+                  language={language}
+                  aria-label={'Legal Link'}
                   className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
                 >
                   Legal
-                </a>
+                </Link>
               </div>
             </nav>
           </div>
@@ -306,38 +310,38 @@ const UptimeDot = styled.span`
   border-radius: 50%;
   background: ${props => (props.uptime ? '#67b246' : '#cca92c')};
   cursor: pointer;
-  box-shadow:  ${props =>
+  box-shadow: ${props =>
     props.uptime
       ? '0 0 0 rgba(103, 178, 70, 0.4)'
       : '0 0 0 rgba(204,169,44, 0.4)'};
   animation: ${props => (props.uptime ? 'pulseUp' : 'pulseDown')} 2s infinite;
-}
-&:hover {
-  animation: none;
-}
+  &:hover {
+    animation: none;
+  }
 
-@keyframes pulseUp {
-  0% {
-    box-shadow: 0 0 0 0 rgba(103, 178, 70, 0.4);
+  @keyframes pulseUp {
+    0% {
+      box-shadow: 0 0 0 0 rgba(103, 178, 70, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(103, 178, 70, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(103, 178, 70, 0);
+    }
   }
-  70% {
-    box-shadow: 0 0 0 10px rgba(103, 178, 70, 0);
+  @keyframes pulseDown {
+    0% {
+      box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
   }
-  100% {
-    box-shadow: 0 0 0 0 rgba(103, 178, 70, 0);
-  }
-}
-@keyframes pulseDown {
-  0% {
-    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
-}`
+`
 
 const SocialItem = styled.a`
   display: inline-block;

@@ -1,25 +1,24 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-const HelmetData = () => {
-  return (
-    <Helmet>
-      <link
-        rel='preload'
-        as='font'
-        href='static/fonts/Rubik_400.woff2'
-        type='font/woff2'
-        crossOrigin
-      />
-      <link
-        rel='preload'
-        as='font'
-        href='static/fonts/Raleway_100.woff2'
-        type='font/woff2'
-        crossOrigin
-      />
-      <script type='application/ld+json'>
-        {`{
+const HelmetData = () => (
+  <Helmet>
+    <link
+      rel='preload'
+      as='font'
+      href='static/fonts/Rubik_400.woff2'
+      type='font/woff2'
+      crossOrigin
+    />
+    <link
+      rel='preload'
+      as='font'
+      href='static/fonts/Raleway_100.woff2'
+      type='font/woff2'
+      crossOrigin
+    />
+    <script type='application/ld+json'>
+      {`{
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "image": [
@@ -59,17 +58,16 @@ const HelmetData = () => {
         }
       ]
     }`}
-      </script>
-      <script type='application/ld+json'>
-        {`{
+    </script>
+    <script type='application/ld+json'>
+      {`{
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "https://newtelco.dev",
       "logo": "https://newtelco.dev/icons/icon-256x256.png"
     }`}
-      </script>
-    </Helmet>
-  )
-}
+    </script>
+  </Helmet>
+)
 
 export default HelmetData

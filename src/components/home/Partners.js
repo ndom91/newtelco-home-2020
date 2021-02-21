@@ -90,7 +90,7 @@ const Circle = styled.div`
   left: -50%;
   border-radius: 50%;
   // box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 40px 1px rgba(103, 178, 70, 0.03);
+  box-shadow: 0 0 10px 1px rgba(103, 178, 70, 0.03);
   // 0 5px 10px rgb(103, 178, 70, 0.8);
   display: flex;
   justify-content: center;

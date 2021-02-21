@@ -4,6 +4,7 @@ import slug from 'slug'
 import styled from '@emotion/styled'
 import LogoFull from '../images/NewtelcoFullLogo'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
+import { RGBA_ASTC_10x10_Format } from 'three'
 
 const Footer = ({ products, services, social, locations }) => {
   const [uptime, setUptime] = useState(true)
@@ -255,12 +256,13 @@ const Footer = ({ products, services, social, locations }) => {
                 className='hover:no-underline'
               >
                 <div className='h-4 flex items-center border-gray-700 border p-4 rounded-lg mr-8'>
-                  <span
+                  <UptimeDot
                     alt='team'
+                    uptime={uptime}
                     className={`w-3 h-3 ${
                       uptime ? 'bg-green-500' : 'bg-yellow-400'
                     } flex-shrink-0 rounded-full mr-4 shadow-outline`}
-                  ></span>
+                  />
                   <div className='flex-grow align-middle'>
                     <p className='text-gray-500 mb-0'>
                       {uptime ? 'All Systems Normal' : 'Systems Degraded'}
@@ -296,6 +298,46 @@ const Footer = ({ products, services, social, locations }) => {
     </footer>
   )
 }
+
+const UptimeDot = styled.span`
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: ${props => (props.uptime ? '#67b246' : '#cca92c')};
+  cursor: pointer;
+  box-shadow:  ${props =>
+    props.uptime
+      ? '0 0 0 rgba(103, 178, 70, 0.4)'
+      : '0 0 0 rgba(204,169,44, 0.4)'};
+  animation: ${props => (props.uptime ? 'pulseUp' : 'pulseDown')} 2s infinite;
+}
+&:hover {
+  animation: none;
+}
+
+@keyframes pulseUp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(103, 178, 70, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(103, 178, 70, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(103, 178, 70, 0);
+  }
+}
+@keyframes pulseDown {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}`
 
 const SocialItem = styled.a`
   display: inline-block;

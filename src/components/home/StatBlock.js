@@ -41,7 +41,15 @@ const Wrapper = styled.div`
   background-color: #111;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
-  transition: box-shadow 250ms ease-in-out, transform 250ms ease-in-out;
+  transition: box-shadow 250ms ease-in-out, transform 250ms ease-in-out,
+    backdrop-filter 250ms ease-in-out;
+
+  // Glassmorphism
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0px 20px 2px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
   &:nth-of-type(2n) {
     top: 35px;
@@ -49,6 +57,8 @@ const Wrapper = styled.div`
 
   &:hover {
     transform: translateY(-5px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0px 20px 2px rgba(255, 255, 255, 0.1);
   }
 
   ${media.tabletSmall`
@@ -60,18 +70,19 @@ const Wrapper = styled.div`
 const Value = styled.div`
   font-size: 4.5rem;
   font-family: var(--font-all);
-  font-weight: 100;
-  color: #ababab;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: #101113;
   ${media.tabletSmall`
     font-size: 3.5rem;
   `}
 `
 
 const Label = styled.div`
-  font-size: 1.7rem;
-  font-family: var(--font-header);
+  font-size: 1.5rem;
+  font-family: var(--font-mono);
   font-weight: 100;
-  color: #ababab;
+  color: #101113;
   ${media.tabletSmall`
     font-size: 1.2rem;
   `}

@@ -1,7 +1,7 @@
 {
   "name": "newtelco-datocms",
   "description": "NewTelco GmbH",
-  "version": "0.5.0",
+  "version": "0.7.0",
   "author": "Nico Domino <ndomino@newtelco.de>",
   "keywords": [
     "gatsby",
@@ -50,10 +50,8 @@
     "gsap": "^3.5.1",
     "i18next": "^19.5.4",
     "i18next-http-backend": "^1.0.16",
-    "path": "^0.12.7",
     "pattern.css": "^1.0.0",
     "postcss-import": "^12.0.1",
-    "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.0",
@@ -70,12 +68,15 @@
     "react-responsive": "^8.1.0",
     "react-typed": "^1.2.0",
     "react-universal-tilt": "^1.3.1",
+    "tailwind": "^4.0.0",
     "three": "^0.119.1",
     "tippy.js": "^6.2.6",
-    "transition-style": "0.0.7"
+    "transition-style": "^0.1.1"
   },
   "devDependencies": {
     "@bundle-analyzer/gatsby-plugin": "^0.5.1",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "babel-eslint": "^10.0.3",
     "babel-preset-gatsby": "^0.4.12",
     "dotenv": "^8.1.0",
@@ -95,12 +96,17 @@
     "prettier": "^1.18.2",
     "pretty-quick": "^2.0.1",
     "slug": "^3.3.0",
-    "tailwindcss": "^1.4.6",
     "twin.macro": "^1.5.0"
   },
   "husky": {
     "hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "pretty-quick --staged --pattern '**/*.*(js)'"
     }
+  },
+	"commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }

@@ -46,12 +46,9 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
     },
   }
   return (
-    <OverlayWrapper
-      transition='in:circle:top-right'
-      className={isOpen ? 'active' : ''}
-    >
+    <OverlayWrapper className={isOpen ? 'active' : ''}>
       <HeaderImage src={newtelcoLogo} alt='Newtelco Logo' />
-      <Navigation>
+      <Navigation className={isOpen ? 'active' : ''}>
         <ul className={isOpen ? 'active' : ''}>
           <motion.div
             style={{ x, y }}
@@ -65,9 +62,8 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.9 }}
                 key={index}
-                className='mb-8'
+                className='mb-10'
               >
-                <NavNumber>{`0${index}`}</NavNumber>
                 <NavigationLink
                   to={menu.link}
                   aria-label={menu.name}
@@ -75,6 +71,7 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
                   activeClassName='active'
                   onClick={toggleMenu}
                 >
+                  <NavNumber>{`0${index}`}</NavNumber>
                   {menu.name}
                 </NavigationLink>
               </motion.div>
@@ -95,7 +92,7 @@ const OverlayWrapper = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
-  z-index: -2;
+  z-index: 2;
   transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out,
     max-height 0.35s ease-in-out;
   overflow: hidden;
@@ -138,18 +135,18 @@ const Navigation = styled.div`
   top: 50%;
   left: 0%;
   transform: translateY(-50%);
+  opacity: 0;
+  &.active {
+    opacity: 1;
+  }
   & ul {
     list-style: none;
     padding: 0;
     display: inline-block;
     position: relative;
     height: 90%;
-    opacity: 0;
     transition: opacity 250ms ease-in-out;
     transition-delay: 300ms;
-    &.active {
-      opacity: 1;
-    }
     & li {
       display: block;
       height: calc(100% / 7);
@@ -164,24 +161,32 @@ const Navigation = styled.div`
 
 const NavigationLink = styled(Link)`
   text-decoration: none;
+  font-family: 'IBM Plex Mono';
   position: relative;
   color: #fff;
   z-index: 101;
   text-align: left;
   font-size: 2.2rem;
-  font-weight: 200;
+  font-weight: 100;
   &.active {
+    font-weight: 900;
+
+    div {
+      font-weight: 900;
+    }
+  }
+  /* &.active {
     &:after {
       position: absolute;
       display: inline-block;
       content: '';
-      border-bottom: 0.25rem solid #67b246;
+      border-bottom: 0.45rem solid #67b246;
       border-radius: 0 5px 5px;
-      width: 375px;
+      width: 475px;
       font-family: var(--font-face-san-serif);
       position: absolute;
       top: 50px;
-      left: -200px;
+      left: -300px;
     }
-  }
+  } */
 `

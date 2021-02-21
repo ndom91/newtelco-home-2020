@@ -23,12 +23,6 @@ const Globe = Loadable({
 
 import 'pattern.css/dist/pattern.min.css'
 
-const globeMobileStyle = {
-  position: 'absolute',
-  left: '80px',
-  top: '50px',
-}
-
 const useBreakpoint = createBreakpoint({ phone: 640 })
 
 const Hero = React.memo(function Hero({ data }) {
@@ -118,7 +112,17 @@ const Hero = React.memo(function Hero({ data }) {
               />
             )}
           </motion.div>
-          <GlobeWrapper style={isMobile ? globeMobileStyle : {}}>
+          <GlobeWrapper
+            style={
+              isMobile
+                ? {
+                    position: 'absolute',
+                    left: '80px',
+                    top: '50px',
+                  }
+                : {}
+            }
+          >
             <Globe />
           </GlobeWrapper>
         </div>

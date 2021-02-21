@@ -25,12 +25,11 @@ export default function Header() {
         >
           <Logo />
         </Link>
-        {breakpoint !== 'phone' ? (
-          <OverlayMenu
-            isOpen={toggleMenu}
-            toggleMenu={() => setToggleMenu(!toggleMenu)}
-          />
-        ) : (
+        <OverlayMenu
+          isOpen={toggleMenu}
+          toggleMenu={() => setToggleMenu(!toggleMenu)}
+        />
+        {breakpoint == 'phone' && (
           <nav className='flex flex-wrap items-center justify-center hidden font-mono text-base sm:mr-auto sm:ml-3 sm:py-1 sm:pl-10 sm:flex'>
             <NavLink
               language={language}

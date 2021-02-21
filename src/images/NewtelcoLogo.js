@@ -1,8 +1,11 @@
 import React from 'react'
-import { useMediaQuery } from 'react-responsive'
+import { createBreakpoint } from 'react-use'
+
+const useBreakpoint = createBreakpoint({ phone: 640 })
 
 const Logo = () => {
-  const isMobile = useMediaQuery({ query: '(max-device-width: 641px)' })
+  const breakpoint = useBreakpoint()
+  const isMobile = breakpoint !== 'phone'
   return (
     <svg
       id='svgLogo'

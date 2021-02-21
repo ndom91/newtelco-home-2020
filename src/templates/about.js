@@ -43,7 +43,7 @@ export default function AboutPage({ data }) {
                           y='8'
                           fill='none'
                           stroke='currentColor'
-                          vector-effect='non-scaling-stroke'
+                          vectorEffect='non-scaling-stroke'
                           strokeLinecap='square'
                           strokeMiterlimit='10'
                           width='6'

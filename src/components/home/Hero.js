@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { useMediaQuery } from 'react-responsive'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import Blob10 from '../../images/illustrations/blobs/blob10.svg'
 import Blob11 from '../../images/illustrations/blobs/blob11.svg'
 import Blob12 from '../../images/illustrations/blobs/blob12.svg'
 import Blob13 from '../../images/illustrations/blobs/blob13.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
+import { createBreakpoint } from 'react-use'
 import Typed from 'react-typed'
 import Loadable from 'react-loadable'
 const Globe = Loadable({
@@ -29,6 +29,8 @@ const globeMobileStyle = {
   top: '50px',
 }
 
+const useBreakpoint = createBreakpoint({ phone: 640 })
+
 const Hero = React.memo(function Hero({ data }) {
   const { ctaEmail, ctaActionText } = data
   const { t } = useTranslation()
@@ -36,7 +38,8 @@ const Hero = React.memo(function Hero({ data }) {
   const y1 = useTransform(scrollY, [700, -100], [-170, -10])
   const y2 = useTransform(scrollY, [-200, 200], [20, -20])
   const x1 = useTransform(scrollY, [500, -500], [-150, 10])
-  const isMobile = useMediaQuery({ query: '(max-device-width: 641px)' })
+  const breakpoint = useBreakpoint()
+  const isMobile = breakpoint === 'phone'
 
   return (
     <section className='relative w-4/5 mb-8 text-gray-500 bg-gray-900 body-font w-full max-w-screen-lg'>
@@ -107,7 +110,7 @@ const Hero = React.memo(function Hero({ data }) {
               position: 'absolute',
             }}
           >
-            {!isMobile && (
+            {!breakpoint === 'tablet' && (
               <Blob13
                 alt='Lines under Map Blob'
                 width='150px'

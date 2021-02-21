@@ -56,7 +56,7 @@ const LanguageWrapper = styled.ul`
   position: absolute;
   top: 1rem;
   right: 1rem;
-  ${media.tabletSmall_up`
+  ${media.mobile_up`
     margin-left: 0;
     position: relative;
     top: 0;
@@ -75,7 +75,7 @@ const LanguageWrapper = styled.ul`
     right: 27px;
   }
 
-  ${media.tabletSmall`
+  ${media.mobile`
     display: none;
 
     &.active {
@@ -163,7 +163,7 @@ const LanguageLink = styled(Link)`
   color: #fff;
   font-size: 1.4rem;
   line-height: 30px;
-  ${media.tabletSmall`
+  ${media.mobile`
     font-size: 2.75rem;
   `}
   &:hover {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useMediaQuery } from 'react-responsive'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useViewportScroll } from 'framer-motion'
+import { createBreakpoint } from 'react-use'
 import Blob from '../../images/illustrations/blobs/blob16.svg'
 import styled from '@emotion/styled'
 
@@ -39,7 +39,9 @@ const handleDynamicHeight = (ref, setDynamicHeight) => {
 }
 
 const HorizontalScroll = ({ children }) => {
-  const isMobile = useMediaQuery({ query: '(max-device-width: 641px)' })
+  const useBreakpoint = createBreakpoint()
+  const breakpoint = useBreakpoint()
+  const isMobile = breakpoint === 'tablet'
   const { t } = useTranslation()
   const { scrollY } = useViewportScroll()
   const [dynamicHeight, setDynamicHeight] = useState(null)

@@ -10,9 +10,9 @@ export default function TeamPage({ data }) {
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
-      <section class='text-gray-500 bg-gray-900 body-font px-0 py-32 xl:px-20'>
-        <div class='container px-10 mx-auto sm:px-0'>
-          <div class='flex flex-col text-left w-full mb-20'>
+      <section className='text-gray-500 bg-gray-900 body-font px-0 py-32 xl:px-20'>
+        <div className='container px-10 mx-auto sm:px-0'>
+          <div className='flex flex-col text-left w-full mb-20'>
             <div className='text-sm text-gray-500 uppercase'>
               {t('team.subtitle')}
             </div>
@@ -20,28 +20,28 @@ export default function TeamPage({ data }) {
               {t('team.title')}
             </div>
           </div>
-          <div class='flex flex-wrap -m-4'>
+          <div className='flex flex-wrap -m-4'>
             {team &&
               team.nodes.map(member => (
-                <div class='p-8 lg:w-1/2'>
-                  <div class='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left'>
+                <div key={member.name} className='p-8 lg:w-1/2'>
+                  <div className='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left'>
                     <Img
                       fluid={member.image.fluid}
                       alt='team'
                       className='rounded-lg w-76 h-48 object-cover object-center sm:mb-0 mb-4'
                     />
-                    <div class='flex-grow sm:pl-8'>
-                      <h2 class='title-font font-medium text-lg text-green-500 font-mono'>
+                    <div className='flex-grow sm:pl-8'>
+                      <h2 className='title-font font-medium text-lg text-green-500 font-mono'>
                         {member.name}
                       </h2>
-                      <h3 class='text-gray-600 font-thin tracking-tighter font-mono mb-3'>
+                      <h3 className='text-gray-600 font-thin tracking-tighter font-mono mb-3'>
                         {member.jobTitle}
                       </h3>
-                      <p class='text-base mb-4'>
+                      <p className='text-base mb-4'>
                         Dui faucibus in ornare quam viverra orci sagittis eu.
                         Est ante in nibh mauris. Tellus molestie nunc non.
                       </p>
-                      <span class='inline-flex'>
+                      <span className='inline-flex'>
                         {member.contactmethod.email && (
                           <a
                             href={`mailto:${member.contactmethod.email}`}

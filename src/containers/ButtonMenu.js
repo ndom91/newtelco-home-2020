@@ -35,11 +35,11 @@ const ButtonHamburger = styled.button`
   &:focus {
     outline: none;
   }
-  ${media.tabletSmall`
+  ${media.mobile`
     display: fixed;
     visibility: visible;
   `}
-  ${media.tabletSmall_up`
+  ${media.mobile_up`
     display: none;
   `}
   &.active {

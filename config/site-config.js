@@ -1,7 +1,7 @@
 module.exports = {
   siteUrl: 'https://newtelco.dev',
   sitemapPath: '/sitemap.xml',
-  title: 'Newtelco 2020',
-  description: 'Newtelco Gmbh - The Interconnection Company',
-  author: '@ndom91',
+  title: 'NewTelco GmbH',
+  description: 'NewTelco Gmbh - The Interconnection Company',
+  author: 'Nico Domino <ndomino@newtelco.de>',
 }

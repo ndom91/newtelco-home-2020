@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactGlobe from 'react-globe'
-import { useMediaQuery } from 'react-responsive'
+import { createBreakpoint } from 'react-use'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/scale.css'
 
@@ -68,13 +68,14 @@ const options = {
 }
 
 const Globe = () => {
-  const isMobile = useMediaQuery({ query: '(max-device-width: 641px)' })
+  const useBreakpoint = createBreakpoint()
+  const breakpoint = useBreakpoint()
   return (
     <ReactGlobe
       options={options}
       // markers={markers}
-      height={isMobile ? 600 : 800}
-      width={isMobile ? 600 : 800}
+      height={breakpoint === 'tablet' ? 600 : 800}
+      width={breakpoint === 'tablet' ? 600 : 800}
       globeBackgroundTexture={null}
       globeCloudsTexture={globeCloudsTexture}
       globeTexture={globeTexture}

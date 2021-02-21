@@ -33,6 +33,17 @@ const Wrapper = styled.div`
   top: 0;
   width: 100%;
   z-index: 9999;
+
+  &:after {
+    content: '';
+    background-image: url('/blackmamba.png');
+    height: 300%;
+    width: 300%;
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    pointer-events: none;
+  }
 `
 
 export default Layout

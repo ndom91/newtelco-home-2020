@@ -2,13 +2,16 @@ import React from 'react'
 
 const WorldMap = () => (
   <>
-    {/* <div className='absolute top-0 left-0 w-screen flex justify-center'> */}
     <svg
       xmlns='http://www.w3.org/2000/svg'
       preserveAspectRatio='none'
       viewBox='0 0 1440 560'
-      className='mt-32 z-0 w-full absolute'
-      // style={{ width: '75%' }}
+      className='mt-48 z-0 w-full absolute'
+      style={{
+        width: '90vw',
+        transform: 'translate(-50%)',
+        left: '50%',
+      }}
     >
       <g mask='url("#SvgjsMask1001")' fill='none'>
         <path

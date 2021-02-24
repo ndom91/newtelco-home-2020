@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
-// import HeaderImg from '../../static/product1.jpg'
 import Img from 'gatsby-image'
 import SEO from '../components/shared/SEO'
 import slugify from 'slug'
@@ -21,7 +20,6 @@ export default function ProductsPage({ data }) {
                   alt='content'
                   fluid={productImg.nodes[0].childImageSharp.fluid}
                   className='object-cover object-top h-full w-full'
-                  // src={HeaderImg}
                 />
               </div>
               {products &&

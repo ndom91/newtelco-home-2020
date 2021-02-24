@@ -26,33 +26,28 @@ export default function ProductPage({ data = {}, pageContext }) {
     return para
   })
 
-  if (product && seo) {
-    return (
-      <>
-        <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
-        <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
-          <section className='relative text-gray-500 bg-gray-900 body-font mb-20 w-4/5 max-w-screen-lg'>
-            {product.nodes.map(product => {
-              return (
-                <div key={product.title}>
-                  <Title className='font-mono font-thin'>{product.title}</Title>
-                  <div className='h-1 bg-gray-800 rounded overflow-hidden mb-20'>
-                    <div className='w-24 h-full bg-green-500'></div>
-                  </div>
-                  {/* <Body>{product.fullText}</Body> */}
-                  <Body className='font-all'>{firstHalf}</Body>
-                  {product.title === 'Colocation' && <ColoPricing />}
-                  <Body>{secondHalf}</Body>
+  if (product && seo)
+    <>
+      <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
+      <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
+        <section className='relative text-gray-500 bg-gray-900 body-font mb-20 w-4/5 max-w-screen-lg'>
+          {product.nodes.map(product => {
+            return (
+              <div key={product.title}>
+                <Title className='font-mono font-thin'>{product.title}</Title>
+                <div className='h-1 bg-gray-800 rounded overflow-hidden mb-20'>
+                  <div className='w-24 h-full bg-green-500'></div>
                 </div>
-              )
-            })}
-          </section>
-        </div>
-      </>
-    )
-  } else {
-    return null
-  }
+                {/* <Body>{product.fullText}</Body> */}
+                <Body className='font-all'>{firstHalf}</Body>
+                {product.title === 'Colocation' && <ColoPricing />}
+                <Body>{secondHalf}</Body>
+              </div>
+            )
+          })}
+        </section>
+      </div>
+    </>
 }
 
 const Title = styled.h1`

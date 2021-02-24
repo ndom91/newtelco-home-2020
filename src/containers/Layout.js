@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Header from './Header'
 import Footer from './Footer'
-import HelmetTags from './HelmetTags'
+import MetaTags from './MetaTags'
 import Reboot from '../style/reboot'
 import '../style/globals.css'
 import '../style/fonts.css'
@@ -10,7 +10,7 @@ import '../style/fonts.css'
 const Layout = ({ children, location, data, pageContext }) => (
   <>
     <Reboot />
-    <HelmetTags />
+    <MetaTags />
     <Wrapper>
       <Header location={location} />
       {children}
@@ -25,9 +25,8 @@ const Layout = ({ children, location, data, pageContext }) => (
 )
 
 const Wrapper = styled.div`
-  position: sticky;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 9999;
 
   &:after {
@@ -39,6 +38,7 @@ const Wrapper = styled.div`
     position: fixed;
     top: 0;
     pointer-events: none;
+    overflow: hidden;
   }
 `
 

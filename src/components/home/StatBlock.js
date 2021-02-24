@@ -72,7 +72,7 @@ const Value = styled.div`
   font-family: var(--font-all);
   font-family: var(--font-mono);
   font-weight: 500;
-  color: #101113;
+  color: rgba(255, 255, 255, 0.75);
   ${media.tabletSmall`
     font-size: 3.5rem;
   `}
@@ -82,7 +82,7 @@ const Label = styled.div`
   font-size: 1.5rem;
   font-family: var(--font-mono);
   font-weight: 100;
-  color: #101113;
+  color: rgba(255, 255, 255, 0.75);
   ${media.tabletSmall`
     font-size: 1.2rem;
   `}

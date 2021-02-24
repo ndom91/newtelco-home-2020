@@ -48,7 +48,7 @@ const RackStats = () => {
             width: '230px',
             backgroundSize: 'calc(20 * 1px) calc(20 * 1px)',
           }}
-          className='absolute top-0 right-0 z-0 opacity-0 pointer-events-none -mr-24 mt-56 md:opacity-25 pattern-dots-md text-gray-700'
+          className='hidden sm:block absolute top-0 right-0 z-0 opacity-0 pointer-events-none -mr-24 mt-56 md:opacity-25 pattern-dots-md text-gray-700'
         />
         <BlobFilled />
       </ContentWrapper>
@@ -60,8 +60,8 @@ const BlobFilled = styled(Blob2)`
   right: 18rem;
   top: 41rem;
   ${media.tabletSmall`
-    bottom: -100px;
-    right: 30px;
+    bottom: -110px;
+    right: 250px;
     top: unset;
   `}
 `

@@ -31,28 +31,27 @@ const Hero = React.memo(function Hero({ data }) {
   const { scrollY } = useViewportScroll()
   const y1 = useTransform(scrollY, [700, -100], [-170, -10])
   const y2 = useTransform(scrollY, [-200, 200], [20, -20])
-  const x1 = useTransform(scrollY, [500, -500], [-150, 10])
+  const x1 = useTransform(scrollY, [-500, 500], [150, -10])
   const breakpoint = useBreakpoint()
   const isMobile = breakpoint === 'phone'
 
   return (
-    <section className='relative w-4/5 mb-8 text-gray-500 bg-gray-900 body-font w-full max-w-screen-lg'>
+    <section className='relative mb-8 text-gray-500 bg-gray-900 body-font w-full max-w-screen-lg overflow-hidden sm:overflow-visible'>
       <Blob11
         alt='Arrow Nav Blob'
         width='100px'
-        className='absolute top-0 left-0 ml-24 mt-8 z-50'
+        className='absolute top-0 left-0 ml-24 mt-8 z-50 hidden sm:block'
       />
       <motion.div
-        className='absolute top-0 right-0 z-10 -mr-12 z-50'
+        className='absolute top-0 left-0 sm:right-0 sm:left-auto z-10 -mr-12 z-50'
         style={{
           right: x1,
-          top: y1,
         }}
       >
         <Blob12 alt='Squiggle Map Blob' width='200px' className='z-50' />
       </motion.div>
       <div className='relative flex flex-col-reverse items-end py-0 mx-auto md:px-5 sm:py-24 md:flex-row'>
-        <div className='relative flex flex-col w-full -mt-8 lg:flex-grow md:w-1/2 md:text-left md:mb-0 items-left'>
+        <div className='relative flex flex-col w-full -mt-8 lg:flex-grow md:w-1/2 md:text-left md:mb-0 items-left px-12 sm:px-0'>
           <h1 className='z-10 text-3xl mb-10 font-semibold text-left text-white font-sans sm:text-4xl md:whitespace-no-wrap'>
             {t('welcome')}
           </h1>

@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
-import ReactTilt from 'react-universal-tilt'
+import Tilt from 'react-parallax-tilt'
 import Flippy, { FrontSide, BackSide } from 'react-flippy'
 import 'react-flippy/dist/styles.css'
 
@@ -62,7 +62,7 @@ const LocationTilt = ({ city, address, image }) => {
   )
 }
 
-const Tilter = styled(ReactTilt)`
+const Tilter = styled(Tilt)`
   position: relative;
   display: block;
   flex: none;

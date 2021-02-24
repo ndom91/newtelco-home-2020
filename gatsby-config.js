@@ -176,12 +176,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
+        disable: true,
         devMode: false,
+        analyzerMode: 'static',
       },
-    },
-    {
-      resolve: '@bundle-analyzer/gatsby-plugin',
-      options: { token: process.env.BUNDLE_ANALYZER_TOKEN },
     },
   ],
 }

@@ -5,7 +5,7 @@ import SEO from '../components/shared/SEO'
 
 export default function ServicePage({ data = {}, pageContext }) {
   const { service, seo } = data
-  console.log(data, pageContext, service)
+  // console.log(data, pageContext, service)
   const sentences = service.nodes[0].fullText.match(
     /[^\s.!?]+[^.!?\r\n]+[.!?]*/g
   )

@@ -4,31 +4,22 @@ import SEO from '../components/shared/SEO'
 import Hero from '../components/home/Hero'
 import Products from '../components/home/Products'
 import RackStats from '../components/home/RackStats'
-// import Team from '../components/home/Team'
 import HorizontalScroll from '../components/home/HorizontalScroll'
 import Loadable from 'react-loadable'
-
 import Location from '../components/home/Locations'
-
-// const Location = Loadable({
-//   loader: () => import('../components/home/Locations'),
-//   loading() {
-//     return <div>Loading...</div>
-//   },
-// })
 
 const Contact = Loadable({
   loader: () => import('../components/home/Contact'),
   loading() {
     return <div>Loading...</div>
-  },
+  }
 })
 
 const Testimonials = Loadable({
   loader: () => import('../components/home/Testimonials'),
   loading() {
     return <div>Loading...</div>
-  },
+  }
 })
 
 export default function IndexPage({ data }) {
@@ -43,7 +34,6 @@ export default function IndexPage({ data }) {
       <div className='flex flex-col justify-start items-center max-w-100 bg-gray-900'>
         <Hero data={home} />
         <RackStats className='overflow-hidden max-w-100' />
-        {/* <Team members={team} /> */}
         <HorizontalScroll members={team} />
         <Products products={products} />
         <Testimonials

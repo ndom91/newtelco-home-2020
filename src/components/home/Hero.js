@@ -8,7 +8,18 @@ import Blob13 from '../../images/illustrations/blobs/blob13.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
 import { createBreakpoint } from 'react-use'
 import Typed from 'react-typed'
-import Globe from './Globe'
+import Loadable from 'react-loadable'
+const Globe = Loadable({
+  loader: () => import('./Globe'),
+  loading() {
+    return (
+      <div
+        style={{ height: '600px', width: '600px' }}
+        className='text-white font-display font-thin'
+      ></div>
+    )
+  }
+})
 
 import 'pattern.css/dist/pattern.min.css'
 

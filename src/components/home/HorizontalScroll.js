@@ -66,7 +66,7 @@ const HorizontalScroll = ({ members }) => {
       <StickyInnerContainer>
         <div className='container flex justify-between flex-row-reverse w-full my-12 mx-auto'>
           <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-16 text-right'>
-            <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-hairline'>
+            <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-thin'>
               {t('team.headline')}
             </h1>
             <div className='h-1 w-20 bg-green-500 rounded float-right'></div>

@@ -15,7 +15,7 @@ const Globe = Loadable({
     return (
       <div
         style={{ height: '600px', width: '600px' }}
-        className='text-white font-display font-hairline'
+        className='text-white font-display font-thin'
       ></div>
     )
   },
@@ -43,23 +43,23 @@ const Hero = React.memo(function Hero({ data }) {
         className='absolute top-0 left-0 ml-24 mt-8 z-50 hidden sm:block'
       />
       <motion.div
-        className='absolute top-3.5 left-3.5 sm:right-0 sm:left-auto z-10 -mr-12 z-50'
+        className='absolute top-12 left-24 sm:top-0 sm:right-0 sm:left-auto z-10 -mr-12 z-10'
         style={{
           right: x1,
         }}
       >
-        <Blob12 alt='Squiggle Map Blob' width='200px' className='z-50' />
+        <Blob12 alt='Squiggle Map Blob' width='200px' />
       </motion.div>
       <div className='relative flex flex-col-reverse items-end py-0 mx-auto md:px-5 sm:py-24 md:flex-row'>
-        <div className='relative flex flex-col w-full -mt-8 lg:flex-grow md:w-1/2 md:text-left md:mb-0 items-left px-12 sm:px-0'>
-          <h1 className='z-10 text-3xl mb-10 font-semibold text-left text-white font-sans sm:text-4xl md:whitespace-no-wrap'>
+        <div className='relative flex flex-col -mt-8 w-full lg:flex-grow md:text-left md:mb-0 items-left px-12 sm:px-0'>
+          <h1 className='z-50 text-3xl mb-10 font-semibold text-left text-white font-sans sm:text-4xl md:whitespace-no-wrap'>
             {t('welcome')}
           </h1>
           <Typed
             strings={[t('subtitle.1'), t('subtitle.2'), t('subtitle.3')]}
             typeSpeed={50}
             backSpeed={60}
-            className='absolute bottom-0 w-full overflow-x-visible text-2xl font-hairline font-mono md:text-3xl whitespace-no-wrap'
+            className='absolute bottom-0 w-full overflow-x-visible text-2xl font-thin font-mono md:text-3xl  z-50 w-max'
           />
           <div className='z-10 flex flex-col items-start -mb-16 leading-normal text-left bg-transparent'>
             <a

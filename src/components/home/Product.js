@@ -34,7 +34,7 @@ const Product = ({ product, index }) => {
         <Blob alt={product.image.fluid} className='z-0 w-76 h-48' />
       </div>
       <div className='flex-grow sm:text-left text-center mt-6 sm:mt-0'>
-        <h2 className='text-green text-4xl md:text-5xl font-body font-hairline mb-2'>
+        <h2 className='text-green text-4xl md:text-5xl font-body font-thin mb-2'>
           <Link
             language={language}
             to={`/products/${slugify(product.title)}`}

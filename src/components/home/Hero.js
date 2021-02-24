@@ -43,7 +43,7 @@ const Hero = React.memo(function Hero({ data }) {
         className='absolute top-0 left-0 ml-24 mt-8 z-50 hidden sm:block'
       />
       <motion.div
-        className='absolute top-0 left-0 sm:right-0 sm:left-auto z-10 -mr-12 z-50'
+        className='absolute top-3.5 left-3.5 sm:right-0 sm:left-auto z-10 -mr-12 z-50'
         style={{
           right: x1,
         }}

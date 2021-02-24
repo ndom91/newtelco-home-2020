@@ -51,7 +51,7 @@ const Partners = React.memo(function Partners({ partners }) {
             .slice(0, 10)
             .map((partner, i) => (
               <Motion
-                key={`marquee-example-company-${i}`}
+                key={`marquee-${i}`}
                 initDeg={randomIntFromInterval(0, 360)}
                 direction={
                   Math.random() > 0.5 ? 'clockwise' : 'counterclockwise'

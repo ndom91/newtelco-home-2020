@@ -36,7 +36,7 @@ const Footer = ({ products, services, social, locations }) => {
   return (
     <footer className='text-gray-500 bg-gray-900 body-font overflow-hidden max-w-100'>
       <div className='relative container px-5 py-20 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col'>
-        <div className='relative w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left'>
+        <div className='relative w-64 flex-shrink-0 lg:mx-0 mx-auto text-center lg:text-left'>
           <div className='flex title-font font-medium items-center md:justify-start justify-center text-white z-20'>
             <LogoFull className='z-30' />
           </div>
@@ -141,7 +141,7 @@ const Footer = ({ products, services, social, locations }) => {
             <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
               Locations
             </h2>
-            <nav className='list-none mb-10'>
+            <nav className='list-none mb-10 text-left pl-12 md:pl-0'>
               {locations.map(location => (
                 <div key={location.city}>
                   <a
@@ -163,7 +163,7 @@ const Footer = ({ products, services, social, locations }) => {
             <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
               Products
             </h2>
-            <nav className='list-none mb-10'>
+            <nav className='list-none mb-10 text-left pl-12 md:pl-0'>
               {products &&
                 products.map(product => (
                   <div key={product.title}>
@@ -183,7 +183,7 @@ const Footer = ({ products, services, social, locations }) => {
             <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
               Services
             </h2>
-            <nav className='list-none mb-10'>
+            <nav className='list-none mb-10 text-left pl-12 md:pl-0'>
               {services &&
                 services.map(service => (
                   <div key={service.title}>
@@ -203,7 +203,7 @@ const Footer = ({ products, services, social, locations }) => {
             <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
               Company
             </h2>
-            <nav className='list-none mb-10'>
+            <nav className='list-none mb-10 text-left pl-12 md:pl-0'>
               <div>
                 <Link
                   to={'/about'}
@@ -251,33 +251,12 @@ const Footer = ({ products, services, social, locations }) => {
       <div className='bg-gray-800'>
         <div className='container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row align-center'>
           <div className='text-gray-600 text-sm text-center sm:text-left w-full flex justify-between items-center mb-0 font-mono'>
-            <p className=' mb-0'>© {year} NewTelco GmbH</p>
-            <div className='flex'>
-              <a
-                href='https://is.newtelco.online'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='hover:no-underline'
-              >
-                <div className='h-4 flex items-center border-gray-700 border p-4 rounded-lg mr-8'>
-                  <UptimeDot
-                    alt='team'
-                    uptime={uptime}
-                    className={`w-3 h-3 ${
-                      uptime ? 'bg-green-500' : 'bg-yellow-400'
-                    } flex-shrink-0 rounded-full mr-4 shadow-outline`}
-                  />
-                  <div className='flex-grow align-middle'>
-                    <p className='text-gray-500 mb-0'>
-                      {uptime ? 'All Systems Normal' : 'Systems Degraded'}
-                    </p>
-                  </div>
-                </div>
-              </a>
+            <div className='flex items-center'>
+              <p className='mb-0 mr-4'>© {year} NewTelco GmbH</p>
               <a
                 href='https://github.com/ndom91'
                 rel='noopener noreferrer'
-                className='leading-8 text-gray-700 ml-1 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out text-xs'
+                className='leading-8 text-gray-700 ml-1 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out text-sm hidden sm:block '
                 target='_blank'
               >
                 <svg
@@ -296,6 +275,27 @@ const Footer = ({ products, services, social, locations }) => {
                 ndomino
               </a>
             </div>
+            <a
+              href='https://is.newtelco.online'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='hover:no-underline'
+            >
+              <div className='h-4 flex items-center border-gray-700 border p-4 rounded-md'>
+                <UptimeDot
+                  alt='team'
+                  uptime={uptime}
+                  className={`w-3 h-3 ${
+                    uptime ? 'bg-green-500' : 'bg-yellow-400'
+                  } flex-shrink-0 rounded-full mr-4 shadow-outline`}
+                />
+                <div className='flex-grow align-middle'>
+                  <p className='text-gray-500 mb-0'>
+                    {uptime ? 'All Systems Normal' : 'Systems Degraded'}
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>

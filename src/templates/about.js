@@ -301,7 +301,7 @@ export default function AboutPage({ data }) {
                     <div className='text-2xl text-green-500 font-mono font-thin'>
                       Vision
                     </div>
-                    <p className='mt-5 leading-7 text-gray-700 text-md font-sans font-thin'>
+                    <p className='mt-5 leading-7 text-gray-700 text-md font-thin'>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -338,11 +338,6 @@ export default function AboutPage({ data }) {
           </div>
         </div>
       </section>
-      {/* <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
-        <section className='relative text-gray-500 bg-gray-900 body-font mb-8 w-4/5 max-w-screen-lg'>
-          About!
-        </section>
-      </div> */}
     </>
   )
 }

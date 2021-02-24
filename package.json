@@ -96,6 +96,42 @@
     "pretty-quick": "^2.0.1",
     "slug": "^3.3.0"
   },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "strict": 0,
+      "no-console": "warn",
+      "quotes": [
+        "warn",
+        "single"
+      ],
+      "prettier/prettier": "warn",
+      "react/prop-types": "disable",
+      "no-unused-vars": "warn"
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": ["prettier", "jsx-a11y"],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "parser": "babel",
+    "semi": false,
+    "arrowParens": "avoid"
+  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",

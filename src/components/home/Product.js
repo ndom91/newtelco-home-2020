@@ -12,7 +12,7 @@ import Blob4 from '../../images/illustrations/blobs/blob9.svg'
 const Product = ({ product, index }) => {
   const [ref, inView] = useInView({
     rootMargin: '50px 0px',
-    triggerOnce: true,
+    triggerOnce: true
   })
 
   const blobs = [Blob1, Blob2, Blob3, Blob4]
@@ -30,10 +30,10 @@ const Product = ({ product, index }) => {
         inView ? 'sectionInView product-wrapper' : 'product-wrapper'
       }`}
     >
-      <div className='absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible'>
+      <div className='absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible z-0'>
         <Blob alt={product.image.fluid} className='z-0 w-76 h-48' />
       </div>
-      <div className='flex-grow sm:text-left text-center mt-6 sm:mt-0'>
+      <div className='flex-grow sm:text-left text-center mt-6 sm:mt-0 z-10'>
         <h2 className='text-green text-4xl md:text-5xl font-body font-thin mb-2'>
           <Link
             language={language}

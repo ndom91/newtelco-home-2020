@@ -33,7 +33,9 @@ export default function ServicesPage({ data }) {
                   <div
                     key={product.title}
                     className={`flex mt-10 ${
-                      (index + 1) % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
+                      (index + 1) % 2 === 0
+                        ? 'flex-col sm:flex-row-reverse'
+                        : 'flex-col sm:flex-row'
                     }`}
                   >
                     <div className='sm:w-1/3 text-center sm:pr-8 sm:py-8'>

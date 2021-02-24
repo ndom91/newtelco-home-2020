@@ -8,18 +8,7 @@ import Blob13 from '../../images/illustrations/blobs/blob13.svg'
 import { useViewportScroll, useTransform, motion } from 'framer-motion'
 import { createBreakpoint } from 'react-use'
 import Typed from 'react-typed'
-import Loadable from 'react-loadable'
-const Globe = Loadable({
-  loader: () => import('./Globe'),
-  loading() {
-    return (
-      <div
-        style={{ height: '600px', width: '600px' }}
-        className='text-white font-display font-thin'
-      ></div>
-    )
-  },
-})
+import Globe from './Globe'
 
 import 'pattern.css/dist/pattern.min.css'
 
@@ -31,12 +20,12 @@ const Hero = React.memo(function Hero({ data }) {
   const { scrollY } = useViewportScroll()
   const y1 = useTransform(scrollY, [700, -100], [-170, -10])
   const y2 = useTransform(scrollY, [-200, 200], [20, -20])
-  const x1 = useTransform(scrollY, [-500, 500], [150, -10])
+  const x = useTransform(scrollY)
   const breakpoint = useBreakpoint()
   const isMobile = breakpoint === 'phone'
 
   return (
-    <section className='relative mb-8 text-gray-500 bg-gray-900 body-font w-full max-w-screen-lg overflow-hidden sm:overflow-visible'>
+    <section className='relative mb-8 text-gray-500 bg-gray-900 body-font w-full max-w-screen-lg '>
       <Blob11
         alt='Arrow Nav Blob'
         width='100px'
@@ -45,7 +34,7 @@ const Hero = React.memo(function Hero({ data }) {
       <motion.div
         className='absolute top-12 left-24 sm:top-0 sm:right-0 sm:left-auto z-10 -mr-12 z-10'
         style={{
-          right: x1,
+          x
         }}
       >
         <Blob12 alt='Squiggle Map Blob' width='200px' />
@@ -82,13 +71,13 @@ const Hero = React.memo(function Hero({ data }) {
           <motion.div
             style={{
               top: y1,
-              position: 'absolute',
+              position: 'absolute'
             }}
           >
             <div
               alt='bg-dot-1'
               style={{ height: '260px', width: '260px' }}
-              className='bottom-0 left-0 z-0 opacity-0 pointer-events-none -ml-20 -mb-16 md:opacity-10 pattern-dots-xl'
+              className='bottom-0 left-0 z-50 opacity-20 pointer-events-none -ml-20 -mb-16 pattern-dots-xl'
             />
           </motion.div>
         </div>
@@ -100,7 +89,7 @@ const Hero = React.memo(function Hero({ data }) {
             className='absolute bottom-0 left-0'
             style={{
               right: y2,
-              position: 'absolute',
+              position: 'absolute'
             }}
           >
             {!breakpoint === 'tablet' && (
@@ -117,7 +106,7 @@ const Hero = React.memo(function Hero({ data }) {
                 ? {
                     position: 'absolute',
                     left: '80px',
-                    top: '50px',
+                    top: '50px'
                   }
                 : {}
             }

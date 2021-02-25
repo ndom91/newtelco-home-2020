@@ -3,13 +3,13 @@ async function getUptimeStatus() {
     method: 'POST',
     headers: {
       'cache-control': 'no-cache',
-      'content-type': 'application/json',
+      'content-type': 'application/json'
     },
     body: JSON.stringify({
       api_key: UPTIMEROBOT_KEY,
       format: 'json',
-      logs: '1',
-    }),
+      logs: '1'
+    })
   })
     .then(res => res.json())
     .then(data => {
@@ -18,7 +18,7 @@ async function getUptimeStatus() {
         returnObj.monitors.push({
           name: mon.friendly_name,
           online: mon.status === 2,
-          url: mon.url,
+          url: mon.url
         })
       })
       return returnObj
@@ -32,14 +32,14 @@ const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   // 'Access-Control-Allow-Origin': "https://home.newtelco.de",
   'Access-Control-Allow-Methods': 'GET, HEAD, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Headers': 'Content-Type'
 }
 
 async function handleRequest(request) {
   const details = await getUptimeStatus()
   return new Response(JSON.stringify(details), {
     headers: corsHeaders,
-    status: 200,
+    status: 200
   })
 }
 
@@ -49,7 +49,7 @@ addEventListener('fetch', event => {
   } else {
     return new Response(null, {
       status: 405,
-      statusText: 'Method Not Allowed',
+      statusText: 'Method Not Allowed'
     })
   }
 })

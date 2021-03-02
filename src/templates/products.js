@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
-import Img from 'gatsby-plugin-image'
+import Img from 'gatsby-image'
 import SEO from '../components/shared/SEO'
 import slugify from 'slug'
 

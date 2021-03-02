@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-plugin-image'
+import Img from 'gatsby-image'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import SEO from '../components/shared/SEO'
 

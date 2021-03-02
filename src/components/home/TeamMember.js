@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Img from 'gatsby-plugin-image'
+import Img from 'gatsby-image'
 
 const TeamMember = ({ member }) => {
   return (

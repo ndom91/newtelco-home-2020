@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import styled from '@emotion/styled'
-import Img from 'gatsby-plugin-image'
+import Img from 'gatsby-image'
 import Tilt from 'react-parallax-tilt'
 import Flippy, { FrontSide, BackSide } from 'react-flippy'
 import 'react-flippy/dist/styles.css'
@@ -15,7 +15,7 @@ const LocationTilt = ({ city, address, image }) => {
         scale: 1.05,
         max: 25,
         perspective: 1000,
-        base: 'element'
+        base: 'element',
       }}
       key='front'
       onClick={() => setFlipped(!flipped)}

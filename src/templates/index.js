@@ -5,7 +5,7 @@ import Hero from '../components/home/Hero'
 import Products from '../components/home/Products'
 import RackStats from '../components/home/RackStats'
 import HorizontalScroll from '../components/home/HorizontalScroll'
-import { useQuerySubscription } from 'react-datocms'
+// import { useQuerySubscription } from 'react-datocms'
 import Loadable from 'react-loadable'
 import Location from '../components/home/Locations'
 
@@ -241,6 +241,11 @@ export const query = graphql`
         city
         address
         image {
+          # Gatsby v3 gatsby-image-plugin syntax
+          #   not supported by DatoCMS yet
+          # childImageSharp {
+          #   gatsbyImageData(layout: FLUID)
+          # }
           fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
             ...GatsbyDatoCmsFluid
           }

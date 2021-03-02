@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import Img from 'gatsby-plugin-image'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import SEO from '../components/shared/SEO'
 
@@ -10,13 +10,13 @@ export default function TeamPage({ data }) {
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
-      <section className='text-gray-500 bg-gray-900 body-font px-0 py-32 xl:px-20'>
-        <div className='container px-10 mx-auto sm:px-0'>
-          <div className='flex flex-col text-left w-full mb-20'>
-            <div className='text-sm text-gray-500 uppercase'>
+      <section className='body-font px-0 py-32 text-gray-500 bg-gray-900 xl:px-20'>
+        <div className='container mx-auto px-10 sm:px-0'>
+          <div className='flex flex-col mb-20 w-full text-left'>
+            <div className='text-gray-500 text-sm uppercase'>
               {t('team.subtitle')}
             </div>
-            <div className='text-4xl text-white font-mono'>
+            <div className='text-white font-mono text-4xl'>
               {t('team.title')}
             </div>
           </div>
@@ -24,20 +24,20 @@ export default function TeamPage({ data }) {
             {team &&
               team.nodes.map(member => (
                 <div key={member.name} className='p-8 lg:w-1/2'>
-                  <div className='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left'>
+                  <div className='flex flex-col items-center justify-center h-full text-center sm:flex-row sm:justify-start sm:text-left'>
                     <Img
                       fluid={member.image.fluid}
                       alt='team'
-                      className='rounded-lg w-76 h-48 object-cover object-center sm:mb-0 mb-4'
+                      className='mb-4 w-76 h-48 rounded-lg object-cover object-center sm:mb-0'
                     />
                     <div className='flex-grow sm:pl-8'>
-                      <h2 className='title-font font-medium text-lg text-green-500 font-mono'>
+                      <h2 className='title-font text-green-500 font-mono text-lg font-medium'>
                         {member.name}
                       </h2>
-                      <h3 className='text-gray-600 font-thin tracking-tighter font-mono mb-3'>
+                      <h3 className='mb-3 text-gray-600 font-mono font-thin tracking-tighter'>
                         {member.jobTitle}
                       </h3>
-                      <p className='text-base mb-4'>
+                      <p className='mb-4 text-base'>
                         Dui faucibus in ornare quam viverra orci sagittis eu.
                         Est ante in nibh mauris. Tellus molestie nunc non.
                       </p>
@@ -46,7 +46,7 @@ export default function TeamPage({ data }) {
                           <a
                             href={`mailto:${member.contactmethod.email}`}
                             alt={`mailto ${member.name}`}
-                            className='text-gray-500 hover:text-green-500 transition transition-color duration-300 ease-in-out'
+                            className='transition-color text-gray-500 hover:text-green-500 transition duration-300 ease-in-out'
                           >
                             <svg
                               height='28'
@@ -66,7 +66,7 @@ export default function TeamPage({ data }) {
                           <a
                             href={member.contactmethod.linkedin}
                             alt={`${member.name} LinkedIn`}
-                            className='text-gray-500 hover:text-green-500 transition transition-color duration-300 ease-in-out'
+                            className='transition-color text-gray-500 hover:text-green-500 transition duration-300 ease-in-out'
                           >
                             <svg height='28' width='28' viewBox='0 0 24 24'>
                               <path fill='none' d='M0 0h24v24H0z' />
@@ -81,7 +81,7 @@ export default function TeamPage({ data }) {
                           <a
                             href={`${member.contactmethod.xing}`}
                             alt={`Xing ${member.name}`}
-                            className='text-gray-500 hover:text-green-500 transition transition-color duration-300 ease-in-out'
+                            className='transition-color text-gray-500 hover:text-green-500 transition duration-300 ease-in-out'
                           >
                             <svg height='28' width='28' viewBox='0 0 24 24'>
                               <path fill='none' d='M0 0h24v24H0z' />

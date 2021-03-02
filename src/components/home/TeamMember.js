@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Img from 'gatsby-image'
+import Img from 'gatsby-plugin-image'
 
 const TeamMember = ({ member }) => {
   return (
@@ -8,18 +8,18 @@ const TeamMember = ({ member }) => {
       className='inline-flex flex-wrap m-4'
       style={{ width: '300px', minWidth: '300px' }}
     >
-      <div className='h-full w-full rounded-lg flex flex-col relative overflow-hidden'>
+      <div className='relative flex flex-col w-full h-full rounded-lg overflow-hidden'>
         <TeamImg
           alt={member.name}
-          className='flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4'
+          className='flex-shrink-0 mb-4 w-full h-56 rounded-lg object-cover object-center'
           fluid={member.image.fluid}
           loading='eager'
         />
         <div className='w-full'>
-          <h2 className='font-medium text-2xl text-gray-600 text-center'>
+          <h2 className='text-center text-gray-600 text-2xl font-medium'>
             {member.name}
           </h2>
-          <h3 className='text-gray-700 text-lg mb-3 text-center font-mono font-thin'>
+          <h3 className='mb-3 text-center text-gray-700 font-mono text-lg font-thin'>
             {member.jobTitle}
           </h3>
         </div>
@@ -28,7 +28,7 @@ const TeamMember = ({ member }) => {
             <a
               href={`mailto:${member.contactmethod.email}`}
               alt={`mailto ${member.name}`}
-              className='text-gray-700 hover:text-green-500 transition transition-color duration-300 ease-in-out'
+              className='transition-color text-gray-700 hover:text-green-500 transition duration-300 ease-in-out'
             >
               <svg
                 height='32'
@@ -48,7 +48,7 @@ const TeamMember = ({ member }) => {
             <a
               href={member.contactmethod.linkedin}
               alt={`${member.name} LinkedIn`}
-              className='text-gray-700 hover:text-green-500 transition transition-color duration-300 ease-in-out'
+              className='transition-color text-gray-700 hover:text-green-500 transition duration-300 ease-in-out'
             >
               <svg height='32' width='32' viewBox='0 0 24 24'>
                 <path fill='none' d='M0 0h24v24H0z' />
@@ -63,7 +63,7 @@ const TeamMember = ({ member }) => {
             <a
               href={`${member.contactmethod.xing}`}
               alt={`Xing ${member.name}`}
-              className='text-gray-700 hover:text-green-500 transition transition-color duration-300 ease-in-out'
+              className='transition-color text-gray-700 hover:text-green-500 transition duration-300 ease-in-out'
             >
               <svg height='32' width='32' viewBox='0 0 24 24'>
                 <path fill='none' d='M0 0h24v24H0z' />

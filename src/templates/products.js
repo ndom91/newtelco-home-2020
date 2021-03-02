@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
-import Img from 'gatsby-image'
+import Img from 'gatsby-plugin-image'
 import SEO from '../components/shared/SEO'
 import slugify from 'slug'
 
@@ -11,15 +11,15 @@ export default function ProductsPage({ data }) {
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
-      <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
-        <section className='text-gray-500 bg-gray-900 body-font'>
-          <div className='container px-5 py-12 mx-auto flex flex-col'>
-            <div className='lg:w-4/6 mx-auto'>
-              <div className='rounded-lg h-64 overflow-hidden'>
+      <div className='max-w-100 flex flex-col items-center justify-start bg-gray-900 overflow-hidden'>
+        <section className='body-font text-gray-500 bg-gray-900'>
+          <div className='container flex flex-col mx-auto px-5 py-12'>
+            <div className='mx-auto lg:w-4/6'>
+              <div className='h-64 rounded-lg overflow-hidden'>
                 <Img
                   alt='content'
                   fluid={productImg.nodes[0].childImageSharp.fluid}
-                  className='object-cover object-top h-full w-full'
+                  className='w-full h-full object-cover object-top'
                 />
               </div>
               {products &&
@@ -32,8 +32,8 @@ export default function ProductsPage({ data }) {
                         : 'flex-col sm:flex-row'
                     }`}
                   >
-                    <div className='sm:w-1/3 text-center sm:pr-8 sm:py-8'>
-                      <div className='w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-800 text-gray-600'>
+                    <div className='text-center sm:pr-8 sm:py-8 sm:w-1/3'>
+                      <div className='inline-flex items-center justify-center w-20 h-20 text-gray-600 bg-gray-800 rounded-full'>
                         <svg
                           fill='none'
                           stroke='currentColor'
@@ -47,12 +47,12 @@ export default function ProductsPage({ data }) {
                           <circle cx='12' cy='7' r='4'></circle>
                         </svg>
                       </div>
-                      <div className='flex flex-col items-center text-center justify-center'>
-                        <div className='w-12 h-1 bg-green-500 rounded mt-4 mb-4'></div>
+                      <div className='flex flex-col items-center justify-center text-center'>
+                        <div className='mb-4 mt-4 w-12 h-1 bg-green-500 rounded'></div>
                         <Link
                           language={language}
                           to={`/products/${slugify(product.title)}`}
-                          className='text-white hover:text-green-500 transition transition-color duration-300 ease-in-out hover:no-underline inline font-mono font-thin'
+                          className='transition-color inline hover:text-green-500 text-white hover:no-underline font-mono font-thin transition duration-300 ease-in-out'
                         >
                           <span>{product.title}</span>
                         </Link>
@@ -63,7 +63,7 @@ export default function ProductsPage({ data }) {
                         (index + 1) % 2 === 0 ? 'sm:text-right' : 'sm:text-left'
                       }`}
                     >
-                      <p className='leading-relaxed text-lg mb-4'>
+                      <p className='mb-4 text-lg leading-relaxed'>
                         {product.shortText}
                       </p>
                     </div>

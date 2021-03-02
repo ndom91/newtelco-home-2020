@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 // import HeaderImg from '../../static/service1.jpg'
 import SEO from '../components/shared/SEO'
-import Img from 'gatsby-image'
+import Img from 'gatsby-plugin-image'
 import slugify from 'slug'
 
 export default function ServicesPage({ data }) {

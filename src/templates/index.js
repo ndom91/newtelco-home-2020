@@ -24,7 +24,7 @@ const Testimonials = Loadable({
 })
 
 export default function IndexPage({ data, pageContext }) {
-  const { language } = pageContext
+  // const { language } = pageContext
   // const { status, error, data: datoData } = useQuerySubscription({
   //   query: `
   //     social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {

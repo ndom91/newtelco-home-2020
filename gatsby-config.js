@@ -15,15 +15,15 @@ module.exports = {
     ...siteConfig
   },
   flags: {
-    DEV_SSR: false
+    QUERY_ON_DEMAND: true,
+    DEV_SSR: false,
+    FAST_DEV: true
   },
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     // 'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
@@ -93,6 +93,8 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -137,17 +139,18 @@ module.exports = {
         localeJsonSourceName: `locale`,
         // path: `${__dirname}/src/locales`,
         languages: ['en', 'de'],
+        siteUrl: `http://localhost:8000/`,
         defaultLanguage: 'en',
         i18nextOptions: {
+          debug: true,
           preload: ['en', 'de'],
           fallbackLng: 'en',
           interpolation: {
             escapeValue: false
           },
-          react: {
-            wait: true
-          }
-        }
+          keySeparator: false,
+          nsSeparator: false
+        },
       }
     },
     {

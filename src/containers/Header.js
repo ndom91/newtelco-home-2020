@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import { createBreakpoint } from 'react-use'
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
 import Logo from '../images/NewtelcoLogo'

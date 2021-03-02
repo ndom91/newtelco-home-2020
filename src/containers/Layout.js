@@ -1,9 +1,9 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import Header from './Header'
 import Footer from './Footer'
 import MetaTags from './MetaTags'
-import Reboot from '../style/reboot'
+import GlobalReboot from '../style/reboot'
 // import { useQuery } from 'react-datocms'
 import '../style/globals.css'
 import '../style/fonts.css'
@@ -67,7 +67,7 @@ const Layout = ({ children, location, data, pageContext }) => {
 
   return (
     <>
-      <Reboot />
+      <GlobalReboot />
       <MetaTags />
       <Wrapper>
         <Header location={location} />

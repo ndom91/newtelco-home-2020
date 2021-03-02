@@ -3,7 +3,7 @@ import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
 import LanguageSelect from './LanguageSelect'
 import newtelcoLogo from '../images/newtelco-white.png'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import 'transition-style'
 
 const OverlayMenu = ({ toggleMenu, isOpen }) => {

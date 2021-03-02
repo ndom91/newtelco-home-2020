@@ -1,6 +1,6 @@
 import React from 'react'
 import CountUp from 'react-countup'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import media from '../../style/mq'
 
 const StatBlock = (props, ref) => {

@@ -19,8 +19,8 @@ module.exports = {
     FAST_DEV: true
   },
   plugins: [
-    'gatsby-plugin-emotion',
     'gatsby-plugin-postcss',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     // 'gatsby-plugin-image',
     {
@@ -141,7 +141,6 @@ module.exports = {
         siteUrl: `http://localhost:8000/`,
         defaultLanguage: 'en',
         i18nextOptions: {
-          debug: true,
           preload: ['en', 'de'],
           fallbackLng: 'en',
           interpolation: {

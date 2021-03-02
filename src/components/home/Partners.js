@@ -2,8 +2,8 @@ import React from 'react'
 import Marquee, {
   Motion,
   randomIntFromInterval,
-} from 'react-marquee-slider-emotion'
-import styled from '@emotion/styled'
+} from 'react-marquee-slider'
+import styled from 'styled-components'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const Partners = React.memo(function Partners({ partners }) {

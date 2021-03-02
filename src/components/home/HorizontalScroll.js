@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useWindowScroll, createBreakpoint } from 'react-use'
 import TeamMember from './TeamMember'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 const TallOuterContainer = styled.div`
   height: ${props => props.dynamicHeight}px;

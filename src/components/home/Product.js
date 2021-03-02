@@ -1,7 +1,7 @@
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import slugify from 'slug'
 
 import Blob1 from '../../images/illustrations/blobs/blob6.svg'

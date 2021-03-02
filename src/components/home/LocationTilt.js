@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Tilt from 'react-parallax-tilt'
 import Flippy, { FrontSide, BackSide } from 'react-flippy'

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import Blob10 from '../../images/illustrations/blobs/blob10.svg'
 import Blob11 from '../../images/illustrations/blobs/blob11.svg'

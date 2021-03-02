@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import BG from '../images/404.jpg'
 import SEO from '../components/shared/SEO'
 import { useTranslation, Link, useI18next } from 'gatsby-plugin-react-i18next'

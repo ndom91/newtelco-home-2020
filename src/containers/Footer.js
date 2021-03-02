@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 import slug from 'slug'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import LogoFull from '../images/NewtelcoFullLogo'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
 

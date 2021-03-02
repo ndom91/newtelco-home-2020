@@ -1,6 +1,6 @@
 module.exports = {
   tailwind: {
-    styled: '@emotion/styled',
+    styled: 'styled-components',
     config: './tailwind.config.js',
     format: 'auto',
   },

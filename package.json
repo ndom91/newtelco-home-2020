@@ -69,7 +69,7 @@
     "react-use": "^17.1.1",
     "styled-components": "^5.2.1",
     "tailwindcss": "^2.0.3",
-    "three": "^0.126.0",
+    "three": "^0.118.3",
     "tippy.js": "^6.3.1",
     "transition-style": "^0.1.1",
     "twin.macro": "^2.2.3"

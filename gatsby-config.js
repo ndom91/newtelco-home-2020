@@ -16,7 +16,6 @@ module.exports = {
   },
   flags: {
     DEV_SSR: false,
-    FAST_DEV: true
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -136,13 +135,10 @@ module.exports = {
       resolve: 'gatsby-plugin-react-i18next',
       options: {
         localeJsonSourceName: `locale`,
-        // path: `${__dirname}/src/locales`,
         languages: ['en', 'de'],
         siteUrl: `http://localhost:8000/`,
         defaultLanguage: 'en',
         i18nextOptions: {
-          preload: ['en', 'de'],
-          fallbackLng: 'en',
           interpolation: {
             escapeValue: false
           },

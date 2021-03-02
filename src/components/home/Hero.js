@@ -29,9 +29,9 @@ const Hero = React.memo(function Hero({ data }) {
   const { ctaEmail, ctaActionText } = data
   const { t } = useTranslation()
   const { scrollY } = useViewportScroll()
-  const y1 = useTransform(scrollY, [700, -100], [-170, -10])
-  const y2 = useTransform(scrollY, [-200, 200], [20, -20])
-  const x = useTransform(scrollY)
+  const y1 = useTransform(scrollY, [-500, 500], [-170, -10])
+  const y2 = useTransform(scrollY, [-500, 500], [20, -20])
+  const x1 = useTransform(scrollY, [-500, 500], [10, 20])
   const breakpoint = useBreakpoint()
   const isMobile = breakpoint === 'phone'
 
@@ -45,7 +45,7 @@ const Hero = React.memo(function Hero({ data }) {
       <motion.div
         className='absolute top-12 left-24 sm:top-0 sm:right-0 sm:left-auto z-10 -mr-12 z-10'
         style={{
-          x
+          x1
         }}
       >
         <Blob12 alt='Squiggle Map Blob' width='200px' />

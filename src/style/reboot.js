@@ -1,5 +1,5 @@
 import React from 'react'
-import { Global, css } from '@emotion/core'
+import { Global, css } from '@emotion/react'
 
 //****** Contains Reboot.css ******/
 // https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap-reboot.css

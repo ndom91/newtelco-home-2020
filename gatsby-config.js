@@ -15,7 +15,6 @@ module.exports = {
     ...siteConfig
   },
   flags: {
-    QUERY_ON_DEMAND: true,
     DEV_SSR: false,
     FAST_DEV: true
   },

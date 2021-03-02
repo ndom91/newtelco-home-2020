@@ -1,4 +1,4 @@
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import bp from '../consts/breakpoints'
 
 // Creates up & down media queries for your breakpoints

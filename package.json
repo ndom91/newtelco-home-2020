@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.19.26",
-    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "autoprefixer": "^10.2.4",

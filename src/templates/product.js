@@ -6,7 +6,6 @@ import ColoPricing from '../components/product/pricing'
 
 export default function ProductPage({ data = {}, pageContext }) {
   const { product, seo } = data
-  console.log(product, seo, pageContext)
   const sentences = product.nodes[0].fullText.match(
     /[^\s.!?]+[^.!?\r\n]+[.!?]*/g
   )

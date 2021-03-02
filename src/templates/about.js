@@ -1,23 +1,24 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { Image } from 'react-datocms'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import SEO from '../components/shared/SEO'
 
 export default function AboutPage({ data }) {
   const { seo, about } = data
   const { t } = useTranslation()
+
   return (
     <>
       <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
-      <section className='relative px-0 py-32 xl:px-20 min-w-screen animation-fade animation-delay'>
-        <div className='container px-10 mx-auto sm:px-0'>
+      <section className='min-w-screen animation-fade animation-delay relative px-0 py-32 xl:px-20'>
+        <div className='container mx-auto px-10 sm:px-0'>
           <div className='sm:flex'>
             <div className='flex-1 mr-12'>
-              <div className='text-sm text-gray-500 uppercase'>
+              <div className='text-gray-500 text-sm uppercase'>
                 {t('about.subtitle')}
               </div>
-              <div className='text-4xl text-white font-mono'>
+              <div className='text-white font-mono text-4xl'>
                 {t('about.title')}
               </div>
               <div className='mt-10'>
@@ -106,10 +107,10 @@ export default function AboutPage({ data }) {
                     </svg>
                   </div>
                   <div className='flex-grow ml-5'>
-                    <div className='text-2xl text-green-500 font-mono font-thin'>
+                    <div className='text-green-500 font-mono text-2xl font-thin'>
                       Powerhouse
                     </div>
-                    <p className='mt-5 leading-7 text-gray-700 text-md font-thin'>
+                    <p className='text-md mt-5 text-gray-700 font-thin leading-7'>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -202,10 +203,10 @@ export default function AboutPage({ data }) {
                     </svg>
                   </div>
                   <div className='flex-grow ml-5'>
-                    <div className='text-2xl text-green-500 font-mono font-thin'>
+                    <div className='text-green-500 font-mono text-2xl font-thin'>
                       Tenure
                     </div>
-                    <p className='mt-5 leading-7 text-gray-700 text-md font-thin'>
+                    <p className='text-md mt-5 text-gray-700 font-thin leading-7'>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -266,7 +267,7 @@ export default function AboutPage({ data }) {
                           y1='6'
                           x2='19'
                           y2='18'
-                          stroke-linejoin='miter'
+                          strokeLinejoin='miter'
                         ></line>
                         <line
                           data-color='color-2'
@@ -298,10 +299,10 @@ export default function AboutPage({ data }) {
                     </svg>
                   </div>
                   <div className='flex-grow ml-5'>
-                    <div className='text-2xl text-green-500 font-mono font-thin'>
+                    <div className='text-green-500 font-mono text-2xl font-thin'>
                       Vision
                     </div>
-                    <p className='mt-5 leading-7 text-gray-700 text-md font-thin'>
+                    <p className='text-md mt-5 text-gray-700 font-thin leading-7'>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -311,26 +312,26 @@ export default function AboutPage({ data }) {
                 </div>
               </div>
             </div>
-            <div className='px-10 mt-20 pt-40 sm:flex-1 sm:mt-0 sm:px-0 sm:mt-48 lg:mt-0'>
-              <div className='grid grid-cols-2 gap-5'>
+            <div className='mt-20 pt-40 px-10 sm:flex-1 sm:mt-0 sm:mt-48 sm:px-0 lg:mt-0'>
+              <div className='grid gap-5 grid-cols-2'>
                 <div className='col-span-1'>
-                  <Img
+                  <Image
                     className='min-w-full h-76 rounded-md object-cover object-center'
-                    fluid={about.images[0].fluid}
+                    data={about.images[0].fluid}
                   />
-                  <Img
-                    className='min-w-full h-64 mt-5 rounded-md'
-                    fluid={about.images[2].fluid}
+                  <Image
+                    className='mt-5 min-w-full h-64 rounded-md'
+                    data={about.images[2].fluid}
                   />
                 </div>
                 <div className='col-span-1 pt-10'>
-                  <Img
+                  <Image
                     className='min-w-full h-76 rounded-md'
-                    fluid={about.images[3].fluid}
+                    data={about.images[3].fluid}
                   />
-                  <Img
-                    className='min-w-full h-64 mt-5 rounded-md'
-                    fluid={about.images[1].fluid}
+                  <Image
+                    className='mt-5 min-w-full h-64 rounded-md'
+                    data={about.images[1].fluid}
                   />
                 </div>
               </div>

@@ -97,7 +97,7 @@ const NotFoundPage = () => {
   const { language } = useI18next()
   return (
     <>
-      <SEO title='404: Not found' />
+      <SEO title='Error 404 - Page Not found' />
       <Wrapper>
         {/* <Datacenter /> */}
         <TextWrapper>

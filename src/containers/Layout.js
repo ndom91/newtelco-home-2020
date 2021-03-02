@@ -4,25 +4,84 @@ import Header from './Header'
 import Footer from './Footer'
 import MetaTags from './MetaTags'
 import Reboot from '../style/reboot'
+import { useQuery } from 'react-datocms'
 import '../style/globals.css'
 import '../style/fonts.css'
 
-const Layout = ({ children, location, data, pageContext }) => (
-  <>
-    <Reboot />
-    <MetaTags />
-    <Wrapper>
-      <Header location={location} />
-      {children}
-      <Footer
-        social={data.social.nodes}
-        products={data.products.nodes}
-        services={data.services.nodes}
-        locations={data.locations.nodes}
-      />
-    </Wrapper>
-  </>
-)
+const Layout = ({ children, location, data, pageContext }) => {
+  const { status, error, data } = useQuery({
+    enabled: true,
+    query: `
+      query FooterQuery($language: StringType) {
+        social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
+          nodes {
+            provider
+            url
+            locale
+          }
+        }
+        locations: allDatoCmsLocation(filter: { locale: { eq: $language } }) {
+          nodes {
+            city
+            address
+            image {
+              fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
+            }
+          }
+        }
+        products: allDatoCmsProduct(
+          filter: { locale: { eq: $language }, onHomepage: { eq: true } }
+        ) {
+          nodes {
+            shortText
+            title
+            image {
+              alt
+              fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
+                ...GatsbyDatoCmsFluid
+              }
+            }
+          }
+        }
+        services: allDatoCmsService(
+          filter: { locale: { eq: $language }, onHomepage: { eq: true } }
+        ) {
+          nodes {
+            shortText
+            title
+            image {
+              alt
+              fluid(imgixParams: { auto: "format", fit: "max", w: "600" }) {
+                ...GatsbyDatoCmsFluid
+              }
+            }
+          }
+        }
+      }`,
+    variables: { language: pageContext.language },
+    token: process.env.DATO_CMS_KEY
+  })
+  console.table(status, error, data)
+
+  return (
+    <>
+      <Reboot />
+      <MetaTags />
+      <Wrapper>
+        <Header location={location} />
+        {children}
+        <Footer
+          social={data.social.nodes}
+          products={data.products.nodes}
+          services={data.services.nodes}
+          locations={data.locations.nodes}
+        />
+      </Wrapper>
+    </>
+  )
+}
 
 const Wrapper = styled.div`
   top: 0;

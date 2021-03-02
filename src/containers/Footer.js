@@ -4,7 +4,6 @@ import slug from 'slug'
 import styled from '@emotion/styled'
 import LogoFull from '../images/NewtelcoFullLogo'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
-import { RGBA_ASTC_10x10_Format } from 'three'
 
 const Footer = ({ products, services, social, locations }) => {
   const [uptime, setUptime] = useState(true)
@@ -22,8 +21,8 @@ const Footer = ({ products, services, social, locations }) => {
     fetch('https://uptimerobot.newtelco.workers.dev', {
       method: 'GET',
       headers: {
-        'content-type': 'application/json',
-      },
+        'content-type': 'application/json'
+      }
     })
       .then(data => data.json())
       .then(data => {
@@ -34,18 +33,18 @@ const Footer = ({ products, services, social, locations }) => {
   }, [])
 
   return (
-    <footer className='text-gray-500 bg-gray-900 body-font overflow-hidden max-w-100'>
-      <div className='relative container px-5 py-20 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col'>
-        <div className='relative w-64 flex-shrink-0 lg:mx-0 mx-auto text-center lg:text-left'>
-          <div className='flex title-font font-medium items-center md:justify-start justify-center text-white z-20'>
+    <footer className='body-font max-w-100 text-gray-500 bg-gray-900 overflow-hidden'>
+      <div className='md:flex-no-wrap container relative flex flex-col flex-wrap mx-auto px-5 py-20 md:flex-row md:items-center lg:items-start'>
+        <div className='relative flex-shrink-0 mx-auto w-64 text-center lg:mx-0 lg:text-left'>
+          <div className='title-font z-20 flex items-center justify-center text-white font-medium md:justify-start'>
             <LogoFull className='z-30' />
           </div>
-          <p className='mt-8 text-sm text-gray-700'>
-            <span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-around w-full'>
+          <p className='mt-8 text-gray-700 text-sm'>
+            <span className='inline-flex justify-around mt-2 w-full sm:ml-auto sm:mt-0'>
               <SocialItem
                 aria-label='Facebook'
                 href={fb}
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
+                className='z-20 text-white hover:text-white transition transition-colors duration-300 ease-in-out'
               >
                 <svg
                   fill='currentColor'
@@ -61,7 +60,7 @@ const Footer = ({ products, services, social, locations }) => {
               <SocialItem
                 href={twitter}
                 aria-label='Twitter'
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
+                className='z-20 text-white hover:text-white transition transition-colors duration-300 ease-in-out'
               >
                 <svg
                   fill='currentColor'
@@ -77,7 +76,7 @@ const Footer = ({ products, services, social, locations }) => {
               <SocialItem
                 aria-label='Instagram'
                 href={instagram}
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
+                className='z-20 text-white hover:text-white transition transition-colors duration-300 ease-in-out'
               >
                 <svg
                   fill='none'
@@ -95,7 +94,7 @@ const Footer = ({ products, services, social, locations }) => {
               <SocialItem
                 href={linkedin}
                 aria-label='LinkedIn'
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
+                className='z-20 text-white hover:text-white transition transition-colors duration-300 ease-in-out'
               >
                 <svg
                   fill='currentColor'
@@ -116,7 +115,7 @@ const Footer = ({ products, services, social, locations }) => {
               <SocialItem
                 href={github}
                 aria-label='Github'
-                className='text-white hover:text-white transition ease-in-out duration-300 transition-colors z-20'
+                className='z-20 text-white hover:text-white transition transition-colors duration-300 ease-in-out'
               >
                 <svg
                   className='w-10 h-10'
@@ -131,17 +130,17 @@ const Footer = ({ products, services, social, locations }) => {
             </span>
             <Scribble
               alt='Scribble Circle'
-              className='h-auto w-full absolute -ml-16 -bottom-2 left-0 opacity-25 pointer-events-none z-0'
+              className='absolute z-0 -bottom-2 left-0 -ml-16 w-full h-auto opacity-25 pointer-events-none'
               style={{ width: '150%' }}
             />
           </p>
         </div>
-        <div className='flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center'>
-          <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
-            <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
+        <div className='flex flex-grow flex-wrap -mb-10 mt-10 text-center md:mt-0 md:pl-20 md:text-left'>
+          <div className='px-4 w-1/2 md:w-1/2 lg:w-1/4'>
+            <h2 className='title-font mb-3 text-white font-mono text-base font-medium tracking-widest'>
               Locations
             </h2>
-            <nav className='list-none mb-10 text-left pl-12 md:pl-0'>
+            <nav className='mb-10 pl-12 text-left list-none md:pl-0'>
               {locations.map(location => (
                 <div key={location.city}>
                   <a
@@ -151,7 +150,7 @@ const Footer = ({ products, services, social, locations }) => {
                     alt={`${location.city} Maps Link`}
                     rel='noopener noreferrer'
                     target='_blank'
-                    className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                    className='text-gray-600 hover:text-white hover:no-underline text-base transition transition-colors duration-300 ease-in-out'
                   >
                     {location.city}
                   </a>
@@ -159,11 +158,11 @@ const Footer = ({ products, services, social, locations }) => {
               ))}
             </nav>
           </div>
-          <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
-            <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
+          <div className='px-4 w-1/2 md:w-1/2 lg:w-1/4'>
+            <h2 className='title-font mb-3 text-white font-mono text-base font-medium tracking-widest'>
               Products
             </h2>
-            <nav className='list-none mb-10 text-left pl-12 md:pl-0'>
+            <nav className='mb-10 pl-12 text-left list-none md:pl-0'>
               {products &&
                 products.map(product => (
                   <div key={product.title}>
@@ -171,7 +170,7 @@ const Footer = ({ products, services, social, locations }) => {
                       to={`/products/${slug(product.title)}`}
                       language={language}
                       aria-label={`${product.title} Link`}
-                      className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                      className='text-gray-600 hover:text-white hover:no-underline text-base transition transition-colors duration-300 ease-in-out'
                     >
                       {product.title}
                     </Link>
@@ -179,11 +178,11 @@ const Footer = ({ products, services, social, locations }) => {
                 ))}
             </nav>
           </div>
-          <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
-            <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
+          <div className='px-4 w-1/2 md:w-1/2 lg:w-1/4'>
+            <h2 className='title-font mb-3 text-white font-mono text-base font-medium tracking-widest'>
               Services
             </h2>
-            <nav className='list-none mb-10 text-left pl-12 md:pl-0'>
+            <nav className='mb-10 pl-12 text-left list-none md:pl-0'>
               {services &&
                 services.map(service => (
                   <div key={service.title}>
@@ -191,7 +190,7 @@ const Footer = ({ products, services, social, locations }) => {
                       to={`/services/${slug(service.title)}`}
                       language={language}
                       aria-label={`${service.title} Link`}
-                      className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                      className='text-gray-600 hover:text-white hover:no-underline text-base transition transition-colors duration-300 ease-in-out'
                     >
                       {service.title}
                     </Link>
@@ -199,17 +198,17 @@ const Footer = ({ products, services, social, locations }) => {
                 ))}
             </nav>
           </div>
-          <div className='lg:w-1/4 md:w-1/2 w-1/2 px-4'>
-            <h2 className='title-font font-medium text-white tracking-widest text-base mb-3 font-mono'>
+          <div className='px-4 w-1/2 md:w-1/2 lg:w-1/4'>
+            <h2 className='title-font mb-3 text-white font-mono text-base font-medium tracking-widest'>
               Company
             </h2>
-            <nav className='list-none mb-10 text-left pl-12 md:pl-0'>
+            <nav className='mb-10 pl-12 text-left list-none md:pl-0'>
               <div>
                 <Link
                   to={'/about'}
                   language={language}
                   aria-label={'About Link'}
-                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 hover:text-white hover:no-underline text-base transition transition-colors duration-300 ease-in-out'
                 >
                   About Us
                 </Link>
@@ -219,7 +218,7 @@ const Footer = ({ products, services, social, locations }) => {
                   to={'/team'}
                   language={language}
                   aria-label={'Team Link'}
-                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 hover:text-white hover:no-underline text-base transition transition-colors duration-300 ease-in-out'
                 >
                   Team
                 </Link>
@@ -229,7 +228,7 @@ const Footer = ({ products, services, social, locations }) => {
                   to={'/privacy'}
                   language={language}
                   aria-label={'Privacy Link'}
-                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 hover:text-white hover:no-underline text-base transition transition-colors duration-300 ease-in-out'
                 >
                   Privacy Policy
                 </Link>
@@ -239,7 +238,7 @@ const Footer = ({ products, services, social, locations }) => {
                   to={'/legal'}
                   language={language}
                   aria-label={'Legal Link'}
-                  className='text-gray-600 text-base hover:text-white hover:no-underline transition transition-colors duration-300 ease-in-out'
+                  className='text-gray-600 hover:text-white hover:no-underline text-base transition transition-colors duration-300 ease-in-out'
                 >
                   Legal
                 </Link>
@@ -249,14 +248,14 @@ const Footer = ({ products, services, social, locations }) => {
         </div>
       </div>
       <div className='bg-gray-800'>
-        <div className='container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row align-center'>
-          <div className='text-gray-600 text-sm text-center sm:text-left w-full flex justify-between items-center mb-0 font-mono'>
+        <div className='align-center container flex flex-col flex-wrap mx-auto px-5 py-4 sm:flex-row'>
+          <div className='flex items-center justify-between mb-0 w-full text-center text-gray-600 font-mono text-sm sm:text-left'>
             <div className='flex items-center'>
               <p className='mb-0 mr-4'>© {year} NewTelco GmbH</p>
               <a
                 href='https://github.com/ndom91'
                 rel='noopener noreferrer'
-                className='leading-8 text-gray-700 ml-1 hover:text-green-500 hover:no-underline transition transition-colors duration-300 ease-in-out text-sm hidden sm:block '
+                className='hidden ml-1 text-gray-700 hover:text-green-500 hover:no-underline text-sm leading-8 transition transition-colors duration-300 ease-in-out sm:block'
                 target='_blank'
               >
                 <svg
@@ -281,7 +280,7 @@ const Footer = ({ products, services, social, locations }) => {
               rel='noopener noreferrer'
               className='hover:no-underline'
             >
-              <div className='h-4 flex items-center border-gray-700 border p-4 rounded-md'>
+              <div className='flex items-center p-4 h-4 border border-gray-700 rounded-md'>
                 <UptimeDot
                   alt='team'
                   uptime={uptime}
@@ -290,7 +289,7 @@ const Footer = ({ products, services, social, locations }) => {
                   } flex-shrink-0 rounded-full mr-4 shadow-outline`}
                 />
                 <div className='flex-grow align-middle'>
-                  <p className='text-gray-500 mb-0'>
+                  <p className='mb-0 text-gray-500'>
                     {uptime ? 'All Systems Normal' : 'Systems Degraded'}
                   </p>
                 </div>

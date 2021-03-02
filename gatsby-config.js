@@ -3,18 +3,19 @@ const {
   NODE_ENV: NODE_ENV = 'development',
   URL: NETLIFY_SITE_URL = 'https://newtelco-dato.netlify.app',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
 } = process.env
+
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV}`
 })
 
 module.exports = {
   siteMetadata: {
-    ...siteConfig,
+    ...siteConfig
   },
   flags: {
-    DEV_SSR: false,
+    DEV_SSR: false
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -25,29 +26,29 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
-        offset: -90,
-      },
+        offset: -90
+      }
     },
     {
       resolve: 'gatsby-plugin-advanced-sitemap',
       options: {
-        output: siteConfig.sitemapPath,
-      },
+        output: siteConfig.sitemapPath
+      }
     },
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: siteConfig.siteUrl,
-      },
+        siteUrl: siteConfig.siteUrl
+      }
     },
     {
       resolve: 'gatsby-plugin-preconnect',
       options: {
         domains: [
           'https://www.google-analytics.com',
-          'https://fonts.googleapis.com',
-        ],
-      },
+          'https://fonts.googleapis.com'
+        ]
+      }
     },
     {
       resolve: 'gatsby-plugin-robots-txt',
@@ -57,39 +58,39 @@ module.exports = {
         resolveEnv: () => process.env.NETLIFY_ENV,
         env: {
           production: {
-            policy: [{ userAgent: '*' }],
+            policy: [{ userAgent: '*' }]
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
-            host: null,
+            host: null
           },
           'deploy-preview': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
-            host: null,
-          },
-        },
-      },
+            host: null
+          }
+        }
+      }
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: process.env.GA_ID,
-      },
+        trackingId: process.env.GA_ID
+      }
     },
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve('./src/containers/Layout.js'),
-      },
+        component: require.resolve('./src/containers/Layout.js')
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     {
       resolve: 'gatsby-plugin-manifest',
@@ -103,47 +104,58 @@ module.exports = {
         lang: 'en',
         icon: 'src/images/favicon.png',
         icon_options: {
-          purpose: 'maskable',
+          purpose: 'maskable'
         },
         localize: [
           {
             start_url: '/de/',
-            lang: 'de',
-          },
-        ],
-      },
+            lang: 'de'
+          }
+        ]
+      }
     },
     {
       resolve: 'gatsby-source-datocms',
       options: {
         apiToken: process.env.DATO_CMS_KEY,
-      },
+        localeFallbacks: {
+          de: ['en']
+        }
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/locales`,
+        name: `locale`
+      }
     },
     {
       resolve: 'gatsby-plugin-react-i18next',
       options: {
-        path: `${__dirname}/src/locales`,
+        localeJsonSourceName: `locale`,
+        // path: `${__dirname}/src/locales`,
         languages: ['en', 'de'],
         defaultLanguage: 'en',
         i18nextOptions: {
           preload: ['en', 'de'],
           fallbackLng: 'en',
           interpolation: {
-            escapeValue: false,
+            escapeValue: false
           },
           react: {
-            wait: true,
-          },
-        },
-      },
+            wait: true
+          }
+        }
+      }
     },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /images\/illustrations/,
-        },
-      },
+          include: /images\/illustrations/
+        }
+      }
     },
     {
       resolve: 'gatsby-plugin-purgecss',
@@ -153,17 +165,17 @@ module.exports = {
         tailwind: true,
         ignore: [
           'node_modules/@brainhubeu/react-carousel/lib/style.css',
-          'node_modules/react-flippy/dist/styles.css',
-        ],
-      },
+          'node_modules/react-flippy/dist/styles.css'
+        ]
+      }
     },
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         disable: true,
         devMode: false,
-        analyzerMode: 'static',
-      },
-    },
-  ],
+        analyzerMode: 'static'
+      }
+    }
+  ]
 }

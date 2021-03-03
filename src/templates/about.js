@@ -345,6 +345,15 @@ export default function AboutPage({ data }) {
 
 export const query = graphql`
   query AboutQuery($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
       nodes {
         provider

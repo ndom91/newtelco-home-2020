@@ -65,6 +65,15 @@ const Body = styled.p`
 
 export const query = graphql`
   query ServiceQuery($language: String!, $serviceid: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     social: allDatoCmsSocial(filter: { locale: { eq: "en" } }) {
       nodes {
         provider

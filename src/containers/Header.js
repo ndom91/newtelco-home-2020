@@ -36,7 +36,7 @@ export default function Header() {
               to='/products'
               className='mr-16 text-white hover:text-white hover:no-underline h-7'
             >
-              {t('menuproducts')}
+              {t('menu.products')}
             </NavLink>
             <NavLink
               language={language}

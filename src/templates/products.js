@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
+import { Image } from "react-datocms";
 import SEO from '../components/shared/SEO'
 import slugify from 'slug'
 
@@ -16,9 +17,9 @@ export default function ProductsPage({ data }) {
           <div className='container flex flex-col mx-auto px-5 py-12'>
             <div className='mx-auto lg:w-4/6'>
               <div className='h-64 rounded-lg overflow-hidden'>
-                <Img
+                <Imagae
                   alt='content'
-                  fluid={productImg.nodes[0].childImageSharp.fluid}
+                  data={productImg.nodes[0].childImageSharp.fluid}
                   className='w-full h-full object-cover object-top'
                 />
               </div>

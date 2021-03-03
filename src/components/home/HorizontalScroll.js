@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useWindowScroll, createBreakpoint } from 'react-use'
 import TeamMember from './TeamMember'
+import Blur from '../../images/blur2.png'
 import styled from 'styled-components'
 
 const TallOuterContainer = styled.div`
@@ -36,7 +37,7 @@ const calcDynamicHeight = objectWidth => {
 }
 
 const handleDynamicHeight = (ref, setDynamicHeight) => {
-  const objectWidth = ref.current.scrollWidth
+  const objectWidth = ref?.current?.scrollWidth
   setDynamicHeight(calcDynamicHeight(objectWidth))
 }
 
@@ -64,14 +65,14 @@ const HorizontalScroll = ({ members }) => {
   return (
     <TallOuterContainer dynamicHeight={dynamicHeight}>
       <StickyInnerContainer>
-        <div className='container flex justify-between flex-row-reverse w-full my-12 mx-auto'>
-          <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-16 text-right'>
-            <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-thin'>
+        <div className='container flex flex-row-reverse justify-between mx-auto my-12 w-full'>
+          <div className='mb-6 mx-16 w-2/3 text-right lg:mb-0 lg:w-2/5'>
+            <h1 className='mb-2 text-white font-body text-2xl font-thin sm:text-4xl'>
               {t('team.headline')}
             </h1>
-            <div className='h-1 w-20 bg-green-500 rounded float-right'></div>
+            <div className='float-right w-20 h-1 bg-green-500 rounded'></div>
           </div>
-          <p className='flex-grow text-right leading-relaxed text-base text-gray-500 overflow-visible justify-end'></p>
+          <p className='flex-grow justify-end text-right text-gray-500 text-base leading-relaxed overflow-visible'></p>
         </div>
         <HorizontalTranslateContainer translateX={xOffset} ref={objectRef}>
           {members.nodes &&
@@ -79,9 +80,19 @@ const HorizontalScroll = ({ members }) => {
               return <TeamMember member={member} key={member.name} />
             })}
         </HorizontalTranslateContainer>
+        <BlurImg src={Blur} />
       </StickyInnerContainer>
     </TallOuterContainer>
   )
 }
+
+const BlurImg = styled.img`
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`
 
 export default HorizontalScroll

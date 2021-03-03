@@ -1,8 +1,5 @@
 import React from 'react'
-import Marquee, {
-  Motion,
-  randomIntFromInterval,
-} from 'react-marquee-slider'
+import Marquee, { Motion, randomIntFromInterval } from 'react-marquee-slider'
 import styled from 'styled-components'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
@@ -27,15 +24,15 @@ const Partners = React.memo(function Partners({ partners }) {
 
   return (
     <Wrapper>
-      <div className='container px-5 pt-24 mx-auto'>
-        <div className='flex justify-between w-full mb-20'>
-          <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto'>
-            <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-thin'>
+      <div className='container mx-auto pt-24 px-5'>
+        <div className='flex justify-between mb-20 w-full'>
+          <div className='mb-6 mx-auto w-2/3 lg:mb-0 lg:w-2/5'>
+            <h1 className='mb-2 text-white font-body text-2xl font-thin sm:text-4xl'>
               {t('trustedby')}
             </h1>
-            <div className='h-1 w-20 bg-green-500 rounded'></div>
+            <div className='w-20 h-1 bg-green-500 rounded'></div>
           </div>
-          <p className='flex-grow max-w-2xl w-full leading-relaxed text-base'></p>
+          <p className='flex-grow w-full max-w-2xl text-base leading-relaxed'></p>
         </div>
       </div>
       <Height height={400}>

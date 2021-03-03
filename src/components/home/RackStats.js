@@ -26,7 +26,7 @@ const RackStats = () => {
               <img
                 src={datacenter}
                 alt='datacenter'
-                className='w-5/6 m:w-full mx-auto mt-20'
+                className='mt-20 mx-auto w-5/6 m:w-full'
               />
             }
             playState={inView ? PlayState.play : PlayState.stop}
@@ -48,7 +48,7 @@ const RackStats = () => {
             width: '230px',
             backgroundSize: 'calc(20 * 1px) calc(20 * 1px)',
           }}
-          className='hidden sm:block absolute top-0 right-0 z-0 opacity-0 pointer-events-none -mr-24 mt-56 md:opacity-25 pattern-dots-md text-gray-700'
+          className='pattern-dots-md absolute z-0 right-0 top-0 hidden -mr-24 mt-56 text-gray-700 opacity-0 pointer-events-none sm:block md:opacity-25'
         />
         <BlobFilled />
       </ContentWrapper>

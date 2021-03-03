@@ -4,6 +4,7 @@ import slug from 'slug'
 import styled from 'styled-components'
 import LogoFull from '../images/NewtelcoFullLogo'
 import Scribble from '../images/illustrations/scribbles/blob3.svg'
+import Blur from '../images/blur3.png'
 
 const Footer = ({ products, services, social, locations }) => {
   const [uptime, setUptime] = useState(true)
@@ -21,8 +22,8 @@ const Footer = ({ products, services, social, locations }) => {
     fetch('https://uptimerobot.newtelco.workers.dev', {
       method: 'GET',
       headers: {
-        'content-type': 'application/json'
-      }
+        'content-type': 'application/json',
+      },
     })
       .then(data => data.json())
       .then(data => {
@@ -35,7 +36,7 @@ const Footer = ({ products, services, social, locations }) => {
   return (
     <footer className='body-font max-w-100 text-gray-500 bg-gray-900 overflow-hidden'>
       <div className='md:flex-no-wrap container relative flex flex-col flex-wrap mx-auto px-5 py-20 md:flex-row md:items-center lg:items-start'>
-        <div className='relative flex-shrink-0 mx-auto w-64 text-center lg:mx-0 lg:text-left'>
+        <div className='relative z-10 flex-shrink-0 mx-auto w-64 text-center lg:mx-0 lg:text-left'>
           <div className='title-font z-20 flex items-center justify-center text-white font-medium md:justify-start'>
             <LogoFull className='z-30' />
           </div>
@@ -135,7 +136,7 @@ const Footer = ({ products, services, social, locations }) => {
             />
           </p>
         </div>
-        <div className='flex flex-grow flex-wrap -mb-10 mt-10 text-center md:mt-0 md:pl-20 md:text-left'>
+        <div className='z-10 flex flex-grow flex-wrap -mb-10 mt-10 text-center md:mt-0 md:pl-20 md:text-left'>
           <div className='px-4 w-1/2 md:w-1/2 lg:w-1/4'>
             <h2 className='title-font mb-3 text-white font-mono text-base font-medium tracking-widest'>
               Locations
@@ -246,6 +247,7 @@ const Footer = ({ products, services, social, locations }) => {
             </nav>
           </div>
         </div>
+        <BlurImg src={Blur} />
       </div>
       <div className='bg-gray-800'>
         <div className='align-center container flex flex-col flex-wrap mx-auto px-5 py-4 sm:flex-row'>
@@ -380,6 +382,15 @@ const SocialItem = styled.a`
     opacity: 1;
     transform: translateY(5px);
   }
+`
+
+const BlurImg = styled.img`
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `
 
 export default Footer

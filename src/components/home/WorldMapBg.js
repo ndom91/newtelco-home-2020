@@ -6,7 +6,7 @@ const WorldMap = () => (
       xmlns='http://www.w3.org/2000/svg'
       preserveAspectRatio='none'
       viewBox='0 0 1440 560'
-      className='mt-48 z-0 w-full absolute'
+      className='absolute z-0 mt-48 w-full'
       style={{
         width: '90vw',
         transform: 'translate(-50%)',

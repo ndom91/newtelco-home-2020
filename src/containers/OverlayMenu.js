@@ -67,7 +67,7 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
                 <NavigationLink
                   to={menu.link}
                   aria-label={menu.name}
-                  className='hover:no-underline hover:text-white font-display'
+                  className='hover:text-white hover:no-underline font-display'
                   activeClassName='active'
                   onClick={toggleMenu}
                 >

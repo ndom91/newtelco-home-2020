@@ -15,13 +15,13 @@ export default function Header() {
   const breakpoint = useBreakpoint()
 
   return (
-    <Wrapper className='top-0 text-gray-500 bg-transparent body-font'>
-      <div className='container z-50 flex flex-col flex-wrap items-center px-8 py-2 mx-auto bg-transparent sm:flex-row max-w-screen-lg'>
+    <Wrapper className='body-font top-0 text-gray-500 bg-transparent'>
+      <div className='container z-50 flex flex-col flex-wrap items-center mx-auto px-8 py-2 max-w-screen-lg bg-transparent sm:flex-row'>
         <Link
           language={language}
           to='/'
           aria-label='Home'
-          className='mt-2 sm:mt-0 sm:-mr-6 md:mr-0 flex items-center font-medium text-white title-font'
+          className='title-font flex items-center mt-2 text-white font-medium sm:-mr-6 sm:mt-0 md:mr-0'
         >
           <Logo />
         </Link>
@@ -30,32 +30,32 @@ export default function Header() {
           toggleMenu={() => setToggleMenu(!toggleMenu)}
         />
         {breakpoint == 'phone' && (
-          <nav className='flex flex-wrap items-center justify-center hidden font-mono text-base sm:mr-auto sm:ml-3 sm:py-1 sm:pl-10 sm:flex'>
+          <nav className='flex hidden flex-wrap items-center justify-center font-mono text-base sm:flex sm:ml-3 sm:mr-auto sm:pl-10 sm:py-1'>
             <NavLink
               language={language}
               to='/products'
-              className='mr-16 text-white hover:text-white hover:no-underline h-7'
+              className='mr-16 h-7 text-white hover:text-white hover:no-underline'
             >
               {t('menu.products')}
             </NavLink>
             <NavLink
               language={language}
               to='/services'
-              className='mr-16 text-white hover:text-white hover:no-underline h-7'
+              className='mr-16 h-7 text-white hover:text-white hover:no-underline'
             >
               {t('menu.services')}
             </NavLink>
             <NavLink
               language={language}
               to='/team'
-              className='mr-16 text-white hover:text-white hover:no-underline h-7'
+              className='mr-16 h-7 text-white hover:text-white hover:no-underline'
             >
               {t('menu.team')}
             </NavLink>
             <NavLink
               language={language}
               to='/about'
-              className='mr-16 text-white hover:text-white hover:no-underline h-7'
+              className='mr-16 h-7 text-white hover:text-white hover:no-underline'
             >
               {t('menu.about')}
             </NavLink>

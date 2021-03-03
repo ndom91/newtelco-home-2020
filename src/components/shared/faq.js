@@ -10,28 +10,29 @@ const Faq = () => {
     }
   }
   return (
-    <div className='h-screen flex items-start lg:items-center justify-center mt-40'>
+    <div className='flex items-start justify-center mt-40 h-screen lg:items-center'>
       <div className='container mx-auto px-4 h-full'>
-        <h2 className='text-green-500 font-thin font-mono tracking-tight leading-loose text-center text-3xl lg:text-4xl lg:text-5xl my-2 lg:my-8'>
+        <h2 className='my-2 text-center text-green-500 font-mono text-3xl font-thin tracking-tight leading-loose lg:my-8 lg:text-4xl lg:text-5xl'>
           Frequently Asked Questions
         </h2>
 
-        <section className='shadow-md bg-gray-800 overflow-hidden rounded-lg mt-6 sm:shadow-lg lg:mt-16 lg:mx-auto lg:max-w-4xl'>
-          <article className='border-green-500 border-b hover:bg-gray-500'>
+        <section className='mt-6 bg-gray-800 rounded-lg shadow-md overflow-hidden sm:shadow-lg lg:mt-16 lg:mx-auto lg:max-w-4xl'>
+          <article className='hover:bg-gray-500 border-b border-green-500'>
             <div>
               <header
                 onClick={() => toggle(1)}
-                className={`${selectedItem === 1 &&
-                  'bg-green-500'} flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none`}
+                className={`${
+                  selectedItem === 1 && 'bg-green-500'
+                } flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none`}
               >
-                <h3 className='font-semibold text-xl text-gray-800'>
+                <h3 className='text-gray-800 text-xl font-semibold'>
                   Do you offer team pricing?
                 </h3>
-                <div className='rounded-full border w-7 h-7 flex items-center justify-center hover:bg-gray-200'>
+                <div className='flex items-center justify-center w-7 h-7 hover:bg-gray-200 border rounded-full'>
                   {selectedItem === 1 ? (
                     <div
                       x-show='selectedItem === 1'
-                      className='rounded-full text-gray-500 w-7 h-7 flex items-center justify-center'
+                      className='flex items-center justify-center w-7 h-7 text-gray-500 rounded-full'
                     >
                       <svg
                         className='w-6 h-6'
@@ -47,7 +48,7 @@ const Faq = () => {
                       </svg>
                     </div>
                   ) : (
-                    <div className='rounded-full text-gray-500 w-7 h-7 flex items-center justify-center'>
+                    <div className='flex items-center justify-center w-7 h-7 text-gray-500 rounded-full'>
                       <svg
                         className='w-6 h-6'
                         fill='#67b246'
@@ -66,7 +67,7 @@ const Faq = () => {
               </header>
               {selectedItem === 1 && (
                 <div>
-                  <div className='pl-8 pr-8 py-5 bg-gray-100 text-gray-700'>
+                  <div className='pl-8 pr-8 py-5 text-gray-700 bg-gray-100'>
                     <p>
                       Yes, we do! Team pricing is available for any plan. You
                       can take advantage of 30% off for signing up for team
@@ -78,21 +79,22 @@ const Faq = () => {
             </div>
           </article>
 
-          <article className='border-green-500 border-b hover:bg-gray-500'>
+          <article className='hover:bg-gray-500 border-b border-green-500'>
             <div>
               <header
                 onClick={() => toggle(2)}
-                className={`${selectedItem === 2 &&
-                  'bg-green-500'} flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none`}
+                className={`${
+                  selectedItem === 2 && 'bg-green-500'
+                } flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none`}
               >
-                <h3 className='font-semibold text-xl text-gray-800'>
+                <h3 className='text-gray-800 text-xl font-semibold'>
                   How do I add a custom domain?
                 </h3>
-                <div className='rounded-full border w-7 h-7 flex items-center justify-center hover:bg-gray-200'>
+                <div className='flex items-center justify-center w-7 h-7 hover:bg-gray-200 border rounded-full'>
                   {selectedItem === 2 ? (
                     <div
                       x-show='selectedItem === 1'
-                      className='rounded-full text-gray-500 w-7 h-7 flex items-center justify-center'
+                      className='flex items-center justify-center w-7 h-7 text-gray-500 rounded-full'
                     >
                       <svg
                         className='w-6 h-6'
@@ -108,7 +110,7 @@ const Faq = () => {
                       </svg>
                     </div>
                   ) : (
-                    <div className='rounded-full text-gray-500 w-7 h-7 flex items-center justify-center'>
+                    <div className='flex items-center justify-center w-7 h-7 text-gray-500 rounded-full'>
                       <svg
                         className='w-6 h-6'
                         fill='#67b246'
@@ -127,7 +129,7 @@ const Faq = () => {
               </header>
               {selectedItem === 2 && (
                 <div>
-                  <div className='pl-8 pr-8 py-5 bg-gray-100 text-gray-700'>
+                  <div className='pl-8 pr-8 py-5 text-gray-700 bg-gray-100'>
                     <p>
                       You can easily change your site settings inside of your
                       site dashboard by clicking the top right menu and clicking
@@ -139,21 +141,22 @@ const Faq = () => {
             </div>
           </article>
 
-          <article className='border-green-500 border-b hover:bg-gray-500'>
+          <article className='hover:bg-gray-500 border-b border-green-500'>
             <div>
               <header
                 onClick={() => toggle(3)}
-                className={`${selectedItem === 3 &&
-                  'bg-green-500'} flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none`}
+                className={`${
+                  selectedItem === 3 && 'bg-green-500'
+                } flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none`}
               >
-                <h3 className='font-semibold text-xl text-gray-800'>
+                <h3 className='text-gray-800 text-xl font-semibold'>
                   How do I add a custom domain?
                 </h3>
-                <div className='rounded-full border w-7 h-7 flex items-center justify-center hover:bg-gray-200'>
+                <div className='flex items-center justify-center w-7 h-7 hover:bg-gray-200 border rounded-full'>
                   {selectedItem === 3 ? (
                     <div
                       x-show='selectedItem === 1'
-                      className='rounded-full text-gray-500 w-7 h-7 flex items-center justify-center'
+                      className='flex items-center justify-center w-7 h-7 text-gray-500 rounded-full'
                     >
                       <svg
                         className='w-6 h-6'
@@ -169,7 +172,7 @@ const Faq = () => {
                       </svg>
                     </div>
                   ) : (
-                    <div className='rounded-full text-gray-500 w-7 h-7 flex items-center justify-center'>
+                    <div className='flex items-center justify-center w-7 h-7 text-gray-500 rounded-full'>
                       <svg
                         className='w-6 h-6'
                         fill='#67b246'
@@ -188,7 +191,7 @@ const Faq = () => {
               </header>
               {selectedItem === 3 && (
                 <div x-show='selectedItem === 3'>
-                  <div className='pl-8 pr-8 py-5 bg-gray-100 text-gray-700'>
+                  <div className='pl-8 pr-8 py-5 text-gray-700 bg-gray-100'>
                     <p>
                       Our platform works with your content to provides insights
                       and metrics on how you can grow your business and scale

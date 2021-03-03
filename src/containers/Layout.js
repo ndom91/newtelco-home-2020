@@ -28,7 +28,6 @@ const Wrapper = styled.div`
   top: 0;
   width: 100vw;
   z-index: 9999;
-
 `
 
 export default Layout

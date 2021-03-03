@@ -12,7 +12,7 @@ import Blob4 from '../../images/illustrations/blobs/blob9.svg'
 const Product = ({ product, index }) => {
   const [ref, inView] = useInView({
     rootMargin: '50px 0px',
-    triggerOnce: true
+    triggerOnce: true,
   })
 
   const blobs = [Blob1, Blob2, Blob3, Blob4]
@@ -30,20 +30,20 @@ const Product = ({ product, index }) => {
         inView ? 'sectionInView product-wrapper' : 'product-wrapper'
       }`}
     >
-      <div className='absolute md:relative sm:w-2/5 w-full opacity-10 md:opacity-100 inline-flex items-center justify-center align-center flex-shrink-0 overflow-visible z-0'>
+      <div className='align-center absolute z-0 inline-flex flex-shrink-0 items-center justify-center w-full opacity-10 overflow-visible sm:w-2/5 md:relative md:opacity-100'>
         <Blob alt={product.image.fluid} className='z-0 w-76 h-48' />
       </div>
-      <div className='flex-grow sm:text-left text-center mt-6 sm:mt-0 z-10'>
-        <h2 className='text-green text-4xl md:text-5xl font-body font-thin mb-2'>
+      <div className='z-10 flex-grow mt-6 text-center sm:mt-0 sm:text-left'>
+        <h2 className='text-green mb-2 font-body text-4xl font-thin md:text-5xl'>
           <Link
             language={language}
             to={`/products/${slugify(product.title)}`}
-            className='text-white hover:text-green-500 transition transition-color duration-300 ease-in-out hover:no-underline'
+            className='transition-color hover:text-green-500 text-white hover:no-underline transition duration-300 ease-in-out'
           >
             {product.title}
           </Link>
         </h2>
-        <p className='leading-relaxed text-base md:text-lg'>
+        <p className='text-base leading-relaxed md:text-lg'>
           {product.shortText}
         </p>
       </div>

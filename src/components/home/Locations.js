@@ -6,21 +6,21 @@ const Location = ({ locations }) => {
   const { t } = useTranslation()
 
   return (
-    <section className='w-full text-gray-500 body-font relative mt-20 sm:mt-0 overflow-hidden'>
-      <div className='container px-5 pt-24 mx-auto'>
-        <div className='flex justify-between flex-row-reverse w-full mb-20'>
-          <div className='lg:w-2/5 w-2/3 mb-6 lg:mb-0 mx-auto text-right'>
-            <h1 className='sm:text-4xl text-2xl mb-2 text-white font-body font-thin text-right'>
+    <section className='body-font relative mt-20 w-full text-gray-500 overflow-hidden sm:mt-0'>
+      <div className='container mx-auto pt-24 px-5'>
+        <div className='flex flex-row-reverse justify-between mb-20 w-full'>
+          <div className='mb-6 mx-auto w-2/3 text-right lg:mb-0 lg:w-2/5'>
+            <h1 className='mb-2 text-right text-white font-body text-2xl font-thin sm:text-4xl'>
               {t('locations')}
             </h1>
-            <div className='h-1 w-20 bg-green-500 rounded float-right'></div>
+            <div className='float-right w-20 h-1 bg-green-500 rounded'></div>
           </div>
-          <p className='flex-grow max-w-2xl w-full leading-relaxed text-base'></p>
+          <p className='flex-grow w-full max-w-2xl text-base leading-relaxed'></p>
         </div>
       </div>
-      <div className='container px-5 py-14 mx-auto flex sm:flex-no-wrap flex-wrap'>
-        <div className='lg:w-full md:w-3/5 rounded-lg overflow-hidden sm:mr-10 p-10 flex justify-center relative'>
-          <div className='flex w-full px-5'>
+      <div className='sm:flex-no-wrap container flex flex-wrap mx-auto px-5 py-14'>
+        <div className='relative flex justify-center p-10 rounded-lg overflow-hidden sm:mr-10 md:w-3/5 lg:w-full'>
+          <div className='flex px-5 w-full'>
             {locations.nodes.map(loc => (
               <LocationTilt
                 key={loc.city}

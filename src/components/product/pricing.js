@@ -3,7 +3,7 @@ import React from 'react'
 const ColoPricing = () => {
   return (
     <section>
-      <div class='container max-w-full mx-auto py-24 px-6'>
+      <div class='container mx-auto px-6 py-24 max-w-full'>
         {/* <h1 class='text-center text-4xl text-green-500 font-medium leading-snug tracking-wider'>
           Pricing
         </h1>
@@ -13,15 +13,15 @@ const ColoPricing = () => {
         </p>
         <div class='h-1 mx-auto bg-green-500 w-24 opacity-75 mt-4 rounded'></div> */}
 
-        <div class='max-w-full md:max-w-6xl mx-auto my-3 md:px-8'>
-          <div class='relative block flex flex-col md:flex-row items-center'>
-            <div class='w-11/12 max-w-sm sm:w-3/5 lg:w-1/3 sm:my-5 my-8 relative z-0 rounded-lg shadow-lg md:-mr-4'>
-              <div class='bg-white text-black rounded-lg shadow-inner shadow-lg overflow-hidden'>
-                <div class='block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 text-black px-8 lg:px-6'>
-                  <h1 class='text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide'>
+        <div class='mx-auto my-3 max-w-full md:px-8 md:max-w-6xl'>
+          <div class='relative block flex flex-col items-center md:flex-row'>
+            <div class='relative z-0 my-8 w-11/12 max-w-sm rounded-lg shadow-lg sm:my-5 sm:w-3/5 md:-mr-4 lg:w-1/3'>
+              <div class='text-black bg-white rounded-lg shadow-inner shadow-lg overflow-hidden'>
+                <div class='sm:text-md block mt-2 mx-auto px-8 max-w-sm text-left text-black text-sm lg:px-6'>
+                  <h1 class='p-3 pb-0 text-center text-lg font-medium tracking-wide uppercase'>
                     Half Rack
                   </h1>
-                  <h2 class='text-sm text-gray-500 text-center pb-6'>
+                  <h2 class='pb-6 text-center text-gray-500 text-sm'>
                     <small>From</small> €120 /mo
                   </h2>
                   With fantastic around the clock support, NewTelco offers
@@ -32,9 +32,9 @@ const ColoPricing = () => {
                 <div class='flex flex-wrap mt-3 px-6'>
                   <ul>
                     <li class='flex items-center'>
-                      <div class=' rounded-full p-2 fill-current text-green-700'>
+                      <div class='p-2 text-green-700 rounded-full fill-current'>
                         <svg
-                          class='w-6 h-6 align-middle'
+                          class='align-middle w-6 h-6'
                           width='24'
                           height='24'
                           viewBox='0 0 24 24'
@@ -48,14 +48,14 @@ const ColoPricing = () => {
                           <polyline points='22 4 12 14.01 9 11.01'></polyline>
                         </svg>
                       </div>
-                      <span class='text-gray-700 text-lg ml-3'>
+                      <span class='ml-3 text-gray-700 text-lg'>
                         Electricity
                       </span>
                     </li>
                     <li class='flex items-center'>
-                      <div class=' rounded-full p-2 fill-current text-green-700'>
+                      <div class='p-2 text-green-700 rounded-full fill-current'>
                         <svg
-                          class='w-6 h-6 align-middle'
+                          class='align-middle w-6 h-6'
                           width='24'
                           height='24'
                           viewBox='0 0 24 24'
@@ -69,14 +69,14 @@ const ColoPricing = () => {
                           <polyline points='22 4 12 14.01 9 11.01'></polyline>
                         </svg>
                       </div>
-                      <span class='text-gray-700 text-lg ml-3'>
+                      <span class='ml-3 text-gray-700 text-lg'>
                         Setup Included
                       </span>
                     </li>
                     <li class='flex items-center'>
-                      <div class=' rounded-full p-2 fill-current text-green-700'>
+                      <div class='p-2 text-green-700 rounded-full fill-current'>
                         <svg
-                          class='w-6 h-6 align-middle'
+                          class='align-middle w-6 h-6'
                           width='24'
                           height='24'
                           viewBox='0 0 24 24'
@@ -90,26 +90,26 @@ const ColoPricing = () => {
                           <polyline points='22 4 12 14.01 9 11.01'></polyline>
                         </svg>
                       </div>
-                      <span class='text-gray-700 text-lg ml-3'>Support</span>
+                      <span class='ml-3 text-gray-700 text-lg'>Support</span>
                     </li>
                   </ul>
                 </div>
-                <div class='block flex items-center p-8  uppercase'>
-                  <button class='mt-3 text-lg font-semibold bg-green-500 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700 transition ease-in-out duration-300'>
+                <div class='block flex items-center p-8 uppercase'>
+                  <button class='block mt-3 px-6 py-3 w-full text-white text-lg font-semibold hover:bg-gray-700 bg-green-500 rounded-lg shadow-xl transition duration-300 ease-in-out'>
                     Select
                   </button>
                 </div>
               </div>
             </div>
-            <div class='w-full max-w-md sm:w-2/3 lg:w-1/3 sm:my-5 my-8 relative z-10 bg-white rounded-lg shadow-lg'>
-              <div class='text-sm leading-none rounded-t-lg bg-gray-200 text-black font-semibold uppercase py-4 text-center tracking-wide'>
+            <div class='relative z-10 my-8 w-full max-w-md bg-white rounded-lg shadow-lg sm:my-5 sm:w-2/3 lg:w-1/3'>
+              <div class='py-4 text-center text-black text-sm font-semibold tracking-wide leading-none bg-gray-200 rounded-t-lg uppercase'>
                 Most Popular
               </div>
-              <div class='block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 text-black px-8 lg:px-6'>
-                <h1 class='text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide'>
+              <div class='sm:text-md block mt-2 mx-auto px-8 max-w-sm text-left text-black text-sm lg:px-6'>
+                <h1 class='p-3 pb-0 text-center text-lg font-medium tracking-wide uppercase'>
                   Full Rack
                 </h1>
-                <h2 class='text-sm text-gray-500 text-center pb-6'>
+                <h2 class='pb-6 text-center text-gray-500 text-sm'>
                   <span class='text-3xl'>
                     <small>From</small> €300
                   </span>{' '}
@@ -119,12 +119,12 @@ const ColoPricing = () => {
                 everything you need to open a new PoP or just get your hardware
                 online, fast!
               </div>
-              <div class='flex pl-12 justify-start sm:justify-start mt-3'>
+              <div class='flex justify-start mt-3 pl-12 sm:justify-start'>
                 <ul>
                   <li class='flex items-center'>
-                    <div class='rounded-full p-2 fill-current text-green-700'>
+                    <div class='p-2 text-green-700 rounded-full fill-current'>
                       <svg
-                        class='w-6 h-6 align-middle'
+                        class='align-middle w-6 h-6'
                         width='24'
                         height='24'
                         viewBox='0 0 24 24'
@@ -138,12 +138,12 @@ const ColoPricing = () => {
                         <polyline points='22 4 12 14.01 9 11.01'></polyline>
                       </svg>
                     </div>
-                    <span class='text-gray-700 text-lg ml-3'>Electricity</span>
+                    <span class='ml-3 text-gray-700 text-lg'>Electricity</span>
                   </li>
                   <li class='flex items-center'>
-                    <div class=' rounded-full p-2 fill-current text-green-700'>
+                    <div class='p-2 text-green-700 rounded-full fill-current'>
                       <svg
-                        class='w-6 h-6 align-middle'
+                        class='align-middle w-6 h-6'
                         width='24'
                         height='24'
                         viewBox='0 0 24 24'
@@ -157,14 +157,14 @@ const ColoPricing = () => {
                         <polyline points='22 4 12 14.01 9 11.01'></polyline>
                       </svg>
                     </div>
-                    <span class='text-gray-700 text-lg ml-3'>
+                    <span class='ml-3 text-gray-700 text-lg'>
                       No Setup fees
                     </span>
                   </li>
                   <li class='flex items-center'>
-                    <div class=' rounded-full p-2 fill-current text-green-700'>
+                    <div class='p-2 text-green-700 rounded-full fill-current'>
                       <svg
-                        class='w-6 h-6 align-middle'
+                        class='align-middle w-6 h-6'
                         width='24'
                         height='24'
                         viewBox='0 0 24 24'
@@ -178,24 +178,24 @@ const ColoPricing = () => {
                         <polyline points='22 4 12 14.01 9 11.01'></polyline>
                       </svg>
                     </div>
-                    <span class='text-gray-700 text-lg ml-3'>Support</span>
+                    <span class='ml-3 text-gray-700 text-lg'>Support</span>
                   </li>
                 </ul>
               </div>
 
-              <div class='block flex items-center p-8  uppercase'>
-                <button class='mt-3 text-lg font-semibold bg-green-500 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700 transition ease-in-out duration-300'>
+              <div class='block flex items-center p-8 uppercase'>
+                <button class='block mt-3 px-6 py-3 w-full text-white text-lg font-semibold hover:bg-gray-700 bg-green-500 rounded-lg shadow-xl transition duration-300 ease-in-out'>
                   Select
                 </button>
               </div>
             </div>
-            <div class='w-11/12 max-w-sm sm:w-3/5 lg:w-1/3 sm:my-5 my-8 relative z-0 rounded-lg shadow-lg md:-ml-4'>
-              <div class='bg-white text-black rounded-lg shadow-inner shadow-lg overflow-hidden'>
-                <div class='block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 text-black px-8 lg:px-6'>
-                  <h1 class='text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide'>
+            <div class='relative z-0 my-8 w-11/12 max-w-sm rounded-lg shadow-lg sm:my-5 sm:w-3/5 md:-ml-4 lg:w-1/3'>
+              <div class='text-black bg-white rounded-lg shadow-inner shadow-lg overflow-hidden'>
+                <div class='sm:text-md block mt-2 mx-auto px-8 max-w-sm text-left text-black text-sm lg:px-6'>
+                  <h1 class='p-3 pb-0 text-center text-lg font-medium tracking-wide uppercase'>
                     2+ Racks
                   </h1>
-                  <h2 class='text-sm text-gray-500 text-center pb-6'>
+                  <h2 class='pb-6 text-center text-gray-500 text-sm'>
                     Custom Pricing
                   </h2>
                   With fantastic around the clock support, NewTelco offers
@@ -205,9 +205,9 @@ const ColoPricing = () => {
                 <div class='flex flex-wrap mt-3 px-6'>
                   <ul>
                     <li class='flex items-center'>
-                      <div class=' rounded-full p-2 fill-current text-green-700'>
+                      <div class='p-2 text-green-700 rounded-full fill-current'>
                         <svg
-                          class='w-6 h-6 align-middle'
+                          class='align-middle w-6 h-6'
                           width='24'
                           height='24'
                           viewBox='0 0 24 24'
@@ -221,14 +221,14 @@ const ColoPricing = () => {
                           <polyline points='22 4 12 14.01 9 11.01'></polyline>
                         </svg>
                       </div>
-                      <span class='text-gray-700 text-lg ml-3'>
+                      <span class='ml-3 text-gray-700 text-lg'>
                         Power (2kW)
                       </span>
                     </li>
                     <li class='flex items-center'>
-                      <div class=' rounded-full p-2 fill-current text-green-700'>
+                      <div class='p-2 text-green-700 rounded-full fill-current'>
                         <svg
-                          class='w-6 h-6 align-middle'
+                          class='align-middle w-6 h-6'
                           width='24'
                           height='24'
                           viewBox='0 0 24 24'
@@ -242,14 +242,14 @@ const ColoPricing = () => {
                           <polyline points='22 4 12 14.01 9 11.01'></polyline>
                         </svg>
                       </div>
-                      <span class='text-gray-700 text-lg ml-3'>
+                      <span class='ml-3 text-gray-700 text-lg'>
                         Premium Support
                       </span>
                     </li>
                     <li class='flex items-center'>
-                      <div class=' rounded-full p-2 fill-current text-green-700'>
+                      <div class='p-2 text-green-700 rounded-full fill-current'>
                         <svg
-                          class='w-6 h-6 align-middle'
+                          class='align-middle w-6 h-6'
                           width='24'
                           height='24'
                           viewBox='0 0 24 24'
@@ -263,15 +263,15 @@ const ColoPricing = () => {
                           <polyline points='22 4 12 14.01 9 11.01'></polyline>
                         </svg>
                       </div>
-                      <span class='text-gray-700 text-lg ml-3'>
+                      <span class='ml-3 text-gray-700 text-lg'>
                         Remote Hands
                       </span>
                     </li>
                   </ul>
                 </div>
 
-                <div class='block flex items-center p-8  uppercase'>
-                  <button class='mt-3 text-lg font-semibold bg-green-500 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-gray-700 transition ease-in-out duration-300'>
+                <div class='block flex items-center p-8 uppercase'>
+                  <button class='block mt-3 px-6 py-3 w-full text-white text-lg font-semibold hover:bg-gray-700 bg-green-500 rounded-lg shadow-xl transition duration-300 ease-in-out'>
                     Select
                   </button>
                 </div>

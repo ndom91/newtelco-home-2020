@@ -13,14 +13,14 @@ const Contact = Loadable({
   loader: () => import('../components/home/Contact'),
   loading() {
     return <div>Loading...</div>
-  }
+  },
 })
 
 const Testimonials = Loadable({
   loader: () => import('../components/home/Testimonials'),
   loading() {
     return <div>Loading...</div>
-  }
+  },
 })
 
 export default function IndexPage({ data, pageContext }) {
@@ -157,7 +157,7 @@ export default function IndexPage({ data, pageContext }) {
       testimonials,
       locations,
       page,
-      site
+      site,
     } = data
 
     return (
@@ -169,9 +169,9 @@ export default function IndexPage({ data, pageContext }) {
           favicon={seo.faviconMetaTags}
           global={seo.globalSeo}
         />
-        <div className='flex flex-col justify-start items-center max-w-100 bg-gray-900'>
+        <div className='max-w-100 flex flex-col items-center justify-start bg-gray-900'>
           <Hero data={home} />
-          <RackStats className='overflow-hidden max-w-100' />
+          <RackStats className='max-w-100 overflow-hidden' />
           <HorizontalScroll members={team} />
           <Products products={products} />
           <Testimonials
@@ -190,7 +190,7 @@ export default function IndexPage({ data, pageContext }) {
 
 export const query = graphql`
   query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns

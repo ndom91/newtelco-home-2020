@@ -3,12 +3,12 @@ import React from 'react'
 const HeaderBanner = () => {
   return (
     <div class='bg-indigo-600'>
-      <div class='max-w-screen-xl mx-auto py-3 px-3 sm:px-6 lg:px-8'>
-        <div class='flex items-center justify-between flex-wrap'>
-          <div class='w-0 flex-1 flex items-center'>
-            <span class='flex p-2 rounded-lg bg-indigo-800'>
+      <div class='mx-auto px-3 py-3 max-w-screen-xl sm:px-6 lg:px-8'>
+        <div class='flex flex-wrap items-center justify-between'>
+          <div class='flex flex-1 items-center w-0'>
+            <span class='flex p-2 bg-indigo-800 rounded-lg'>
               <svg
-                class='h-6 w-6 text-white'
+                class='w-6 h-6 text-white'
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'
@@ -22,31 +22,31 @@ const HeaderBanner = () => {
                 />
               </svg>
             </span>
-            <p class='ml-3 font-medium text-white truncate'>
+            <p class='ml-3 text-white font-medium truncate'>
               <span class='md:hidden'>We announced a new product!</span>
               <span class='hidden md:inline'>
                 Big news! We're excited to announce a brand new product.
               </span>
             </p>
           </div>
-          <div class='order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto'>
+          <div class='flex-shrink-0 order-3 mt-2 w-full sm:order-2 sm:mt-0 sm:w-auto'>
             <div class='rounded-md shadow-sm'>
               <a
                 href='#'
-                class='flex items-center justify-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline transition ease-in-out duration-150'
+                class='flex items-center justify-center px-4 py-2 hover:text-indigo-500 text-indigo-600 text-sm font-medium leading-5 bg-white border border-transparent rounded-md focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
               >
                 Learn more
               </a>
             </div>
           </div>
-          <div class='order-2 flex-shrink-0 sm:order-3 sm:ml-3'>
+          <div class='flex-shrink-0 order-2 sm:order-3 sm:ml-3'>
             <button
               type='button'
-              class='-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500 sm:-mr-2 transition ease-in-out duration-150'
+              class='flex -mr-1 p-2 hover:bg-indigo-500 focus:bg-indigo-500 rounded-md focus:outline-none transition duration-150 ease-in-out sm:-mr-2'
               aria-label='Dismiss'
             >
               <svg
-                class='h-6 w-6 text-white'
+                class='w-6 h-6 text-white'
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'

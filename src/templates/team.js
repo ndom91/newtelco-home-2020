@@ -142,14 +142,14 @@ export const query = graphql`
       }
     }
     team: allDatoCmsTeam(
-      sort: { order: ASC, fields: order }
+      sort: { order: ASC, fields: position }
       filter: { locale: { eq: $language } }
     ) {
       nodes {
         name
         jobTitle
         description
-        order
+        position
         contactmethod
         image {
           alt

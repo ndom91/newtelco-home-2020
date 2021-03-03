@@ -298,7 +298,7 @@ export const query = graphql`
     }
     team: allDatoCmsTeam(
       filter: { locale: { eq: $language } }
-      sort: { order: ASC, fields: order }
+      sort: { fields: position }
     ) {
       nodes {
         name

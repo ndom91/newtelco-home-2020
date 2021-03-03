@@ -17,7 +17,7 @@ export default function ProductsPage({ data }) {
           <div className='container flex flex-col mx-auto px-5 py-12'>
             <div className='mx-auto lg:w-4/6'>
               <div className='h-64 rounded-lg overflow-hidden'>
-                <Imagae
+                <Image
                   alt='content'
                   data={productImg.nodes[0].childImageSharp.fluid}
                   className='w-full h-full object-cover object-top'

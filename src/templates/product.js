@@ -30,13 +30,13 @@ export default function ProductPage({ data = {}, pageContext }) {
     return (
       <>
         <SEO favicon={seo.faviconMetaTags} global={seo.globalSeo} />
-        <div className='flex flex-col overflow-hidden justify-start items-center max-w-100 bg-gray-900'>
-          <section className='relative text-gray-500 bg-gray-900 body-font mb-20 w-4/5 max-w-screen-lg'>
+        <div className='max-w-100 flex flex-col items-center justify-start bg-gray-900 overflow-hidden'>
+          <section className='body-font relative mb-20 w-4/5 max-w-screen-lg text-gray-500 bg-gray-900'>
             {product.nodes.map(product => {
               return (
                 <div key={product.title}>
                   <Title className='font-mono font-thin'>{product.title}</Title>
-                  <div className='h-1 bg-gray-800 rounded overflow-hidden mb-20'>
+                  <div className='mb-20 h-1 bg-gray-800 rounded overflow-hidden'>
                     <div className='w-24 h-full bg-green-500'></div>
                   </div>
                   {/* <Body>{product.fullText}</Body> */}
@@ -64,7 +64,7 @@ const Body = styled.p`
 
 export const query = graphql`
   query ProductQuery($language: String!, $productid: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns

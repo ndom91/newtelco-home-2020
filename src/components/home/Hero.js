@@ -129,7 +129,7 @@ const Hero = React.memo(function Hero({ data }) {
           </div>
         </div>
       </section>
-      <BlurImg src={Blur} />
+      <BlurImg src={Blur} loading='eager' />
     </>
   )
 })

@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 // import Img from 'gatsby-image'
-import { Image } from "react-datocms";
+import { Image } from 'react-datocms'
 import SEO from '../components/shared/SEO'
 import slugify from 'slug'
 
@@ -80,7 +80,7 @@ export default function ProductsPage({ data }) {
 
 export const query = graphql`
   query ProductsQuery($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns

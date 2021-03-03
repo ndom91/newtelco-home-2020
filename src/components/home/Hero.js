@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation,useI18next } from 'gatsby-plugin-react-i18next'
 import Blob10 from '../../images/illustrations/blobs/blob10.svg'
 import Blob11 from '../../images/illustrations/blobs/blob11.svg'
 import Blob12 from '../../images/illustrations/blobs/blob12.svg'
@@ -27,7 +27,8 @@ const useBreakpoint = createBreakpoint({ phone: 640 })
 
 const Hero = React.memo(function Hero({ data }) {
   const { ctaEmail, ctaActionText } = data
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
+  const { t } = useI18next()
   const { scrollY } = useViewportScroll()
   const y1 = useTransform(scrollY, [-500, 500], [-170, -10])
   const y2 = useTransform(scrollY, [-500, 500], [20, -20])

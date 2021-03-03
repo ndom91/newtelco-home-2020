@@ -136,13 +136,13 @@ module.exports = {
       options: {
         localeJsonSourceName: `locale`,
         languages: ['en', 'de'],
-        siteUrl: `http://localhost:8000/`,
+        siteUrl: `https://newtelco.dev`,
         defaultLanguage: 'en',
         i18nextOptions: {
+          defaultNS: 'translation',
           interpolation: {
             escapeValue: false
           },
-          keySeparator: false,
           nsSeparator: false
         },
       }

@@ -9,9 +9,9 @@ import ButtonMenu from './ButtonMenu'
 const useBreakpoint = createBreakpoint({ phone: 640 })
 
 export default function Header() {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   const [toggleMenu, setToggleMenu] = useState(false)
-  const { language } = useI18next()
+  const { language, t } = useI18next()
   const breakpoint = useBreakpoint()
 
   return (
@@ -36,7 +36,7 @@ export default function Header() {
               to='/products'
               className='mr-16 text-white hover:text-white hover:no-underline h-7'
             >
-              {t('menu.products')}
+              {t('menuproducts')}
             </NavLink>
             <NavLink
               language={language}

@@ -4,8 +4,6 @@ import Header from './Header'
 import Footer from './Footer'
 import MetaTags from './MetaTags'
 import GlobalReboot from '../style/reboot'
-import '../style/globals.css'
-import '../style/fonts.css'
 
 const Layout = ({ children, location, data, pageContext }) => {
   return (
@@ -31,17 +29,6 @@ const Wrapper = styled.div`
   width: 100vw;
   z-index: 9999;
 
-  &:after {
-    content: '';
-    background-image: url('/blackmamba.png');
-    height: 300%;
-    width: 300%;
-    opacity: 0.3;
-    position: fixed;
-    top: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
 `
 
 export default Layout

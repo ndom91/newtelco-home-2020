@@ -26,6 +26,17 @@ html {
 
 body { 
   overflow-x: hidden;
+  &:after {
+    content: '';
+    background-image: url('/blackmamba.png');
+    height: 300%;
+    width: 300%;
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
 }
 
 @supports (font-variation-settings: normal) {

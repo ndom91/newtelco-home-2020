@@ -26,8 +26,9 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
   }, [isOpen])
 
   const list = {
+    hidden: { opacity: 0 },
     visible: {
-      opacity: [0, 1],
+      opacity: 1,
       transition: {
         staggerChildren: 0.1,
         delayChildren: 0.25,
@@ -45,39 +46,71 @@ const OverlayMenu = ({ toggleMenu, isOpen }) => {
       },
     },
   }
+
+  // const listVariants = {
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.1,
+  //       delayChildren: 0.25,
+  //       type: 'inertia',
+  //     },
+  //   },
+  //   hidden: { opacity: 0 },
+  // }
+  const listVariants = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.3,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+      },
+    },
+  }
+  const itemVariants = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  }
+
   return (
     <OverlayWrapper className={isOpen ? 'active' : ''}>
       <HeaderImage src={newtelcoLogo} alt='Newtelco Logo' />
       <Navigation className={isOpen ? 'active' : ''}>
-        <ul className={isOpen ? 'active' : ''}>
-          <motion.div
-            style={{ x, y }}
-            animate={isOpen ? 'visible' : 'hidden'}
-            variants={list}
-          >
-            {menuItems.map((menu, index) => (
-              <motion.div
-                initial='hidden'
-                variants={variants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.9 }}
-                key={index}
-                className='mb-10'
+        <motion.ul
+          // initial='hidden'
+          // // style={{ x, y }}
+          // animate='visible'
+          // variants={list}
+          initial='hidden'
+          animate='visible'
+          variants={listVariants}
+        >
+          {menuItems.map((menu, index) => (
+            <motion.li
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              key={index}
+            >
+              <NavigationLink
+                to={menu.link}
+                aria-label={menu.name}
+                className='hover:text-white hover:no-underline font-display'
+                activeClassName='active'
+                onClick={toggleMenu}
               >
-                <NavigationLink
-                  to={menu.link}
-                  aria-label={menu.name}
-                  className='hover:text-white hover:no-underline font-display'
-                  activeClassName='active'
-                  onClick={toggleMenu}
-                >
-                  <NavNumber>{`0${index}`}</NavNumber>
-                  {menu.name}
-                </NavigationLink>
-              </motion.div>
-            ))}
-          </motion.div>
-        </ul>
+                <NavNumber>{`0${index}`}</NavNumber>
+                {menu.name}
+              </NavigationLink>
+            </motion.li>
+          ))}
+        </motion.ul>
       </Navigation>
       <LanguageSelect toggleMenu={toggleMenu} isOpen={isOpen} />
     </OverlayWrapper>
@@ -135,10 +168,10 @@ const Navigation = styled.div`
   top: 50%;
   left: 0%;
   transform: translateY(-50%);
-  opacity: 0;
+  /* opacity: 0;
   &.active {
     opacity: 1;
-  }
+  } */
   & ul {
     list-style: none;
     padding: 0;
@@ -149,11 +182,11 @@ const Navigation = styled.div`
     transition-delay: 300ms;
     & li {
       display: block;
-      height: calc(100% / 7);
+      height: calc(100% / 8);
       position: relative;
       margin-left: 0px;
-      margin-top: 40px;
-      margin-bottom: 40px;
+      margin-top: 5px;
+      margin-bottom: 0px;
       text-align: left;
     }
   }

@@ -54,7 +54,7 @@ const Hero = React.memo(function Hero({ data }) {
         </motion.div>
         <div className='relative flex flex-col-reverse items-end mx-auto py-0 sm:py-24 md:flex-row md:px-5'>
           <div className='items-left relative flex flex-col -mt-8 px-12 w-full sm:px-0 md:mb-0 md:text-left lg:flex-grow'>
-            <h1 className='md:whitespace-no-wrap z-50 mb-10 text-left text-white font-sans text-3xl font-semibold sm:text-4xl'>
+            <h1 className='md:whitespace-no-wrap z-50 mb-10 text-left text-white font-sans text-4xl font-semibold sm:text-4xl'>
               {t('welcome')}
             </h1>
             <Typed

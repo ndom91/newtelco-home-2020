@@ -4,9 +4,25 @@ import { createBreakpoint } from 'react-use'
 // import 'tippy.js/dist/tippy.css'
 // import 'tippy.js/animations/scale.css'
 
-const globeCloudsTexture =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Fair_Weather_Cloud_Map.jpg/1280px-Fair_Weather_Cloud_Map.jpg'
-const globeTexture = 'https://i.imgur.com/MipfNVK.png'
+const globeCloudsTexture = '/cloud_map.jpg'
+const globeTexture = '/globe_texture.jpg'
+
+const options = {
+  cameraRotateSpeed: 0.3,
+  cameraDistanceRadiusScale: 4,
+  cameraAutoRotateSpeed: 0.6,
+  enableGlobeGlow: false,
+  enableCameraZoom: false,
+  enableCameraAutoRotate: true,
+  enableMarkerGlow: false,
+  globeGlowColor: '#000000',
+  globeGlowCoefficient: 0,
+  globeGlowPower: 0,
+  globeGlowRadiusScale: 0,
+  // markerType: 'bar',
+  // markerRadiusScaleRange: [0.2, 0.5],
+  // markerTooltipRenderer: marker => `${marker.city} (${marker.value})`,
+}
 
 const markers = [
   {
@@ -52,20 +68,6 @@ const markers = [
     value: 54,
   },
 ]
-
-const options = {
-  enableGlobeGlow: false,
-  enableCameraAutoRotate: true,
-  cameraRotateSpeed: 0.3,
-  markerType: 'bar',
-  enableMarkerGlow: false,
-  markerRadiusScaleRange: [0.2, 0.5],
-  cameraDistanceRadiusScale: 4,
-  enableCameraZoom: false,
-  cameraAutoRotateSpeed: 0.6,
-  initialCoordinates: [51.5074, 0.1278],
-  markerTooltipRenderer: marker => `${marker.city} (${marker.value})`,
-}
 
 const Globe = () => {
   const useBreakpoint = createBreakpoint()
